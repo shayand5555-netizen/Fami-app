@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.10.0-beta.1 – 30. September 2026
+
+- Optionalen Supabase-Online-Modus ergänzt
+- Passwortlose Anmeldung per E-Mail vorbereitet
+- Familien erstellen und per Einladungscode beitreten
+- Aufgaben, Termine, Einkaufsliste, Rezepte und Einstellungen live synchronisieren
+- Anhänge zusätzlich geschützt im Familien-Cloudspeicher ablegen
+- Sicheren Offline-Rückfall beibehalten
+- SQL-Einrichtung mit Row-Level-Security für getrennte Familiendaten ergänzt
+
 ## 0.9.2 – 30. September 2026
 
 - Aufgaben und Einkaufsliste in einem gemeinsamen Bereich zusammengeführt

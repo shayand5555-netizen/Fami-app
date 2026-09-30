@@ -46,6 +46,7 @@ state.tasks = state.tasks.filter(task => !state.deletedIds.includes(task.id));
 
 let createType = 'task';
 let taskFilter = 'open';
+let currentView = 'home';
 let installPrompt = null;
 const today = new Date();
 let calendarCursor = new Date(today.getFullYear(),today.getMonth(),1);
@@ -55,7 +56,7 @@ const subdivisions = {'DE-BW':'Baden-Württemberg','DE-BY':'Bayern','DE-BE':'Ber
 $('#dateLabel').textContent = today.toLocaleDateString('de-DE', {weekday:'long',day:'2-digit',month:'long'}).toUpperCase();
 $('#itemDate').valueAsDate = today;
 
-function save(){ localStorage.setItem('fami-state', JSON.stringify(state)); }
+function save(){ localStorage.setItem('fami-state', JSON.stringify(state)); window.FamiCloud?.schedulePush(state); }
 function toast(message){ const t=$('#toast'); $('p',t).textContent=message;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),2400); }
 function initials(person){ return person === 'Alle' ? 'A' : person.charAt(0); }
 function avatarClass(person){ return {Lena:'lena',Tom:'tom',Emma:'emma',Noah:'noah'}[person] || 'lena'; }
@@ -72,12 +73,13 @@ async function storeAttachments(entity,files){
   if(!files?.length)return;const db=await openFileDb();const tx=db.transaction('attachments','readwrite');const store=tx.objectStore('attachments');
   [...files].forEach(file=>store.put({id:`${entity}-${Date.now()}-${Math.random()}`,entity,name:file.name,type:file.type,size:file.size,blob:file}));
   await new Promise((resolve,reject)=>{tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();
+  if(window.FamiCloud?.isConnected())try{await window.FamiCloud.uploadFiles(entity,[...files])}catch(error){console.error(error);toast('Datei lokal gespeichert – Cloud-Upload fehlgeschlagen')}
 }
 async function getAttachments(entity){
-  const db=await openFileDb();const tx=db.transaction('attachments','readonly');const req=tx.objectStore('attachments').index('entity').getAll(entity);const result=await new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});db.close();return result;
+  const db=await openFileDb();const tx=db.transaction('attachments','readonly');const req=tx.objectStore('attachments').index('entity').getAll(entity);const local=await new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});db.close();if(!window.FamiCloud?.isConnected())return local;try{const cloud=await window.FamiCloud.listFiles(entity);return [...local,...cloud.filter(file=>!local.some(item=>item.entity===file.entity&&item.name===file.name&&item.size===file.size))]}catch(error){console.error(error);return local}
 }
-async function getAllAttachments(){const db=await openFileDb();const tx=db.transaction('attachments','readonly');const req=tx.objectStore('attachments').getAll();const result=await new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});db.close();return result}
-async function removeAttachment(id){const db=await openFileDb();const tx=db.transaction('attachments','readwrite');tx.objectStore('attachments').delete(id);await new Promise(resolve=>tx.oncomplete=resolve);db.close()}
+async function getAllAttachments(){const db=await openFileDb();const tx=db.transaction('attachments','readonly');const req=tx.objectStore('attachments').getAll();const local=await new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});db.close();if(!window.FamiCloud?.isConnected())return local;try{const cloud=await window.FamiCloud.listFiles();return [...local,...cloud.filter(file=>!local.some(item=>item.entity===file.entity&&item.name===file.name&&item.size===file.size))]}catch(error){console.error(error);return local}}
+async function removeAttachment(id){if(id.startsWith('cloud:')){await window.FamiCloud.deleteFile(id);return}const db=await openFileDb();const tx=db.transaction('attachments','readwrite');tx.objectStore('attachments').delete(id);await new Promise(resolve=>tx.oncomplete=resolve);db.close()}
 async function removeEntityAttachments(entity){const files=await getAttachments(entity);await Promise.all(files.map(file=>removeAttachment(file.id)))}
 async function renderAttachments(entity,host){
   const files=await getAttachments(entity);host.innerHTML='';files.forEach(file=>{const row=document.createElement('div');row.className='attachment';row.innerHTML='<button class="attachment-open"></button><small></small><button class="attachment-delete" aria-label="Anhang löschen">×</button>';$('.attachment-open',row).textContent=file.name;$('small',row).textContent=`${Math.max(1,Math.round(file.size/1024))} KB`;$('.attachment-open',row).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.attachment-delete',row).onclick=async()=>{await removeAttachment(file.id);renderAttachments(entity,host);toast('Anhang gelöscht')};host.append(row)});
@@ -258,7 +260,7 @@ $('#deleteEvent').addEventListener('click',()=>{
 $('#taskAttachmentInput').addEventListener('change',async e=>{const id=$('#editTaskId').value;await storeAttachments(`task:${id}`,e.target.files);await renderAttachments(`task:${id}`,$('#taskAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
 $('#eventAttachmentInput').addEventListener('change',async e=>{const id=$('#editEventId').value;await storeAttachments(`event:${id}`,e.target.files);await renderAttachments(`event:${id}`,$('#eventAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
 
-$('#fileInput').addEventListener('change',async e=>{if(e.target.files.length){await storeAttachments('general:shared',e.target.files);toast(`${e.target.files.length} ${e.target.files.length===1?'Datei wurde':'Dateien wurden'} lokal gespeichert`);e.target.value=''}});$('#inviteBtn').onclick=async()=>{try{await navigator.clipboard.writeText(location.href);toast('Testlink kopiert – Daten werden noch nicht synchronisiert')}catch{toast('Testlink: '+location.href)}};
+$('#fileInput').addEventListener('change',async e=>{if(e.target.files.length){await storeAttachments('general:shared',e.target.files);toast(`${e.target.files.length} ${e.target.files.length===1?'Datei wurde':'Dateien wurden'} gespeichert`);e.target.value=''}});$('#inviteBtn').onclick=()=>window.FamiCloud?.openSetup();
 
 function shoppingCategory(name){const value=name.toLowerCase();if(/hähnchen|fleisch|fisch/.test(value))return'Fleisch & Protein';if(/salat|tomat|möhr|gurke|paprika|zwiebel|knoblauch|limette|apfel|peperoni|petersilie|lauch/.test(value))return'Obst & Gemüse';if(/skyr|quark|milch/.test(value))return'Kühlregal';if(/reis|hafer|nüss|mandel|sesam|kern/.test(value))return'Vorrat';return'Sonstiges'}
 function addShoppingItem(name,quantity='1',source='Manuell'){
@@ -284,7 +286,7 @@ function recipeCard(recipe){
 async function loadRecipeImages(root){for(const recipe of state.customRecipes.filter(item=>item.hasPhoto)){const host=$(`[data-recipe-image="${recipe.id}"]`,root);if(!host)continue;const files=await getAttachments(`recipe:${recipe.id}`);const photo=files.find(file=>file.type?.startsWith('image/'));if(!photo)continue;const url=URL.createObjectURL(photo.blob);const img=document.createElement('img');img.alt=`Foto von ${recipe.title}`;img.src=url;img.onload=()=>URL.revokeObjectURL(url);host.replaceChildren(img)}}
 async function deleteRecipe(id){state.customRecipes=state.customRecipes.filter(recipe=>recipe.id!==id);await removeEntityAttachments(`recipe:${id}`);save();switchView('recipes');toast('Rezept gelöscht')}
 function bindRecipeCards(root){$$('.recipe-add',root).forEach(button=>button.onclick=()=>addRecipeToShopping(allRecipes().find(recipe=>recipe.id===button.dataset.recipe)));$$('[data-delete-recipe]',root).forEach(button=>button.onclick=()=>deleteRecipe(button.dataset.deleteRecipe));loadRecipeImages(root)}
-function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.9.2',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
+function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.10.0-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
 async function importBackup(file){try{const data=JSON.parse(await file.text());if(!data.state?.tasks||!data.state?.events)throw new Error();localStorage.setItem('fami-state',JSON.stringify(data.state));toast('Sicherung importiert – App wird neu geladen');setTimeout(()=>location.reload(),800)}catch{toast('Diese Sicherungsdatei ist ungültig')}}
 async function renderFileLibrary(){
   const host=$('#fileLibrary');if(!host)return;const files=await getAllAttachments();host.innerHTML='';files.forEach(file=>{const card=document.createElement('article');card.className='library-file';card.innerHTML=`<span class="file-kind">${file.type?.startsWith('image/')?'FOTO':'DATEI'}</span><strong></strong><small></small><div><button class="open-library-file">Öffnen</button><button class="delete-library-file">Löschen</button></div>`;$('strong',card).textContent=file.name;$('small',card).textContent=`${Math.max(1,Math.round(file.size/1024))} KB · ${file.entity.startsWith('task:')?'Aufgabe':file.entity.startsWith('event:')?'Termin':'Allgemein'}`;$('.open-library-file',card).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.delete-library-file',card).onclick=async()=>{await removeAttachment(file.id);renderFileLibrary();toast('Datei gelöscht')};host.append(card)});if(!files.length)host.innerHTML='<div class="task-empty">Noch keine Dateien gespeichert.</div>';
@@ -303,6 +305,7 @@ function bindActivitySection(root){
   $$('.add-activity',root).forEach((button,index)=>button.onclick=()=>{const idea=activityIdeas[index];state.events.push({id:`event-${Date.now()}-${index}`,title:idea.title,date:'',time:'11:00',place:`${idea.distance} · ${state.familyProfile.location}`,people:[...family],color:'green'});save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();toast('Aktivität zum Familienkalender hinzugefügt')});
 }
 function switchView(name){
+  currentView=name;
   const navigationView=name==='shopping'?'tasks':name;
   $$('.nav-item,.mobile-nav button[data-view]').forEach(b=>b.classList.toggle('active',b.dataset.view===navigationView));
   if(name==='home'){$('#homeView').classList.remove('hidden');$('#genericView').classList.add('hidden');return}
@@ -344,3 +347,14 @@ window.addEventListener('appinstalled',()=>toast('Fami ist jetzt auf deinem Ger�
 if('serviceWorker' in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
 
 renderHomeTasks();applyHomeCalendarFilter();updateShoppingCount();save();
+window.FamiCloud?.init({
+  getState:()=>JSON.parse(JSON.stringify(state)),
+  applyState:payload=>{
+    if(!payload||!Array.isArray(payload.tasks)||!Array.isArray(payload.events))return;
+    Object.assign(state,payload);
+    localStorage.setItem('fami-state',JSON.stringify(state));
+    renderHomeTasks();applyHomeCalendarFilter();updateShoppingCount();
+    if(currentView!=='home')switchView(currentView);
+  },
+  notify:toast
+});

@@ -4,9 +4,9 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.9.2**
+Version: **0.10.0-beta.1**
 
-Dieser Release Candidate ist für Bedienungs- und Funktionsfeedback vorgesehen. Daten und Anhänge werden derzeit lokal im Browser des jeweiligen Geräts gespeichert und noch nicht zwischen Familienmitgliedern synchronisiert.
+Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cloud-Einrichtung bleiben Daten lokal gespeichert. Nach Verbindung mit Supabase werden Familiendaten live synchronisiert und Anhänge geschützt in der Cloud gespeichert.
 
 ## Funktionen
 
@@ -21,6 +21,19 @@ Dieser Release Candidate ist für Bedienungs- und Funktionsfeedback vorgesehen. 
 - Familienaktivitäten im Kalenderbereich
 - Lokale Sicherung und Wiederherstellung
 - Installierbare Progressive Web App
+- Optionaler Online-Modus mit E-Mail-Anmeldung und Familien-Einladungscode
+- Live-Synchronisierung zwischen mehreren Geräten
+- Geschützte Cloud-Dateien mit Familienzugriff
+
+## Online-Modus aktivieren
+
+1. Ein kostenloses Supabase-Projekt erstellen.
+2. `supabase-schema.sql` vollständig im Supabase SQL Editor ausführen.
+3. In Supabase unter Authentication → URL Configuration die GitHub-Pages-Adresse als Site URL und Redirect URL eintragen.
+4. In Fami auf den Speicherstatus tippen und Projekt-URL sowie Publishable Key eintragen.
+5. Per E-Mail anmelden und eine Familie erstellen oder mit Einladungscode beitreten.
+
+Niemals einen `service_role`- oder Secret-Key in die App eintragen. Fami benötigt ausschließlich den öffentlichen Publishable Key.
 
 ## Rezeptquellen
 

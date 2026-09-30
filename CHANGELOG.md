@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.6.1 – 30. September 2026
+
+- Monatskalender direkt nach oben verschoben
+- Personen-, Feiertags- und Ferienauswahl kompakt unter dem Kalender angeordnet
+- Auswahlbereich ein- und ausklappbar
+- Bearbeiten-Schaltfläche in der Terminliste nach rechts verschoben
+- Terminzeilen kompakter gestaltet
+
 ## 0.6.0 – 30. September 2026
 
 - Vollständige Monatsansicht mit Wochenzahlen ergänzt

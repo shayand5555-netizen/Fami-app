@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.9.2 – 30. September 2026
+
+- Aufgaben und Einkaufsliste in einem gemeinsamen Bereich zusammengeführt
+- Direkter Wechsel zwischen Aufgaben und Einkaufsliste innerhalb der Seite ergänzt
+- Eigenen Einkaufsliste-Reiter aus der Hauptnavigation entfernt
+
 ## 0.9.1 – 30. September 2026
 
 - „Aufgaben & To-dos“ einheitlich in „Aufgaben“ umbenannt

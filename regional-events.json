@@ -1,14 +1,259 @@
 {
-  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "updatedAt": "2026-09-30T19:44:57.636Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {"title":"Großes Kürbisfest","date":"2026-10-03","venue":"Eldagser Hoflieferant","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Großes-Kürbisfest"},
-    {"title":"Am 4. Oktober ist Schorsenbummel","date":"2026-10-04","venue":"Hannovers Innenstadt","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals"},
-    {"title":"KiezKultur Festival","date":"2026-10-09","venue":"Faust und Glocksee","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals"},
-    {"title":"Tiergartenfest Hannover","date":"2026-10-10","venue":"Tiergarten","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals"},
-    {"title":"Kunst & Kürbis in Eldagsen","date":"2026-10-18","venue":"Eldagser Hoflieferant","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-Kürbis-in-Eldagsen"},
-    {"title":"Museumsclub","date":"2026-10-24","venue":"Museum August Kestner","category":"Kinder & Jugendliche","url":"https://www.hannover.de/Museum-August-Kestner/Veranstaltungen/Veranstaltungskalender/Museumsclub2"},
-    {"title":"Vorlesenachmittage","date":"2026-10-30","venue":"Museum August Kestner","category":"Kinder & Jugendliche","url":"https://www.hannover.de/Museum-August-Kestner/Ausstellung-Programme/Veranstaltungskalender/Gesamtprogramm"}
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-09-30",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk"
+    },
+    {
+      "title": "meetYourJob 2026",
+      "date": "2026-09-30",
+      "venue": "Hannover Congress Centrum (HCC)",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/meetYourJob-2026"
+    },
+    {
+      "title": "Oktoberfest 2026",
+      "date": "2026-09-30",
+      "venue": "Schützenplatz Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Oktoberfest-2026"
+    },
+    {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-09-30",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald"
+    },
+    {
+      "title": "Sprachcafe DaF alle Level | English Translation",
+      "date": "2026-09-30",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-alle-Level-|-English-Translation"
+    },
+    {
+      "title": "Sprachcafe DaF für Fortgeschrittene",
+      "date": "2026-09-30",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-f%C3%BCr-Fortgeschrittene"
+    },
+    {
+      "title": "Wochen der Demenz im September 2026",
+      "date": "2026-09-30",
+      "venue": "Verschiedene Veranstaltungsorte",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Wochen-der-Demenz-im-September-2026"
+    },
+    {
+      "title": "Sprachcafe DaF für Anfänger*Innen | українська",
+      "date": "2026-10-01",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-f%C3%BCr-Anf%C3%A4nger*Innen-|-%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0"
+    },
+    {
+      "title": "Sprachcafe DaF für Fortgeschrittene | українська",
+      "date": "2026-10-01",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-f%C3%BCr-Fortgeschrittene-|-%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0"
+    },
+    {
+      "title": "Sprechstunde in der Wedemark",
+      "date": "2026-10-01",
+      "venue": "Mehrgenerationenhaus Mellendorf",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprechstunde-in-der-Wedemark"
+    },
+    {
+      "title": "Großes Kürbisfest",
+      "date": "2026-10-03",
+      "venue": "Eldagser Hoflieferant",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Gro%C3%9Fes-K%C3%BCrbisfest"
+    },
+    {
+      "title": "Mardorfer Kunsthandwerkermarkt",
+      "date": "2026-10-03",
+      "venue": "Aloys-Bunge-Platz",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Mardorfer-Kunsthandwerkermarkt"
+    },
+    {
+      "title": "Wassersause und „Dicke Berta“ fahren im Ersepark",
+      "date": "2026-10-03",
+      "venue": "Erse Park Uetze",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wassersause-und-%E2%80%9EDicke-Berta%E2%80%9C-fahren-im-Ersepark"
+    },
+    {
+      "title": "Am 4. Oktober ist Schorsenbummel",
+      "date": "2026-10-04",
+      "venue": "Hannovers Innenstadt",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Am-4.-Oktober-ist-Schorsenbummel"
+    },
+    {
+      "title": "Figurentheater Tonne: Es rappelt in der Kiste",
+      "date": "2026-10-04",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste"
+    },
+    {
+      "title": "Für Grundschulkinder: Führungen durch den Landtag",
+      "date": "2026-10-04",
+      "venue": "Niedersächsischer Landtag",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/F%C3%BCr-Grundschulkinder-F%C3%BChrungen-durch-den-Landtag"
+    },
+    {
+      "title": "Naturpark-Kino & Erzähltheater: Geschichte des Apfels",
+      "date": "2026-10-04",
+      "venue": "Naturpark-Scheune Steinhude",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Naturpark-Kino-Erz%C3%A4hltheater-Geschichte-des-Apfels"
+    },
+    {
+      "title": "SPIEL:ZEIT - (Spiel)Figuren aus Wolle und Garn wickeln",
+      "date": "2026-10-04",
+      "venue": "Stadtteilzentrum Weiße Rose",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Spiel-Figuren-aus-Wolle-und-Garn-wickeln"
+    },
+    {
+      "title": "Zauberhafte Waldküche - ABGESAGT!",
+      "date": "2026-10-04",
+      "venue": "Stadtteilzentrum Lister Turm",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Zauberhafte-Waldk%C3%BCche-ABGESAGT"
+    },
+    {
+      "title": "Die Jugendgruppe BE:TwEEN 2026",
+      "date": "2026-10-05",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026"
+    },
+    {
+      "title": "Lerne die Welt der Sphero Bolts kennen",
+      "date": "2026-10-07",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lerne-die-Welt-der-Sphero-Bolts-kennen"
+    },
+    {
+      "title": "Offener Spielenachmittag",
+      "date": "2026-10-08",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Offener-Spielenachmittag"
+    },
+    {
+      "title": "KiezKultur Festival",
+      "date": "2026-10-09",
+      "venue": "Region Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/KiezKultur-Festival"
+    },
+    {
+      "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
+      "date": "2026-10-10",
+      "venue": "Flohmarkt Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer"
+    },
+    {
+      "title": "Flohmarkt auf der Neuen Bult",
+      "date": "2026-10-10",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult"
+    },
+    {
+      "title": "Flohmarkt der Johanniter Langenhagen",
+      "date": "2026-10-10",
+      "venue": "Johanniter-Unfall-Hilfe e.V. Nordhannoverscher Ortsverband Langenhagen",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-der-Johanniter-Langenhagen"
+    },
+    {
+      "title": "Tiergartenfest Hannover",
+      "date": "2026-10-10",
+      "venue": "Tiergarten",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tiergartenfest-Hannover"
+    },
+    {
+      "title": "Vintage Wonderland",
+      "date": "2026-10-10",
+      "venue": "Vintage Wonderland",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland"
+    },
+    {
+      "title": "Flohmarkt Großburgwedel",
+      "date": "2026-10-11",
+      "venue": "Flohmarkt bei IKEA in Großburgwedel",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel"
+    },
+    {
+      "title": "Kunst & Kürbis in Eldagsen",
+      "date": "2026-10-18",
+      "venue": "Eldagser Hoflieferant",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-K%C3%BCrbis-in-Eldagsen"
+    },
+    {
+      "title": "EXIT x Electric Sunday",
+      "date": "2026-10-30",
+      "venue": "Hannover Congress Centrum (HCC)",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday"
+    },
+    {
+      "title": "Glitterbox Hannover",
+      "date": "2026-10-31",
+      "venue": "Kuppelsaal im HCC Congress Centrum Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover"
+    },
+    {
+      "title": "Second-Hand-Basar für Kinder- und Babyartikel",
+      "date": "2026-10-31",
+      "venue": "Pavillon Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Second-Hand-Basar-f%C3%BCr-Kinder-und-Babyartikel"
+    },
+    {
+      "title": "Stoffmarkt Holland",
+      "date": "2026-11-01",
+      "venue": "Schützenplatz Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Stoffmarkt-Holland"
+    },
+    {
+      "title": "Tanzparty in Misburg",
+      "date": "2026-11-12",
+      "venue": "Bürgerhaus & Kulturbüro",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tanzparty-in-Misburg"
+    },
+    {
+      "title": "Fairground Festival 2026",
+      "date": "2026-11-28",
+      "venue": "Messegelände / Halle 2",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Fairground-Festival-2026"
+    }
   ]
 }

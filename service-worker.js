@@ -1,4 +1,4 @@
-const CACHE = 'fami-v1';
+const CACHE = 'fami-v0.3.0';
 const APP_FILES = ['./','./index.html','./styles.css','./app.js','./manifest.webmanifest','./icons/fami-icon.svg'];
 
 self.addEventListener('install', event => {

@@ -63,7 +63,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.3.0</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -140,6 +140,21 @@
         <label>Details<textarea id="itemDetails" placeholder="Ort, Checkliste oder eine kurze Notiz …"></textarea></label>
         <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto anhängen<small>Optional · bis 100 MB</small></span><input type="file"></label>
         <div class="modal-actions"><button type="button" class="btn ghost" data-close>Abbrechen</button><button class="btn primary" type="submit">Für alle speichern</button></div>
+      </form>
+    </section>
+  </div>
+  <div class="modal-wrap" id="editTaskModal" aria-hidden="true">
+    <div class="modal-backdrop" data-edit-close></div>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="editTaskTitle">
+      <button class="icon-btn modal-close" data-edit-close><svg><use href="#i-x"/></svg></button>
+      <p class="eyebrow">AUFGABE BEARBEITEN</p><h2 id="editTaskTitle">Details anpassen</h2>
+      <form id="editTaskForm">
+        <input type="hidden" id="editTaskId">
+        <label>Titel<input required id="editTaskName" placeholder="Was ist zu tun?"></label>
+        <div class="form-row"><label>Fällig am<input type="date" id="editTaskDate"></label><label>Zuständig<select id="editTaskPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label></div>
+        <label>Notiz<textarea id="editTaskNote" placeholder="Ergänzende Informationen …"></textarea></label>
+        <label class="complete-toggle"><input type="checkbox" id="editTaskDone"><span class="checkmark"></span><span>Aufgabe ist erledigt</span></label>
+        <div class="modal-actions split"><button type="button" class="btn danger" id="deleteTask">Aufgabe löschen</button><span></span><button type="button" class="btn ghost" data-edit-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
       </form>
     </section>
   </div>

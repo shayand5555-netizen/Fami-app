@@ -1,0 +1,17 @@
+.chrome-test/
+output/
+tmp/
+
+# Lokale Release-Archive und historische Zwischenstände
+*.zip
+Fami-Testversion/
+Fami-Update-Aufgaben/
+Fami-v*/
+
+# Lokale Entwurfs- und Vorschaudateien
+*.png
+Bildprompt-*.txt
+Woche-*.md
+Familienvorlieben.md
+RELEASE_TEST_REPORT_*.md
+build_recipe_pdf.py

@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.8.0-rc.1**
+Version: **0.9.0**
 
 Dieser Release Candidate ist für Bedienungs- und Funktionsfeedback vorgesehen. Daten und Anhänge werden derzeit lokal im Browser des jeweiligen Geräts gespeichert und noch nicht zwischen Familienmitgliedern synchronisiert.
 
@@ -16,6 +16,8 @@ Dieser Release Candidate ist für Bedienungs- und Funktionsfeedback vorgesehen. 
 - Lokale Foto- und Dateianhänge
 - Gemeinsame Einkaufsliste auf einem Gerät
 - Rezeptideen mit direkter Zutatenübernahme
+- Eigene Rezepte per Foto oder Link lokal speichern
+- Gemeinsamer Bereich für Aufgaben und To-dos
 - Familienaktivitäten im Kalenderbereich
 - Lokale Sicherung und Wiederherstellung
 - Installierbare Progressive Web App

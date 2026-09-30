@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.14.0-beta.1 – 30. September 2026
+
+- Fehlende Nährwerte als deutlich markierte KI-Schätzung ergänzt
+- Portionsannahmen für jede Schätzung direkt an der Rezeptkarte erklärt
+- Veröffentlichte Original-Nährwerte bleiben unverändert und werden als Originalwert gekennzeichnet
+- Vollständige offizielle Schmale-Schulter-Upload-Playlist eingebettet
+- Neue Kanalvideos erscheinen automatisch in der Videobibliothek
+
 ## 0.13.0-beta.1 – 30. September 2026
 
 - Offizielle YouTube-Vorschaubilder bei den Schmale-Schulter-Rezepten ergänzt

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=0.5.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -24,6 +24,7 @@
     <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
     <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
@@ -42,6 +43,7 @@
       <button class="nav-item" data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
       <button class="nav-item" data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span><b id="taskCount">5</b></button>
       <button class="nav-item" data-view="time"><svg><use href="#i-clock"/></svg><span>Zeit</span></button>
+      <button class="nav-item" data-view="activities"><svg><use href="#i-compass"/></svg><span>Entdecken</span></button>
       <button class="nav-item" data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
     </nav>
     <div class="family-card">
@@ -63,7 +65,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.3.0</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.5.0</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -125,6 +127,7 @@
     <button data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
     <button class="mobile-create" id="mobileAdd"><svg><use href="#i-plus"/></svg></button>
     <button data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span></button>
+    <button data-view="activities"><svg><use href="#i-compass"/></svg><span>Entdecken</span></button>
     <button data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
   </nav>
 
@@ -138,7 +141,7 @@
         <label>Titel<input required id="itemTitle" placeholder="Was steht an?" autofocus></label>
         <div class="form-row"><label>Datum<input type="date" id="itemDate"></label><label>Zuständig<select id="itemPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label></div>
         <label>Details<textarea id="itemDetails" placeholder="Ort, Checkliste oder eine kurze Notiz …"></textarea></label>
-        <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto anhängen<small>Optional · bis 100 MB</small></span><input type="file"></label>
+        <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Dateien oder Fotos anhängen<small>Optional · mehrere Dateien möglich</small></span><input type="file" id="newItemFiles" multiple></label>
         <div class="modal-actions"><button type="button" class="btn ghost" data-close>Abbrechen</button><button class="btn primary" type="submit">Für alle speichern</button></div>
       </form>
     </section>
@@ -153,12 +156,31 @@
         <label>Titel<input required id="editTaskName" placeholder="Was ist zu tun?"></label>
         <div class="form-row"><label>Fällig am<input type="date" id="editTaskDate"></label><label>Zuständig<select id="editTaskPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label></div>
         <label>Notiz<textarea id="editTaskNote" placeholder="Ergänzende Informationen …"></textarea></label>
+        <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto hinzufügen<small>Wird lokal auf diesem Gerät gespeichert</small></span><input type="file" id="taskAttachmentInput" multiple></label>
+        <div class="attachment-list" id="taskAttachments"></div>
         <label class="complete-toggle"><input type="checkbox" id="editTaskDone"><span class="checkmark"></span><span>Aufgabe ist erledigt</span></label>
         <div class="modal-actions split"><button type="button" class="btn danger" id="deleteTask">Aufgabe löschen</button><span></span><button type="button" class="btn ghost" data-edit-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
       </form>
     </section>
   </div>
+  <div class="modal-wrap" id="editEventModal" aria-hidden="true">
+    <div class="modal-backdrop" data-event-close></div>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="editEventHeading">
+      <button class="icon-btn modal-close" data-event-close><svg><use href="#i-x"/></svg></button>
+      <p class="eyebrow">TERMIN BEARBEITEN</p><h2 id="editEventHeading">Kalendereintrag</h2>
+      <form id="editEventForm">
+        <input type="hidden" id="editEventId">
+        <label>Titel<input required id="editEventName" placeholder="Was steht an?"></label>
+        <div class="form-row"><label>Datum<input required type="date" id="editEventDate"></label><label>Uhrzeit<input required type="time" id="editEventTime"></label></div>
+        <div class="form-row"><label>Zuständig<select id="editEventPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label><label>Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option></select></label></div>
+        <label>Ort oder Details<input id="editEventPlace" placeholder="Wo findet der Termin statt?"></label>
+        <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto hinzufügen<small>Wird lokal auf diesem Gerät gespeichert</small></span><input type="file" id="eventAttachmentInput" multiple></label>
+        <div class="attachment-list" id="eventAttachments"></div>
+        <div class="modal-actions split"><button type="button" class="btn danger" id="deleteEvent">Termin löschen</button><span></span><button type="button" class="btn ghost" data-event-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
+      </form>
+    </section>
+  </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="app.js"></script>
+  <script src="app.js?v=0.5.0"></script>
 </body>
 </html>

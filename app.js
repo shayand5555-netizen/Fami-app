@@ -9,11 +9,17 @@ const defaults = [
   {id:'base-5',title:'Pflanzen gießen',person:'Noah',dateLabel:'Freitag · wiederholt sich',date:'',note:'',done:false}
 ];
 const family = ['Lena','Tom','Emma','Noah'];
-const calendarEvents = [
-  {id:'event-1',time:'08:00',title:'Zahnarzt Emma',place:'Praxis Dr. König · Prenzlauer Berg',people:['Emma'],color:'blue'},
-  {id:'event-2',time:'10:30',title:'Wocheneinkauf',place:'Markthalle · Liste ist geteilt',people:['Lena','Tom'],color:'coral'},
-  {id:'event-3',time:'15:30',title:'Fußballtraining Noah',place:'Sportplatz Nord',people:['Noah'],color:'yellow'},
-  {id:'event-4',time:'18:30',title:'Gemeinsames Abendessen',place:'Zuhause · Lasagne',people:['Lena','Tom','Emma','Noah'],color:'green'}
+const defaultEvents = [
+  {id:'event-1',date:'',time:'08:00',title:'Zahnarzt Emma',place:'Praxis Dr. König · Prenzlauer Berg',people:['Emma'],color:'blue'},
+  {id:'event-2',date:'',time:'10:30',title:'Wocheneinkauf',place:'Markthalle · Liste ist geteilt',people:['Lena','Tom'],color:'coral'},
+  {id:'event-3',date:'',time:'15:30',title:'Fußballtraining Noah',place:'Sportplatz Nord',people:['Noah'],color:'yellow'},
+  {id:'event-4',date:'',time:'18:30',title:'Gemeinsames Abendessen',place:'Zuhause · Lasagne',people:['Lena','Tom','Emma','Noah'],color:'green'}
+];
+const activityIdeas = [
+  {icon:'🎃',title:'Kürbisfest & Herbstmarkt',category:'Feste',ages:'3–14 Jahre',distance:'ca. 12 km',when:'Dieses Wochenende',text:'Kürbisschnitzen, Strohburg und regionale Leckereien.'},
+  {icon:'🦕',title:'Familientag im Museum',category:'Drinnen',ages:'5–16 Jahre',distance:'ca. 4 km',when:'Sonntag',text:'Mitmachstationen und eine kindgerechte Entdeckungstour.'},
+  {icon:'🌲',title:'Wald-Rallye für Familien',category:'Draußen',ages:'4–12 Jahre',distance:'ca. 8 km',when:'Nächsten Samstag',text:'Gemeinsam Spuren suchen und kleine Naturaufgaben lösen.'},
+  {icon:'🎭',title:'Kinder- und Jugendtheater',category:'Kultur',ages:'6–15 Jahre',distance:'ca. 6 km',when:'In 9 Tagen',text:'Familienvorstellung am Nachmittag mit anschließendem Gespräch.'}
 ];
 const stored = JSON.parse(localStorage.getItem('fami-state') || '{}');
 const migratedCustom = (stored.customTasks || []).map((task,index) => ({
@@ -22,9 +28,11 @@ const migratedCustom = (stored.customTasks || []).map((task,index) => ({
 }));
 const state = {
   tasks: Array.isArray(stored.tasks) ? stored.tasks : [...defaults, ...migratedCustom],
+  events: Array.isArray(stored.events) ? stored.events : defaultEvents,
   deletedIds: stored.deletedIds || [],
   taskPeople: stored.taskPeople || [...family],
-  calendarPeople: stored.calendarPeople || [...family]
+  calendarPeople: stored.calendarPeople || [...family],
+  familyProfile: stored.familyProfile || {location:'Berlin',emmaAge:10,noahAge:7}
 };
 state.tasks = state.tasks.filter(task => !state.deletedIds.includes(task.id));
 
@@ -47,6 +55,22 @@ function prettyDate(raw, fallback='Heute'){
 }
 function getTask(id){ return state.tasks.find(task => task.id === id); }
 function isVisible(person, kind='task'){ return state[kind==='task'?'taskPeople':'calendarPeople'].includes(person) || person === 'Alle'; }
+
+function openFileDb(){
+  return new Promise((resolve,reject)=>{const request=indexedDB.open('fami-files',1);request.onupgradeneeded=()=>{const db=request.result;if(!db.objectStoreNames.contains('attachments')){const store=db.createObjectStore('attachments',{keyPath:'id'});store.createIndex('entity','entity')}};request.onsuccess=()=>resolve(request.result);request.onerror=()=>reject(request.error)});
+}
+async function storeAttachments(entity,files){
+  if(!files?.length)return;const db=await openFileDb();const tx=db.transaction('attachments','readwrite');const store=tx.objectStore('attachments');
+  [...files].forEach(file=>store.put({id:`${entity}-${Date.now()}-${Math.random()}`,entity,name:file.name,type:file.type,size:file.size,blob:file}));
+  await new Promise((resolve,reject)=>{tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();
+}
+async function getAttachments(entity){
+  const db=await openFileDb();const tx=db.transaction('attachments','readonly');const req=tx.objectStore('attachments').index('entity').getAll(entity);const result=await new Promise((resolve,reject)=>{req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)});db.close();return result;
+}
+async function removeAttachment(id){const db=await openFileDb();const tx=db.transaction('attachments','readwrite');tx.objectStore('attachments').delete(id);await new Promise(resolve=>tx.oncomplete=resolve);db.close()}
+async function renderAttachments(entity,host){
+  const files=await getAttachments(entity);host.innerHTML='';files.forEach(file=>{const row=document.createElement('div');row.className='attachment';row.innerHTML='<button class="attachment-open"></button><small></small><button class="attachment-delete" aria-label="Anhang löschen">×</button>';$('.attachment-open',row).textContent=file.name;$('small',row).textContent=`${Math.max(1,Math.round(file.size/1024))} KB`;$('.attachment-open',row).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.attachment-delete',row).onclick=async()=>{await removeAttachment(file.id);renderAttachments(entity,host);toast('Anhang gelöscht')};host.append(row)});
+}
 
 function taskLabel(task){
   const label=document.createElement('label');
@@ -104,19 +128,31 @@ function bindPeoplePicker(root,kind){
   });
 }
 
+function eventVisible(event){ return event.people.some(person=>state.calendarPeople.includes(person)); }
+function eventPeople(value){ return value === 'Alle' ? [...family] : [value]; }
+function getEvent(id){ return state.events.find(event=>event.id===id); }
+
 function applyHomeCalendarFilter(){
-  $$('.timeline .event').forEach((element,index)=>{const event=calendarEvents[index];element.style.display=event.people.some(person=>state.calendarPeople.includes(person))?'':'none'});
-  const visible=calendarEvents.filter(event=>event.people.some(person=>state.calendarPeople.includes(person))).length;
-  $('.schedule-card .card-head p').textContent=`${visible} Termine`;
+  const host=$('#timeline');host.innerHTML='';
+  const visible=state.events.filter(eventVisible).sort((a,b)=>a.time.localeCompare(b.time));
+  visible.slice(0,5).forEach(event=>{
+    const row=document.createElement('article');row.className='event';row.dataset.eventId=event.id;
+    row.innerHTML=`<time>${event.time}</time><div class="event-line ${event.color}"></div><div class="event-body"><strong></strong><p></p><div class="event-avatars"></div></div><button class="edit-event-mini" aria-label="Termin bearbeiten">Bearbeiten</button>`;
+    $('.event-body strong',row).textContent=event.title;$('.event-body p',row).textContent=event.place||'Keine Ortsangabe';
+    event.people.forEach(person=>$('.event-avatars',row).insertAdjacentHTML('beforeend',`<span class="avatar ${avatarClass(person)} mini">${initials(person)}</span>`));
+    $('.edit-event-mini',row).onclick=()=>openEventEditor(event.id);host.append(row);
+  });
+  if(!visible.length)host.innerHTML='<p class="task-empty">Für deine Auswahl gibt es keine Termine.</p>';
+  $('.schedule-card .card-head p').textContent=`${visible.length} Termine`;
 }
 
 function renderCalendarManager(){
   const host=$('#calendarEntries');if(!host)return;host.innerHTML='';
-  calendarEvents.filter(event=>event.people.some(person=>state.calendarPeople.includes(person))).forEach(event=>{
+  state.events.filter(eventVisible).sort((a,b)=>a.time.localeCompare(b.time)).forEach(event=>{
     const row=document.createElement('article');row.className='calendar-entry';
-    row.innerHTML=`<time>${event.time}</time><i class="${event.color}"></i><div><strong></strong><small></small><div class="calendar-people"></div></div>`;
+    row.innerHTML=`<time>${event.time}</time><i class="${event.color}"></i><div><strong></strong><small></small><div class="calendar-people"></div></div><button class="edit-task-btn edit-calendar-btn">Bearbeiten</button>`;
     $('strong',row).textContent=event.title;$('small',row).textContent=event.place;
-    event.people.forEach(person=>{$('.calendar-people',row).insertAdjacentHTML('beforeend',`<span class="avatar ${avatarClass(person)} mini">${initials(person)}</span>`)});host.append(row);
+    event.people.forEach(person=>{$('.calendar-people',row).insertAdjacentHTML('beforeend',`<span class="avatar ${avatarClass(person)} mini">${initials(person)}</span>`)});$('.edit-calendar-btn',row).onclick=()=>openEventEditor(event.id);host.append(row);
   });
   if(!host.children.length)host.innerHTML='<div class="task-empty">Für diese Auswahl gibt es keine Termine.</div>';
 }
@@ -126,22 +162,31 @@ function openModal(type='task'){
   $$('.type-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.type===type));setTimeout(()=>$('#itemTitle').focus(),100);
 }
 function closeModal(){ $('#modal').classList.remove('open');$('#modal').setAttribute('aria-hidden','true'); }
-function openTaskEditor(id){
+async function openTaskEditor(id){
   const task=getTask(id);if(!task)return;
   $('#editTaskId').value=id;$('#editTaskName').value=task.title;$('#editTaskDate').value=task.date||'';$('#editTaskPerson').value=task.person;$('#editTaskNote').value=task.note||'';$('#editTaskDone').checked=task.done;
-  $('#editTaskModal').classList.add('open');$('#editTaskModal').setAttribute('aria-hidden','false');setTimeout(()=>$('#editTaskName').focus(),80);
+  $('#editTaskModal').classList.add('open');$('#editTaskModal').setAttribute('aria-hidden','false');await renderAttachments(`task:${id}`,$('#taskAttachments'));setTimeout(()=>$('#editTaskName').focus(),80);
 }
 function closeTaskEditor(){ $('#editTaskModal').classList.remove('open');$('#editTaskModal').setAttribute('aria-hidden','true'); }
+async function openEventEditor(id){
+  const event=getEvent(id);if(!event)return;
+  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventPerson').value=event.people.length===family.length?'Alle':event.people[0];$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';
+  $('#editEventModal').classList.add('open');$('#editEventModal').setAttribute('aria-hidden','false');await renderAttachments(`event:${id}`,$('#eventAttachments'));setTimeout(()=>$('#editEventName').focus(),80);
+}
+function closeEventEditor(){ $('#editEventModal').classList.remove('open');$('#editEventModal').setAttribute('aria-hidden','true'); }
 
 $('#quickAdd').onclick=()=>openModal();$('#mobileAdd').onclick=()=>openModal();
-$$('[data-kind]').forEach(b=>b.onclick=()=>openModal(b.dataset.kind));$$('[data-close]').forEach(b=>b.onclick=closeModal);$$('[data-edit-close]').forEach(b=>b.onclick=closeTaskEditor);
+$$('[data-kind]').forEach(b=>b.onclick=()=>openModal(b.dataset.kind));$$('[data-close]').forEach(b=>b.onclick=closeModal);$$('[data-edit-close]').forEach(b=>b.onclick=closeTaskEditor);$$('[data-event-close]').forEach(b=>b.onclick=closeEventEditor);
 $$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b))});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeTaskEditor()}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeTaskEditor();closeEventEditor()}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
 
-$('#createForm').addEventListener('submit',e=>{
+$('#createForm').addEventListener('submit',async e=>{
   e.preventDefault();const title=$('#itemTitle').value.trim();const person=$('#itemPerson').value;const rawDate=$('#itemDate').value;
   if(createType==='task'){
-    state.tasks.push({id:`task-${Date.now()}`,title,person,date:rawDate,dateLabel:prettyDate(rawDate),note:$('#itemDetails').value.trim(),done:false});save();renderHomeTasks();renderTaskManager();
+    const id=`task-${Date.now()}`;state.tasks.push({id,title,person,date:rawDate,dateLabel:prettyDate(rawDate),note:$('#itemDetails').value.trim(),done:false});await storeAttachments(`task:${id}`,$('#newItemFiles').files);save();renderHomeTasks();renderTaskManager();
+  }
+  if(createType==='event'){
+    const id=`event-${Date.now()}`;state.events.push({id,title,date:rawDate,time:'12:00',place:$('#itemDetails').value.trim(),people:eventPeople(person),color:'green'});await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();
   }
   $('#createForm').reset();$('#itemDate').valueAsDate=today;closeModal();toast(`${createType==='event'?'Termin':createType==='note'?'Notiz':'Aufgabe'} für alle gespeichert`);
 });
@@ -156,6 +201,19 @@ $('#deleteTask').addEventListener('click',()=>{
   const id=$('#editTaskId').value;const task=getTask(id);if(!task)return;
   state.tasks=state.tasks.filter(item=>item.id!==id);state.deletedIds.push(id);save();renderHomeTasks();renderTaskManager();closeTaskEditor();toast('Aufgabe wurde gelöscht');
 });
+
+$('#editEventForm').addEventListener('submit',e=>{
+  e.preventDefault();const event=getEvent($('#editEventId').value);if(!event)return;
+  event.title=$('#editEventName').value.trim();event.date=$('#editEventDate').value;event.time=$('#editEventTime').value;event.people=eventPeople($('#editEventPerson').value);event.color=$('#editEventColor').value;event.place=$('#editEventPlace').value.trim();
+  save();applyHomeCalendarFilter();renderCalendarManager();closeEventEditor();toast('Kalendereintrag wurde aktualisiert');
+});
+
+$('#deleteEvent').addEventListener('click',()=>{
+  const id=$('#editEventId').value;state.events=state.events.filter(event=>event.id!==id);save();applyHomeCalendarFilter();renderCalendarManager();closeEventEditor();toast('Kalendereintrag wurde gelöscht');
+});
+
+$('#taskAttachmentInput').addEventListener('change',async e=>{const id=$('#editTaskId').value;await storeAttachments(`task:${id}`,e.target.files);await renderAttachments(`task:${id}`,$('#taskAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
+$('#eventAttachmentInput').addEventListener('change',async e=>{const id=$('#editEventId').value;await storeAttachments(`event:${id}`,e.target.files);await renderAttachments(`event:${id}`,$('#eventAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
 
 $('#timerBtn').addEventListener('click',()=>{
   if(timerTick){clearInterval(timerTick);timerTick=null;$('#timerBtn').classList.remove('running');$('#timerLabel').textContent='Timer pausiert';toast('Zeit wurde lokal gespeichert');return}
@@ -180,6 +238,12 @@ function switchView(name){
   if(name==='calendar'){
     box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">GEMEINSAMER ÜBERBLICK</p><h1>Familienkalender</h1><p>Wähle aus, wessen Termine du sehen möchtest.</p></div><button class="btn primary sub-add"><svg><use href="#i-plus"/></svg><span>Neuer Termin</span></button></div>${peoplePicker('calendar')}<section class="empty-shell"><div class="calendar-manager" id="calendarEntries"></div></section>`;
     $('.sub-add',box).onclick=()=>openModal('event');bindPeoplePicker(box,'calendar');renderCalendarManager();return;
+  }
+  if(name==='activities'){
+    const profile=state.familyProfile;
+    box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">GEMEINSAM ETWAS ERLEBEN</p><h1>Aktivitäten entdecken</h1><p>Ideen passend zu eurem Ort und dem Alter der Kinder.</p></div></div><section class="discovery-settings"><label>Ort oder PLZ<input id="activityLocation" value="${profile.location}"></label><label>Emma – Alter<input id="emmaAge" type="number" min="0" max="17" value="${profile.emmaAge}"></label><label>Noah – Alter<input id="noahAge" type="number" min="0" max="17" value="${profile.noahAge}"></label><button class="btn primary" id="refreshIdeas">Vorschläge aktualisieren</button></section><div class="demo-note"><strong>Beispielvorschläge</strong><span>Live-Veranstaltungen und genaue Entfernungen werden in einer späteren Online-Version angebunden.</span></div><section class="activity-grid">${activityIdeas.map(item=>`<article class="activity-card"><span class="activity-emoji">${item.icon}</span><div class="activity-meta"><span>${item.category}</span><span>${item.distance}</span></div><h2>${item.title}</h2><p>${item.text}</p><div class="activity-bottom"><span>${item.when}</span><small>${item.ages}</small></div><button class="add-activity">Zum Kalender hinzufügen</button></article>`).join('')}</section>`;
+    $('#refreshIdeas').onclick=()=>{state.familyProfile={location:$('#activityLocation').value.trim()||'Berlin',emmaAge:Number($('#emmaAge').value),noahAge:Number($('#noahAge').value)};save();toast('Familienprofil und Vorschläge aktualisiert')};
+    $$('.add-activity',box).forEach((button,index)=>button.onclick=()=>{const idea=activityIdeas[index];state.events.push({id:`event-${Date.now()}-${index}`,title:idea.title,date:'',time:'11:00',place:`${idea.distance} · ${state.familyProfile.location}`,people:[...family],color:'green'});save();applyHomeCalendarFilter();toast('Aktivität zum Familienkalender hinzugefügt')});return;
   }
   const v=views[name];box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">${v.eyebrow}</p><h1>${v.title}</h1><p>${v.desc}</p></div><button class="btn primary sub-add"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div><section class="empty-shell"><div class="feature-grid">${v.features.map(x=>`<article class="feature-item"><strong>${x[0]}</strong><p>${x[1]}</p></article>`).join('')}</div></section>`;$('.sub-add',box).onclick=()=>openModal(name==='calendar'?'event':'note');
 }

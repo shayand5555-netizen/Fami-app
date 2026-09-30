@@ -1,5 +1,28 @@
 # Fami – Versionsverlauf
 
+## 0.5.0 – 30. September 2026
+
+- Dateien und Fotos an Aufgaben anhängen, öffnen und löschen
+- Dateien und Fotos an Kalendereinträge anhängen, öffnen und löschen
+- Anhänge werden lokal und offlinefähig auf dem Gerät gespeichert
+- Neuer Bereich „Entdecken“ mit Familienaktivitäten
+- Ort beziehungsweise Postleitzahl und Alter der Kinder speicherbar
+- Vorschläge zeigen Altersgruppe, Entfernung, Termin und Kategorie
+- Aktivitäten lassen sich direkt zum Familienkalender hinzufügen
+
+## 0.4.0 – 30. September 2026
+
+- Kalendereinträge können nachträglich bearbeitet werden
+- Titel, Datum, Uhrzeit, Ort, Person und Farbe anpassbar
+- Termine können gelöscht werden
+- Neue Termine werden im Kalender gespeichert
+- Kalender und Startseite zeigen stets denselben Datenstand
+
+## 0.3.1 – 30. September 2026
+
+- Cache-Problem behoben, durch das Kalender und Aufgaben noch die alte Platzhalteransicht zeigten
+- JavaScript und Stylesheets erhalten eine Versionskennung und werden bei Updates zuverlässig neu geladen
+
 ## 0.3.0 – 30. September 2026
 
 - Personenfilter für Aufgaben ergänzt

@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.10.0-beta.2 – 30. September 2026
+
+- Erzeugung von Familien-Einladungscodes mit Supabase-Projekten korrigiert
+- Kleine Reparaturabfrage `supabase-fix-001.sql` für bereits eingerichtete Projekte ergänzt
+
 ## 0.10.0-beta.1 – 30. September 2026
 
 - Optionalen Supabase-Online-Modus ergänzt

@@ -62,7 +62,7 @@ begin
   insert into public.families(name, invite_code, created_by)
   values (
     trim(family_name),
-    upper(substr(encode(gen_random_bytes(8), 'hex'), 1, 8)),
+    upper(substr(replace(gen_random_uuid()::text, '-', ''), 1, 8)),
     auth.uid()
   ) returning * into new_family;
   insert into public.family_members(family_id, user_id, role)

@@ -21,9 +21,14 @@
     button.querySelector('strong').textContent = label;
     button.querySelector('small').textContent = mode === 'online' ? 'Live synchronisiert' : mode === 'working' ? 'Wird verbunden …' : 'Antippen zum Einrichten';
     const familyLabel = document.querySelector('#familySyncLabel');
-    if (familyLabel) familyLabel.textContent = mode === 'online' ? 'Familie · live synchronisiert' : '4 Mitglieder · Online-Modus optional';
+    if (familyLabel) {
+      const memberCount = callbacks?.getState?.().familyMembers?.length || 1;
+      familyLabel.textContent = mode === 'online' ? `${memberCount} Mitglieder · live synchronisiert` : `${memberCount} Mitglieder · Online-Modus optional`;
+    }
   };
   const notify = message => callbacks?.notify?.(message);
+  const displayFamilyName = () => callbacks?.getState?.().familyName || familyInfo?.name || 'Familie online';
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 
   function loadSdk() {
     if (window.supabase?.createClient) return Promise.resolve();
@@ -80,7 +85,7 @@
     localStorage.setItem(FAMILY_KEY, familyInfo.id);
     await pullState(true);
     subscribe();
-    setStatus(familyInfo.name || 'Familie online', 'online');
+    setStatus(displayFamilyName(), 'online');
     renderSetup();
   }
 
@@ -121,7 +126,7 @@
       updated_at:new Date().toISOString()
     }, {onConflict:'family_id'});
     if (error) { console.error(error); setStatus('Synchronisierung gestört'); return; }
-    setStatus(familyInfo.name || 'Familie online', 'online');
+    setStatus(displayFamilyName(), 'online');
   }
 
   function schedulePush(payload) {
@@ -136,7 +141,10 @@
     if (error) throw error;
     familyInfo = data?.[0];
     localStorage.setItem(FAMILY_KEY, familyInfo.id);
-    await pushNow(callbacks.getState());
+    const initialState = callbacks.getState();
+    initialState.familyName = name;
+    callbacks.applyState(initialState);
+    await pushNow(initialState);
     await loadFamily();
     notify('Familie erstellt und dieses Gerät synchronisiert');
   }
@@ -236,7 +244,7 @@
       document.querySelector('#joinFamilyForm').onsubmit = async event => {event.preventDefault();try{await joinFamily(document.querySelector('#familyCode').value.trim());renderSetup()}catch(error){notify(error.message)}};
       return;
     }
-    host.innerHTML = `<div class="cloud-connected"><span>✓</span><div><strong>${familyInfo.name}</strong><p>Live-Synchronisierung ist aktiv.</p></div></div><div class="invite-code"><small>Einladungscode für weitere Familienmitglieder</small><strong>${familyInfo.invite_code}</strong><button class="btn ghost" id="copyInvite">Code kopieren</button></div><button class="text-btn cloud-reset" id="cloudLogout">Von der Cloud abmelden</button>`;
+    host.innerHTML = `<div class="cloud-connected"><span>✓</span><div><strong>${escapeHtml(displayFamilyName())}</strong><p>Live-Synchronisierung ist aktiv.</p></div></div><div class="invite-code"><small>Einladungscode für weitere Familienmitglieder</small><strong>${escapeHtml(familyInfo.invite_code)}</strong><button class="btn ghost" id="copyInvite">Code kopieren</button></div><button class="text-btn cloud-reset" id="cloudLogout">Von der Cloud abmelden</button>`;
     document.querySelector('#copyInvite').onclick = async () => {await navigator.clipboard.writeText(familyInfo.invite_code);notify('Einladungscode kopiert')};
     document.querySelector('#cloudLogout').onclick = async () => {await client.auth.signOut();localStorage.removeItem(FAMILY_KEY);location.reload()};
   }

@@ -1,5 +1,6 @@
 .chrome-test/
 .chrome-cloud-test/
+.chrome-qa-*/
 output/
 tmp/
 

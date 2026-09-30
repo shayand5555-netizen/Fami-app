@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.11.0-beta.1 – 30. September 2026
+
+- Familienverwaltung mit editierbarem Familiennamen und Mitgliederprofilen ergänzt
+- Namen werden beim Umbenennen in Aufgaben, Kalender und Filtern übernommen
+- Aktuelles Profil pro Gerät auswählbar
+- Optionale Altersangaben für passendere Familienvorschläge ergänzt
+- Regionale Live-Veranstaltungssuche über Ticketmaster Discovery API eingebaut
+- Live-Termine lassen sich direkt in den Familienkalender übernehmen
+- Beispielaktivitäten bleiben als Rückfall bei fehlender Internet- oder API-Verbindung erhalten
+
 ## 0.10.0-beta.2 – 30. September 2026
 
 - Erzeugung von Familien-Einladungscodes mit Supabase-Projekten korrigiert

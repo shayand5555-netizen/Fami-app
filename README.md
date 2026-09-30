@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.10.0-beta.2**
+Version: **0.11.0-beta.1**
 
 Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cloud-Einrichtung bleiben Daten lokal gespeichert. Nach Verbindung mit Supabase werden Familiendaten live synchronisiert und Anhänge geschützt in der Cloud gespeichert.
 
@@ -24,6 +24,8 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Optionaler Online-Modus mit E-Mail-Anmeldung und Familien-Einladungscode
 - Live-Synchronisierung zwischen mehreren Geräten
 - Geschützte Cloud-Dateien mit Familienzugriff
+- Familienname, Profile, Namen und Altersangaben bearbeiten
+- Optionale regionale Live-Veranstaltungssuche über Ticketmaster Discovery API
 
 ## Online-Modus aktivieren
 

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.10.0-beta.2" />
+  <link rel="stylesheet" href="styles.css?v=0.11.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -48,16 +48,16 @@
       <button class="nav-item" data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
     </nav>
     <div class="family-card">
-      <p>DEINE FAMILIE</p>
+      <p id="familyNameLabel">DEINE FAMILIE</p>
       <div class="family-row">
-        <div class="avatar-stack"><span class="avatar lena">L</span><span class="avatar tom">T</span><span class="avatar emma">E</span><span class="avatar noah">N</span></div>
+        <button class="avatar-stack family-settings-link" id="familySettingsBtn" aria-label="Familie bearbeiten"><span class="avatar lena">L</span><span class="avatar tom">T</span><span class="avatar emma">E</span><span class="avatar noah">N</span></button>
         <button class="icon-btn small" id="inviteBtn" aria-label="Person einladen"><svg><use href="#i-plus"/></svg></button>
       </div>
       <small id="familySyncLabel">4 Mitglieder · Online-Modus optional</small>
     </div>
-    <button class="profile">
-      <span class="avatar lena">L</span>
-      <span><strong>Lena Weber</strong><small>Familien-Admin</small></span>
+    <button class="profile" id="profileBtn">
+      <span class="avatar lena" id="profileInitial">L</span>
+      <span><strong id="profileName">Lena</strong><small>Familien-Admin</small></span>
       <svg><use href="#i-more"/></svg>
     </button>
   </aside>
@@ -66,12 +66,12 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.10.0 BETA 2</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.11.0 BETA</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
       <div class="welcome">
-        <div><p class="eyebrow" id="dateLabel"></p><h1>Guten Morgen, Lena <span>👋</span></h1><p>Heute ist einiges los — aber ihr habt alles im Blick.</p></div>
+        <div><p class="eyebrow" id="dateLabel"></p><h1>Guten Morgen, <span id="welcomeName">Lena</span> <span>👋</span></h1><p>Heute ist einiges los — aber ihr habt alles im Blick.</p></div>
         <button class="weather"><span>☀️</span><span><strong>18°</strong><small>Berlin · sonnig</small></span></button>
       </div>
 
@@ -183,7 +183,7 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="cloud.js?v=0.10.0-beta.2"></script>
-  <script src="app.js?v=0.10.0-beta.2"></script>
+  <script src="cloud.js?v=0.11.0"></script>
+  <script src="app.js?v=0.11.0"></script>
 </body>
 </html>

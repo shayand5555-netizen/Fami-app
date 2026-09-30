@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.13.0-beta.1 – 30. September 2026
+
+- Offizielle YouTube-Vorschaubilder bei den Schmale-Schulter-Rezepten ergänzt
+- Nährwerte pro Portion beziehungsweise Stück sichtbar gemacht, sofern sie im Original veröffentlicht wurden
+- Vier weitere öffentlich verfügbare Schmale-Schulter-Rezepte ergänzt
+- Direkte Links zum Originalvideo und zum offiziellen Kochbuch hinzugefügt
+- Fehlende Nährwerte werden gekennzeichnet und nicht geschätzt
+
 ## 0.12.0-beta.1 – 30. September 2026
 
 - Regionale Familienveranstaltungen aus Hannover.de als Hauptquelle ergänzt

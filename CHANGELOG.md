@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.12.0-beta.1 – 30. September 2026
+
+- Regionale Familienveranstaltungen aus Hannover.de als Hauptquelle ergänzt
+- Kinderangebote, Feste, kostenlose Termine und Märkte werden täglich aktualisiert
+- Nur Titel, Datum, Ort, Kategorie und der Link zur offiziellen Originalquelle werden übernommen
+- Ticketmaster aus der sichtbaren Hauptsuche entfernt
+- Regionale Termine lassen sich weiterhin direkt in den Familienkalender übernehmen
+
 ## 0.11.0-beta.1 – 30. September 2026
 
 - Familienverwaltung mit editierbarem Familiennamen und Mitgliederprofilen ergänzt

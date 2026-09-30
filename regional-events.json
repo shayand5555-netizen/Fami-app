@@ -1,0 +1,14 @@
+{
+  "updatedAt": "2026-09-30T00:00:00.000Z",
+  "region": "Hannover",
+  "source": "Hannover.de",
+  "events": [
+    {"title":"Großes Kürbisfest","date":"2026-10-03","venue":"Eldagser Hoflieferant","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Großes-Kürbisfest"},
+    {"title":"Am 4. Oktober ist Schorsenbummel","date":"2026-10-04","venue":"Hannovers Innenstadt","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals"},
+    {"title":"KiezKultur Festival","date":"2026-10-09","venue":"Faust und Glocksee","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals"},
+    {"title":"Tiergartenfest Hannover","date":"2026-10-10","venue":"Tiergarten","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals"},
+    {"title":"Kunst & Kürbis in Eldagsen","date":"2026-10-18","venue":"Eldagser Hoflieferant","category":"Feste & Festivals","url":"https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-Kürbis-in-Eldagsen"},
+    {"title":"Museumsclub","date":"2026-10-24","venue":"Museum August Kestner","category":"Kinder & Jugendliche","url":"https://www.hannover.de/Museum-August-Kestner/Veranstaltungen/Veranstaltungskalender/Museumsclub2"},
+    {"title":"Vorlesenachmittage","date":"2026-10-30","venue":"Museum August Kestner","category":"Kinder & Jugendliche","url":"https://www.hannover.de/Museum-August-Kestner/Ausstellung-Programme/Veranstaltungskalender/Gesamtprogramm"}
+  ]
+}

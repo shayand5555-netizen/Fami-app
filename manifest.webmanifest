@@ -1,0 +1,18 @@
+{
+  "name": "Fami – Familienplaner",
+  "short_name": "Fami",
+  "description": "Gemeinsamer Kalender, Aufgaben, Familienzeit, Fotos und Dokumente.",
+  "lang": "de-DE",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#f7f6f1",
+  "theme_color": "#2e6d5b",
+  "categories": ["productivity", "lifestyle"],
+  "icons": [{"src":"icons/fami-icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}],
+  "shortcuts": [
+    {"name":"Aufgabe erstellen","short_name":"Neue Aufgabe","url":"./?create=task"},
+    {"name":"Kalender öffnen","short_name":"Kalender","url":"./?view=calendar"}
+  ]
+}

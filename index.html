@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#f7f5ef" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Fami" />
+  <meta name="description" content="Der gemeinsame Kalender, Aufgabenplaner und Familienbereich für euren Alltag." />
+  <title>Fami — Gemeinsam läuft's leichter</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" href="icons/fami-icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="icons/fami-icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <svg class="svg-sprite" aria-hidden="true">
+    <symbol id="i-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="m9 18 6-6-6-6"/></symbol>
+    <symbol id="i-people" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5a3 3 0 0 1 0 6M18 14a5 5 0 0 1 3 4v2"/></symbol>
+    <symbol id="i-more" viewBox="0 0 24 24"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="m8 5 11 7-11 7z"/></symbol>
+    <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m0 0L7 9m5-5 5 5M4 15v4a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-4"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+  </svg>
+
+  <aside class="sidebar">
+    <a class="brand" href="#"><span class="brand-mark">F</span><span>fami</span></a>
+    <nav class="main-nav" aria-label="Hauptnavigation">
+      <button class="nav-item active" data-view="home"><svg><use href="#i-home"/></svg><span>Heute</span></button>
+      <button class="nav-item" data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
+      <button class="nav-item" data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span><b id="taskCount">5</b></button>
+      <button class="nav-item" data-view="time"><svg><use href="#i-clock"/></svg><span>Zeit</span></button>
+      <button class="nav-item" data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
+    </nav>
+    <div class="family-card">
+      <p>DEINE FAMILIE</p>
+      <div class="family-row">
+        <div class="avatar-stack"><span class="avatar lena">L</span><span class="avatar tom">T</span><span class="avatar emma">E</span><span class="avatar noah">N</span></div>
+        <button class="icon-btn small" id="inviteBtn" aria-label="Person einladen"><svg><use href="#i-plus"/></svg></button>
+      </div>
+      <small>4 Mitglieder · alle synchron</small>
+    </div>
+    <button class="profile">
+      <span class="avatar lena">L</span>
+      <span><strong>Lena Weber</strong><small>Familien-Admin</small></span>
+      <svg><use href="#i-more"/></svg>
+    </button>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <button class="mobile-brand"><span class="brand-mark">F</span></button>
+      <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
+      <div class="top-actions"><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+    </header>
+
+    <section class="content" id="homeView">
+      <div class="welcome">
+        <div><p class="eyebrow" id="dateLabel"></p><h1>Guten Morgen, Lena <span>👋</span></h1><p>Heute ist einiges los — aber ihr habt alles im Blick.</p></div>
+        <button class="weather"><span>☀️</span><span><strong>18°</strong><small>Berlin · sonnig</small></span></button>
+      </div>
+
+      <div class="sync-banner"><span class="pulse"></span><strong>Alles synchronisiert</strong><span>· vor wenigen Sekunden</span><div class="synced-people"><div class="avatar-stack"><span class="avatar lena">L</span><span class="avatar tom">T</span><span class="avatar emma">E</span></div><small>3 gerade aktiv</small></div></div>
+
+      <div class="dashboard-grid">
+        <section class="card schedule-card">
+          <div class="card-head"><div><span class="section-icon coral"><svg><use href="#i-cal"/></svg></span><span><h2>Heute</h2><p>4 Termine</p></span></div><button class="text-btn nav-link" data-target="calendar">Kalender öffnen <svg><use href="#i-arrow"/></svg></button></div>
+          <div class="timeline" id="timeline">
+            <article class="event"><time>08:00</time><div class="event-line blue"></div><div class="event-body"><strong>Zahnarzt Emma</strong><p>Praxis Dr. König · Prenzlauer Berg</p><div><span class="avatar emma mini">E</span><span class="tag blue-soft">Gesundheit</span></div></div><span class="duration">45 Min.</span></article>
+            <article class="event current"><time>10:30</time><div class="event-line coral"></div><div class="event-body"><strong>Wocheneinkauf</strong><p>Markthalle · Liste ist geteilt</p><div><span class="avatar lena mini">L</span><span class="avatar tom mini overlap">T</span><span class="tag coral-soft">Familie</span></div></div><span class="now-label">JETZT</span></article>
+            <article class="event"><time>15:30</time><div class="event-line yellow"></div><div class="event-body"><strong>Fußballtraining Noah</strong><p>Sportplatz Nord</p><div><span class="avatar noah mini">N</span><span class="tag yellow-soft">Freizeit</span></div></div><span class="duration">90 Min.</span></article>
+            <article class="event"><time>18:30</time><div class="event-line green"></div><div class="event-body"><strong>Gemeinsames Abendessen</strong><p>Zuhause · Lasagne 🍝</p><div><span class="tag green-soft">Alle dabei</span></div></div><span class="duration">60 Min.</span></article>
+          </div>
+          <button class="add-row" data-kind="event"><svg><use href="#i-plus"/></svg> Termin hinzufügen</button>
+        </section>
+
+        <section class="card tasks-card">
+          <div class="card-head"><div><span class="section-icon mint"><svg><use href="#i-check"/></svg></span><span><h2>Offene Aufgaben</h2><p><span id="doneCount">3</span> von 8 erledigt</p></span></div><button class="text-btn nav-link" data-target="tasks">Alle anzeigen <svg><use href="#i-arrow"/></svg></button></div>
+          <div class="progress"><i id="taskProgress"></i></div>
+          <div class="task-list" id="taskList">
+            <label class="task"><input type="checkbox"><span class="checkmark"></span><span class="task-copy"><strong>Pfand wegbringen</strong><small>Heute</small></span><span class="avatar tom mini">T</span></label>
+            <label class="task"><input type="checkbox"><span class="checkmark"></span><span class="task-copy"><strong>Elternbrief unterschreiben</strong><small class="urgent">Heute · wichtig</small></span><span class="avatar lena mini">L</span></label>
+            <label class="task"><input type="checkbox"><span class="checkmark"></span><span class="task-copy"><strong>Spülmaschine ausräumen</strong><small>Heute</small></span><span class="avatar emma mini">E</span></label>
+            <label class="task"><input type="checkbox"><span class="checkmark"></span><span class="task-copy"><strong>Geburtstagsgeschenk bestellen</strong><small>Morgen</small></span><span class="avatar tom mini">T</span></label>
+            <label class="task"><input type="checkbox"><span class="checkmark"></span><span class="task-copy"><strong>Pflanzen gießen</strong><small>Freitag · wiederholt sich</small></span><span class="avatar noah mini">N</span></label>
+          </div>
+          <button class="add-row" data-kind="task"><svg><use href="#i-plus"/></svg> Aufgabe hinzufügen</button>
+        </section>
+
+        <section class="card timer-card">
+          <div class="card-head"><div><span class="section-icon violet"><svg><use href="#i-clock"/></svg></span><span><h2>Familienzeit</h2><p>Gemeinsame Zeit erfassen</p></span></div></div>
+          <div class="timer-content"><button class="play-btn" id="timerBtn"><svg><use href="#i-play"/></svg></button><div><span id="timerLabel">Timer starten</span><strong id="timerValue">00:00:00</strong><small>Wähle danach eine Kategorie</small></div></div>
+          <div class="week-time"><span><small>Diese Woche</small><strong>12 Std. 40 Min.</strong></span><div class="bars"><i style="height:35%"></i><i style="height:52%"></i><i style="height:28%"></i><i style="height:80%"></i><i style="height:62%"></i><i class="today" style="height:93%"></i><i style="height:18%"></i></div></div>
+        </section>
+
+        <section class="card files-card">
+          <div class="card-head"><div><span class="section-icon gold"><svg><use href="#i-folder"/></svg></span><span><h2>Zuletzt geteilt</h2><p>Fotos & Dokumente</p></span></div><button class="text-btn nav-link" data-target="files">Alle Dateien <svg><use href="#i-arrow"/></svg></button></div>
+          <div class="file-grid" id="fileGrid">
+            <button class="file-tile photo"><span class="photo-preview picnic"><em>12</em></span><span><strong>Sommerfest</strong><small>12 Fotos · gestern</small></span></button>
+            <button class="file-tile"><span class="doc-preview pdf">PDF</span><span><strong>Stundenplan.pdf</strong><small>Tom · 2,4 MB</small></span></button>
+            <button class="file-tile photo"><span class="photo-preview beach"><em>8</em></span><span><strong>Wochenende</strong><small>8 Fotos · So.</small></span></button>
+          </div>
+          <label class="upload-row"><input type="file" id="fileInput" multiple accept="image/*,.pdf,.doc,.docx"><svg><use href="#i-upload"/></svg> Fotos oder Dateien teilen</label>
+        </section>
+      </div>
+    </section>
+
+    <section class="content subview hidden" id="genericView"></section>
+  </main>
+
+  <nav class="mobile-nav">
+    <button class="active" data-view="home"><svg><use href="#i-home"/></svg><span>Heute</span></button>
+    <button data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
+    <button class="mobile-create" id="mobileAdd"><svg><use href="#i-plus"/></svg></button>
+    <button data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span></button>
+    <button data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
+  </nav>
+
+  <div class="modal-wrap" id="modal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="icon-btn modal-close" data-close><svg><use href="#i-x"/></svg></button>
+      <p class="eyebrow">GEMEINSAM PLANEN</p><h2 id="modalTitle">Neu erstellen</h2>
+      <div class="type-tabs"><button class="active" data-type="task">Aufgabe</button><button data-type="event">Termin</button><button data-type="note">Notiz</button></div>
+      <form id="createForm">
+        <label>Titel<input required id="itemTitle" placeholder="Was steht an?" autofocus></label>
+        <div class="form-row"><label>Datum<input type="date" id="itemDate"></label><label>Zuständig<select id="itemPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label></div>
+        <label>Details<textarea id="itemDetails" placeholder="Ort, Checkliste oder eine kurze Notiz …"></textarea></label>
+        <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto anhängen<small>Optional · bis 100 MB</small></span><input type="file"></label>
+        <div class="modal-actions"><button type="button" class="btn ghost" data-close>Abbrechen</button><button class="btn primary" type="submit">Für alle speichern</button></div>
+      </form>
+    </section>
+  </div>
+  <div class="toast" id="toast"><span>✓</span><p></p></div>
+  <script src="app.js"></script>
+</body>
+</html>

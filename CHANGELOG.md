@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.6.0 – 30. September 2026
+
+- Vollständige Monatsansicht mit Wochenzahlen ergänzt
+- Termine als farbige Einträge direkt im Monatsraster
+- Monatsnavigation und „Heute“-Schaltfläche
+- Feiertage je Bundesland ein- und ausblendbar
+- Schulferien je Bundesland ein- und ausblendbar
+- Auswahl aller 16 deutschen Bundesländer
+- Ferien- und Feiertagsdaten werden über OpenHolidays API geladen
+
 ## 0.5.0 – 30. September 2026
 
 - Dateien und Fotos an Aufgaben anhängen, öffnen und löschen

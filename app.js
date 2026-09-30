@@ -39,8 +39,6 @@ state.tasks = state.tasks.filter(task => !state.deletedIds.includes(task.id));
 
 let createType = 'task';
 let taskFilter = 'open';
-let timerStart = null;
-let timerTick = null;
 let installPrompt = null;
 const today = new Date();
 let calendarCursor = new Date(today.getFullYear(),today.getMonth(),1);
@@ -251,16 +249,10 @@ $('#deleteEvent').addEventListener('click',()=>{
 $('#taskAttachmentInput').addEventListener('change',async e=>{const id=$('#editTaskId').value;await storeAttachments(`task:${id}`,e.target.files);await renderAttachments(`task:${id}`,$('#taskAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
 $('#eventAttachmentInput').addEventListener('change',async e=>{const id=$('#editEventId').value;await storeAttachments(`event:${id}`,e.target.files);await renderAttachments(`event:${id}`,$('#eventAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
 
-$('#timerBtn').addEventListener('click',()=>{
-  if(timerTick){clearInterval(timerTick);timerTick=null;$('#timerBtn').classList.remove('running');$('#timerLabel').textContent='Timer pausiert';toast('Zeit wurde lokal gespeichert');return}
-  timerStart=timerStart||Date.now();$('#timerBtn').classList.add('running');$('#timerLabel').textContent='Familienzeit läuft';timerTick=setInterval(()=>{const sec=Math.floor((Date.now()-timerStart)/1000);$('#timerValue').textContent=[Math.floor(sec/3600),Math.floor(sec%3600/60),sec%60].map(x=>String(x).padStart(2,'0')).join(':')},1000);
-});
-
 $('#fileInput').addEventListener('change',e=>{if(e.target.files.length)toast(`${e.target.files.length} ${e.target.files.length===1?'Datei wird':'Dateien werden'} sicher geteilt`)});$('#inviteBtn').onclick=()=>toast('Einladungslink wurde kopiert');
 
 const views={
   calendar:{eyebrow:'GEMEINSAMER ÜBERBLICK',title:'Familienkalender',desc:'Alle Termine, farblich nach Person – ohne versteckte Einträge.',features:[['Persönliche Filter','Zeige alle oder nur deine eigenen Termine.'],['Sicher synchronisiert','Jede Änderung erscheint im Aktivitätsverlauf.'],['Wiederholungen','Schule, Sport und Routinen einmalig planen.']]},
-  time:{eyebrow:'ZEIT, DIE ZÄHLT',title:'Familienzeit',desc:'Gemeinsame Aktivitäten erfassen und bewusster Zeit miteinander verbringen.',features:[['Einfacher Timer','Ein Tipp genügt – Kategorien kommen danach.'],['Wochenrückblick','Gemeinsame Zeit auf einen Blick sehen.'],['Privat by Design','Keine Leistungswertung und kein Wettbewerb.']]},
   files:{eyebrow:'ALLES WICHTIGE',title:'Fotos & Dateien',desc:'Erinnerungen und Dokumente sicher mit der Familie teilen.',features:[['Gemeinsame Alben','Fotos sammeln, kommentieren und wiederfinden.'],['Dokumentenablage','Stundenpläne, Briefe und PDFs griffbereit.'],['Klare Rechte','Festlegen, wer ansehen, ergänzen oder löschen darf.']]}
 };
 function switchView(name){

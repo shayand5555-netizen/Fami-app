@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.6.1" />
+  <link rel="stylesheet" href="styles.css?v=0.7.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -42,7 +42,6 @@
       <button class="nav-item active" data-view="home"><svg><use href="#i-home"/></svg><span>Heute</span></button>
       <button class="nav-item" data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
       <button class="nav-item" data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span><b id="taskCount">5</b></button>
-      <button class="nav-item" data-view="time"><svg><use href="#i-clock"/></svg><span>Zeit</span></button>
       <button class="nav-item" data-view="activities"><svg><use href="#i-compass"/></svg><span>Entdecken</span></button>
       <button class="nav-item" data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
     </nav>
@@ -65,7 +64,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.6.1</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.7.0</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -99,12 +98,6 @@
             <label class="task"><input type="checkbox"><span class="checkmark"></span><span class="task-copy"><strong>Pflanzen gießen</strong><small>Freitag · wiederholt sich</small></span><span class="avatar noah mini">N</span></label>
           </div>
           <button class="add-row" data-kind="task"><svg><use href="#i-plus"/></svg> Aufgabe hinzufügen</button>
-        </section>
-
-        <section class="card timer-card">
-          <div class="card-head"><div><span class="section-icon violet"><svg><use href="#i-clock"/></svg></span><span><h2>Familienzeit</h2><p>Gemeinsame Zeit erfassen</p></span></div></div>
-          <div class="timer-content"><button class="play-btn" id="timerBtn"><svg><use href="#i-play"/></svg></button><div><span id="timerLabel">Timer starten</span><strong id="timerValue">00:00:00</strong><small>Wähle danach eine Kategorie</small></div></div>
-          <div class="week-time"><span><small>Diese Woche</small><strong>12 Std. 40 Min.</strong></span><div class="bars"><i style="height:35%"></i><i style="height:52%"></i><i style="height:28%"></i><i style="height:80%"></i><i style="height:62%"></i><i class="today" style="height:93%"></i><i style="height:18%"></i></div></div>
         </section>
 
         <section class="card files-card">
@@ -181,6 +174,6 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="app.js?v=0.6.1"></script>
+  <script src="app.js?v=0.7.0"></script>
 </body>
 </html>

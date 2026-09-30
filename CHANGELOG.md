@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.7.0 – 30. September 2026
+
+- Familienzeit und Timer vollständig entfernt
+- Navigation auf die zentralen Familienfunktionen reduziert
+- Dateibereich nutzt die frei gewordene Breite auf dem Dashboard
+
 ## 0.6.1 – 30. September 2026
 
 - Monatskalender direkt nach oben verschoben

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.7.0" />
+  <link rel="stylesheet" href="styles.css?v=0.7.1" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -42,7 +42,6 @@
       <button class="nav-item active" data-view="home"><svg><use href="#i-home"/></svg><span>Heute</span></button>
       <button class="nav-item" data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
       <button class="nav-item" data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span><b id="taskCount">5</b></button>
-      <button class="nav-item" data-view="activities"><svg><use href="#i-compass"/></svg><span>Entdecken</span></button>
       <button class="nav-item" data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
     </nav>
     <div class="family-card">
@@ -64,7 +63,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.7.0</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.7.1</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -120,7 +119,6 @@
     <button data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
     <button class="mobile-create" id="mobileAdd"><svg><use href="#i-plus"/></svg></button>
     <button data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span></button>
-    <button data-view="activities"><svg><use href="#i-compass"/></svg><span>Entdecken</span></button>
     <button data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
   </nav>
 
@@ -174,6 +172,6 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="app.js?v=0.7.0"></script>
+  <script src="app.js?v=0.7.1"></script>
 </body>
 </html>

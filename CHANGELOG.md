@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.7.1 – 30. September 2026
+
+- Eigenen Navigationspunkt „Entdecken“ entfernt
+- Aktivitätsvorschläge unterhalb der Terminliste in den Kalender integriert
+- Standort, Kinderalter und Vorschläge bleiben beim Scrollen im Kalender erreichbar
+
 ## 0.7.0 – 30. September 2026
 
 - Familienzeit und Timer vollständig entfernt

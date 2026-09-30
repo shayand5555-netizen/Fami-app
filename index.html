@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.7.1" />
+  <link rel="stylesheet" href="styles.css?v=0.8.0-rc.1" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -25,6 +25,8 @@
     <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v6l4 2"/></symbol>
     <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6a2 2 0 0 1 2-2h5l2 3h7a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
     <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+    <symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h2l2.2 10.2a2 2 0 0 0 2 1.6h7.7a2 2 0 0 0 2-1.6L20 8H7"/><circle cx="10" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M4 5a3 3 0 0 1 3-3h5v18H7a3 3 0 0 0-3 2zM20 5a3 3 0 0 0-3-3h-5v18h5a3 3 0 0 1 3 2z"/></symbol>
     <symbol id="i-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
     <symbol id="i-bell" viewBox="0 0 24 24"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9M10 21h4"/></symbol>
     <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></symbol>
@@ -42,6 +44,8 @@
       <button class="nav-item active" data-view="home"><svg><use href="#i-home"/></svg><span>Heute</span></button>
       <button class="nav-item" data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
       <button class="nav-item" data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span><b id="taskCount">5</b></button>
+      <button class="nav-item" data-view="shopping"><svg><use href="#i-cart"/></svg><span>Einkaufsliste</span><b id="shoppingCount">0</b></button>
+      <button class="nav-item" data-view="recipes"><svg><use href="#i-book"/></svg><span>Rezepte</span></button>
       <button class="nav-item" data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
     </nav>
     <div class="family-card">
@@ -63,7 +67,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.7.1</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.8.0 RC1</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -72,7 +76,7 @@
         <button class="weather"><span>☀️</span><span><strong>18°</strong><small>Berlin · sonnig</small></span></button>
       </div>
 
-      <div class="sync-banner"><span class="pulse"></span><strong>Alles synchronisiert</strong><span>· vor wenigen Sekunden</span><div class="synced-people"><div class="avatar-stack"><span class="avatar lena">L</span><span class="avatar tom">T</span><span class="avatar emma">E</span></div><small>3 gerade aktiv</small></div></div>
+      <div class="sync-banner"><span class="pulse"></span><strong>Lokal gespeichert</strong><span>· Testversion auf diesem Gerät</span><div class="synced-people"><small>Cloud-Synchronisation folgt</small></div></div>
 
       <div class="dashboard-grid">
         <section class="card schedule-card">
@@ -119,7 +123,7 @@
     <button data-view="calendar"><svg><use href="#i-cal"/></svg><span>Kalender</span></button>
     <button class="mobile-create" id="mobileAdd"><svg><use href="#i-plus"/></svg></button>
     <button data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span></button>
-    <button data-view="files"><svg><use href="#i-folder"/></svg><span>Dateien</span></button>
+    <button data-view="more"><svg><use href="#i-more"/></svg><span>Mehr</span></button>
   </nav>
 
   <div class="modal-wrap" id="modal" aria-hidden="true">
@@ -127,7 +131,7 @@
     <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
       <button class="icon-btn modal-close" data-close><svg><use href="#i-x"/></svg></button>
       <p class="eyebrow">GEMEINSAM PLANEN</p><h2 id="modalTitle">Neu erstellen</h2>
-      <div class="type-tabs"><button class="active" data-type="task">Aufgabe</button><button data-type="event">Termin</button><button data-type="note">Notiz</button></div>
+      <div class="type-tabs"><button class="active" data-type="task">Aufgabe</button><button data-type="event">Termin</button></div>
       <form id="createForm">
         <label>Titel<input required id="itemTitle" placeholder="Was steht an?" autofocus></label>
         <div class="form-row"><label>Datum<input type="date" id="itemDate"></label><label>Zuständig<select id="itemPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label></div>
@@ -172,6 +176,6 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="app.js?v=0.7.1"></script>
+  <script src="app.js?v=0.8.0-rc.1"></script>
 </body>
 </html>

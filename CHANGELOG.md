@@ -1,5 +1,16 @@
 # Fami – Versionsverlauf
 
+## 0.8.0-rc.1 – 30. September 2026
+
+- Gemeinsame Einkaufsliste mit Mengen, Kategorien und Erledigt-Status
+- Drei proteinreiche Rezeptideen mit Quellenlinks zu Schmale Schulter
+- Alle Rezeptzutaten mit einem Klick zur Einkaufsliste hinzufügen
+- Echte lokale Dateibibliothek für sämtliche Anhänge
+- Mobile „Mehr“-Navigation für Einkaufsliste, Rezepte und Dateien
+- Lokale Datensicherung und Wiederherstellung ergänzt
+- Irreführenden Synchronisationsstatus durch klaren lokalen Teststatus ersetzt
+- Funktionslose Notiz-Auswahl entfernt
+
 ## 0.7.1 – 30. September 2026
 
 - Eigenen Navigationspunkt „Entdecken“ entfernt

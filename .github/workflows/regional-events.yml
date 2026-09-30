@@ -2,6 +2,11 @@ name: Regionale Familienveranstaltungen aktualisieren
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scripts/update-regional-events.mjs'
+      - '.github/workflows/regional-events.yml'
   schedule:
     - cron: '17 4 * * *'
 

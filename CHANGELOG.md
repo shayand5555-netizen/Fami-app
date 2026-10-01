@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.16.0-beta.1 – 1. Oktober 2026
+
+- Alle 1.431 öffentlichen Schmale-Schulter-Uploads als einzelne Videokarten ergänzt
+- Videosuche, Sortierung, Angesehen-Status und schrittweises Nachladen ergänzt
+- Wöchentliche automatische Aktualisierung des Videokatalogs eingerichtet
+- Ausführliche Anleitung für Familieneinladungen im Familienbereich ergänzt
+- Vollständiger Einladungstext mit App-Link, Code und Anleitung kann kopiert werden
+- Sicherheitshinweis zum vertraulichen Einladungscode ergänzt
+
 ## 0.15.1-beta.1 – 1. Oktober 2026
 
 - Aktivitäten für Misburg zeigen jetzt eine ausgewogene Mischung aus lokalen Terminen und Veranstaltungen aus ganz Hannover

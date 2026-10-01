@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.17.0-beta.1 – 1. Oktober 2026
+
+- Alle öffentlichen Videos von Schmale Schulter und Yummy Gastronomy in einem gemeinsamen, automatisch aktualisierten Katalog
+- Filter nach Kanal, Frühstück, Hauptgericht, Dessert, Snack, Getränk sowie persischer, westlicher oder internationaler Küche
+- Sortierung nach Beliebtheit anhand öffentlich sichtbarer YouTube-Aufrufe
+- Kategorien werden automatisch aus Kanal und Videotitel abgeleitet und können deshalb bei einzelnen Videos ungenau sein
+- Jede Videokarte besitzt einen direkten Button zur Kochanleitung im Originalvideo
+- Die vorhandenen Rezeptkarten zeigen nun eine kurze Schritt-für-Schritt-Kochanleitung
+- Bei eigenen Rezepten kann eine Kochanleitung als einzelne Arbeitsschritte gespeichert werden
+
 ## 0.16.0-beta.1 – 1. Oktober 2026
 
 - Alle 1.431 öffentlichen Schmale-Schulter-Uploads als einzelne Videokarten ergänzt

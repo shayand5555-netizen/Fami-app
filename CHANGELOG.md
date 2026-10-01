@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.15.0-beta.1 – 30. September 2026
+
+- Rezeptvideos können als angesehen markiert und danach sortiert werden
+- Kalenderimport und -export im ICS-Format ergänzt
+- Wiederkehrende Termine und Duplikaterkennung beim Kalenderimport ergänzt
+- Offizielle Misburg-Anderten-Quellen in die regionale Veranstaltungssuche aufgenommen
+- Stadtteilfeste, Märkte, Kultur und weitere Veranstaltungen werden auch ohne Kinderfilter angezeigt
+- Sprachcafés und Sprechstunden werden aus „Aktivitäten entdecken“ ausgefiltert
+
 ## 0.14.0-beta.1 – 30. September 2026
 
 - Fehlende Nährwerte als deutlich markierte KI-Schätzung ergänzt

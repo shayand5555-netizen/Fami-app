@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.15.1-beta.1 – 1. Oktober 2026
+
+- Aktivitäten für Misburg zeigen jetzt eine ausgewogene Mischung aus lokalen Terminen und Veranstaltungen aus ganz Hannover
+- Beide Bereiche bleiben chronologisch sortiert
+
 ## 0.15.0-beta.1 – 30. September 2026
 
 - Rezeptvideos können als angesehen markiert und danach sortiert werden

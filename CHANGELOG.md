@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.20.1-beta.1 – 1. Oktober 2026
+
+- Öffentlichen VAPID-Schlüssel für Push-Abonnements eingebunden
+- Versionskennung und PWA-Cache für die Benachrichtigungseinrichtung aktualisiert
+
 ## 0.20.0-beta.1 – 1. Oktober 2026
 
 - Erinnerungszeit direkt beim Erstellen und Bearbeiten eines Termins auswählbar

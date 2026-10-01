@@ -1,78 +1,8 @@
 {
-  "updatedAt": "2026-09-30T19:44:57.636Z",
+  "updatedAt": "2026-10-01T03:39:00.645Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Hannover Kiosk",
-      "date": "2026-09-30",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk"
-    },
-    {
-      "title": "meetYourJob 2026",
-      "date": "2026-09-30",
-      "venue": "Hannover Congress Centrum (HCC)",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/meetYourJob-2026"
-    },
-    {
-      "title": "Oktoberfest 2026",
-      "date": "2026-09-30",
-      "venue": "Schützenplatz Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Oktoberfest-2026"
-    },
-    {
-      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
-      "date": "2026-09-30",
-      "venue": "SEA LIFE Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald"
-    },
-    {
-      "title": "Sprachcafe DaF alle Level | English Translation",
-      "date": "2026-09-30",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-alle-Level-|-English-Translation"
-    },
-    {
-      "title": "Sprachcafe DaF für Fortgeschrittene",
-      "date": "2026-09-30",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-f%C3%BCr-Fortgeschrittene"
-    },
-    {
-      "title": "Wochen der Demenz im September 2026",
-      "date": "2026-09-30",
-      "venue": "Verschiedene Veranstaltungsorte",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Wochen-der-Demenz-im-September-2026"
-    },
-    {
-      "title": "Sprachcafe DaF für Anfänger*Innen | українська",
-      "date": "2026-10-01",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-f%C3%BCr-Anf%C3%A4nger*Innen-|-%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0"
-    },
-    {
-      "title": "Sprachcafe DaF für Fortgeschrittene | українська",
-      "date": "2026-10-01",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachcafe-DaF-f%C3%BCr-Fortgeschrittene-|-%D1%83%D0%BA%D1%80%D0%B0%D1%97%D0%BD%D1%81%D1%8C%D0%BA%D0%B0"
-    },
-    {
-      "title": "Sprechstunde in der Wedemark",
-      "date": "2026-10-01",
-      "venue": "Mehrgenerationenhaus Mellendorf",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprechstunde-in-der-Wedemark"
-    },
     {
       "title": "Großes Kürbisfest",
       "date": "2026-10-03",
@@ -130,13 +60,6 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Spiel-Figuren-aus-Wolle-und-Garn-wickeln"
     },
     {
-      "title": "Zauberhafte Waldküche - ABGESAGT!",
-      "date": "2026-10-04",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Zauberhafte-Waldk%C3%BCche-ABGESAGT"
-    },
-    {
       "title": "Die Jugendgruppe BE:TwEEN 2026",
       "date": "2026-10-05",
       "venue": "Freizeitheim Vahrenwald",
@@ -149,6 +72,13 @@
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lerne-die-Welt-der-Sphero-Bolts-kennen"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-10-07",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
       "title": "Offener Spielenachmittag",
@@ -200,6 +130,13 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland"
     },
     {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-10-10",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
       "title": "Flohmarkt Großburgwedel",
       "date": "2026-10-11",
       "venue": "Flohmarkt bei IKEA in Großburgwedel",
@@ -207,11 +144,46 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel"
     },
     {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-10-14",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-10-17",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
       "title": "Kunst & Kürbis in Eldagsen",
       "date": "2026-10-18",
       "venue": "Eldagser Hoflieferant",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-K%C3%BCrbis-in-Eldagsen"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-10-21",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-10-24",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-10-28",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
       "title": "EXIT x Electric Sunday",
@@ -242,6 +214,27 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Stoffmarkt-Holland"
     },
     {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-11-04",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-11-07",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-11-11",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
       "title": "Tanzparty in Misburg",
       "date": "2026-11-12",
       "venue": "Bürgerhaus & Kulturbüro",
@@ -249,11 +242,88 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tanzparty-in-Misburg"
     },
     {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-11-14",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-11-18",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-11-21",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-11-25",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
       "title": "Fairground Festival 2026",
       "date": "2026-11-28",
       "venue": "Messegelände / Halle 2",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Fairground-Festival-2026"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-11-28",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Flohmarkt - Standplätze bereits ausgebucht",
+      "date": "2026-11-29",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-12-02",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-12-05",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Offener Palettengarten Misburg-Anderten",
+      "date": "2026-12-09",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-12-12",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Wochenmarkt Misburg",
+      "date": "2026-12-19",
+      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     }
   ]
 }

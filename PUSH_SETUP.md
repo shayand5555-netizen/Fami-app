@@ -4,7 +4,7 @@ Die App-Oberfläche und lokale Testnachrichten sind ab Version 0.20 vorhanden. F
 
 ## 1. Datenbank aktualisieren
 
-Im Supabase SQL Editor den Abschnitt **„Ab Version 0.20“** aus `supabase-schema.sql` ausführen. Dadurch entstehen `push_subscriptions` und `push_deliveries` samt sicheren RLS-Regeln.
+Im Supabase SQL Editor die vollständige Datei `supabase-push-migration.sql` einfügen und ausführen. Dadurch entstehen `push_subscriptions` und `push_deliveries` samt sicheren RLS-Regeln.
 
 ## 2. VAPID-Schlüssel erzeugen
 

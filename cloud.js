@@ -164,6 +164,22 @@
     notify('Anmeldelink wurde per E-Mail gesendet');
   }
 
+  async function registerPush(subscription) {
+    if (!client || !session || !familyInfo) throw new Error('Fami Online ist noch nicht verbunden.');
+    const json = subscription.toJSON();
+    const {error} = await client.from('push_subscriptions').upsert({
+      family_id:familyInfo.id,
+      user_id:session.user.id,
+      endpoint:json.endpoint,
+      p256dh:json.keys?.p256dh,
+      auth:json.keys?.auth,
+      user_agent:navigator.userAgent.slice(0,500),
+      enabled:true,
+      updated_at:new Date().toISOString()
+    }, {onConflict:'endpoint'});
+    if (error) throw error;
+  }
+
   async function uploadFiles(entity, files) {
     if (!client || !familyInfo || !session || !files?.length) return [];
     const uploaded = [];
@@ -266,6 +282,7 @@
     uploadFiles,
     listFiles,
     deleteFile,
+    registerPush,
     isConnected:() => Boolean(client && familyInfo && session)
   };
 })();

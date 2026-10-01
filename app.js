@@ -70,6 +70,7 @@ const state = {
   memberAges:stored.memberAges || {Emma:stored.familyProfile?.emmaAge??10,Noah:stored.familyProfile?.noahAge??7}
 };
 state.tasks = state.tasks.filter(task => !state.deletedIds.includes(task.id));
+state.events.forEach(event=>{if(event.date&&!event.startsAt)event.startsAt=eventStartsAt(event.date,event.time||'12:00');if(event.reminderMinutes===undefined)event.reminderMinutes=-1});
 
 let createType = 'task';
 let taskFilter = 'open';
@@ -90,6 +91,7 @@ function avatarClass(person){const classes=['lena','tom','emma','noah'];const in
 function prettyDate(raw, fallback='Heute'){
   return raw ? new Date(`${raw}T12:00`).toLocaleDateString('de-DE',{day:'2-digit',month:'short'}) : fallback;
 }
+function eventStartsAt(date,time='12:00'){if(!date)return'';const value=new Date(`${date}T${time||'12:00'}:00`);return Number.isNaN(value.getTime())?'':value.toISOString()}
 function getTask(id){ return state.tasks.find(task => task.id === id); }
 function isVisible(person, kind='task'){ return state[kind==='task'?'taskPeople':'calendarPeople'].includes(person) || person === 'Alle'; }
 
@@ -222,7 +224,7 @@ function expandIcsRecurrence(base,rule){
   for(let index=0,date=new Date(start);date<=end&&results.length<count;index++){add(new Date(date));if(settings.FREQ==='DAILY')date.setDate(date.getDate()+interval);else if(settings.FREQ==='WEEKLY')date.setDate(date.getDate()+7*interval);else if(settings.FREQ==='MONTHLY')date.setMonth(date.getMonth()+interval);else if(settings.FREQ==='YEARLY')date.setFullYear(date.getFullYear()+interval);else break}return results;
 }
 async function importCalendarIcs(file){
-  try{const text=await file.text();const unfolded=text.replace(/\r?\n[ \t]/g,'');const blocks=unfolded.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/gi)||[];let added=0,duplicates=0;for(const block of blocks){const fields={};block.split(/\r?\n/).forEach(line=>{const split=line.indexOf(':');if(split<0)return;const key=line.slice(0,split).split(';')[0].toUpperCase();if(fields[key]===undefined)fields[key]=line.slice(split+1)});const start=parseIcsDate(fields.DTSTART);if(!start)continue;const people=(fields['X-FAMI-PEOPLE']?icsUnescape(fields['X-FAMI-PEOPLE']).split(','):family).filter(name=>family.includes(name));const base={title:icsUnescape(fields.SUMMARY)||'Importierter Termin',date:start.date,time:start.time,place:icsUnescape(fields.LOCATION||fields.DESCRIPTION||''),people:people.length?people:[...family],color:'blue'};for(const item of expandIcsRecurrence(base,fields.RRULE)){if(state.events.some(event=>event.title===item.title&&event.date===item.date&&event.time===item.time)){duplicates++;continue}state.events.push({...item,id:`event-import-${Date.now()}-${added}-${Math.random().toString(36).slice(2,7)}`});added++}}
+  try{const text=await file.text();const unfolded=text.replace(/\r?\n[ \t]/g,'');const blocks=unfolded.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/gi)||[];let added=0,duplicates=0;for(const block of blocks){const fields={};block.split(/\r?\n/).forEach(line=>{const split=line.indexOf(':');if(split<0)return;const key=line.slice(0,split).split(';')[0].toUpperCase();if(fields[key]===undefined)fields[key]=line.slice(split+1)});const start=parseIcsDate(fields.DTSTART);if(!start)continue;const people=(fields['X-FAMI-PEOPLE']?icsUnescape(fields['X-FAMI-PEOPLE']).split(','):family).filter(name=>family.includes(name));const base={title:icsUnescape(fields.SUMMARY)||'Importierter Termin',date:start.date,time:start.time,startsAt:eventStartsAt(start.date,start.time),reminderMinutes:-1,place:icsUnescape(fields.LOCATION||fields.DESCRIPTION||''),people:people.length?people:[...family],color:'blue'};for(const item of expandIcsRecurrence(base,fields.RRULE)){if(state.events.some(event=>event.title===item.title&&event.date===item.date&&event.time===item.time)){duplicates++;continue}state.events.push({...item,id:`event-import-${Date.now()}-${added}-${Math.random().toString(36).slice(2,7)}`});added++}}
     if(!blocks.length)throw new Error('Keine Termine');save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();toast(`${added} Termine importiert${duplicates?` · ${duplicates} Duplikate übersprungen`:''}`)
   }catch(error){console.error(error);toast('Die Kalenderdatei konnte nicht importiert werden')}
 }
@@ -259,7 +261,7 @@ function renderMonthCalendar(){
 
 function openModal(type='task'){
   createType=type;$('#modal').classList.add('open');$('#modal').setAttribute('aria-hidden','false');
-  $$('.type-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.type===type));setTimeout(()=>$('#itemTitle').focus(),100);
+  $$('.type-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.type===type));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',type!=='event'));setTimeout(()=>$('#itemTitle').focus(),100);
 }
 function closeModal(){ $('#modal').classList.remove('open');$('#modal').setAttribute('aria-hidden','true'); }
 async function openTaskEditor(id){
@@ -270,14 +272,14 @@ async function openTaskEditor(id){
 function closeTaskEditor(){ $('#editTaskModal').classList.remove('open');$('#editTaskModal').setAttribute('aria-hidden','true'); }
 async function openEventEditor(id){
   const event=getEvent(id);if(!event)return;
-  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventPerson').value=event.people.length===family.length?'Alle':event.people[0];$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';
+  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventPerson').value=event.people.length===family.length?'Alle':event.people[0];$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';$('#editEventReminder').value=String(event.reminderMinutes??-1);
   $('#editEventModal').classList.add('open');$('#editEventModal').setAttribute('aria-hidden','false');await renderAttachments(`event:${id}`,$('#eventAttachments'));setTimeout(()=>$('#editEventName').focus(),80);
 }
 function closeEventEditor(){ $('#editEventModal').classList.remove('open');$('#editEventModal').setAttribute('aria-hidden','true'); }
 
 $('#quickAdd').onclick=()=>openModal();$('#mobileAdd').onclick=()=>openModal();
 $$('[data-kind]').forEach(b=>b.onclick=()=>openModal(b.dataset.kind));$$('[data-close]').forEach(b=>b.onclick=closeModal);$$('[data-edit-close]').forEach(b=>b.onclick=closeTaskEditor);$$('[data-event-close]').forEach(b=>b.onclick=closeEventEditor);
-$$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b))});
+$$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType!=='event'))});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeTaskEditor();closeEventEditor()}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
 
 $('#createForm').addEventListener('submit',async e=>{
@@ -286,7 +288,7 @@ $('#createForm').addEventListener('submit',async e=>{
     const id=`task-${Date.now()}`;state.tasks.push({id,title,person,date:rawDate,dateLabel:prettyDate(rawDate),note:$('#itemDetails').value.trim(),done:false});await storeAttachments(`task:${id}`,$('#newItemFiles').files);save();renderHomeTasks();renderTaskManager();
   }
   if(createType==='event'){
-    const id=`event-${Date.now()}`;state.events.push({id,title,date:rawDate,time:'12:00',place:$('#itemDetails').value.trim(),people:eventPeople(person),color:'green'});await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();
+    const id=`event-${Date.now()}`,time=$('#itemTime').value||'12:00';state.events.push({id,title,date:rawDate,time,startsAt:eventStartsAt(rawDate,time),reminderMinutes:Number($('#itemReminder').value),place:$('#itemDetails').value.trim(),people:eventPeople(person),color:'green'});await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();window.FamiNotifications?.checkDue();
   }
   $('#createForm').reset();$('#itemDate').valueAsDate=today;closeModal();toast(`${createType==='event'?'Termin':createType==='note'?'Notiz':'Aufgabe'} für alle gespeichert`);
 });
@@ -304,8 +306,8 @@ $('#deleteTask').addEventListener('click',()=>{
 
 $('#editEventForm').addEventListener('submit',e=>{
   e.preventDefault();const event=getEvent($('#editEventId').value);if(!event)return;
-  event.title=$('#editEventName').value.trim();event.date=$('#editEventDate').value;event.time=$('#editEventTime').value;event.people=eventPeople($('#editEventPerson').value);event.color=$('#editEventColor').value;event.place=$('#editEventPlace').value.trim();
-  save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();closeEventEditor();toast('Kalendereintrag wurde aktualisiert');
+  event.title=$('#editEventName').value.trim();event.date=$('#editEventDate').value;event.time=$('#editEventTime').value;event.startsAt=eventStartsAt(event.date,event.time);event.reminderMinutes=Number($('#editEventReminder').value);event.people=eventPeople($('#editEventPerson').value);event.color=$('#editEventColor').value;event.place=$('#editEventPlace').value.trim();
+  save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();closeEventEditor();window.FamiNotifications?.checkDue();toast('Kalendereintrag wurde aktualisiert');
 });
 
 $('#deleteEvent').addEventListener('click',()=>{
@@ -373,7 +375,7 @@ async function loadYouTubeCatalog(root){
   const resetAndRender=()=>{limit=48;render()};search.oninput=resetAndRender;sort.value=state.videoSort;channel.value=state.videoChannel;meal.value=state.videoMeal;cuisine.value=state.videoCuisine;sort.onchange=()=>{state.videoSort=sort.value;save();resetAndRender()};channel.onchange=()=>{state.videoChannel=channel.value;save();resetAndRender()};meal.onchange=()=>{state.videoMeal=meal.value;save();resetAndRender()};cuisine.onchange=()=>{state.videoCuisine=cuisine.value;save();resetAndRender()};more.onclick=()=>{limit+=48;render()};
   try{const response=await fetch(`./recipe-videos.json?update=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`Videokatalog ${response.status}`);const data=await response.json();videos=[...curatedVideoRecipes(),...(data.videos||[]).filter(video=>video.featured)];render()}catch(error){console.error(error);status.textContent='Videokatalog konnte gerade nicht geladen werden';grid.innerHTML='<a class="btn ghost" href="https://www.youtube.com/@SchmaleSchulter/videos" target="_blank" rel="noopener">Schmale Schulter bei YouTube öffnen ↗</a><a class="btn ghost" href="https://www.youtube.com/channel/UCvd5wsIuZzEYA55cZkt7hIQ/videos" target="_blank" rel="noopener">Yummy Gastronomy bei YouTube öffnen ↗</a>';more.classList.add('hidden')}
 }
-function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.19.0-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
+function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.20.0-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
 async function importBackup(file){try{const data=JSON.parse(await file.text());if(!data.state?.tasks||!data.state?.events)throw new Error();localStorage.setItem('fami-state',JSON.stringify(data.state));toast('Sicherung importiert – App wird neu geladen');setTimeout(()=>location.reload(),800)}catch{toast('Diese Sicherungsdatei ist ungültig')}}
 async function renderFileLibrary(){
   const host=$('#fileLibrary');if(!host)return;const files=await getAllAttachments();host.innerHTML='';files.forEach(file=>{const card=document.createElement('article');card.className='library-file';card.innerHTML=`<span class="file-kind">${file.type?.startsWith('image/')?'FOTO':'DATEI'}</span><strong></strong><small></small><div><button class="open-library-file">Öffnen</button><button class="delete-library-file">Löschen</button></div>`;$('strong',card).textContent=file.name;$('small',card).textContent=`${Math.max(1,Math.round(file.size/1024))} KB · ${file.entity.startsWith('task:')?'Aufgabe':file.entity.startsWith('event:')?'Termin':'Allgemein'}`;$('.open-library-file',card).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.delete-library-file',card).onclick=async()=>{await removeAttachment(file);renderFileLibrary();toast('Datei gelöscht')};host.append(card)});if(!files.length)host.innerHTML='<div class="task-empty">Noch keine Dateien gespeichert.</div>';
@@ -396,7 +398,7 @@ function bindActivitySection(root){
   const keywordInput=$('#activityKeyword',root);if(keywordInput){if(keywordInput.value==='Kinder Familie')keywordInput.value='';keywordInput.placeholder='z. B. Stadtteilfest, Markt, Konzert';const label=keywordInput.closest('label');if(label?.firstChild)label.firstChild.textContent='Suchbegriff (optional)'}
   const sourceText=$('.demo-note span',root);if(sourceText)sourceText.textContent=activitySource.startsWith('Live')?'Aktuelle Metadaten von Hannover.de. Bitte Details und mögliche Änderungen bei der Originalquelle prüfen.':activitySource.includes('keine passenden')?'Für diese Suche gibt es im aktuellen Hannover-Feed keine Treffer. Versuche einen allgemeineren Suchbegriff.':activitySource.includes('nicht erreichbar')?'Der regionale Feed konnte gerade nicht geladen werden. Beispielideen bleiben sichtbar.':'Offizielle Quellen: Hannover.de, Bürgerhaus Misburg und Stadtbezirk Misburg-Anderten.';
   $('#refreshIdeas',root).onclick=loadRegionalEvents;$$('[data-age-person]',root).forEach(input=>input.onchange=()=>{if(input.value==='')delete state.memberAges[input.dataset.agePerson];else state.memberAges[input.dataset.agePerson]=Number(input.value);save()});
-  $$('.add-activity',root).forEach((button,index)=>button.onclick=()=>{const idea=discoveredActivityIdeas[index];state.events.push({id:`event-${Date.now()}-${index}`,title:idea.title,date:idea.date||'',time:idea.time||'11:00',place:`${idea.text} · ${state.familyProfile.location}`,people:[...family],color:'green'});save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();toast('Aktivität zum Familienkalender hinzugefügt')});
+  $$('.add-activity',root).forEach((button,index)=>button.onclick=()=>{const idea=discoveredActivityIdeas[index],time=idea.time||'11:00';state.events.push({id:`event-${Date.now()}-${index}`,title:idea.title,date:idea.date||'',time,startsAt:eventStartsAt(idea.date||'',time),reminderMinutes:-1,place:`${idea.text} · ${state.familyProfile.location}`,people:[...family],color:'green'});save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();toast('Aktivität zum Familienkalender hinzugefügt')});
 }
 async function loadTicketmasterEventsLegacy(){
   const location=$('#activityLocation').value.trim()||'Berlin';const keyword=$('#activityKeyword').value.trim()||'Kinder';const apiKey=$('#ticketmasterKey').value.trim();state.familyProfile={...state.familyProfile,location,keyword};save();if(!apiKey){activitySource='Beispielvorschläge – Ticketmaster API-Key fehlt';discoveredActivityIdeas=[...fallbackActivityIdeas];switchView('calendar');return toast('Für Live-Termine bitte einen Ticketmaster API-Key eintragen')};localStorage.setItem('fami-ticketmaster-key',apiKey);const params=new URLSearchParams({apikey:apiKey,countryCode:'DE',locale:'de-de',size:'12',sort:'date,asc',keyword});if(/^\d{5}$/.test(location))params.set('postalCode',location);else params.set('city',location);params.set('radius','50');params.set('unit','km');const start=new Date();const end=new Date(Date.now()+1000*60*60*24*90);params.set('startDateTime',start.toISOString().replace(/\.\d{3}Z$/,'Z'));params.set('endDateTime',end.toISOString().replace(/\.\d{3}Z$/,'Z'));try{toast('Regionale Veranstaltungen werden geladen …');const response=await fetch(`https://app.ticketmaster.com/discovery/v2/events.json?${params}`);if(!response.ok)throw new Error(`Ticketmaster ${response.status}`);const data=await response.json();const events=data._embedded?.events||[];if(!events.length){activitySource=`Keine Live-Termine für „${keyword}“ gefunden`;discoveredActivityIdeas=[...fallbackActivityIdeas]}else{discoveredActivityIdeas=events.map(event=>{const venue=event._embedded?.venues?.[0];const date=event.dates?.start?.localDate||'';const time=event.dates?.start?.localTime?.slice(0,5)||'11:00';return {icon:'🎟️',title:event.name,category:event.classifications?.[0]?.genre?.name||'Veranstaltung',ages:'Altersfreigabe prüfen',distance:venue?.city?.name||location,when:date?new Date(`${date}T12:00`).toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'short'}):'Termin prüfen',text:venue?.name||'Veranstaltungsort siehe Details',date,time,url:event.url||''}});activitySource=`Live: ${events.length} Termine im Raum ${location}`};switchView('calendar')}catch(error){console.error(error);activitySource='Live-Suche derzeit nicht erreichbar';discoveredActivityIdeas=[...fallbackActivityIdeas];switchView('calendar');toast('Live-Termine konnten nicht geladen werden – Beispiele werden angezeigt')}
@@ -479,3 +481,6 @@ window.FamiCloud?.init({
   },
   notify:toast
 });
+window.FamiNotifications?.init({getState:()=>state,notify:toast});
+const initialView=new URLSearchParams(location.search).get('view');
+if(initialView&&['calendar','tasks','shopping','recipes','files','family','more'].includes(initialView))switchView(initialView);

@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.19.0" />
+  <link rel="stylesheet" href="styles.css?v=0.20.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -66,7 +66,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.19.0 BETA</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.20.0 BETA</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -134,6 +134,7 @@
       <form id="createForm">
         <label>Titel<input required id="itemTitle" placeholder="Was steht an?" autofocus></label>
         <div class="form-row"><label>Datum<input type="date" id="itemDate"></label><label>Zuständig<select id="itemPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label></div>
+        <div class="form-row event-only hidden"><label>Uhrzeit<input type="time" id="itemTime" value="12:00"></label><label>Erinnerung<select id="itemReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60" selected>1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="1440">1 Tag vorher</option></select></label></div>
         <label>Details<textarea id="itemDetails" placeholder="Ort, Checkliste oder eine kurze Notiz …"></textarea></label>
         <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Dateien oder Fotos anhängen<small>Optional · mehrere Dateien möglich</small></span><input type="file" id="newItemFiles" multiple></label>
         <div class="modal-actions"><button type="button" class="btn ghost" data-close>Abbrechen</button><button class="btn primary" type="submit">Für alle speichern</button></div>
@@ -168,6 +169,7 @@
         <div class="form-row"><label>Datum<input required type="date" id="editEventDate"></label><label>Uhrzeit<input required type="time" id="editEventTime"></label></div>
         <div class="form-row"><label>Zuständig<select id="editEventPerson"><option>Lena</option><option>Tom</option><option>Emma</option><option>Noah</option><option>Alle</option></select></label><label>Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option></select></label></div>
         <label>Ort oder Details<input id="editEventPlace" placeholder="Wo findet der Termin statt?"></label>
+        <label>Erinnerung<select id="editEventReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60">1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="1440">1 Tag vorher</option></select></label>
         <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto hinzufügen<small>Wird lokal auf diesem Gerät gespeichert</small></span><input type="file" id="eventAttachmentInput" multiple></label>
         <div class="attachment-list" id="eventAttachments"></div>
         <div class="modal-actions split"><button type="button" class="btn danger" id="deleteEvent">Termin löschen</button><span></span><button type="button" class="btn ghost" data-event-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
@@ -182,8 +184,18 @@
       <div id="cloudSetup"></div>
     </section>
   </div>
+  <div class="modal-wrap" id="notificationModal" aria-hidden="true">
+    <div class="modal-backdrop" data-notification-close></div>
+    <section class="modal notification-modal" role="dialog" aria-modal="true" aria-labelledby="notificationModalTitle">
+      <button class="icon-btn modal-close" data-notification-close><svg><use href="#i-x"/></svg></button>
+      <p class="eyebrow">TERMINERINNERUNGEN</p><h2 id="notificationModalTitle">Benachrichtigungen</h2>
+      <div class="notification-setup"><div class="notification-status" id="notificationStatus"></div><button class="btn primary" id="enableNotifications">Benachrichtigungen aktivieren</button><button class="btn ghost" id="testNotification">Testnachricht senden</button><p>Wähle anschließend bei jedem Termin aus, wie lange vorher du erinnert werden möchtest.</p><small>Für Erinnerungen bei vollständig geschlossener App muss Fami installiert und der Online-Pushdienst verbunden sein.</small></div>
+    </section>
+  </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="cloud.js?v=0.19.0"></script>
-  <script src="app.js?v=0.19.0"></script>
+  <script src="push-config.js?v=0.20.0"></script>
+  <script src="cloud.js?v=0.20.0"></script>
+  <script src="notifications.js?v=0.20.0"></script>
+  <script src="app.js?v=0.20.0"></script>
 </body>
 </html>

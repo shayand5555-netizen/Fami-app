@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.20.0-beta.1 – 1. Oktober 2026
+
+- Erinnerungszeit direkt beim Erstellen und Bearbeiten eines Termins auswählbar
+- Benachrichtigungszentrale mit Berechtigungsprüfung und Testnachricht ergänzt
+- Lokale Terminerinnerungen funktionieren bei geöffneter App bereits ohne Servereinrichtung
+- Web-Push-Unterstützung für installierte Handys einschließlich Klick zur Kalenderansicht vorbereitet
+- Sichere Supabase-Tabellen, Zugriffsregeln und Edge Function für Hintergrund-Erinnerungen ergänzt
+- Importierte Kalendertermine und Aktivitätsvorschläge auf das neue Erinnerungsformat umgestellt
+
 ## 0.19.0-beta.1 – 1. Oktober 2026
 
 - Zwei getrennte Rezeptdarstellungen zu einer einheitlichen, filterbaren Bibliothek zusammengeführt

@@ -23,7 +23,11 @@ jobs:
         with:
           node-version: '22'
       - name: App-Syntax prüfen
-        run: node --check app.js
+        run: |
+          node --check app.js
+          node --check cloud.js
+          node --check notifications.js
+          node --check service-worker.js
       - run: node scripts/update-youtube-videos.mjs
       - name: Änderungen veröffentlichen
         run: |

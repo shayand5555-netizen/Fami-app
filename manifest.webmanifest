@@ -1,7 +1,8 @@
 {
   "name": "Fami – Familienplaner",
   "short_name": "Fami",
-  "description": "Gemeinsamer Kalender, Aufgaben, Familienzeit, Fotos und Dokumente.",
+  "id": "./",
+  "description": "Gemeinsamer Kalender, Aufgaben, Einkaufsliste, Rezepte, Fotos und Dokumente.",
   "lang": "de-DE",
   "start_url": "./",
   "scope": "./",

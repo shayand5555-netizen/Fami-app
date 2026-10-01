@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.18.0-beta.1 – 1. Oktober 2026
+
+- Videobibliothek auf die 100 beliebtesten passenden Videos je Kanal konzentriert
+- Videotreffer als große Rezeptkarten im Stil der vorhandenen Fami-Rezepte neu gestaltet
+- Getrennte Buttons für Originalvideo und schriftliches Leserezept ergänzt
+- Zutaten werden, soweit eindeutig vorhanden, aus der öffentlichen Videobeschreibung übernommen
+- Lesbare Kochschritte werden regelbasiert als KI-Entwurf ergänzt und entsprechend gekennzeichnet
+- Sicherheitshinweis zu Mengen, Garzeiten, Temperaturen und Allergenen in jeder generierten Anleitung
+
 ## 0.17.0-beta.1 – 1. Oktober 2026
 
 - Alle öffentlichen Videos von Schmale Schulter und Yummy Gastronomy in einem gemeinsamen, automatisch aktualisierten Katalog

@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.19.0-beta.1 – 1. Oktober 2026
+
+- Zwei getrennte Rezeptdarstellungen zu einer einheitlichen, filterbaren Bibliothek zusammengeführt
+- Jede öffentliche Rezeptkarte zeigt Bild, Kategorien, Nährwerte, Zutaten, Einkaufsliste, Video und Leserezept
+- Nährwerte für Videorezepte werden als KI-Schätzung pro Portion angezeigt
+- Vorhandene Fami-Rezepte werden in dieselbe Bibliothek integriert und behalten ihre hinterlegten Nährwerte
+- Zutaten jeder Rezeptkarte können direkt in die gemeinsame Einkaufsliste übernommen werden
+- Filter nach Kanal, Mahlzeit, Küche, Beliebtheit und Angesehen-Status bleiben erhalten
+
 ## 0.18.0-beta.1 – 1. Oktober 2026
 
 - Videobibliothek auf die 100 beliebtesten passenden Videos je Kanal konzentriert

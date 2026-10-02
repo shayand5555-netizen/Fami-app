@@ -1,8 +1,22 @@
 {
-  "updatedAt": "2026-10-01T04:31:13.103Z",
+  "updatedAt": "2026-10-02T04:30:31.609Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
+    {
+      "title": "Infos zur Vorsorgevollmacht in Hannover",
+      "date": "2026-10-02",
+      "venue": "Betreuungsstelle der Region Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Hannover"
+    },
+    {
+      "title": "Flohmarkt auf der Waldbühne Otternhagen",
+      "date": "2026-10-03",
+      "venue": "Waldbühne Otternhagen",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Waldb%C3%BChne-Otternhagen"
+    },
     {
       "title": "Großes Kürbisfest",
       "date": "2026-10-03",
@@ -30,6 +44,13 @@
       "venue": "Hannovers Innenstadt",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Am-4.-Oktober-ist-Schorsenbummel"
+    },
+    {
+      "title": "Faust-Flohmarkt",
+      "date": "2026-10-04",
+      "venue": "Kulturzentrum Faust",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt"
     },
     {
       "title": "Figurentheater Tonne: Es rappelt in der Kiste",
@@ -198,20 +219,6 @@
       "venue": "Kuppelsaal im HCC Congress Centrum Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover"
-    },
-    {
-      "title": "Second-Hand-Basar für Kinder- und Babyartikel",
-      "date": "2026-10-31",
-      "venue": "Pavillon Hannover",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Second-Hand-Basar-f%C3%BCr-Kinder-und-Babyartikel"
-    },
-    {
-      "title": "Stoffmarkt Holland",
-      "date": "2026-11-01",
-      "venue": "Schützenplatz Hannover",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Stoffmarkt-Holland"
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",

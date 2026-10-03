@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.20.2-beta.1 – 3. Oktober 2026
+
+- Supabase-Projektzugang für Familienmitglieder fest in der App hinterlegt
+- Technischen Dialog für Projekt-URL und Publishable Key auf neuen Geräten entfernt
+- Einladungscode als Teil des Einladungslinks übertragen und nach der Anmeldung vorausgefüllt
+- Einladungsanleitung für den vereinfachten Beitritt überarbeitet
+
 ## 0.20.1-beta.1 – 1. Oktober 2026
 
 - Öffentlichen VAPID-Schlüssel für Push-Abonnements eingebunden

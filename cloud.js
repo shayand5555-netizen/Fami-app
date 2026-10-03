@@ -11,6 +11,8 @@
   let initialized = false;
 
   const readConfig = () => {
+    const bundled = window.FAMI_CLOUD_CONFIG;
+    if (bundled?.url && bundled?.key) return bundled;
     try { return JSON.parse(localStorage.getItem(CONFIG_KEY) || 'null'); } catch { return null; }
   };
   const statusButton = () => document.querySelector('#cloudStatus');
@@ -238,31 +240,24 @@
     if (!host) return;
     const config = readConfig();
     if (!config) {
-      host.innerHTML = `<p class="cloud-explain">Verbinde Fami einmalig mit deinem Supabase-Projekt. Projekt-URL und öffentlicher Publishable Key dürfen in einer Browser-App verwendet werden.</p><form id="cloudConfigForm"><label>Projekt-URL<input id="cloudUrl" type="url" required placeholder="https://…supabase.co"></label><label>Publishable Key<input id="cloudKey" required autocomplete="off" placeholder="sb_publishable_…"></label><button class="btn primary">Verbindung speichern</button></form><p class="cloud-help">Zuerst <code>supabase-schema.sql</code> im SQL Editor ausführen.</p>`;
-      document.querySelector('#cloudConfigForm').onsubmit = event => {
-        event.preventDefault();
-        const url = document.querySelector('#cloudUrl').value.trim().replace(/\/$/, '');
-        const key = document.querySelector('#cloudKey').value.trim();
-        localStorage.setItem(CONFIG_KEY, JSON.stringify({url,key}));
-        renderSetup(); connect();
-      };
+      host.innerHTML = `<p class="cloud-explain">Fami Online konnte nicht geladen werden. Bitte aktualisiere die App oder versuche es später erneut.</p>`;
       return;
     }
     if (!session) {
-      host.innerHTML = `<p class="cloud-explain">Melde dich ohne Passwort an. Supabase sendet dir einen sicheren Anmeldelink.</p><form id="cloudLoginForm"><label>E-Mail-Adresse<input id="cloudEmail" type="email" required autocomplete="email"></label><button class="btn primary">Anmeldelink senden</button></form><button class="text-btn cloud-reset" id="cloudReset">Projektdaten ändern</button>`;
+      host.innerHTML = `<p class="cloud-explain">Melde dich ohne Passwort an. Fami sendet dir einen sicheren Anmeldelink per E-Mail.</p><form id="cloudLoginForm"><label>E-Mail-Adresse<input id="cloudEmail" type="email" required autocomplete="email" inputmode="email"></label><button class="btn primary">Anmeldelink senden</button></form><p class="cloud-help">Du wurdest eingeladen? Öffne danach den Link aus der E-Mail auf diesem Gerät. Dein Familiencode bleibt im Einladungslink gespeichert.</p>`;
       document.querySelector('#cloudLoginForm').onsubmit = async event => {event.preventDefault();try{await sendLogin(document.querySelector('#cloudEmail').value.trim())}catch(error){notify(error.message)}};
-      document.querySelector('#cloudReset').onclick = () => {localStorage.removeItem(CONFIG_KEY);location.reload()};
       return;
     }
     if (!familyInfo) {
-      host.innerHTML = `<p class="cloud-explain">Erstelle eine neue Familie oder gib den Einladungscode einer bestehenden Familie ein.</p><div class="cloud-family-forms"><form id="createFamilyForm"><label>Neue Familie<input id="familyName" required placeholder="z. B. Familie Weber"></label><button class="btn primary">Familie erstellen</button></form><form id="joinFamilyForm"><label>Einladungscode<input id="familyCode" required maxlength="8" placeholder="AB12CD34"></label><button class="btn ghost">Familie beitreten</button></form></div><div class="cloud-mini-guide"><strong>Du wurdest eingeladen?</strong><ol><li>Mit deiner eigenen E-Mail-Adresse anmelden.</li><li>Den achtstelligen Code der einladenden Person eingeben.</li><li>Nach dem Beitritt unter „Familie bearbeiten“ dein Profil für dieses Gerät auswählen.</li></ol></div>`;
+      const inviteCode=(new URLSearchParams(location.search).get('invite')||'').toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,8);
+      host.innerHTML = `<p class="cloud-explain">Erstelle eine neue Familie oder tritt mit dem Einladungscode einer bestehenden Familie bei.</p><div class="cloud-family-forms"><form id="createFamilyForm"><label>Neue Familie<input id="familyName" required placeholder="z. B. Familie Weber"></label><button class="btn primary">Familie erstellen</button></form><form id="joinFamilyForm"><label>Einladungscode<input id="familyCode" required maxlength="8" autocomplete="one-time-code" autocapitalize="characters" value="${escapeHtml(inviteCode)}" placeholder="AB12CD34"></label><button class="btn ghost">Familie beitreten</button></form></div><div class="cloud-mini-guide"><strong>Du wurdest eingeladen?</strong><ol><li>Der Code aus dem Einladungslink ist bereits eingesetzt.</li><li>Auf „Familie beitreten“ tippen.</li><li>Danach unter „Familie bearbeiten“ dein Profil für dieses Gerät auswählen.</li></ol></div>`;
       document.querySelector('#createFamilyForm').onsubmit = async event => {event.preventDefault();try{await createFamily(document.querySelector('#familyName').value.trim());renderSetup()}catch(error){notify(error.message)}};
-      document.querySelector('#joinFamilyForm').onsubmit = async event => {event.preventDefault();try{await joinFamily(document.querySelector('#familyCode').value.trim());renderSetup()}catch(error){notify(error.message)}};
+      document.querySelector('#joinFamilyForm').onsubmit = async event => {event.preventDefault();try{await joinFamily(document.querySelector('#familyCode').value.trim());history.replaceState({},'',location.pathname);renderSetup()}catch(error){notify(error.message)}};
       return;
     }
     host.innerHTML = `<div class="cloud-connected"><span>✓</span><div><strong>${escapeHtml(displayFamilyName())}</strong><p>Live-Synchronisierung ist aktiv.</p></div></div><div class="invite-code"><small>Einladungscode für weitere Familienmitglieder</small><strong>${escapeHtml(familyInfo.invite_code)}</strong><button class="btn ghost" id="copyInvite">Nur Code kopieren</button><button class="btn primary" id="copyInvitation">Einladung mit Anleitung kopieren</button></div><div class="cloud-mini-guide"><strong>So funktioniert der Test</strong><ol><li>Einladung an die zweite Person senden.</li><li>Sie öffnet Fami auf ihrem eigenen Handy und meldet sich per E-Mail-Link an.</li><li>Sie wählt „Familie beitreten“ und gibt den Code ein.</li><li>Anschließend wählt sie unter „Familie bearbeiten“ ihr Profil aus.</li></ol><small>Den Code nur an vertraute Personen weitergeben – er erlaubt Zugriff auf eure gemeinsamen Daten.</small></div><button class="text-btn cloud-reset" id="cloudLogout">Von der Cloud abmelden</button>`;
     document.querySelector('#copyInvite').onclick = async () => {await navigator.clipboard.writeText(familyInfo.invite_code);notify('Einladungscode kopiert')};
-    document.querySelector('#copyInvitation').onclick = async () => {const appUrl=`${location.origin}${location.pathname}`;const message=`Teste Fami mit mir: ${appUrl}\n\n1. Öffne den Link auf deinem Handy.\n2. Melde dich mit deiner eigenen E-Mail-Adresse an.\n3. Wähle „Familie beitreten“.\n4. Gib diesen Einladungscode ein: ${familyInfo.invite_code}\n5. Wähle danach unter „Familie bearbeiten“ dein Profil aus.\n\nBitte teile den Code nicht mit anderen Personen.`;await navigator.clipboard.writeText(message);notify('Einladung mit Anleitung kopiert')};
+    document.querySelector('#copyInvitation').onclick = async () => {const appUrl=`${location.origin}${location.pathname}?invite=${encodeURIComponent(familyInfo.invite_code)}`;const message=`Teste Fami mit mir: ${appUrl}\n\n1. Öffne den Link auf deinem Handy.\n2. Melde dich mit deiner eigenen E-Mail-Adresse an.\n3. Öffne den Anmeldelink aus der E-Mail auf demselben Gerät.\n4. Der Familiencode ${familyInfo.invite_code} ist bereits vorausgefüllt – tippe nur noch auf „Familie beitreten“.\n5. Wähle danach unter „Familie bearbeiten“ dein Profil aus.\n\nBitte teile den Link nicht mit anderen Personen.`;await navigator.clipboard.writeText(message);notify('Einladung mit persönlichem Link kopiert')};
     document.querySelector('#cloudLogout').onclick = async () => {await client.auth.signOut();localStorage.removeItem(FAMILY_KEY);location.reload()};
   }
 

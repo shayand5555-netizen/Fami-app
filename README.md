@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.20.2-beta.1**
+Version: **0.21.0-beta.1**
 
 Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cloud-Einrichtung bleiben Daten lokal gespeichert. Nach Verbindung mit Supabase werden Familiendaten live synchronisiert und Anhänge geschützt in der Cloud gespeichert.
 
@@ -15,6 +15,8 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Bearbeitbare Aufgaben und Termine
 - Lokale Foto- und Dateianhänge
 - Gemeinsame Einkaufsliste auf einem Gerät
+- Gemeinsamer Wochenessenplan mit Rezeptbildern, Verschieben und Löschen direkt auf der Startseite
+- Konfigurierbarer Putzplan mit sinnvollen Intervallen und fair rotierenden Aufgaben
 - Rezeptideen mit direkter Zutatenübernahme
 - Je 100 beliebte, ausführliche Rezeptkarten von Schmale Schulter und Yummy Gastronomy mit Mahlzeit-, Küchen- und Beliebtheitsfiltern
 - Getrennte Buttons für Originalvideo und schriftliches Leserezept

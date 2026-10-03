@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.20.2" />
+  <link rel="stylesheet" href="styles.css?v=0.21.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -66,7 +66,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.20.2 BETA</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version">v0.21.0 BETA</span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -78,6 +78,11 @@
       <button class="sync-banner cloud-status" id="cloudStatus" type="button" data-mode="offline"><span class="pulse"></span><strong>Lokal gespeichert</strong><span>· sicher auf diesem Gerät</span><div class="synced-people"><small>Antippen zum Einrichten</small></div></button>
 
       <div class="dashboard-grid">
+        <section class="card meal-plan-card">
+          <div class="card-head"><div><span class="section-icon gold">🍽️</span><span><h2>Wochenessenplan</h2><p id="mealPlanRange">Diese Woche</p></span></div><div class="meal-week-actions"><button id="mealWeekPrev" aria-label="Vorherige Woche">‹</button><button id="mealWeekToday">Heute</button><button id="mealWeekNext" aria-label="Nächste Woche">›</button></div></div>
+          <div class="meal-week" id="mealWeek"></div>
+          <button class="add-row nav-link" data-target="recipes"><svg><use href="#i-plus"/></svg> Gericht aus den Rezepten einplanen</button>
+        </section>
         <section class="card schedule-card">
           <div class="card-head"><div><span class="section-icon coral"><svg><use href="#i-cal"/></svg></span><span><h2>Heute</h2><p>4 Termine</p></span></div><button class="text-btn nav-link" data-target="calendar">Kalender öffnen <svg><use href="#i-arrow"/></svg></button></div>
           <div class="timeline" id="timeline">
@@ -193,9 +198,9 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="push-config.js?v=0.20.2"></script>
-  <script src="cloud.js?v=0.20.2"></script>
-  <script src="notifications.js?v=0.20.2"></script>
-  <script src="app.js?v=0.20.2"></script>
+  <script src="push-config.js?v=0.21.0"></script>
+  <script src="cloud.js?v=0.21.0"></script>
+  <script src="notifications.js?v=0.21.0"></script>
+  <script src="app.js?v=0.21.0"></script>
 </body>
 </html>

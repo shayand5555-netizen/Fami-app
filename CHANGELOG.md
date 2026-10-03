@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.21.0-beta.1 – 3. Oktober 2026
+
+- Gemeinsamen Wochenessenplan auf der Startseite ergänzt
+- Jedes Rezept und Rezeptvideo kann samt Bild einem Wochentag zugeordnet werden
+- Gerichte lassen sich per Ziehen oder Pfeiltasten verschieben und direkt löschen
+- Konfigurierbaren Putzplan in den Aufgabenbereich integriert
+- Putzpunkte erscheinen automatisch als normale, gemeinsam synchronisierte Aufgaben
+- Flexible Intervalle ab letzter Erledigung und altersgerechte Rotation zwischen Familienmitgliedern ergänzt
+
 ## 0.20.2-beta.1 – 3. Oktober 2026
 
 - Supabase-Projektzugang für Familienmitglieder fest in der App hinterlegt

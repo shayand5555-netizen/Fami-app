@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.23.0-beta.1 – 3. Oktober 2026
+
+- Für jedes der 100 Familiengerichte ein eigenes passendes Rezeptbild ergänzt
+- Bildpfade eindeutig mit der jeweiligen Rezept-ID verknüpft
+- Bilder für schnelle mobile Ladezeiten optimiert und erst bei Sichtbarkeit geladen
+- Rezeptbilder werden beim Öffnen automatisch für die Offline-Nutzung zwischengespeichert
+
 ## 0.22.0-beta.1 – 3. Oktober 2026
 
 - 100 beliebte Familiengerichte als eigene filterbare Rezeptsammlung ergänzt

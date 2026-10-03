@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.22.0-beta.1 – 3. Oktober 2026
+
+- 100 beliebte Familiengerichte als eigene filterbare Rezeptsammlung ergänzt
+- Zehn optimierte, KI-generierte Food-Fotografien für die neuen Rezeptkategorien eingebunden
+- Zutaten, Nährwertschätzungen und vollständige Kochanleitungen ohne YouTube-Link ergänzt
+- Alle Familiengerichte können direkt in Wochenessenplan und Einkaufsliste übernommen werden
+- Verständliche Meldung für das Supabase-Limit von zwei Anmelde-E-Mails pro Stunde ergänzt
+- Wiederholte Anmeldeversuche innerhalb einer Minute im Client verhindert
+
 ## 0.21.0-beta.1 – 3. Oktober 2026
 
 - Gemeinsamen Wochenessenplan auf der Startseite ergänzt

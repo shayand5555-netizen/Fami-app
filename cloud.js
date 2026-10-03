@@ -29,6 +29,10 @@
     }
   };
   const notify = message => callbacks?.notify?.(message);
+  const friendlyAuthError = error => {
+    if(error?.status===429||/rate limit|too many|over_email_send_rate_limit/i.test(`${error?.code||''} ${error?.message||''}`))return 'Das Supabase-E-Mail-Limit ist erreicht (2 E-Mails pro Stunde). Bitte später erneut versuchen. Für mehr Anmeldungen muss in Supabase ein eigener SMTP-Maildienst eingerichtet werden.';
+    return error?.message || 'Anmeldung ist gerade nicht möglich.';
+  };
   const displayFamilyName = () => callbacks?.getState?.().familyName || familyInfo?.name || 'Familie online';
   const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, character => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[character]));
 
@@ -161,8 +165,10 @@
   }
 
   async function sendLogin(email) {
+    const lastSent=Number(localStorage.getItem('fami-login-mail-sent')||0),remaining=60000-(Date.now()-lastSent);if(remaining>0)throw new Error(`Bitte noch ${Math.ceil(remaining/1000)} Sekunden warten, bevor du erneut einen Anmeldelink anforderst.`);
     const {error} = await client.auth.signInWithOtp({email, options:{emailRedirectTo:location.href.split('#')[0]}});
     if (error) throw error;
+    localStorage.setItem('fami-login-mail-sent',String(Date.now()));
     notify('Anmeldelink wurde per E-Mail gesendet');
   }
 
@@ -244,8 +250,8 @@
       return;
     }
     if (!session) {
-      host.innerHTML = `<p class="cloud-explain">Melde dich ohne Passwort an. Fami sendet dir einen sicheren Anmeldelink per E-Mail.</p><form id="cloudLoginForm"><label>E-Mail-Adresse<input id="cloudEmail" type="email" required autocomplete="email" inputmode="email"></label><button class="btn primary">Anmeldelink senden</button></form><p class="cloud-help">Du wurdest eingeladen? Öffne danach den Link aus der E-Mail auf diesem Gerät. Dein Familiencode bleibt im Einladungslink gespeichert.</p>`;
-      document.querySelector('#cloudLoginForm').onsubmit = async event => {event.preventDefault();try{await sendLogin(document.querySelector('#cloudEmail').value.trim())}catch(error){notify(error.message)}};
+      host.innerHTML = `<p class="cloud-explain">Melde dich ohne Passwort an. Fami sendet dir einen sicheren Anmeldelink per E-Mail.</p><form id="cloudLoginForm"><label>E-Mail-Adresse<input id="cloudEmail" type="email" required autocomplete="email" inputmode="email"></label><button class="btn primary">Anmeldelink senden</button></form><p class="cloud-help">Du wurdest eingeladen? Öffne danach den Link aus der E-Mail auf diesem Gerät. Dein Familiencode bleibt im Einladungslink gespeichert.</p><p class="cloud-rate-note">Hinweis: Der kostenlose Supabase-Maildienst erlaubt nur 2 E-Mails pro Stunde. Bereits angemeldete Geräte bleiben angemeldet und benötigen keinen neuen Link.</p>`;
+      document.querySelector('#cloudLoginForm').onsubmit = async event => {event.preventDefault();const button=event.currentTarget.querySelector('button');button.disabled=true;button.textContent='Wird gesendet …';try{await sendLogin(document.querySelector('#cloudEmail').value.trim());button.textContent='E-Mail wurde gesendet'}catch(error){notify(friendlyAuthError(error));button.disabled=false;button.textContent='Anmeldelink senden'}};
       return;
     }
     if (!familyInfo) {

@@ -1,5 +1,5 @@
-const CACHE = 'fami-v0.21.0';
-const APP_FILES = ['./','./index.html','./styles.css?v=0.21.0','./push-config.js?v=0.21.0','./cloud.js?v=0.21.0','./notifications.js?v=0.21.0','./app.js?v=0.21.0','./regional-events.json','./recipe-videos.json','./manifest.webmanifest','./icons/fami-icon.svg'];
+const CACHE = 'fami-v0.22.0';
+const APP_FILES = ['./','./index.html','./styles.css?v=0.22.0','./push-config.js?v=0.22.0','./cloud.js?v=0.22.0','./notifications.js?v=0.22.0','./family-recipes.js?v=0.22.0','./app.js?v=0.22.0','./regional-events.json','./recipe-videos.json','./manifest.webmanifest','./icons/fami-icon.svg','./images/family-recipes/pasta.webp','./images/family-recipes/auflauf.webp','./images/family-recipes/haehnchen.webp','./images/family-recipes/fisch.webp','./images/family-recipes/vegetarisch.webp','./images/family-recipes/suppe.webp','./images/family-recipes/kartoffeln.webp','./images/family-recipes/fruehstueck.webp','./images/family-recipes/backen.webp','./images/family-recipes/orientalisch.webp'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(APP_FILES)));

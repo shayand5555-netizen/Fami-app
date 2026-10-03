@@ -1,15 +1,8 @@
 {
-  "updatedAt": "2026-10-02T04:30:31.609Z",
+  "updatedAt": "2026-10-03T04:30:46.692Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Infos zur Vorsorgevollmacht in Hannover",
-      "date": "2026-10-02",
-      "venue": "Betreuungsstelle der Region Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Hannover"
-    },
     {
       "title": "Flohmarkt auf der Waldbühne Otternhagen",
       "date": "2026-10-03",
@@ -81,11 +74,32 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Spiel-Figuren-aus-Wolle-und-Garn-wickeln"
     },
     {
+      "title": "Zeitlupe: Luís Salgueiro",
+      "date": "2026-10-04",
+      "venue": "Sprengel Museum Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zeitlupe-Lu%C3%ADs-Salgueiro"
+    },
+    {
+      "title": "Zur guten Absicht - Spieleabend",
+      "date": "2026-10-04",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zur-guten-Absicht-Spieleabend"
+    },
+    {
       "title": "Die Jugendgruppe BE:TwEEN 2026",
       "date": "2026-10-05",
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026"
+    },
+    {
+      "title": "Digitaler Dienstag",
+      "date": "2026-10-06",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag"
     },
     {
       "title": "Lerne die Welt der Sphero Bolts kennen",
@@ -100,13 +114,6 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
-    {
-      "title": "Offener Spielenachmittag",
-      "date": "2026-10-08",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Offener-Spielenachmittag"
     },
     {
       "title": "KiezKultur Festival",

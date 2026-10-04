@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.23.0-beta.1**
+Version: **0.24.0-beta.1**
 
 Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cloud-Einrichtung bleiben Daten lokal gespeichert. Nach Verbindung mit Supabase werden Familiendaten live synchronisiert und Anhänge geschützt in der Cloud gespeichert.
 
@@ -26,6 +26,7 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Eigene Rezepte per Foto oder Link lokal speichern
 - Gemeinsamer Aufgabenbereich
 - Familienaktivitäten im Kalenderbereich
+- Automatisch geladene Hannover-Termine mit hervorgehobenen Stadtteil-, Tiergarten-, Kürbis- und Familienfesten
 - Lokale Sicherung und Wiederherstellung
 - Installierbare Progressive Web App
 - Optionaler Online-Modus mit E-Mail-Anmeldung und Familien-Einladungscode

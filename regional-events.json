@@ -1,112 +1,140 @@
 {
-  "updatedAt": "2026-10-03T04:30:46.692Z",
+  "updatedAt": "2026-10-04T05:23:22.854Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "Flohmarkt auf der Waldbühne Otternhagen",
-      "date": "2026-10-03",
-      "venue": "Waldbühne Otternhagen",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Waldb%C3%BChne-Otternhagen"
-    },
-    {
       "title": "Großes Kürbisfest",
       "date": "2026-10-03",
-      "venue": "Eldagser Hoflieferant",
+      "endDate": "2026-10-04",
+      "time": "11:00",
+      "venue": "Eldagser Hoflieferant, Springe-Eldagsen",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Gro%C3%9Fes-K%C3%BCrbisfest"
-    },
-    {
-      "title": "Mardorfer Kunsthandwerkermarkt",
-      "date": "2026-10-03",
-      "venue": "Aloys-Bunge-Platz",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Mardorfer-Kunsthandwerkermarkt"
-    },
-    {
-      "title": "Wassersause und „Dicke Berta“ fahren im Ersepark",
-      "date": "2026-10-03",
-      "venue": "Erse Park Uetze",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wassersause-und-%E2%80%9EDicke-Berta%E2%80%9C-fahren-im-Ersepark"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Gro%C3%9Fes-K%C3%BCrbisfest",
+      "featured": true,
+      "description": "Großes Hoffest mit Kürbissen und regionalem Familienprogramm im Umland."
     },
     {
       "title": "Am 4. Oktober ist Schorsenbummel",
       "date": "2026-10-04",
+      "time": "11:00",
       "venue": "Hannovers Innenstadt",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Am-4.-Oktober-ist-Schorsenbummel"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Am-4.-Oktober-ist-Schorsenbummel",
+      "featured": true,
+      "description": "Traditioneller musikalischer Bummel durch Hannovers Innenstadt."
+    },
+    {
+      "title": "Ein wenig Licht. Und diese Ruhe.",
+      "date": "2026-10-04",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ein-wenig-Licht.-Und-diese-Ruhe",
+      "featured": false
     },
     {
       "title": "Faust-Flohmarkt",
       "date": "2026-10-04",
       "venue": "Kulturzentrum Faust",
       "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt"
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
+      "featured": false
     },
     {
       "title": "Figurentheater Tonne: Es rappelt in der Kiste",
       "date": "2026-10-04",
       "venue": "Theatrio Figuren Theaterhaus Hannover",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste",
+      "featured": false
     },
     {
       "title": "Für Grundschulkinder: Führungen durch den Landtag",
       "date": "2026-10-04",
       "venue": "Niedersächsischer Landtag",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/F%C3%BCr-Grundschulkinder-F%C3%BChrungen-durch-den-Landtag"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/F%C3%BCr-Grundschulkinder-F%C3%BChrungen-durch-den-Landtag",
+      "featured": false
+    },
+    {
+      "title": "Johannes Steuding",
+      "date": "2026-10-04",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Johannes-Steuding",
+      "featured": false
     },
     {
       "title": "Naturpark-Kino & Erzähltheater: Geschichte des Apfels",
       "date": "2026-10-04",
       "venue": "Naturpark-Scheune Steinhude",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Naturpark-Kino-Erz%C3%A4hltheater-Geschichte-des-Apfels"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Naturpark-Kino-Erz%C3%A4hltheater-Geschichte-des-Apfels",
+      "featured": false
+    },
+    {
+      "title": "Pique Dame",
+      "date": "2026-10-04",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
+      "featured": false
     },
     {
       "title": "SPIEL:ZEIT - (Spiel)Figuren aus Wolle und Garn wickeln",
       "date": "2026-10-04",
       "venue": "Stadtteilzentrum Weiße Rose",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Spiel-Figuren-aus-Wolle-und-Garn-wickeln"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Spiel-Figuren-aus-Wolle-und-Garn-wickeln",
+      "featured": false
     },
     {
       "title": "Zeitlupe: Luís Salgueiro",
       "date": "2026-10-04",
       "venue": "Sprengel Museum Hannover",
       "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zeitlupe-Lu%C3%ADs-Salgueiro"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zeitlupe-Lu%C3%ADs-Salgueiro",
+      "featured": false
     },
     {
       "title": "Zur guten Absicht - Spieleabend",
       "date": "2026-10-04",
       "venue": "Zur guten Absicht",
       "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zur-guten-Absicht-Spieleabend"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zur-guten-Absicht-Spieleabend",
+      "featured": false
     },
     {
       "title": "Die Jugendgruppe BE:TwEEN 2026",
       "date": "2026-10-05",
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
+      "featured": false
+    },
+    {
+      "title": "Propadanga",
+      "date": "2026-10-05",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Propadanga",
+      "featured": false
     },
     {
       "title": "Digitaler Dienstag",
       "date": "2026-10-06",
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag",
+      "featured": false
     },
     {
       "title": "Lerne die Welt der Sphero Bolts kennen",
       "date": "2026-10-07",
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lerne-die-Welt-der-Sphero-Bolts-kennen"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lerne-die-Welt-der-Sphero-Bolts-kennen",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -118,44 +146,55 @@
     {
       "title": "KiezKultur Festival",
       "date": "2026-10-09",
-      "venue": "Region Hannover",
+      "endDate": "2026-10-10",
+      "time": "18:00",
+      "venue": "Faust und Glocksee, Hannover",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/KiezKultur-Festival"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/KiezKultur-Festival",
+      "featured": true,
+      "description": "Zwei Hannoveraner Kieze und viele Kulturorte feiern gemeinsam."
+    },
+    {
+      "title": "Tiergartenfest Hannover",
+      "date": "2026-10-10",
+      "time": "13:00",
+      "venue": "Tiergarten, Tiergartenstraße 117, 30559 Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Naherholung/Infos%2C-Projekte%2C-Termine/Termine/Tiergartenfest-Hannover",
+      "featured": true,
+      "description": "Familienfest mit Naturerlebnis, Waldwissen, Mitmachaktionen und Laternenumzug."
     },
     {
       "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
       "date": "2026-10-10",
       "venue": "Flohmarkt Hannover",
       "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer"
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
     },
     {
       "title": "Flohmarkt auf der Neuen Bult",
       "date": "2026-10-10",
       "venue": "Pferderennbahn Neue Bult",
       "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult"
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
+      "featured": false
     },
     {
       "title": "Flohmarkt der Johanniter Langenhagen",
       "date": "2026-10-10",
       "venue": "Johanniter-Unfall-Hilfe e.V. Nordhannoverscher Ortsverband Langenhagen",
       "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-der-Johanniter-Langenhagen"
-    },
-    {
-      "title": "Tiergartenfest Hannover",
-      "date": "2026-10-10",
-      "venue": "Tiergarten",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tiergartenfest-Hannover"
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-der-Johanniter-Langenhagen",
+      "featured": false
     },
     {
       "title": "Vintage Wonderland",
       "date": "2026-10-10",
       "venue": "Vintage Wonderland",
       "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland"
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
+      "featured": false
     },
     {
       "title": "Wochenmarkt Misburg",
@@ -169,7 +208,8 @@
       "date": "2026-10-11",
       "venue": "Flohmarkt bei IKEA in Großburgwedel",
       "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel"
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -177,6 +217,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Hannover 96 vs. FC St. Pauli",
+      "date": "2026-10-17",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-FC-St.-Pauli",
+      "featured": false
     },
     {
       "title": "Wochenmarkt Misburg",
@@ -188,9 +236,12 @@
     {
       "title": "Kunst & Kürbis in Eldagsen",
       "date": "2026-10-18",
-      "venue": "Eldagser Hoflieferant",
+      "time": "11:00",
+      "venue": "Eldagser Hoflieferant, Springe-Eldagsen",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-K%C3%BCrbis-in-Eldagsen"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-K%C3%BCrbis-in-Eldagsen",
+      "featured": true,
+      "description": "Hoffest mit Kunst, Kürbissen und buntem Familienprogramm im Umland."
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -200,11 +251,27 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
+      "title": "Erstes 25-Stunden-Schwimmen in der Wasserwelt",
+      "date": "2026-10-24",
+      "venue": "Wasserwelt Langenhagen",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Erstes-25-Stunden-Schwimmen-in-der-Wasserwelt",
+      "featured": false
+    },
+    {
       "title": "Wochenmarkt Misburg",
       "date": "2026-10-24",
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Galopprennen Neue Bult",
+      "date": "2026-10-25",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Galopprennen-Neue-Bult",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -218,14 +285,32 @@
       "date": "2026-10-30",
       "venue": "Hannover Congress Centrum (HCC)",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday",
+      "featured": false
     },
     {
       "title": "Glitterbox Hannover",
       "date": "2026-10-31",
       "venue": "Kuppelsaal im HCC Congress Centrum Hannover",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover",
+      "featured": false
+    },
+    {
+      "title": "Second-Hand-Basar für Kinder- und Babyartikel",
+      "date": "2026-10-31",
+      "venue": "Pavillon Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Second-Hand-Basar-f%C3%BCr-Kinder-und-Babyartikel",
+      "featured": false
+    },
+    {
+      "title": "Stoffmarkt Holland",
+      "date": "2026-11-01",
+      "venue": "Schützenplatz Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Stoffmarkt-Holland",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -242,6 +327,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Zum dritten Mal in Hannover: OKTAGON MMA",
+      "date": "2026-11-07",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Zum-dritten-Mal-in-Hannover-OKTAGON-MMA",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-11",
       "venue": "Bürgerhaus Misburg",
@@ -253,7 +346,8 @@
       "date": "2026-11-12",
       "venue": "Bürgerhaus & Kulturbüro",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tanzparty-in-Misburg"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tanzparty-in-Misburg",
+      "featured": false
     },
     {
       "title": "Wochenmarkt Misburg",
@@ -288,7 +382,8 @@
       "date": "2026-11-28",
       "venue": "Messegelände / Halle 2",
       "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Fairground-Festival-2026"
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Fairground-Festival-2026",
+      "featured": false
     },
     {
       "title": "Wochenmarkt Misburg",
@@ -302,7 +397,8 @@
       "date": "2026-11-29",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht"
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",

@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.24.0-beta.1 – 4. Oktober 2026
+
+- Aktivitäten aus Hannover.de werden beim Öffnen des Kalenders automatisch geladen
+- Tiergartenfest, Stadtteilfeste, Kürbis-/Herbstfeste und weitere Hannover-Höhepunkte erscheinen zuerst
+- Termine aus Misburg-Anderten, ganz Hannover und besondere Ziele im nahen Umland werden gemeinsam angezeigt
+- Offizielle Detailtexte, mehrtägige Termine und bekannte Anfangszeiten werden übernommen
+- Regionale Quellen um Bühnen- und Sporttermine erweitert; Aktualisierung läuft weiterhin täglich
+
 ## 0.23.0-beta.1 – 3. Oktober 2026
 
 - Für jedes der 100 Familiengerichte ein eigenes passendes Rezeptbild ergänzt

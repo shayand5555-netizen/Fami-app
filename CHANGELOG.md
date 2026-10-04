@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.26.0-beta.1 – 4. Oktober 2026
+
+- Eigene Rezepte lassen sich jetzt aus einem Foto per OCR erfassen
+- Öffentliche Rezeptlinks werden automatisch nach Rezeptdaten durchsucht
+- Zutaten, Portionen, Zeit und Kochschritte werden strukturiert übernommen
+- Nährwerte werden aus erkannten Zutaten geschätzt oder aus der Quelle übernommen
+- Vor dem Speichern erscheint eine vollständig bearbeitbare Kontrolle
+- Aus dem Ergebnis entsteht eine normale Rezeptkachel mit Einkaufsliste und Wochenplan
+
 ## 0.25.2-beta.1 – 4. Oktober 2026
 
 - Eingabefenster auf kleinen iPhone-Bildschirmen kompakter gestaltet

@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.29.0-beta.1 – 4. Oktober 2026
+
+- Antippen eines Tages in der Monatsansicht öffnet direkt einen neuen Termin mit vorausgefülltem Datum
+- Termine können mehreren Familienmitgliedern gleichzeitig zugewiesen werden
+- Mehrfachzuständigkeiten lassen sich auch bei bestehenden und wiederkehrenden Terminen bearbeiten
+
 ## 0.28.2-beta.1 – 4. Oktober 2026
 
 - Kompakte Versionsanzeige in der iPhone-Kopfleiste ergänzt

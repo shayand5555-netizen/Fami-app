@@ -240,7 +240,11 @@ function bindPeoplePicker(root,kind){
 }
 
 function eventVisible(event){ return event.people.some(person=>state.calendarPeople.includes(person)); }
-function eventPeople(value){ return value === 'Alle' ? [...family] : [value]; }
+function renderEventPeoplePicker(host,selected=[]){
+  if(!host)return;const chosen=new Set((selected.length?selected:[state.currentUser||family[0]]).filter(person=>family.includes(person)));
+  host.innerHTML=family.map(person=>`<label class="person-choice"><input type="checkbox" value="${escapeHtml(person)}" ${chosen.has(person)?'checked':''}><span class="avatar ${avatarClass(person)} mini">${initials(person)}</span><strong>${person===state.currentUser?'Ich':escapeHtml(person)}</strong></label>`).join('');
+}
+function selectedEventPeople(host){const selected=$$('input:checked',host).map(input=>input.value).filter(person=>family.includes(person));return selected.length?selected:[state.currentUser||family[0]]}
 function getEvent(id){ return state.events.find(event=>event.id===id); }
 
 function applyHomeCalendarFilter(){
@@ -366,7 +370,7 @@ function holidayItemsFor(date){
 function appendCalendarItems(host,date,maxItems=3,showTime=false){
   const iso=isoDate(date),events=state.events.filter(event=>eventVisible(event)&&(event.date||isoDate(today))===iso),holidays=holidayItemsFor(date),items=[];
   holidays.forEach(item=>items.push({type:'holiday',item}));events.forEach(event=>items.push({type:'event',event}));
-  items.slice(0,maxItems).forEach(entry=>{if(entry.type==='holiday')host.insertAdjacentHTML('beforeend',`<span class="calendar-pill ${entry.item.type}">${entry.item.name}</span>`);else{const pill=document.createElement('button');pill.className=`calendar-pill event-pill ${entry.event.color}`;pill.textContent=showTime?`${entry.event.time} ${entry.event.title}`:entry.event.title;pill.onclick=()=>openEventEditor(entry.event.id);host.append(pill)}});
+  items.slice(0,maxItems).forEach(entry=>{if(entry.type==='holiday')host.insertAdjacentHTML('beforeend',`<span class="calendar-pill ${entry.item.type}">${entry.item.name}</span>`);else{const pill=document.createElement('button');pill.className=`calendar-pill event-pill ${entry.event.color}`;pill.textContent=showTime?`${entry.event.time} ${entry.event.title}`:entry.event.title;pill.onclick=click=>{click.stopPropagation();openEventEditor(entry.event.id)};host.append(pill)}});
   if(items.length>maxItems)host.insertAdjacentHTML('beforeend',`<small>+${items.length-maxItems} weitere</small>`);
 }
 function renderWeekCalendar(){
@@ -383,16 +387,17 @@ function renderMonthCalendar(){
     const weekDate=new Date(gridStart);weekDate.setDate(gridStart.getDate()+week*7);host.insertAdjacentHTML('beforeend',`<div class="week-number">${weekNumber(weekDate)}</div>`);
     for(let day=0;day<7;day++){
       const date=new Date(gridStart);date.setDate(gridStart.getDate()+week*7+day);const iso=isoDate(date);const outside=date.getMonth()!==month;const isToday=iso===isoDate(today);
-      const cell=document.createElement('div');cell.className=`month-day${outside?' outside':''}${isToday?' today':''}`;cell.innerHTML=`<span class="day-number">${date.getDate()}</span><div class="day-items"></div>`;
+      const cell=document.createElement('div');cell.className=`month-day${outside?' outside':''}${isToday?' today':''}`;cell.tabIndex=0;cell.setAttribute('role','button');cell.setAttribute('aria-label',`Termin am ${date.toLocaleDateString('de-DE')} erstellen`);cell.innerHTML=`<span class="day-number">${date.getDate()}</span><div class="day-items"></div>`;cell.onclick=()=>openModal('event',iso);cell.onkeydown=event=>{if(event.target===cell&&(event.key==='Enter'||event.key===' ')){event.preventDefault();openModal('event',iso)}};
       appendCalendarItems($('.day-items',cell),date,3);host.append(cell);
     }
   }
 }
 
-function openModal(type='task'){
+function openModal(type='task',selectedDate=''){
   createType=type;$('#modal').classList.add('open');$('#modal').setAttribute('aria-hidden','false');
-  if(type==='event'){if(!$('#itemTime').value)$('#itemTime').value='12:00';if(!$('#itemEndTime').value)$('#itemEndTime').value=addMinutesToTime($('#itemTime').value,60)}
-  $$('.type-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.type===type));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',type!=='event'));setTimeout(()=>$('#itemTitle').focus(),100);
+  if(selectedDate)$('#itemDate').value=selectedDate;
+  if(type==='event'){if(!$('#itemTime').value)$('#itemTime').value='12:00';if(!$('#itemEndTime').value)$('#itemEndTime').value=addMinutesToTime($('#itemTime').value,60);renderEventPeoplePicker($('#itemEventPeople'),[state.currentUser||family[0]])}
+  $$('.type-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.type===type));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',type!=='event'));$$('.task-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',type==='event'));setTimeout(()=>$('#itemTitle').focus(),100);
 }
 function closeModal(){ $('#modal').classList.remove('open');$('#modal').setAttribute('aria-hidden','true'); }
 async function openTaskEditor(id){
@@ -403,14 +408,14 @@ async function openTaskEditor(id){
 function closeTaskEditor(){ $('#editTaskModal').classList.remove('open');$('#editTaskModal').setAttribute('aria-hidden','true'); }
 async function openEventEditor(id){
   const event=getEvent(id);if(!event)return;
-  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventEndTime').value=event.endTime||addMinutesToTime(event.time,60);$('#editEventRecurrence').value=event.recurrence||'none';$('#editEventPerson').value=event.people.length===family.length?'Alle':event.people[0];$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';$('#editEventReminder').value=String(event.reminderMinutes??-1);
+  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventEndTime').value=event.endTime||addMinutesToTime(event.time,60);$('#editEventRecurrence').value=event.recurrence||'none';renderEventPeoplePicker($('#editEventPeople'),event.people||[]);$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';$('#editEventReminder').value=String(event.reminderMinutes??-1);
   $('#editEventModal').classList.add('open');$('#editEventModal').setAttribute('aria-hidden','false');await renderAttachments(`event:${id}`,$('#eventAttachments'));setTimeout(()=>$('#editEventName').focus(),80);
 }
 function closeEventEditor(){ $('#editEventModal').classList.remove('open');$('#editEventModal').setAttribute('aria-hidden','true'); }
 
 $('#quickAdd').onclick=()=>openModal();$('#mobileAdd').onclick=()=>openModal();
 $$('[data-kind]').forEach(b=>b.onclick=()=>openModal(b.dataset.kind));$$('[data-close]').forEach(b=>b.onclick=closeModal);$$('[data-edit-close]').forEach(b=>b.onclick=closeTaskEditor);$$('[data-event-close]').forEach(b=>b.onclick=closeEventEditor);
-$$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType!=='event'))});
+$$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType!=='event'));$$('.task-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType==='event'));if(createType==='event')renderEventPeoplePicker($('#itemEventPeople'),[state.currentUser||family[0]])});
 $('#itemTime').addEventListener('change',()=>{$('#itemEndTime').value=addMinutesToTime($('#itemTime').value||'12:00',60)});
 $('#editEventTime').addEventListener('change',()=>{$('#editEventEndTime').value=addMinutesToTime($('#editEventTime').value||'12:00',60)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeTaskEditor();closeEventEditor()}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
@@ -421,9 +426,9 @@ $('#createForm').addEventListener('submit',async e=>{
     const id=`task-${Date.now()}`;state.tasks.push({id,title,person,date:rawDate,dateLabel:prettyDate(rawDate),note:$('#itemDetails').value.trim(),done:false});await storeAttachments(`task:${id}`,$('#newItemFiles').files);save();renderHomeTasks();renderTaskManager();
   }
   if(createType==='event'){
-    const id=`event-${Date.now()}`,time=$('#itemTime').value||'12:00',endTime=$('#itemEndTime').value||addMinutesToTime(time,60),recurrence=$('#itemRecurrence').value||'none';addEventSeries({id,title,date:rawDate,time,endTime,startsAt:eventStartsAt(rawDate,time),reminderMinutes:Number($('#itemReminder').value),place:$('#itemDetails').value.trim(),people:eventPeople(person),color:'green'},recurrence);await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();window.FamiNotifications?.checkDue();
+    const id=`event-${Date.now()}`,time=$('#itemTime').value||'12:00',endTime=$('#itemEndTime').value||addMinutesToTime(time,60),recurrence=$('#itemRecurrence').value||'none';addEventSeries({id,title,date:rawDate,time,endTime,startsAt:eventStartsAt(rawDate,time),reminderMinutes:Number($('#itemReminder').value),place:$('#itemDetails').value.trim(),people:selectedEventPeople($('#itemEventPeople')),color:'green'},recurrence);await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();window.FamiNotifications?.checkDue();
   }
-  $('#createForm').reset();$('#itemDate').valueAsDate=today;closeModal();toast(`${createType==='event'?'Termin':createType==='note'?'Notiz':'Aufgabe'} für alle gespeichert`);
+  $('#createForm').reset();$('#itemDate').valueAsDate=today;closeModal();toast(`${createType==='event'?'Termin':createType==='note'?'Notiz':'Aufgabe'} gespeichert`);
 });
 
 $('#editTaskForm').addEventListener('submit',e=>{
@@ -440,7 +445,7 @@ $('#deleteTask').addEventListener('click',()=>{
 $('#editEventForm').addEventListener('submit',e=>{
   e.preventDefault();const event=getEvent($('#editEventId').value);if(!event)return;
   const date=$('#editEventDate').value,time=$('#editEventTime').value,endTime=$('#editEventEndTime').value||addMinutesToTime(time,60),recurrence=$('#editEventRecurrence').value||'none',seriesId=event.seriesId||`series-${Date.now()}`;
-  const base={id:event.id,title:$('#editEventName').value.trim(),date,time,endTime,startsAt:eventStartsAt(date,time),reminderMinutes:Number($('#editEventReminder').value),people:eventPeople($('#editEventPerson').value),color:$('#editEventColor').value,place:$('#editEventPlace').value.trim(),seriesId};
+  const base={id:event.id,title:$('#editEventName').value.trim(),date,time,endTime,startsAt:eventStartsAt(date,time),reminderMinutes:Number($('#editEventReminder').value),people:selectedEventPeople($('#editEventPeople')),color:$('#editEventColor').value,place:$('#editEventPlace').value.trim(),seriesId};
   if((event.recurrence||'none')!==recurrence){state.events=state.events.filter(item=>!(item.id===event.id||(event.seriesId&&item.seriesId===event.seriesId&&item.date>=event.date)));addEventSeries(base,recurrence)}else{const targets=event.seriesId?state.events.filter(item=>item.seriesId===event.seriesId&&item.date>=event.date):[event];targets.forEach(item=>Object.assign(item,{title:base.title,time,endTime,startsAt:eventStartsAt(item.date,time),reminderMinutes:base.reminderMinutes,people:base.people,color:base.color,place:base.place,recurrence}))}
   save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();closeEventEditor();window.FamiNotifications?.checkDue();toast('Kalendereintrag wurde aktualisiert');
 });
@@ -472,7 +477,7 @@ function matchesFoodFilter(item,filter,favorites=[]){if(filter==='favorites')ret
 function allRecipes(){const items=[...state.customRecipes,...recipes];if(state.recipeSort==='default')return items;return items.sort((a,b)=>{const first=state.watchedRecipes.includes(a.id)?1:0;const second=state.watchedRecipes.includes(b.id)?1:0;return state.recipeSort==='watched'?second-first:first-second})}
 function escapeHtml(value){return String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]))}
 function refreshPersonSelects(){
-  ['#itemPerson','#editTaskPerson','#editEventPerson'].forEach(selector=>{const select=$(selector);if(!select)return;const previous=select.value;select.replaceChildren(...[...family,'Alle'].map(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;return option}));select.value=[...family,'Alle'].includes(previous)?previous:family[0]});
+  ['#itemPerson','#editTaskPerson'].forEach(selector=>{const select=$(selector);if(!select)return;const previous=select.value;select.replaceChildren(...[...family,'Alle'].map(name=>{const option=document.createElement('option');option.value=name;option.textContent=name;return option}));select.value=[...family,'Alle'].includes(previous)?previous:family[0]});renderEventPeoplePicker($('#itemEventPeople'),selectedEventPeople($('#itemEventPeople')));
 }
 function syncFamilyUi(){
   $('#familyNameLabel').textContent=(state.familyName||'Deine Familie').toUpperCase();
@@ -515,7 +520,7 @@ async function loadYouTubeCatalog(root){
   const resetAndRender=()=>{limit=48;render()};search.oninput=resetAndRender;sort.value=state.videoSort;channel.value=state.videoChannel;meal.value=state.videoMeal;cuisine.value=state.videoCuisine;food.value=state.videoFoodFilter;sort.onchange=()=>{state.videoSort=sort.value;save();resetAndRender()};channel.onchange=()=>{state.videoChannel=channel.value;save();resetAndRender()};meal.onchange=()=>{state.videoMeal=meal.value;save();resetAndRender()};cuisine.onchange=()=>{state.videoCuisine=cuisine.value;save();resetAndRender()};food.onchange=()=>{state.videoFoodFilter=food.value;save();resetAndRender()};more.onclick=()=>{limit+=48;render()};
   try{const response=await fetch(`./recipe-videos.json?update=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`Videokatalog ${response.status}`);const data=await response.json();videos=[...(window.FAMI_FAMILY_RECIPES||[]),...curatedVideoRecipes(),...(data.videos||[]).filter(video=>video.featured)];render()}catch(error){console.error(error);videos=[...(window.FAMI_FAMILY_RECIPES||[]),...curatedVideoRecipes()];if(videos.length){status.textContent='Familienrezepte geladen · Rezeptvideos derzeit offline';render()}else{status.textContent='Rezeptkatalog konnte gerade nicht geladen werden';grid.innerHTML='<a class="btn ghost" href="https://www.youtube.com/@SchmaleSchulter/videos" target="_blank" rel="noopener">Schmale Schulter bei YouTube öffnen ↗</a><a class="btn ghost" href="https://www.youtube.com/channel/UCvd5wsIuZzEYA55cZkt7hIQ/videos" target="_blank" rel="noopener">Yummy Gastronomy bei YouTube öffnen ↗</a>';more.classList.add('hidden')}}
 }
-function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.28.2-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
+function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.29.0-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
 async function importBackup(file){try{const data=JSON.parse(await file.text());if(!data.state?.tasks||!data.state?.events)throw new Error();localStorage.setItem('fami-state',JSON.stringify(data.state));toast('Sicherung importiert – App wird neu geladen');setTimeout(()=>location.reload(),800)}catch{toast('Diese Sicherungsdatei ist ungültig')}}
 async function renderFileLibrary(){
   const host=$('#fileLibrary');if(!host)return;const files=await getAllAttachments();host.innerHTML='';files.forEach(file=>{const card=document.createElement('article');card.className='library-file';card.innerHTML=`<span class="file-kind">${file.type?.startsWith('image/')?'FOTO':'DATEI'}</span><strong></strong><small></small><div><button class="open-library-file">Öffnen</button><button class="delete-library-file">Löschen</button></div>`;$('strong',card).textContent=file.name;$('small',card).textContent=`${Math.max(1,Math.round(file.size/1024))} KB · ${file.entity.startsWith('task:')?'Aufgabe':file.entity.startsWith('event:')?'Termin':'Allgemein'}`;$('.open-library-file',card).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.delete-library-file',card).onclick=async()=>{await removeAttachment(file);renderFileLibrary();toast('Datei gelöscht')};host.append(card)});if(!files.length)host.innerHTML='<div class="task-empty">Noch keine Dateien gespeichert.</div>';

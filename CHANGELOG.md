@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.28.1-beta.1 – 4. Oktober 2026
+
+- Monatskalender für Smartphones angepasst: Montag bis Sonntag sind jetzt vollständig sichtbar
+- Umschaltbare Wochenansicht mit sieben übersichtlichen Tageszeilen ergänzt
+- Kalendernavigation und Terminliste folgen automatisch der gewählten Monats- oder Wochenansicht
+
 ## 0.28.0-beta.1 – 4. Oktober 2026
 
 - Private TimeTree-Termine aus den bereitgestellten Monatsansichten übernommen

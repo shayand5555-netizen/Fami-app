@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.30.1-beta.1 – 4. Oktober 2026
+
+- Automatischen Wechsel auf zwei kostenlose Gemini-Ersatzmodelle bei hoher Auslastung ergänzt
+- Verständliche deutsche Fehlermeldung, falls alle kostenlosen Modelle vorübergehend ausgelastet sind
+
 ## 0.30.0-beta.1 – 4. Oktober 2026
 
 - KI-Rezeptanalyse von OpenAI auf Google Gemini 3.8 Flash umgestellt

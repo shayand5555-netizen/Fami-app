@@ -26,16 +26,25 @@ Deno.serve(async request => {
 - confidence liegt zwischen 0 und 1. Bei unklarem Foto niedrig ansetzen.
 - imageType ist recipe_page oder dish.`;
     const recipeSchema={type:'object',additionalProperties:false,properties:{title:{type:'string'},imageType:{type:'string',enum:['recipe_page','dish']},confidence:{type:'number'},portions:{type:'integer'},time:{type:'string'},tags:{type:'array',items:{type:'string'}},ingredients:{type:'array',items:{type:'object',additionalProperties:false,properties:{name:{type:'string'},quantity:{type:'string'}},required:['name','quantity']}},steps:{type:'array',items:{type:'string'}},nutrition:{type:'object',additionalProperties:false,properties:{kcal:{type:'number'},protein:{type:'number'},carbs:{type:'number'},fat:{type:'number'}},required:['kcal','protein','carbs','fat']}},required:['title','imageType','confidence','portions','time','tags','ingredients','steps','nutrition']};
-    const response=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',{
-      method:'POST',headers:{'x-goog-api-key':key,'content-type':'application/json'},
-      body:JSON.stringify({contents:[{role:'user',parts:[{text:prompt},{inlineData:{mimeType,data:imageData}}]}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:recipeSchema,temperature:.2}})
-    });
-    const data=await response.json();
-    if(!response.ok){
-      const detail=data?.error?.message||`Gemini antwortet mit ${response.status}`;
-      if(response.status===429||/quota|resource.*exhausted/i.test(detail))throw new Error('Das kostenlose Gemini-Kontingent ist momentan ausgeschöpft. Bitte später erneut versuchen oder die Limits in Google AI Studio prüfen.');
+    const models=['gemini-3.8-flash','gemini-3.7-flash','gemini-3.5-flash-lite'];
+    const body=JSON.stringify({contents:[{role:'user',parts:[{text:prompt},{inlineData:{mimeType,data:imageData}}]}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:recipeSchema,temperature:.2}});
+    let response:Response|undefined;
+    let data:any;
+    let lastDetail='';
+    for(const model of models){
+      response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{
+        method:'POST',headers:{'x-goog-api-key':key,'content-type':'application/json'},body
+      });
+      data=await response.json();
+      if(response.ok)break;
+      lastDetail=data?.error?.message||`Gemini antwortet mit ${response.status}`;
       if(response.status===401||response.status===403)throw new Error('Der Gemini-API-Schlüssel ist ungültig oder für dieses Projekt nicht freigegeben.');
-      throw new Error(detail);
+      const retryable=[429,500,502,503,504].includes(response.status)||/high demand|temporar|unavailable|overload|quota|resource.*exhausted/i.test(lastDetail);
+      if(!retryable)throw new Error(lastDetail);
+    }
+    if(!response?.ok){
+      if(/quota|resource.*exhausted/i.test(lastDetail))throw new Error('Das kostenlose Gemini-Kontingent ist momentan ausgeschöpft. Bitte später erneut versuchen oder die Limits in Google AI Studio prüfen.');
+      throw new Error('Die kostenlose KI ist momentan stark ausgelastet. Fami hat mehrere Modelle ausprobiert. Bitte versuche es in einigen Minuten erneut.');
     }
     const text=data?.candidates?.[0]?.content?.parts?.map((part:{text?:string})=>part.text||'').join('').trim();
     if(!text)throw new Error('Die KI hat kein auswertbares Ergebnis geliefert.');

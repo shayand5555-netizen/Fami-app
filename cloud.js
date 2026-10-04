@@ -10,6 +10,7 @@
   let pushTimer = null;
   let applyingRemote = false;
   let initialized = false;
+  const LOCAL_ONLY_STATE_KEYS = ['taskPeople','calendarPeople','holidaySettings','recipeFoodFilter','videoFoodFilter','recipeSort','videoSort','videoChannel','videoMeal','videoCuisine','calendarView'];
 
   const readConfig = () => {
     const bundled = window.FAMI_CLOUD_CONFIG;
@@ -110,10 +111,11 @@
       return;
     }
     const containedSharedDeviceUser=Object.prototype.hasOwnProperty.call(payload,'currentUser');
+    const containedSharedDevicePreferences=LOCAL_ONLY_STATE_KEYS.some(key=>Object.prototype.hasOwnProperty.call(payload,key));
     applyingRemote = true;
     callbacks.applyState(payload);
     applyingRemote = false;
-    if(containedSharedDeviceUser)await pushNow(callbacks.getState());
+    if(containedSharedDeviceUser||containedSharedDevicePreferences)await pushNow(callbacks.getState());
   }
 
   function subscribe() {

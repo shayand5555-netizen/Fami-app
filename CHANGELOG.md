@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.30.3-beta.1 – 4. Oktober 2026
+
+- Alte gemeinsam gespeicherte Filter werden beim nächsten Online-Abgleich aus den Familiendaten entfernt
+- Neue App-Version erzwingt auf installierten iPhones das Laden der getrennten Gerätefilter
+
 ## 0.30.2-beta.1 – 4. Oktober 2026
 
 - Personen-, Kalender- und Rezeptfilter werden nur noch auf dem jeweiligen Gerät gespeichert

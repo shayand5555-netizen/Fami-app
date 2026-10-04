@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.26.1-beta.1 – 4. Oktober 2026
+
+- Speichern-Leiste in Termin- und Aufgabenfenstern bleibt auf dem iPhone dauerhaft sichtbar
+- Nur die Eingabefelder scrollen; die Aktionsschaltflächen stehen fest darunter
+- Gleiche Korrektur für neue Einträge sowie das Bearbeiten von Aufgaben und Terminen
+
 ## 0.26.0-beta.1 – 4. Oktober 2026
 
 - Eigene Rezepte lassen sich jetzt aus einem Foto per OCR erfassen

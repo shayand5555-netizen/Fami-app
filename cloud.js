@@ -1,6 +1,7 @@
 (() => {
   const CONFIG_KEY = 'fami-cloud-config';
   const FAMILY_KEY = 'fami-cloud-family';
+  const LOGIN_EMAIL_KEY = 'fami-login-email';
   let client = null;
   let session = null;
   let familyInfo = null;
@@ -31,6 +32,7 @@
   const notify = message => callbacks?.notify?.(message);
   const friendlyAuthError = error => {
     if(error?.status===429||/rate limit|too many|over_email_send_rate_limit/i.test(`${error?.code||''} ${error?.message||''}`))return 'Das Supabase-E-Mail-Limit ist erreicht (2 E-Mails pro Stunde). Bitte später erneut versuchen. Für mehr Anmeldungen muss in Supabase ein eigener SMTP-Maildienst eingerichtet werden.';
+    if(/token.*(invalid|expired)|invalid.*token|otp.*(invalid|expired)|expired.*otp/i.test(`${error?.code||''} ${error?.message||''}`))return 'Der Code ist falsch oder abgelaufen. Bitte prüfe die sechs Ziffern oder fordere einen neuen Code an.';
     return error?.message || 'Anmeldung ist gerade nicht möglich.';
   };
   const displayFamilyName = () => callbacks?.getState?.().familyName || familyInfo?.name || 'Familie online';
@@ -68,7 +70,10 @@
       session = result.data.session;
       client.auth.onAuthStateChange((_event, nextSession) => {
         session = nextSession;
-        if (session) loadFamily(); else { familyInfo = null; setStatus('Anmeldung fehlt'); }
+        if (session) {
+          localStorage.removeItem(LOGIN_EMAIL_KEY);
+          loadFamily();
+        } else { familyInfo = null; setStatus('Anmeldung fehlt'); }
         renderSetup();
       });
       if (session) await loadFamily(); else setStatus('Anmeldung fehlt');
@@ -164,12 +169,26 @@
     notify('Familie verbunden');
   }
 
-  async function sendLogin(email) {
-    const lastSent=Number(localStorage.getItem('fami-login-mail-sent')||0),remaining=60000-(Date.now()-lastSent);if(remaining>0)throw new Error(`Bitte noch ${Math.ceil(remaining/1000)} Sekunden warten, bevor du erneut einen Anmeldelink anforderst.`);
-    const {error} = await client.auth.signInWithOtp({email, options:{emailRedirectTo:location.href.split('#')[0]}});
+  async function sendLoginCode(email) {
+    const lastSent=Number(localStorage.getItem('fami-login-mail-sent')||0),remaining=60000-(Date.now()-lastSent);if(remaining>0)throw new Error(`Bitte noch ${Math.ceil(remaining/1000)} Sekunden warten, bevor du einen neuen Code anforderst.`);
+    const {error} = await client.auth.signInWithOtp({email, options:{shouldCreateUser:true}});
     if (error) throw error;
+    localStorage.setItem(LOGIN_EMAIL_KEY,email);
     localStorage.setItem('fami-login-mail-sent',String(Date.now()));
-    notify('Anmeldelink wurde per E-Mail gesendet');
+    notify('Sechsstelliger Anmeldecode wurde per E-Mail gesendet');
+  }
+
+  async function verifyLoginCode(email, token) {
+    const code=String(token||'').replace(/\D/g,'').slice(0,6);
+    if(code.length!==6)throw new Error('Bitte gib den vollständigen sechsstelligen Code ein.');
+    const {data,error}=await client.auth.verifyOtp({email,token:code,type:'email'});
+    if(error)throw error;
+    if(!data?.session)throw new Error('Die Anmeldung konnte nicht abgeschlossen werden. Bitte fordere einen neuen Code an.');
+    session=data.session;
+    localStorage.removeItem(LOGIN_EMAIL_KEY);
+    await loadFamily();
+    renderSetup();
+    notify('Anmeldung erfolgreich');
   }
 
   async function registerPush(subscription) {
@@ -250,8 +269,19 @@
       return;
     }
     if (!session) {
-      host.innerHTML = `<p class="cloud-explain">Melde dich ohne Passwort an. Fami sendet dir einen sicheren Anmeldelink per E-Mail.</p><form id="cloudLoginForm"><label>E-Mail-Adresse<input id="cloudEmail" type="email" required autocomplete="email" inputmode="email"></label><button class="btn primary">Anmeldelink senden</button></form><p class="cloud-help">Du wurdest eingeladen? Öffne danach den Link aus der E-Mail auf diesem Gerät. Dein Familiencode bleibt im Einladungslink gespeichert.</p><p class="cloud-rate-note">Hinweis: Der kostenlose Supabase-Maildienst erlaubt nur 2 E-Mails pro Stunde. Bereits angemeldete Geräte bleiben angemeldet und benötigen keinen neuen Link.</p>`;
-      document.querySelector('#cloudLoginForm').onsubmit = async event => {event.preventDefault();const button=event.currentTarget.querySelector('button');button.disabled=true;button.textContent='Wird gesendet …';try{await sendLogin(document.querySelector('#cloudEmail').value.trim());button.textContent='E-Mail wurde gesendet'}catch(error){notify(friendlyAuthError(error));button.disabled=false;button.textContent='Anmeldelink senden'}};
+      const pendingEmail=localStorage.getItem(LOGIN_EMAIL_KEY)||'';
+      if(pendingEmail){
+        host.innerHTML = `<p class="cloud-explain">Wir haben einen sechsstelligen Code an <strong>${escapeHtml(pendingEmail)}</strong> gesendet. Bleibe in dieser App und gib ihn hier ein.</p><form id="cloudCodeForm"><label>Sechsstelliger Code<input id="cloudOtp" class="cloud-otp" type="text" required maxlength="6" minlength="6" pattern="[0-9]{6}" autocomplete="one-time-code" inputmode="numeric" enterkeyhint="done" placeholder="123456" aria-describedby="cloudOtpHelp"></label><button class="btn primary">Code bestätigen</button></form><p class="cloud-help" id="cloudOtpHelp">Der Code ist eine Stunde gültig. Du kannst dafür kurz zur Mail-App wechseln und anschließend zu Fami zurückkehren.</p><div class="cloud-login-alternatives"><button class="text-btn" id="resendLoginCode">Neuen Code senden</button><button class="text-btn" id="changeLoginEmail">Andere E-Mail-Adresse</button></div><p class="cloud-rate-note">Ein neuer Code kann frühestens nach 60 Sekunden gesendet werden. Bereits angemeldete Geräte bleiben angemeldet.</p>`;
+        const otp=document.querySelector('#cloudOtp');
+        otp.addEventListener('input',()=>{otp.value=otp.value.replace(/\D/g,'').slice(0,6)});
+        document.querySelector('#cloudCodeForm').onsubmit=async event=>{event.preventDefault();const button=event.currentTarget.querySelector('button');button.disabled=true;button.textContent='Code wird geprüft …';try{await verifyLoginCode(pendingEmail,otp.value)}catch(error){notify(friendlyAuthError(error));button.disabled=false;button.textContent='Code bestätigen';otp.select()}};
+        document.querySelector('#resendLoginCode').onclick=async()=>{const button=document.querySelector('#resendLoginCode');button.disabled=true;try{await sendLoginCode(pendingEmail)}catch(error){notify(friendlyAuthError(error))}finally{button.disabled=false}};
+        document.querySelector('#changeLoginEmail').onclick=()=>{localStorage.removeItem(LOGIN_EMAIL_KEY);renderSetup()};
+        setTimeout(()=>otp.focus(),0);
+      }else{
+        host.innerHTML = `<p class="cloud-explain">Melde dich ohne Passwort an. Fami sendet dir einen sechsstelligen Code per E-Mail – du musst keinen Link im Browser öffnen.</p><form id="cloudLoginForm"><label>E-Mail-Adresse<input id="cloudEmail" type="email" required autocomplete="email" inputmode="email" enterkeyhint="send"></label><button class="btn primary">Code senden</button></form><p class="cloud-help">Du wurdest eingeladen? Nach der Anmeldung kannst du direkt den Familiencode eingeben. Ein Familiencode aus einem Einladungslink bleibt gespeichert.</p><p class="cloud-rate-note">Hinweis: Der kostenlose Supabase-Maildienst erlaubt nur wenige E-Mails pro Stunde. Bereits angemeldete Geräte bleiben angemeldet und benötigen keinen neuen Code.</p>`;
+        document.querySelector('#cloudLoginForm').onsubmit = async event => {event.preventDefault();const button=event.currentTarget.querySelector('button');button.disabled=true;button.textContent='Code wird gesendet …';try{await sendLoginCode(document.querySelector('#cloudEmail').value.trim());renderSetup()}catch(error){notify(friendlyAuthError(error));button.disabled=false;button.textContent='Code senden'}};
+      }
       return;
     }
     if (!familyInfo) {
@@ -261,9 +291,9 @@
       document.querySelector('#joinFamilyForm').onsubmit = async event => {event.preventDefault();try{await joinFamily(document.querySelector('#familyCode').value.trim());history.replaceState({},'',location.pathname);renderSetup()}catch(error){notify(error.message)}};
       return;
     }
-    host.innerHTML = `<div class="cloud-connected"><span>✓</span><div><strong>${escapeHtml(displayFamilyName())}</strong><p>Live-Synchronisierung ist aktiv.</p></div></div><div class="invite-code"><small>Einladungscode für weitere Familienmitglieder</small><strong>${escapeHtml(familyInfo.invite_code)}</strong><button class="btn ghost" id="copyInvite">Nur Code kopieren</button><button class="btn primary" id="copyInvitation">Einladung mit Anleitung kopieren</button></div><div class="cloud-mini-guide"><strong>So funktioniert der Test</strong><ol><li>Einladung an die zweite Person senden.</li><li>Sie öffnet Fami auf ihrem eigenen Handy und meldet sich per E-Mail-Link an.</li><li>Sie wählt „Familie beitreten“ und gibt den Code ein.</li><li>Anschließend wählt sie unter „Familie bearbeiten“ ihr Profil aus.</li></ol><small>Den Code nur an vertraute Personen weitergeben – er erlaubt Zugriff auf eure gemeinsamen Daten.</small></div><button class="text-btn cloud-reset" id="cloudLogout">Von der Cloud abmelden</button>`;
+    host.innerHTML = `<div class="cloud-connected"><span>✓</span><div><strong>${escapeHtml(displayFamilyName())}</strong><p>Live-Synchronisierung ist aktiv.</p></div></div><div class="invite-code"><small>Einladungscode für weitere Familienmitglieder</small><strong>${escapeHtml(familyInfo.invite_code)}</strong><button class="btn ghost" id="copyInvite">Nur Code kopieren</button><button class="btn primary" id="copyInvitation">Einladung mit Anleitung kopieren</button></div><div class="cloud-mini-guide"><strong>So funktioniert der Test</strong><ol><li>Einladung an die zweite Person senden.</li><li>Sie öffnet Fami auf ihrem eigenen Handy und fordert mit ihrer E-Mail-Adresse einen sechsstelligen Anmeldecode an.</li><li>Sie gibt zuerst den Anmeldecode und danach euren Familiencode ein.</li><li>Anschließend wählt sie unter „Familie bearbeiten“ ihr Profil aus.</li></ol><small>Den Familiencode nur an vertraute Personen weitergeben – er erlaubt Zugriff auf eure gemeinsamen Daten.</small></div><button class="text-btn cloud-reset" id="cloudLogout">Von der Cloud abmelden</button>`;
     document.querySelector('#copyInvite').onclick = async () => {await navigator.clipboard.writeText(familyInfo.invite_code);notify('Einladungscode kopiert')};
-    document.querySelector('#copyInvitation').onclick = async () => {const appUrl=`${location.origin}${location.pathname}?invite=${encodeURIComponent(familyInfo.invite_code)}`;const message=`Teste Fami mit mir: ${appUrl}\n\n1. Öffne den Link auf deinem Handy.\n2. Melde dich mit deiner eigenen E-Mail-Adresse an.\n3. Öffne den Anmeldelink aus der E-Mail auf demselben Gerät.\n4. Der Familiencode ${familyInfo.invite_code} ist bereits vorausgefüllt – tippe nur noch auf „Familie beitreten“.\n5. Wähle danach unter „Familie bearbeiten“ dein Profil aus.\n\nBitte teile den Link nicht mit anderen Personen.`;await navigator.clipboard.writeText(message);notify('Einladung mit persönlichem Link kopiert')};
+    document.querySelector('#copyInvitation').onclick = async () => {const appUrl=`${location.origin}${location.pathname}?invite=${encodeURIComponent(familyInfo.invite_code)}`;const message=`Teste Fami mit mir: ${appUrl}\n\n1. Öffne den Link auf deinem Handy.\n2. Fordere mit deiner eigenen E-Mail-Adresse einen sechsstelligen Anmeldecode an.\n3. Wechsle kurz zur Mail-App, merke oder kopiere den Code und gib ihn in Fami ein.\n4. Der Familiencode ${familyInfo.invite_code} ist bereits vorausgefüllt – tippe nur noch auf „Familie beitreten“.\n5. Wähle danach unter „Familie bearbeiten“ dein Profil aus.\n\nBitte teile den Link nicht mit anderen Personen.`;await navigator.clipboard.writeText(message);notify('Einladung mit persönlichem Link kopiert')};
     document.querySelector('#cloudLogout').onclick = async () => {await client.auth.signOut();localStorage.removeItem(FAMILY_KEY);location.reload()};
   }
 

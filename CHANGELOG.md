@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.25.0-beta.1 – 4. Oktober 2026
+
+- Anmeldung in der installierten iPhone-Web-App auf sechsstelligen E-Mail-Code umgestellt
+- Code wird direkt in Fami geprüft; ein Wechsel zu Safari ist nicht mehr erforderlich
+- Klare Zweischritt-Anmeldung mit erneutem Senden und Änderung der E-Mail-Adresse ergänzt
+- Einladungsanleitungen für Familienmitglieder an den neuen Code-Ablauf angepasst
+- Verständliche Meldungen für falsche, abgelaufene oder unvollständige Codes ergänzt
+
 ## 0.24.0-beta.1 – 4. Oktober 2026
 
 - Aktivitäten aus Hannover.de werden beim Öffnen des Kalenders automatisch geladen

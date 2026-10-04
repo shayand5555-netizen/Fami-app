@@ -1,6 +1,6 @@
 # Sechsstelligen Fami-Anmeldecode aktivieren
 
-Die App unterstützt ab Version 0.25.0 die Anmeldung mit einem sechsstelligen Code. Damit Supabase den Code statt eines Browserlinks verschickt, muss einmal die E-Mail-Vorlage geändert werden.
+Die App unterstützt ab Version 0.25.1 die Anmeldung mit sechs- oder achtstelligen Codes. Damit Supabase den Code statt eines Browserlinks verschickt, muss einmal die E-Mail-Vorlage geändert werden.
 
 1. Das Supabase-Projekt `Fami-app` öffnen.
 2. **Authentication → Email Templates** aufrufen.

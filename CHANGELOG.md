@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.25.1-beta.1 – 4. Oktober 2026
+
+- Anmeldung akzeptiert jetzt sechs- und achtstellige Supabase-Codes
+- Achtstellige Codes werden nicht mehr nach der sechsten Ziffer abgeschnitten
+- Codefeld, Fehlermeldungen und Einladungsanleitung an variable Codelängen angepasst
+- Schaltflächen zum erneuten Senden und Ändern der E-Mail-Adresse auf Mobilgeräten sichtbar gemacht
+
 ## 0.25.0-beta.1 – 4. Oktober 2026
 
 - Anmeldung in der installierten iPhone-Web-App auf sechsstelligen E-Mail-Code umgestellt

@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.30.5-beta.1 – 4. Oktober 2026
+
+- Persönliche Bewertung mit ein bis fünf Sternen für alle Rezeptkarten ergänzt
+- Rezepte mit ein oder zwei Sternen werden ausgeblendet und automatisch durch neue Vorschläge ersetzt
+- Ausgeblendete Rezepte können über einen eigenen Filter erneut bewertet und zurückgeholt werden
+
 ## 0.30.4-beta.1 – 4. Oktober 2026
 
 - Rezeptfilter für Hähnchen, Rind, Hackfleisch, Schwein, Fisch, vegetarische und vegane Gerichte ergänzt

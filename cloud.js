@@ -10,7 +10,7 @@
   let pushTimer = null;
   let applyingRemote = false;
   let initialized = false;
-  const LOCAL_ONLY_STATE_KEYS = ['taskPeople','calendarPeople','holidaySettings','recipeFoodFilter','recipeIngredientFilter','videoFoodFilter','videoIngredientFilter','recipeSort','videoSort','videoChannel','videoMeal','videoCuisine','calendarView'];
+  const LOCAL_ONLY_STATE_KEYS = ['taskPeople','calendarPeople','holidaySettings','recipeFoodFilter','recipeIngredientFilter','videoFoodFilter','videoIngredientFilter','recipeRatings','recipeSort','videoSort','videoChannel','videoMeal','videoCuisine','calendarView'];
 
   const readConfig = () => {
     const bundled = window.FAMI_CLOUD_CONFIG;

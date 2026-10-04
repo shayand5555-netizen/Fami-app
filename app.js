@@ -15,6 +15,35 @@ const defaultEvents = [
   {id:'event-3',date:'',time:'15:30',title:'Fußballtraining Noah',place:'Sportplatz Nord',people:['Noah'],color:'yellow'},
   {id:'event-4',date:'',time:'18:30',title:'Gemeinsames Abendessen',place:'Zuhause · Lasagne',people:['Lena','Tom','Emma','Noah'],color:'green'}
 ];
+const timeTreeCalendarVersion = 1;
+const timeTreeSourceEvents = [
+  ['2026-09-28','10:00','Küchen planen Porta'],['2026-09-28','12:00','Urlaub','none','Bis 02.10.2026'],
+  ['2026-09-29','10:00','Küchen aktuell'],['2026-09-29','17:30','Stühle abbauen'],
+  ['2026-09-30','10:00','Fensterbauer'],['2026-09-30','13:00','Küche Porta'],
+  ['2026-10-01','09:30','Zahnarzt Shayan'],['2026-10-02','10:00','Küchen Staude Mark Holert'],['2026-10-02','12:30','Küchen aktuell'],
+  ['2026-10-07','15:00','Eltern-Kennenlernnachmittag'],['2026-10-09','12:00','Handball mit ME und Kristin'],
+  ['2026-10-11','12:00','Nino Geburtstag','yearly'],['2026-10-12','12:15','Aryan Pädaudiologe'],
+  ['2026-10-17','12:00','Nino Geburt'],['2026-10-18','05:00','Angeln mit Kindern Option 2'],
+  ['2026-10-19','12:00','Finley Geburtstag','yearly'],['2026-10-19','16:30','Arzt Check Dr Sabouhi'],
+  ['2026-10-26','12:00','Kindergarten zu'],['2026-10-30','14:30','Küche aufmaß'],
+  ['2026-11-02','12:00','Shayan'],['2026-11-03','12:00','Lya Geburtstag','yearly'],['2026-11-03','17:00','Höffner Küche'],
+  ['2026-11-10','12:00','Nele'],['2026-11-18','12:00','Seminar BGHM','none','Bis 20.11.2026'],['2026-11-18','12:00','Sharzad'],
+  ['2026-11-22','11:00','Selina Yoga'],['2026-11-23','09:30','Arvin U Untersuchung'],
+  ['2026-11-26','12:00','Norbert Geburtstag','yearly'],['2026-11-27','12:00','Weihnachtsfeier Shayan'],
+  ['2026-11-29','12:00','Emmi'],['2026-11-30','12:00','Finn Hartung Geburtstag','yearly'],
+  ['2026-12-04','08:45','Zahnarzt Aryan'],['2026-12-07','09:00','Mgk Kirchrode'],['2026-12-08','12:00','Lili'],
+  ['2026-12-24','12:00','Selina Urlaub','none','Bis 03.01.2027'],
+  ['2027-01-12','12:00','Marco Neugebauer BDay','yearly'],['2027-01-23','22:30','Geburtstag Markowski','yearly'],
+  ['2027-02-04','12:00','Hochzeitstag','yearly'],['2027-02-22','12:00','Isolde'],['2027-02-27','12:00','Selina'],
+  ['2027-03-02','10:30','Zahnarzt Arvin'],['2027-03-09','12:00','Payam Geburtstag','yearly'],
+  ['2027-04-02','12:00','Kalea Geburtstag','yearly'],['2027-04-05','12:00','Papa Selina'],
+  ['2027-05-26','12:00','Soheila'],['2027-05-27','12:00','Eugen'],['2027-05-31','12:00','Ina Nachbarin'],
+  ['2027-06-04','12:00','Verica'],['2027-06-10','12:00','Daniel Geburtstag','yearly'],['2027-06-21','07:30','Fete de la music'],
+  ['2027-06-28','12:00','Nikita Geburtstag','yearly'],['2027-06-28','13:00','Rose Geburtstage 2022','yearly'],['2027-06-30','12:00','Sissi Geburtstag','yearly'],
+  ['2027-07-05','12:00','Geburtstag Minoo 2025','yearly'],['2027-07-10','12:00','Geburtstag Olga','yearly'],['2027-07-21','12:00','Adam Geburtstag','yearly'],
+  ['2027-08-16','12:00','Armin'],['2027-08-19','12:00','Ayla und Dilara Geburtstag','yearly'],['2027-08-20','12:00','Hochzeit Kai'],
+  ['2027-09-05','12:00','Elisa Maria'],['2027-09-10','12:00','Padis'],['2027-09-11','12:00','Jonas'],['2027-09-11','13:00','Elli'],['2027-09-24','12:00','Hochzeit Kai']
+];
 const fallbackActivityIdeas = [
   {icon:'🎃',title:'Kürbisfest & Herbstmarkt',category:'Feste',ages:'3–14 Jahre',distance:'ca. 12 km',when:'Dieses Wochenende',text:'Kürbisschnitzen, Strohburg und regionale Leckereien.'},
   {icon:'🦕',title:'Familientag im Museum',category:'Drinnen',ages:'5–16 Jahre',distance:'ca. 4 km',when:'Sonntag',text:'Mitmachstationen und eine kindgerechte Entdeckungstour.'},
@@ -80,10 +109,11 @@ const state = {
   familyMembers:[...family],
   familyName:stored.familyName || 'Familie Weber',
   currentUser:family.includes(storedDeviceUser)?storedDeviceUser:(stored.currentUser && family.includes(stored.currentUser) ? stored.currentUser : family[0]),
-  memberAges:stored.memberAges || {Emma:stored.familyProfile?.emmaAge??10,Noah:stored.familyProfile?.noahAge??7}
+  memberAges:stored.memberAges || {Emma:stored.familyProfile?.emmaAge??10,Noah:stored.familyProfile?.noahAge??7},
+  calendarImportVersion:Number(stored.calendarImportVersion)||0
 };
 state.tasks = state.tasks.filter(task => !state.deletedIds.includes(task.id));
-state.events.forEach(event=>{if(event.date&&!event.startsAt)event.startsAt=eventStartsAt(event.date,event.time||'12:00');if(event.reminderMinutes===undefined)event.reminderMinutes=-1});
+state.events.forEach(event=>{if(event.date&&!event.startsAt)event.startsAt=eventStartsAt(event.date,event.time||'12:00');if(event.reminderMinutes===undefined)event.reminderMinutes=-1;if(!event.endTime)event.endTime=addMinutesToTime(event.time||'12:00',60);if(!event.recurrence)event.recurrence='none'});
 localStorage.setItem(DEVICE_USER_KEY,state.currentUser);
 
 let createType = 'task';
@@ -109,6 +139,23 @@ function prettyDate(raw, fallback='Heute'){
   return raw ? new Date(`${raw}T12:00`).toLocaleDateString('de-DE',{day:'2-digit',month:'short'}) : fallback;
 }
 function eventStartsAt(date,time='12:00'){if(!date)return'';const value=new Date(`${date}T${time||'12:00'}:00`);return Number.isNaN(value.getTime())?'':value.toISOString()}
+function addMinutesToTime(time='12:00',minutes=60){const [hour,minute]=String(time).split(':').map(Number);const total=((hour||0)*60+(minute||0)+minutes)%(24*60);return `${String(Math.floor(total/60)).padStart(2,'0')}:${String(total%60).padStart(2,'0')}`}
+function recurrenceDates(startDate,recurrence='none'){
+  const start=new Date(`${startDate}T12:00:00`);if(Number.isNaN(start.getTime())||recurrence==='none')return[startDate];
+  const end=new Date(start);end.setFullYear(end.getFullYear()+(recurrence==='yearly'?10:recurrence==='monthly'?5:2));const dates=[];
+  for(let date=new Date(start);date<=end&&dates.length<300;){dates.push(isoDate(date));if(recurrence==='weekly')date.setDate(date.getDate()+7);else if(recurrence==='biweekly')date.setDate(date.getDate()+14);else if(recurrence==='monthly')date.setMonth(date.getMonth()+1);else if(recurrence==='yearly')date.setFullYear(date.getFullYear()+1);else break}
+  return dates;
+}
+function addEventSeries(base,recurrence='none'){
+  const seriesId=base.seriesId||`series-${Date.now()}-${Math.random().toString(36).slice(2,7)}`;let added=0;
+  recurrenceDates(base.date,recurrence).forEach((date,index)=>{if(state.events.some(event=>event.title===base.title&&event.date===date&&event.time===base.time))return;state.events.push({...base,id:recurrence==='none'||index===0?(base.id||`event-${Date.now()}`):`${seriesId}-${date}`,date,startsAt:eventStartsAt(date,base.time),recurrence,seriesId:recurrence==='none'?'':seriesId,seriesIndex:index});added++});return added;
+}
+function importTimeTreeCalendar(){
+  if(state.calendarImportVersion>=timeTreeCalendarVersion)return 0;let added=0;
+  timeTreeSourceEvents.forEach(([date,time,title,recurrence='none',place=''])=>{added+=addEventSeries({id:`timetree-${date}-${title.toLowerCase().replace(/[^a-z0-9]+/g,'-')}`,title,date,time,endTime:addMinutesToTime(time,60),durationMinutes:60,reminderMinutes:-1,place:place||'Aus TimeTree übernommen',people:[...family],color:/geburtstag|bday/i.test(title)?'coral':'blue',source:'TimeTree-Screenshots'},recurrence)});
+  for(let date=new Date('2026-10-09T12:00:00'),index=0;date<=new Date('2027-10-22T12:00:00');date.setDate(date.getDate()+14),index++){const start=isoDate(date);if(state.events.some(event=>event.title==='Kiana'&&event.date===start))continue;state.events.push({id:`timetree-kiana-${start}`,title:'Kiana',date:start,time:'12:00',endTime:'13:00',durationMinutes:60,startsAt:eventStartsAt(start,'12:00'),reminderMinutes:-1,place:'Ganztägig bis Sonntag · aus TimeTree übernommen',people:[...family],color:'coral',source:'TimeTree-Screenshots',recurrence:'biweekly',seriesId:'timetree-kiana',seriesIndex:index});added++}
+  state.calendarImportVersion=timeTreeCalendarVersion;return added;
+}
 function getTask(id){ return state.tasks.find(task => task.id === id); }
 function isVisible(person, kind='task'){ return state[kind==='task'?'taskPeople':'calendarPeople'].includes(person) || person === 'Alle'; }
 
@@ -197,10 +244,10 @@ function getEvent(id){ return state.events.find(event=>event.id===id); }
 
 function applyHomeCalendarFilter(){
   const host=$('#timeline');host.innerHTML='';
-  const visible=state.events.filter(eventVisible).sort((a,b)=>a.time.localeCompare(b.time));
+  const todayKey=isoDate(today);const visible=state.events.filter(event=>eventVisible(event)&&(event.date||todayKey)===todayKey).sort((a,b)=>a.time.localeCompare(b.time));
   visible.slice(0,5).forEach(event=>{
     const row=document.createElement('article');row.className='event';row.dataset.eventId=event.id;
-    row.innerHTML=`<time>${event.time}</time><div class="event-line ${event.color}"></div><div class="event-body"><strong></strong><p></p><div class="event-avatars"></div></div><button class="edit-event-mini" aria-label="Termin bearbeiten">Bearbeiten</button>`;
+    row.innerHTML=`<time>${event.time}${event.endTime?`–${event.endTime}`:''}</time><div class="event-line ${event.color}"></div><div class="event-body"><strong></strong><p></p><div class="event-avatars"></div></div><button class="edit-event-mini" aria-label="Termin bearbeiten">Bearbeiten</button>`;
     $('.event-body strong',row).textContent=event.title;$('.event-body p',row).textContent=event.place||'Keine Ortsangabe';
     event.people.forEach(person=>$('.event-avatars',row).insertAdjacentHTML('beforeend',`<span class="avatar ${avatarClass(person)} mini">${initials(person)}</span>`));
     $('.edit-event-mini',row).onclick=()=>openEventEditor(event.id);host.append(row);
@@ -210,10 +257,10 @@ function applyHomeCalendarFilter(){
 }
 
 function renderCalendarManager(){
-  const host=$('#calendarEntries');if(!host)return;host.innerHTML='';
-  state.events.filter(eventVisible).sort((a,b)=>a.time.localeCompare(b.time)).forEach(event=>{
+  const host=$('#calendarEntries');if(!host)return;host.innerHTML='';const monthKey=`${calendarCursor.getFullYear()}-${String(calendarCursor.getMonth()+1).padStart(2,'0')}`;const heading=$('.list-heading');if(heading)heading.textContent=`Terminliste · ${calendarCursor.toLocaleDateString('de-DE',{month:'long',year:'numeric'})}`;
+  state.events.filter(event=>eventVisible(event)&&String(event.date||'').startsWith(monthKey)).sort((a,b)=>`${a.date||''}${a.time}`.localeCompare(`${b.date||''}${b.time}`)).forEach(event=>{
     const row=document.createElement('article');row.className='calendar-entry';
-    row.innerHTML=`<time>${event.time}</time><i class="${event.color}"></i><div><strong></strong><small></small><div class="calendar-people"></div></div><button class="edit-task-btn edit-calendar-btn">Bearbeiten</button>`;
+    row.innerHTML=`<time>${prettyDate(event.date)}<br>${event.time}${event.endTime?`–${event.endTime}`:''}</time><i class="${event.color}"></i><div><strong></strong><small></small><div class="calendar-people"></div></div><button class="edit-task-btn edit-calendar-btn">Bearbeiten</button>`;
     $('strong',row).textContent=event.title;$('small',row).textContent=event.place;
     event.people.forEach(person=>{$('.calendar-people',row).insertAdjacentHTML('beforeend',`<span class="avatar ${avatarClass(person)} mini">${initials(person)}</span>`)});$('.edit-calendar-btn',row).onclick=()=>openEventEditor(event.id);host.append(row);
   });
@@ -284,7 +331,7 @@ function icsStamp(date=new Date()){return date.toISOString().replace(/[-:]/g,'')
 function localIcsDate(date,time='12:00'){return `${date.replaceAll('-','')}T${time.replace(':','')}00`}
 function exportCalendarIcs(){
   const lines=['BEGIN:VCALENDAR','VERSION:2.0','PRODID:-//Fami//Familienkalender//DE','CALSCALE:GREGORIAN','METHOD:PUBLISH','X-WR-CALNAME:Fami Familienkalender'];
-  [...state.events].sort((a,b)=>`${a.date}${a.time}`.localeCompare(`${b.date}${b.time}`)).forEach(event=>{const start=new Date(`${event.date}T${event.time||'12:00'}:00`);const end=new Date(start.getTime()+60*60*1000);lines.push('BEGIN:VEVENT',`UID:${icsEscape(event.id)}@fami`,`DTSTAMP:${icsStamp()}`,`DTSTART:${localIcsDate(event.date,event.time||'12:00')}`,`DTEND:${localIcsDate(isoDate(end),`${String(end.getHours()).padStart(2,'0')}:${String(end.getMinutes()).padStart(2,'0')}`)}`,`SUMMARY:${icsEscape(event.title)}`,`LOCATION:${icsEscape(event.place||'')}`,`DESCRIPTION:${icsEscape(`Zugeordnet: ${(event.people||[]).join(', ')}`)}`,`X-FAMI-PEOPLE:${icsEscape((event.people||[]).join(','))}`,'END:VEVENT')});
+  [...state.events].sort((a,b)=>`${a.date}${a.time}`.localeCompare(`${b.date}${b.time}`)).forEach(event=>{const endTime=event.endTime||addMinutesToTime(event.time||'12:00',60);const endDate=endTime<(event.time||'12:00')?isoDate(addDays(new Date(`${event.date}T12:00:00`),1)):event.date;lines.push('BEGIN:VEVENT',`UID:${icsEscape(event.id)}@fami`,`DTSTAMP:${icsStamp()}`,`DTSTART:${localIcsDate(event.date,event.time||'12:00')}`,`DTEND:${localIcsDate(endDate,endTime)}`,`SUMMARY:${icsEscape(event.title)}`,`LOCATION:${icsEscape(event.place||'')}`,`DESCRIPTION:${icsEscape(`Zugeordnet: ${(event.people||[]).join(', ')}`)}`,`X-FAMI-PEOPLE:${icsEscape((event.people||[]).join(','))}`,'END:VEVENT')});
   lines.push('END:VCALENDAR');const blob=new Blob([`${lines.join('\r\n')}\r\n`],{type:'text/calendar;charset=utf-8'});const url=URL.createObjectURL(blob);const link=document.createElement('a');link.href=url;link.download=`fami-kalender-${isoDate(new Date())}.ics`;link.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast(`${state.events.length} Termine exportiert`);
 }
 function parseIcsDate(value){
@@ -298,7 +345,7 @@ function expandIcsRecurrence(base,rule){
   for(let index=0,date=new Date(start);date<=end&&results.length<count;index++){add(new Date(date));if(settings.FREQ==='DAILY')date.setDate(date.getDate()+interval);else if(settings.FREQ==='WEEKLY')date.setDate(date.getDate()+7*interval);else if(settings.FREQ==='MONTHLY')date.setMonth(date.getMonth()+interval);else if(settings.FREQ==='YEARLY')date.setFullYear(date.getFullYear()+interval);else break}return results;
 }
 async function importCalendarIcs(file){
-  try{const text=await file.text();const unfolded=text.replace(/\r?\n[ \t]/g,'');const blocks=unfolded.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/gi)||[];let added=0,duplicates=0;for(const block of blocks){const fields={};block.split(/\r?\n/).forEach(line=>{const split=line.indexOf(':');if(split<0)return;const key=line.slice(0,split).split(';')[0].toUpperCase();if(fields[key]===undefined)fields[key]=line.slice(split+1)});const start=parseIcsDate(fields.DTSTART);if(!start)continue;const people=(fields['X-FAMI-PEOPLE']?icsUnescape(fields['X-FAMI-PEOPLE']).split(','):family).filter(name=>family.includes(name));const base={title:icsUnescape(fields.SUMMARY)||'Importierter Termin',date:start.date,time:start.time,startsAt:eventStartsAt(start.date,start.time),reminderMinutes:-1,place:icsUnescape(fields.LOCATION||fields.DESCRIPTION||''),people:people.length?people:[...family],color:'blue'};for(const item of expandIcsRecurrence(base,fields.RRULE)){if(state.events.some(event=>event.title===item.title&&event.date===item.date&&event.time===item.time)){duplicates++;continue}state.events.push({...item,id:`event-import-${Date.now()}-${added}-${Math.random().toString(36).slice(2,7)}`});added++}}
+  try{const text=await file.text();const unfolded=text.replace(/\r?\n[ \t]/g,'');const blocks=unfolded.match(/BEGIN:VEVENT[\s\S]*?END:VEVENT/gi)||[];let added=0,duplicates=0;for(const block of blocks){const fields={};block.split(/\r?\n/).forEach(line=>{const split=line.indexOf(':');if(split<0)return;const key=line.slice(0,split).split(';')[0].toUpperCase();if(fields[key]===undefined)fields[key]=line.slice(split+1)});const start=parseIcsDate(fields.DTSTART);if(!start)continue;const end=parseIcsDate(fields.DTEND);const people=(fields['X-FAMI-PEOPLE']?icsUnescape(fields['X-FAMI-PEOPLE']).split(','):family).filter(name=>family.includes(name));const base={title:icsUnescape(fields.SUMMARY)||'Importierter Termin',date:start.date,time:start.time,endTime:end?.time||addMinutesToTime(start.time,60),startsAt:eventStartsAt(start.date,start.time),reminderMinutes:-1,place:icsUnescape(fields.LOCATION||fields.DESCRIPTION||''),people:people.length?people:[...family],color:'blue',recurrence:'none'};for(const item of expandIcsRecurrence(base,fields.RRULE)){if(state.events.some(event=>event.title===item.title&&event.date===item.date&&event.time===item.time)){duplicates++;continue}state.events.push({...item,id:`event-import-${Date.now()}-${added}-${Math.random().toString(36).slice(2,7)}`});added++}}
     if(!blocks.length)throw new Error('Keine Termine');save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();toast(`${added} Termine importiert${duplicates?` · ${duplicates} Duplikate übersprungen`:''}`)
   }catch(error){console.error(error);toast('Die Kalenderdatei konnte nicht importiert werden')}
 }
@@ -335,6 +382,7 @@ function renderMonthCalendar(){
 
 function openModal(type='task'){
   createType=type;$('#modal').classList.add('open');$('#modal').setAttribute('aria-hidden','false');
+  if(type==='event'){if(!$('#itemTime').value)$('#itemTime').value='12:00';if(!$('#itemEndTime').value)$('#itemEndTime').value=addMinutesToTime($('#itemTime').value,60)}
   $$('.type-tabs button').forEach(b=>b.classList.toggle('active',b.dataset.type===type));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',type!=='event'));setTimeout(()=>$('#itemTitle').focus(),100);
 }
 function closeModal(){ $('#modal').classList.remove('open');$('#modal').setAttribute('aria-hidden','true'); }
@@ -346,7 +394,7 @@ async function openTaskEditor(id){
 function closeTaskEditor(){ $('#editTaskModal').classList.remove('open');$('#editTaskModal').setAttribute('aria-hidden','true'); }
 async function openEventEditor(id){
   const event=getEvent(id);if(!event)return;
-  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventPerson').value=event.people.length===family.length?'Alle':event.people[0];$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';$('#editEventReminder').value=String(event.reminderMinutes??-1);
+  $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventEndTime').value=event.endTime||addMinutesToTime(event.time,60);$('#editEventRecurrence').value=event.recurrence||'none';$('#editEventPerson').value=event.people.length===family.length?'Alle':event.people[0];$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';$('#editEventReminder').value=String(event.reminderMinutes??-1);
   $('#editEventModal').classList.add('open');$('#editEventModal').setAttribute('aria-hidden','false');await renderAttachments(`event:${id}`,$('#eventAttachments'));setTimeout(()=>$('#editEventName').focus(),80);
 }
 function closeEventEditor(){ $('#editEventModal').classList.remove('open');$('#editEventModal').setAttribute('aria-hidden','true'); }
@@ -354,6 +402,8 @@ function closeEventEditor(){ $('#editEventModal').classList.remove('open');$('#e
 $('#quickAdd').onclick=()=>openModal();$('#mobileAdd').onclick=()=>openModal();
 $$('[data-kind]').forEach(b=>b.onclick=()=>openModal(b.dataset.kind));$$('[data-close]').forEach(b=>b.onclick=closeModal);$$('[data-edit-close]').forEach(b=>b.onclick=closeTaskEditor);$$('[data-event-close]').forEach(b=>b.onclick=closeEventEditor);
 $$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType!=='event'))});
+$('#itemTime').addEventListener('change',()=>{$('#itemEndTime').value=addMinutesToTime($('#itemTime').value||'12:00',60)});
+$('#editEventTime').addEventListener('change',()=>{$('#editEventEndTime').value=addMinutesToTime($('#editEventTime').value||'12:00',60)});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeModal();closeTaskEditor();closeEventEditor()}if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#globalSearch').focus()}});
 
 $('#createForm').addEventListener('submit',async e=>{
@@ -362,7 +412,7 @@ $('#createForm').addEventListener('submit',async e=>{
     const id=`task-${Date.now()}`;state.tasks.push({id,title,person,date:rawDate,dateLabel:prettyDate(rawDate),note:$('#itemDetails').value.trim(),done:false});await storeAttachments(`task:${id}`,$('#newItemFiles').files);save();renderHomeTasks();renderTaskManager();
   }
   if(createType==='event'){
-    const id=`event-${Date.now()}`,time=$('#itemTime').value||'12:00';state.events.push({id,title,date:rawDate,time,startsAt:eventStartsAt(rawDate,time),reminderMinutes:Number($('#itemReminder').value),place:$('#itemDetails').value.trim(),people:eventPeople(person),color:'green'});await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();window.FamiNotifications?.checkDue();
+    const id=`event-${Date.now()}`,time=$('#itemTime').value||'12:00',endTime=$('#itemEndTime').value||addMinutesToTime(time,60),recurrence=$('#itemRecurrence').value||'none';addEventSeries({id,title,date:rawDate,time,endTime,startsAt:eventStartsAt(rawDate,time),reminderMinutes:Number($('#itemReminder').value),place:$('#itemDetails').value.trim(),people:eventPeople(person),color:'green'},recurrence);await storeAttachments(`event:${id}`,$('#newItemFiles').files);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();window.FamiNotifications?.checkDue();
   }
   $('#createForm').reset();$('#itemDate').valueAsDate=today;closeModal();toast(`${createType==='event'?'Termin':createType==='note'?'Notiz':'Aufgabe'} für alle gespeichert`);
 });
@@ -380,7 +430,9 @@ $('#deleteTask').addEventListener('click',()=>{
 
 $('#editEventForm').addEventListener('submit',e=>{
   e.preventDefault();const event=getEvent($('#editEventId').value);if(!event)return;
-  event.title=$('#editEventName').value.trim();event.date=$('#editEventDate').value;event.time=$('#editEventTime').value;event.startsAt=eventStartsAt(event.date,event.time);event.reminderMinutes=Number($('#editEventReminder').value);event.people=eventPeople($('#editEventPerson').value);event.color=$('#editEventColor').value;event.place=$('#editEventPlace').value.trim();
+  const date=$('#editEventDate').value,time=$('#editEventTime').value,endTime=$('#editEventEndTime').value||addMinutesToTime(time,60),recurrence=$('#editEventRecurrence').value||'none',seriesId=event.seriesId||`series-${Date.now()}`;
+  const base={id:event.id,title:$('#editEventName').value.trim(),date,time,endTime,startsAt:eventStartsAt(date,time),reminderMinutes:Number($('#editEventReminder').value),people:eventPeople($('#editEventPerson').value),color:$('#editEventColor').value,place:$('#editEventPlace').value.trim(),seriesId};
+  if((event.recurrence||'none')!==recurrence){state.events=state.events.filter(item=>!(item.id===event.id||(event.seriesId&&item.seriesId===event.seriesId&&item.date>=event.date)));addEventSeries(base,recurrence)}else{const targets=event.seriesId?state.events.filter(item=>item.seriesId===event.seriesId&&item.date>=event.date):[event];targets.forEach(item=>Object.assign(item,{title:base.title,time,endTime,startsAt:eventStartsAt(item.date,time),reminderMinutes:base.reminderMinutes,people:base.people,color:base.color,place:base.place,recurrence}))}
   save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();closeEventEditor();window.FamiNotifications?.checkDue();toast('Kalendereintrag wurde aktualisiert');
 });
 
@@ -551,7 +603,7 @@ $$('.nav-item,.mobile-nav button[data-view]').forEach(b=>b.classList.toggle('act
   if(name==='calendar'){
     box.innerHTML=`<div class="subview-head calendar-head"><div><p class="eyebrow">GEMEINSAMER ÜBERBLICK</p><h1>Familienkalender</h1><p>Monatsübersicht für eure Termine, Feiertage und Schulferien.</p></div><button class="btn primary sub-add"><svg><use href="#i-plus"/></svg><span>Neuer Termin</span></button></div><section class="month-shell"><div class="month-toolbar"><button id="prevMonth">‹</button><h2 id="monthTitle"></h2><button id="nextMonth">›</button><button id="todayMonth">Heute</button></div><div class="month-calendar" id="monthCalendar"></div></section><details class="calendar-options"><summary>Ansicht, Feiertage & Ferien auswählen</summary><div class="calendar-options-body">${peoplePicker('calendar')}<section class="holiday-controls"><label>Bundesland<select id="holidayRegion">${Object.entries(subdivisions).map(([code,name])=>`<option value="${code}" ${code===state.holidaySettings.subdivision?'selected':''}>${name}</option>`).join('')}</select></label><label class="calendar-toggle"><input id="showPublic" type="checkbox" ${state.holidaySettings.showPublic?'checked':''}><span></span>Feiertage</label><label class="calendar-toggle"><input id="showSchool" type="checkbox" ${state.holidaySettings.showSchool?'checked':''}><span></span>Schulferien</label><small id="holidayStatus">Daten passend zum gewählten Bundesland</small></section></div></details><h2 class="list-heading">Terminliste</h2><section class="empty-shell calendar-list-shell"><div class="calendar-manager" id="calendarEntries"></div></section>${activitySectionMarkup()}`;
     const createButton=$('.sub-add',box);const calendarActions=document.createElement('div');calendarActions.className='calendar-head-actions';createButton.replaceWith(calendarActions);calendarActions.innerHTML='<label class="btn ghost calendar-import">Kalender importieren<input type="file" accept=".ics,text/calendar"></label><button class="btn ghost calendar-export">Kalender exportieren</button>';calendarActions.append(createButton);createButton.onclick=()=>openModal('event');$('.calendar-export',calendarActions).onclick=exportCalendarIcs;$('input',calendarActions).onchange=async e=>{if(e.target.files[0])await importCalendarIcs(e.target.files[0]);e.target.value=''};bindPeoplePicker(box,'calendar');renderCalendarManager();renderMonthCalendar();loadHolidayData();
-    $('#prevMonth').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()-1,1);renderMonthCalendar();loadHolidayData()};$('#nextMonth').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()+1,1);renderMonthCalendar();loadHolidayData()};$('#todayMonth').onclick=()=>{calendarCursor=new Date(today.getFullYear(),today.getMonth(),1);renderMonthCalendar();loadHolidayData()};
+    $('#prevMonth').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()-1,1);renderCalendarManager();renderMonthCalendar();loadHolidayData()};$('#nextMonth').onclick=()=>{calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth()+1,1);renderCalendarManager();renderMonthCalendar();loadHolidayData()};$('#todayMonth').onclick=()=>{calendarCursor=new Date(today.getFullYear(),today.getMonth(),1);renderCalendarManager();renderMonthCalendar();loadHolidayData()};
     $('#holidayRegion').onchange=e=>{state.holidaySettings.subdivision=e.target.value;save();loadHolidayData()};$('#showPublic').onchange=e=>{state.holidaySettings.showPublic=e.target.checked;save();renderMonthCalendar()};$('#showSchool').onchange=e=>{state.holidaySettings.showSchool=e.target.checked;save();renderMonthCalendar()};bindActivitySection(box);if(!regionalEventsLoaded){regionalEventsLoaded=true;setTimeout(loadRegionalEvents,0)}return;
   }
   const v=views[name];box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">${v.eyebrow}</p><h1>${v.title}</h1><p>${v.desc}</p></div><button class="btn primary sub-add"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div><section class="empty-shell"><div class="feature-grid">${v.features.map(x=>`<article class="feature-item"><strong>${x[0]}</strong><p>${x[1]}</p></article>`).join('')}</div></section>`;$('.sub-add',box).onclick=()=>openModal(name==='calendar'?'event':'note');
@@ -566,17 +618,18 @@ $('#installApp').onclick=async()=>{if(!installPrompt)return;installPrompt.prompt
 window.addEventListener('appinstalled',()=>toast('Fami ist jetzt auf deinem Gerät'));
 if('serviceWorker' in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
 
-ensureFeatureState();syncCleaningTasks();syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();save();
+ensureFeatureState();importTimeTreeCalendar();syncCleaningTasks();syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();save();
 window.FamiCloud?.init({
   getState:()=>sharedState(),
   applyState:payload=>{
     if(!payload||!Array.isArray(payload.tasks)||!Array.isArray(payload.events))return;
     const deviceUser=localStorage.getItem(DEVICE_USER_KEY)||state.currentUser;
+    if(payload.calendarImportVersion===undefined)state.calendarImportVersion=0;
     Object.assign(state,payload);
     family=Array.isArray(state.familyMembers)&&state.familyMembers.length?[...state.familyMembers]:family;
     setDeviceUser(deviceUser);
-    ensureFeatureState();syncCleaningTasks();
-    localStorage.setItem('fami-state',JSON.stringify(state));
+    ensureFeatureState();const imported=importTimeTreeCalendar();syncCleaningTasks();
+    localStorage.setItem('fami-state',JSON.stringify(state));if(imported)window.FamiCloud?.schedulePush(sharedState());
     syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();
     if(currentView!=='home')switchView(currentView);
   },

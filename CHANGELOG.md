@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.28.0-beta.1 – 4. Oktober 2026
+
+- Private TimeTree-Termine aus den bereitgestellten Monatsansichten übernommen
+- Fehlende Endzeiten automatisch auf eine Stunde nach Beginn gesetzt
+- Wiederholung für wöchentliche, zweiwöchentliche, monatliche und jährliche Termine ergänzt
+- Geburtstage werden als jährlich wiederkehrende Termine fortgeführt
+- Zweiwöchentliche Kiana-Termine und mehrtägige Einträge aus TimeTree berücksichtigt
+
 ## 0.27.1-beta.1 – 4. Oktober 2026
 
 - Rezeptfotos werden ausschließlich mit der Supabase-KI-Funktion analysiert

@@ -3,6 +3,7 @@
 .chrome-qa-*/
 output/
 tmp/
+supabase/.temp/
 
 # Lokale Release-Archive und historische Zwischenstände
 *.zip

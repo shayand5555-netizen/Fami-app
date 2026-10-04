@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.30.0-beta.1 – 4. Oktober 2026
+
+- KI-Rezeptanalyse von OpenAI auf Google Gemini 3.8 Flash umgestellt
+- Kostenloses Gemini-Kontingent kann über einen geschützten Supabase-Schlüssel genutzt werden
+- Verständliche Hinweise bei ungültigem Schlüssel oder ausgeschöpftem Kontingent ergänzt
+
 ## 0.29.0-beta.1 – 4. Oktober 2026
 
 - Antippen eines Tages in der Monatsansicht öffnet direkt einen neuen Termin mit vorausgefülltem Datum

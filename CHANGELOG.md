@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.27.0-beta.1 – 4. Oktober 2026
+
+- KI-Fotoanalyse erkennt jetzt sowohl fotografierte Rezeptseiten als auch fertige Gerichte
+- Lokale OCR bleibt als automatische Rückfalllösung erhalten
+- Rezepte und Videos lassen sich als Favoriten markieren und danach filtern
+- Eigene Essensbilder können beim Erstellen sowie direkt an jeder Rezeptkarte hochgeladen werden
+- Automatische Kennzeichnung und Filter für „High Protein“ und „Ausgewogen“ ergänzt
+- Gesundheitskennzeichnungen werden transparent als Orientierung aus geschätzten Nährwerten erklärt
+
 ## 0.26.2-beta.1 – 4. Oktober 2026
 
 - „Wer nutzt dieses Gerät?“ wird jetzt ausschließlich auf dem jeweiligen Gerät gespeichert

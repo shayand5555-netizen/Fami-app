@@ -198,8 +198,36 @@
     return tesseractPromise;
   }
 
+  function imageDataUrl(file, maxSize = 1600) {
+    return new Promise((resolve,reject) => {
+      const image = new Image(); const url = URL.createObjectURL(file);
+      image.onload = () => {
+        const scale=Math.min(1,maxSize/Math.max(image.naturalWidth,image.naturalHeight));
+        const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
+        canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);
+        resolve(canvas.toDataURL('image/jpeg',.82));
+      };
+      image.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Das Foto konnte nicht geöffnet werden.'))};image.src=url;
+    });
+  }
+
+  function normalizeAiRecipe(value) {
+    const ingredients=(value.ingredients||[]).map(item=>Array.isArray(item)?item:[item.name,item.quantity||'nach Bedarf']).filter(item=>item[0]);
+    const portions=Math.max(1,Number(value.portions)||4),title=clean(value.title)||'KI-Rezeptvorschlag';
+    return {title,ingredients,steps:(value.steps||[]).map(clean).filter(Boolean),portions,time:clean(value.time)||'ca. 45 Min.',tags:[...(value.tags||[]),'KI-Fotoanalyse','Eigenes Rezept'].filter((item,index,list)=>item&&list.indexOf(item)===index),image:'',url:'',source:'KI-Fotoanalyse',imageType:value.imageType||'dish',confidence:Number(value.confidence)||0,nutrition:{kcal:Number(value.nutrition?.kcal)||0,protein:Number(value.nutrition?.protein)||0,carbs:Number(value.nutrition?.carbs)||0,fat:Number(value.nutrition?.fat)||0,label:'pro Portion',estimated:true,note:'KI-Schätzung aus dem Foto und den erkannten beziehungsweise vorgeschlagenen Zutaten. Bitte Mengen und Allergene prüfen.'}};
+  }
+
   async function analyzePhoto(file, progress = () => {}) {
     if (!file?.type?.startsWith('image/')) throw new Error('Bitte wähle ein Foto des Rezepts aus.');
+    let aiError = null;
+    if(window.FamiCloud?.isConnected?.()&&window.FamiCloud?.analyzeRecipePhoto){
+      try{
+        progress('Foto wird für die KI vorbereitet …',8);const image=await imageDataUrl(file);
+        progress('KI erkennt Gericht, Zutaten und Zubereitung …',30);const aiResult=await window.FamiCloud.analyzeRecipePhoto(image);
+        const recipe=normalizeAiRecipe(aiResult);
+        if(recipe.ingredients.length&&recipe.steps.length){progress('KI-Rezeptvorschlag ist bereit',100);return recipe}
+      }catch(error){aiError=error;console.warn('KI-Fotoanalyse nicht verfügbar, nutze OCR',error);progress('KI nicht verfügbar – lokale Texterkennung startet …',10)}
+    }
     progress('Texterkennung wird geladen …',5); const Tesseract = await loadTesseract();
     const result = await Tesseract.recognize(file, 'deu+eng', {logger:event => {
       const percent = Math.round((event.progress || 0) * 85) + 10;
@@ -207,8 +235,8 @@
       else if (event.status) progress('Foto wird vorbereitet …',Math.min(35,percent));
     }});
     progress('Zutaten und Kochschritte werden ausgewertet …',96);
-    const recipe = parseRecipeText(result.data?.text || '', {source:'Foto-Scan'});
-    if (!recipe.ingredients.length) throw new Error('Auf dem Foto wurden keine eindeutigen Zutaten erkannt. Fotografiere das Rezept möglichst gerade und gut beleuchtet.');
+    const recipe = parseRecipeText(result.data?.text || '', {source:'Lokale Foto-Texterkennung'});recipe.imageType='recipe_page';
+    if (!recipe.ingredients.length) throw new Error(aiError?'Die KI-Fotoanalyse ist noch nicht verfügbar und die lokale Texterkennung fand kein lesbares Rezept. Bitte richte zuerst die KI-Funktion ein oder nutze ein scharfes Foto einer Rezeptseite.':'Auf dem Foto wurden keine eindeutigen Zutaten erkannt. Fotografiere das Rezept möglichst gerade und gut beleuchtet.');
     progress('Rezept erkannt',100); return recipe;
   }
 

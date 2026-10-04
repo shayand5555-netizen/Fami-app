@@ -249,6 +249,14 @@
     return true;
   }
 
+  async function analyzeRecipePhoto(image) {
+    if (!client || !session) throw new Error('Für die KI-Fotoanalyse ist eine Anmeldung bei Fami Online erforderlich.');
+    const {data, error} = await client.functions.invoke('analyze-recipe', {body:{image}});
+    if (error) throw error;
+    if (!data?.recipe) throw new Error(data?.error || 'Die KI konnte auf diesem Foto kein Rezept erkennen.');
+    return data.recipe;
+  }
+
   function openSetup() {
     renderSetup();
     const modal = document.querySelector('#cloudModal');
@@ -315,6 +323,7 @@
     uploadFiles,
     listFiles,
     deleteFile,
+    analyzeRecipePhoto,
     registerPush,
     isConnected:() => Boolean(client && familyInfo && session)
   };

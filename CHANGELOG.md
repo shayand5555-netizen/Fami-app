@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.30.4-beta.1 – 4. Oktober 2026
+
+- Rezeptfilter für Hähnchen, Rind, Hackfleisch, Schwein, Fisch, vegetarische und vegane Gerichte ergänzt
+- Zusätzliche Filter für Nudeln, Reis und Kartoffeln ergänzt
+- Neue Rezeptfilter bleiben als persönliche Ansicht auf dem jeweiligen Gerät
+
 ## 0.30.3-beta.1 – 4. Oktober 2026
 
 - Alte gemeinsam gespeicherte Filter werden beim nächsten Online-Abgleich aus den Familiendaten entfernt

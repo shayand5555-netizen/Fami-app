@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.25.2-beta.1 – 4. Oktober 2026
+
+- Eingabefenster auf kleinen iPhone-Bildschirmen kompakter gestaltet
+- Lange Formulare lassen sich jetzt innerhalb des Fensters vollständig scrollen
+- Aktionsleiste mit Speichern-Schaltfläche bleibt beim Scrollen am unteren Rand erreichbar
+- iPhone-Sicherheitsabstand am unteren Bildschirmrand berücksichtigt
+
 ## 0.25.1-beta.1 – 4. Oktober 2026
 
 - Anmeldung akzeptiert jetzt sechs- und achtstellige Supabase-Codes

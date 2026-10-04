@@ -109,9 +109,11 @@
       if (initial) await pushNow(callbacks.getState());
       return;
     }
+    const containedSharedDeviceUser=Object.prototype.hasOwnProperty.call(payload,'currentUser');
     applyingRemote = true;
     callbacks.applyState(payload);
     applyingRemote = false;
+    if(containedSharedDeviceUser)await pushNow(callbacks.getState());
   }
 
   function subscribe() {

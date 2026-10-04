@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.26.2-beta.1 – 4. Oktober 2026
+
+- „Wer nutzt dieses Gerät?“ wird jetzt ausschließlich auf dem jeweiligen Gerät gespeichert
+- Die Profilauswahl eines Familienmitglieds überschreibt keine anderen Handys mehr
+- Eingehende Cloud-Änderungen bewahren das lokale Geräteprofil
+- Der bisher gemeinsam gespeicherte Gerätebenutzer wird automatisch aus dem Cloud-Datensatz entfernt
+
 ## 0.26.1-beta.1 – 4. Oktober 2026
 
 - Speichern-Leiste in Termin- und Aufgabenfenstern bleibt auf dem iPhone dauerhaft sichtbar

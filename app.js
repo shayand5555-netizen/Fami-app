@@ -43,7 +43,9 @@ const recipeInstructions = {
   'burger-bowl':['Blumenkohl garen und als Basis in eine Schüssel geben.','Hackfleisch und Bacon braten, das Ei nach Wunsch garen.','Mit Salat, Tomaten, Cheddar, Sauce und Röstzwiebeln zur Bowl zusammensetzen.'],
   'protein-brownie':['Schokolade und Butter vorsichtig schmelzen.','Eier mit Erythrit verrühren, anschließend die Schokoladenmischung einarbeiten.','Mandelmehl und Backpulver unterheben, in eine Form geben und backen, bis die Mitte gerade fest ist.']
 };
+const DEVICE_USER_KEY='fami-device-current-user';
 const stored = JSON.parse(localStorage.getItem('fami-state') || '{}');
+const storedDeviceUser=localStorage.getItem(DEVICE_USER_KEY)||'';
 if(Array.isArray(stored.familyMembers)&&stored.familyMembers.length)family=stored.familyMembers.filter(Boolean);
 const migratedCustom = (stored.customTasks || []).map((task,index) => ({
   id:task.id || `custom-${Date.now()}-${index}`, title:task.title, person:task.person || 'Lena',
@@ -71,11 +73,12 @@ const state = {
   cleaningInitialized: Boolean(stored.cleaningInitialized),
   familyMembers:[...family],
   familyName:stored.familyName || 'Familie Weber',
-  currentUser:stored.currentUser && family.includes(stored.currentUser) ? stored.currentUser : family[0],
+  currentUser:family.includes(storedDeviceUser)?storedDeviceUser:(stored.currentUser && family.includes(stored.currentUser) ? stored.currentUser : family[0]),
   memberAges:stored.memberAges || {Emma:stored.familyProfile?.emmaAge??10,Noah:stored.familyProfile?.noahAge??7}
 };
 state.tasks = state.tasks.filter(task => !state.deletedIds.includes(task.id));
 state.events.forEach(event=>{if(event.date&&!event.startsAt)event.startsAt=eventStartsAt(event.date,event.time||'12:00');if(event.reminderMinutes===undefined)event.reminderMinutes=-1});
+localStorage.setItem(DEVICE_USER_KEY,state.currentUser);
 
 let createType = 'task';
 let taskFilter = 'open';
@@ -90,7 +93,9 @@ const subdivisions = {'DE-BW':'Baden-Württemberg','DE-BY':'Bayern','DE-BE':'Ber
 $('#dateLabel').textContent = today.toLocaleDateString('de-DE', {weekday:'long',day:'2-digit',month:'long'}).toUpperCase();
 $('#itemDate').valueAsDate = today;
 
-function save(){ localStorage.setItem('fami-state', JSON.stringify(state)); window.FamiCloud?.schedulePush(state); }
+function sharedState(){const payload=JSON.parse(JSON.stringify(state));delete payload.currentUser;return payload}
+function setDeviceUser(name){state.currentUser=family.includes(name)?name:family[0];localStorage.setItem(DEVICE_USER_KEY,state.currentUser)}
+function save(){ localStorage.setItem('fami-state', JSON.stringify(state)); window.FamiCloud?.schedulePush(sharedState()); }
 function toast(message){ const t=$('#toast'); $('p',t).textContent=message;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),2400); }
 function initials(person){ return person === 'Alle' ? 'A' : person.charAt(0); }
 function avatarClass(person){const classes=['lena','tom','emma','noah'];const index=Math.max(0,family.indexOf(person));return classes[index%classes.length]}
@@ -409,7 +414,7 @@ function familyMemberRow(name='',index=family.length){return `<div class="family
 function bindRemoveMembers(root){$$('.remove-family-member',root).forEach(button=>button.onclick=()=>{if($$('.family-member-row',root).length<=1)return toast('Mindestens ein Mitglied behalten');button.closest('.family-member-row').remove()})}
 function bindFamilySettings(root){
   const list=$('#familyMemberList',root);$('#addFamilyMember',root).onclick=()=>{if($$('.family-member-row',list).length>=10)return toast('Maximal 10 Familienprofile');list.insertAdjacentHTML('beforeend',familyMemberRow());bindRemoveMembers(list)};bindRemoveMembers(list);
-  $('#familySettingsForm',root).onsubmit=e=>{e.preventDefault();const rows=$$('.family-member-row',list);const names=rows.map(row=>$('.family-member-name',row).value.trim()).filter(Boolean);if(!names.length)return toast('Mindestens ein Familienmitglied ist erforderlich');if(new Set(names.map(name=>name.toLowerCase())).size!==names.length)return toast('Jeder Name darf nur einmal vorkommen');const fallback=names[0];const rename={};rows.forEach((row,index)=>{const old=row.dataset.oldName;if(old)rename[old]=names[index]||fallback});state.tasks.forEach(task=>task.person=rename[task.person]||(!names.includes(task.person)?fallback:task.person));state.events.forEach(event=>event.people=[...new Set(event.people.map(person=>rename[person]||(!names.includes(person)?fallback:person)))]);state.taskPeople=[...new Set(state.taskPeople.map(person=>rename[person]||person).filter(person=>names.includes(person)))];state.calendarPeople=[...new Set(state.calendarPeople.map(person=>rename[person]||person).filter(person=>names.includes(person)))];const ages={};rows.forEach((row,index)=>{const age=$('.family-member-age',row).value;if(names[index]&&age!=='')ages[names[index]]=Number(age)});state.memberAges=ages;state.familyName=$('#editFamilyName',root).value.trim()||'Meine Familie';const selected=$('#editCurrentUser',root).value;state.currentUser=rename[selected]||names.find(name=>name===selected)||fallback;family=[...names];state.familyMembers=[...names];save();syncFamilyUi();switchView('family');toast('Familie aktualisiert')};
+  $('#familySettingsForm',root).onsubmit=e=>{e.preventDefault();const rows=$$('.family-member-row',list);const names=rows.map(row=>$('.family-member-name',row).value.trim()).filter(Boolean);if(!names.length)return toast('Mindestens ein Familienmitglied ist erforderlich');if(new Set(names.map(name=>name.toLowerCase())).size!==names.length)return toast('Jeder Name darf nur einmal vorkommen');const fallback=names[0];const rename={};rows.forEach((row,index)=>{const old=row.dataset.oldName;if(old)rename[old]=names[index]||fallback});state.tasks.forEach(task=>task.person=rename[task.person]||(!names.includes(task.person)?fallback:task.person));state.events.forEach(event=>event.people=[...new Set(event.people.map(person=>rename[person]||(!names.includes(person)?fallback:person)))]);state.taskPeople=[...new Set(state.taskPeople.map(person=>rename[person]||person).filter(person=>names.includes(person)))];state.calendarPeople=[...new Set(state.calendarPeople.map(person=>rename[person]||person).filter(person=>names.includes(person)))];const ages={};rows.forEach((row,index)=>{const age=$('.family-member-age',row).value;if(names[index]&&age!=='')ages[names[index]]=Number(age)});state.memberAges=ages;state.familyName=$('#editFamilyName',root).value.trim()||'Meine Familie';const selected=$('#editCurrentUser',root).value;family=[...names];state.familyMembers=[...names];setDeviceUser(rename[selected]||names.find(name=>name===selected)||fallback);save();syncFamilyUi();switchView('family');toast('Familie aktualisiert · Geräteprofil nur auf diesem Gerät geändert')};
   root.insertAdjacentHTML('beforeend','<section class="family-invite-guide"><div><p class="eyebrow">TEST MIT EINER ZWEITEN PERSON</p><h2>Familienmitglied einladen</h2><p>Der Einladungscode verbindet beide Geräte mit denselben Terminen, Aufgaben, Einkaufslisten und Dateien.</p></div><ol><li>Falls nötig oben ein zusätzliches Familienprofil anlegen und speichern.</li><li>Auf „Einladung öffnen“ drücken und den vollständigen Einladungstext kopieren.</li><li>Die andere Person öffnet den Link auf ihrem eigenen Handy und fordert per E-Mail einen Anmeldecode an.</li><li>Sie gibt alle Ziffern des Anmeldecodes in Fami ein und tritt danach mit dem achtstelligen Familiencode bei.</li><li>Unter „Familie bearbeiten“ bei „Wer nutzt dieses Gerät?“ das passende Profil auswählen.</li></ol><p class="invite-warning">Wichtig: Der Familiencode gewährt Zugriff auf eure gemeinsamen Familiendaten. Nur direkt an vertraute Personen senden.</p><button class="btn primary" id="openFamilyInvite">Einladung öffnen</button></section>');
   $('#openFamilyInvite',root).onclick=()=>window.FamiCloud?.openSetup();
 }
@@ -438,7 +443,7 @@ async function loadYouTubeCatalog(root){
   const resetAndRender=()=>{limit=48;render()};search.oninput=resetAndRender;sort.value=state.videoSort;channel.value=state.videoChannel;meal.value=state.videoMeal;cuisine.value=state.videoCuisine;sort.onchange=()=>{state.videoSort=sort.value;save();resetAndRender()};channel.onchange=()=>{state.videoChannel=channel.value;save();resetAndRender()};meal.onchange=()=>{state.videoMeal=meal.value;save();resetAndRender()};cuisine.onchange=()=>{state.videoCuisine=cuisine.value;save();resetAndRender()};more.onclick=()=>{limit+=48;render()};
   try{const response=await fetch(`./recipe-videos.json?update=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`Videokatalog ${response.status}`);const data=await response.json();videos=[...(window.FAMI_FAMILY_RECIPES||[]),...curatedVideoRecipes(),...(data.videos||[]).filter(video=>video.featured)];render()}catch(error){console.error(error);videos=[...(window.FAMI_FAMILY_RECIPES||[]),...curatedVideoRecipes()];if(videos.length){status.textContent='Familienrezepte geladen · Rezeptvideos derzeit offline';render()}else{status.textContent='Rezeptkatalog konnte gerade nicht geladen werden';grid.innerHTML='<a class="btn ghost" href="https://www.youtube.com/@SchmaleSchulter/videos" target="_blank" rel="noopener">Schmale Schulter bei YouTube öffnen ↗</a><a class="btn ghost" href="https://www.youtube.com/channel/UCvd5wsIuZzEYA55cZkt7hIQ/videos" target="_blank" rel="noopener">Yummy Gastronomy bei YouTube öffnen ↗</a>';more.classList.add('hidden')}}
 }
-function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.26.1-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
+function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.26.2-beta.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
 async function importBackup(file){try{const data=JSON.parse(await file.text());if(!data.state?.tasks||!data.state?.events)throw new Error();localStorage.setItem('fami-state',JSON.stringify(data.state));toast('Sicherung importiert – App wird neu geladen');setTimeout(()=>location.reload(),800)}catch{toast('Diese Sicherungsdatei ist ungültig')}}
 async function renderFileLibrary(){
   const host=$('#fileLibrary');if(!host)return;const files=await getAllAttachments();host.innerHTML='';files.forEach(file=>{const card=document.createElement('article');card.className='library-file';card.innerHTML=`<span class="file-kind">${file.type?.startsWith('image/')?'FOTO':'DATEI'}</span><strong></strong><small></small><div><button class="open-library-file">Öffnen</button><button class="delete-library-file">Löschen</button></div>`;$('strong',card).textContent=file.name;$('small',card).textContent=`${Math.max(1,Math.round(file.size/1024))} KB · ${file.entity.startsWith('task:')?'Aufgabe':file.entity.startsWith('event:')?'Termin':'Allgemein'}`;$('.open-library-file',card).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.delete-library-file',card).onclick=async()=>{await removeAttachment(file);renderFileLibrary();toast('Datei gelöscht')};host.append(card)});if(!files.length)host.innerHTML='<div class="task-empty">Noch keine Dateien gespeichert.</div>';
@@ -551,11 +556,13 @@ if('serviceWorker' in navigator&&location.protocol!=='file:')window.addEventList
 
 ensureFeatureState();syncCleaningTasks();syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();save();
 window.FamiCloud?.init({
-  getState:()=>JSON.parse(JSON.stringify(state)),
+  getState:()=>sharedState(),
   applyState:payload=>{
     if(!payload||!Array.isArray(payload.tasks)||!Array.isArray(payload.events))return;
+    const deviceUser=localStorage.getItem(DEVICE_USER_KEY)||state.currentUser;
     Object.assign(state,payload);
     family=Array.isArray(state.familyMembers)&&state.familyMembers.length?[...state.familyMembers]:family;
+    setDeviceUser(deviceUser);
     ensureFeatureState();syncCleaningTasks();
     localStorage.setItem('fami-state',JSON.stringify(state));
     syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();

@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.30.2-beta.1 – 4. Oktober 2026
+
+- Personen-, Kalender- und Rezeptfilter werden nur noch auf dem jeweiligen Gerät gespeichert
+- Filteränderungen eines Familienmitglieds beeinflussen andere Handys nicht mehr
+- Gemeinsame Termine, Aufgaben, Favoriten und Familiendaten bleiben weiterhin synchronisiert
+
 ## 0.30.1-beta.1 – 4. Oktober 2026
 
 - Automatischen Wechsel auf zwei kostenlose Gemini-Ersatzmodelle bei hoher Auslastung ergänzt

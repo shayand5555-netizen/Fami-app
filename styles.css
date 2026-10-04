@@ -102,4 +102,10 @@
   .month-toolbar h2{min-width:0;font-size:13px}
   .month-toolbar button{padding:7px 8px}
   .month-toolbar #todayMonth{grid-column:1/-1;margin-left:0;padding:7px;font-size:10px}
+  #quickAdd{display:none}
+}
+
+.mobile-version{display:none}
+@media(max-width:760px){
+  .mobile-version{display:block;position:fixed;z-index:26;right:8px;bottom:73px;padding:4px 7px;border:1px solid #d1e1d9;border-radius:14px;background:#e5eee9;color:var(--green);font:700 8px Manrope;letter-spacing:.02em;box-shadow:0 2px 8px #173c2f18}
 }

@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.28.2-beta.1 – 4. Oktober 2026
+
+- Kompakte Versionsanzeige in der iPhone-Kopfleiste ergänzt
+- Den doppelten mobilen Plus-Knopf entfernt, damit Versionsnummer und Benachrichtigungen genügend Platz haben
+
 ## 0.28.1-beta.1 – 4. Oktober 2026
 
 - Monatskalender für Smartphones angepasst: Montag bis Sonntag sind jetzt vollständig sichtbar

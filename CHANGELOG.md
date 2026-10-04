@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.27.1-beta.1 – 4. Oktober 2026
+
+- Rezeptfotos werden ausschließlich mit der Supabase-KI-Funktion analysiert
+- Lokale OCR und der automatische OCR-Fallback wurden vollständig entfernt
+- Fehler der KI-Funktion werden verständlicher in der App angezeigt
+
 ## 0.27.0-beta.1 – 4. Oktober 2026
 
 - KI-Fotoanalyse erkennt jetzt sowohl fotografierte Rezeptseiten als auch fertige Gerichte

@@ -4,9 +4,9 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.27.0-beta.1**
+Version: **0.27.1-beta.1**
 
-Die einmalige Server-Einrichtung für die KI-Fotoanalyse steht in [AI_RECIPE_SETUP.md](AI_RECIPE_SETUP.md). Ohne diese Einrichtung verwendet Fami automatisch die lokale OCR-Texterkennung.
+Die einmalige Server-Einrichtung für die reine KI-Fotoanalyse steht in [AI_RECIPE_SETUP.md](AI_RECIPE_SETUP.md). Eine lokale OCR-Texterkennung wird nicht verwendet.
 
 Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cloud-Einrichtung bleiben Daten lokal gespeichert. Nach Verbindung mit Supabase werden Familiendaten live synchronisiert und Anhänge geschützt in der Cloud gespeichert.
 

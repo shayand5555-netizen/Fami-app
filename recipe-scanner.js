@@ -1,7 +1,4 @@
 (() => {
-  const TESSERACT_URL = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
-  let tesseractPromise;
-
   const clean = value => String(value || '')
     .replace(/\r/g, '')
     .replace(/!\[([^\]]*)\]\([^)]+\)/g, '$1')
@@ -187,17 +184,6 @@
     progress('Rezeptdaten erkannt',100); return result;
   }
 
-  function loadTesseract() {
-    if (window.Tesseract) return Promise.resolve(window.Tesseract);
-    if (tesseractPromise) return tesseractPromise;
-    tesseractPromise = new Promise((resolve,reject) => {
-      const script = document.createElement('script'); script.src = TESSERACT_URL; script.async = true;
-      script.onload = () => resolve(window.Tesseract); script.onerror = () => reject(new Error('Die Texterkennung konnte nicht geladen werden. Prüfe die Internetverbindung.'));
-      document.head.append(script);
-    });
-    return tesseractPromise;
-  }
-
   function imageDataUrl(file, maxSize = 1600) {
     return new Promise((resolve,reject) => {
       const image = new Image(); const url = URL.createObjectURL(file);
@@ -219,25 +205,16 @@
 
   async function analyzePhoto(file, progress = () => {}) {
     if (!file?.type?.startsWith('image/')) throw new Error('Bitte wähle ein Foto des Rezepts aus.');
-    let aiError = null;
-    if(window.FamiCloud?.isConnected?.()&&window.FamiCloud?.analyzeRecipePhoto){
-      try{
-        progress('Foto wird für die KI vorbereitet …',8);const image=await imageDataUrl(file);
-        progress('KI erkennt Gericht, Zutaten und Zubereitung …',30);const aiResult=await window.FamiCloud.analyzeRecipePhoto(image);
-        const recipe=normalizeAiRecipe(aiResult);
-        if(recipe.ingredients.length&&recipe.steps.length){progress('KI-Rezeptvorschlag ist bereit',100);return recipe}
-      }catch(error){aiError=error;console.warn('KI-Fotoanalyse nicht verfügbar, nutze OCR',error);progress('KI nicht verfügbar – lokale Texterkennung startet …',10)}
-    }
-    progress('Texterkennung wird geladen …',5); const Tesseract = await loadTesseract();
-    const result = await Tesseract.recognize(file, 'deu+eng', {logger:event => {
-      const percent = Math.round((event.progress || 0) * 85) + 10;
-      if (event.status === 'recognizing text') progress(`Text wird erkannt … ${Math.min(95,percent)} %`,Math.min(95,percent));
-      else if (event.status) progress('Foto wird vorbereitet …',Math.min(35,percent));
-    }});
-    progress('Zutaten und Kochschritte werden ausgewertet …',96);
-    const recipe = parseRecipeText(result.data?.text || '', {source:'Lokale Foto-Texterkennung'});recipe.imageType='recipe_page';
-    if (!recipe.ingredients.length) throw new Error(aiError?'Die KI-Fotoanalyse ist noch nicht verfügbar und die lokale Texterkennung fand kein lesbares Rezept. Bitte richte zuerst die KI-Funktion ein oder nutze ein scharfes Foto einer Rezeptseite.':'Auf dem Foto wurden keine eindeutigen Zutaten erkannt. Fotografiere das Rezept möglichst gerade und gut beleuchtet.');
-    progress('Rezept erkannt',100); return recipe;
+    if(!window.FamiCloud?.isConnected?.()) throw new Error('Bitte melde dich zuerst bei Fami Online an. Die Fotoanalyse läuft ausschließlich über die KI.');
+    if(!window.FamiCloud?.analyzeRecipePhoto) throw new Error('Die KI-Fotoanalyse konnte nicht geladen werden. Bitte aktualisiere die App und versuche es erneut.');
+    progress('Foto wird für die KI vorbereitet …',8);
+    const image=await imageDataUrl(file);
+    progress('KI erkennt Gericht, Zutaten und Zubereitung …',30);
+    const aiResult=await window.FamiCloud.analyzeRecipePhoto(image);
+    const recipe=normalizeAiRecipe(aiResult);
+    if(!recipe.ingredients.length||!recipe.steps.length)throw new Error('Die KI konnte aus diesem Foto noch kein vollständiges Rezept erstellen. Bitte verwende ein helles, scharfes Foto und versuche es erneut.');
+    progress('KI-Rezeptvorschlag ist bereit',100);
+    return recipe;
   }
 
   window.FamiRecipeScanner = {analyzePhoto, analyzeLink, estimateNutrition, parseText:parseRecipeText};

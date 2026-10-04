@@ -252,7 +252,14 @@
   async function analyzeRecipePhoto(image) {
     if (!client || !session) throw new Error('Für die KI-Fotoanalyse ist eine Anmeldung bei Fami Online erforderlich.');
     const {data, error} = await client.functions.invoke('analyze-recipe', {body:{image}});
-    if (error) throw error;
+    if (error) {
+      let message = '';
+      try {
+        const details = await error.context?.clone?.().json();
+        message = details?.error || details?.message || '';
+      } catch {}
+      throw new Error(message || error.message || 'Die Supabase-KI-Funktion konnte nicht erreicht werden.');
+    }
     if (!data?.recipe) throw new Error(data?.error || 'Die KI konnte auf diesem Foto kein Rezept erkennen.');
     return data.recipe;
   }

@@ -1,109 +1,8 @@
 {
-  "updatedAt": "2026-10-04T06:05:09.654Z",
+  "updatedAt": "2026-10-05T04:33:53.261Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Großes Kürbisfest",
-      "date": "2026-10-03",
-      "endDate": "2026-10-04",
-      "time": "11:00",
-      "venue": "Eldagser Hoflieferant, Springe-Eldagsen",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Gro%C3%9Fes-K%C3%BCrbisfest",
-      "featured": true,
-      "description": "Großes Hoffest mit Kürbissen und regionalem Familienprogramm im Umland."
-    },
-    {
-      "title": "Am 4. Oktober ist Schorsenbummel",
-      "date": "2026-10-04",
-      "time": "11:00",
-      "venue": "Hannovers Innenstadt",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Am-4.-Oktober-ist-Schorsenbummel",
-      "featured": true,
-      "description": "Traditioneller musikalischer Bummel durch Hannovers Innenstadt."
-    },
-    {
-      "title": "Ein wenig Licht. Und diese Ruhe.",
-      "date": "2026-10-04",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ein-wenig-Licht.-Und-diese-Ruhe",
-      "featured": false
-    },
-    {
-      "title": "Faust-Flohmarkt",
-      "date": "2026-10-04",
-      "venue": "Kulturzentrum Faust",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater Tonne: Es rappelt in der Kiste",
-      "date": "2026-10-04",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste",
-      "featured": false
-    },
-    {
-      "title": "Für Grundschulkinder: Führungen durch den Landtag",
-      "date": "2026-10-04",
-      "venue": "Niedersächsischer Landtag",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/F%C3%BCr-Grundschulkinder-F%C3%BChrungen-durch-den-Landtag",
-      "featured": false
-    },
-    {
-      "title": "Johannes Steuding",
-      "date": "2026-10-04",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Johannes-Steuding",
-      "featured": false
-    },
-    {
-      "title": "Naturpark-Kino & Erzähltheater: Geschichte des Apfels",
-      "date": "2026-10-04",
-      "venue": "Naturpark-Scheune Steinhude",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Naturpark-Kino-Erz%C3%A4hltheater-Geschichte-des-Apfels",
-      "featured": false
-    },
-    {
-      "title": "Pique Dame",
-      "date": "2026-10-04",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
-      "featured": false
-    },
-    {
-      "title": "SPIEL:ZEIT - (Spiel)Figuren aus Wolle und Garn wickeln",
-      "date": "2026-10-04",
-      "venue": "Stadtteilzentrum Weiße Rose",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Spiel-Figuren-aus-Wolle-und-Garn-wickeln",
-      "featured": false
-    },
-    {
-      "title": "Zeitlupe: Luís Salgueiro",
-      "date": "2026-10-04",
-      "venue": "Sprengel Museum Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zeitlupe-Lu%C3%ADs-Salgueiro",
-      "featured": false
-    },
-    {
-      "title": "Zur guten Absicht - Spieleabend",
-      "date": "2026-10-04",
-      "venue": "Zur guten Absicht",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zur-guten-Absicht-Spieleabend",
-      "featured": false
-    },
     {
       "title": "Die Jugendgruppe BE:TwEEN 2026",
       "date": "2026-10-05",
@@ -121,11 +20,43 @@
       "featured": false
     },
     {
+      "title": "Deutsch, du Schuft!",
+      "date": "2026-10-06",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Deutsch,-du-Schuft",
+      "featured": false
+    },
+    {
       "title": "Digitaler Dienstag",
       "date": "2026-10-06",
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag",
+      "featured": false
+    },
+    {
+      "title": "Regions­versamm­lung am 6. Oktober 2026",
+      "date": "2026-10-06",
+      "venue": "Region Hannover | Standort Hildesheimer Str. 18",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Regions%C2%ADversamm%C2%ADlung-am-6.-Oktober-2026",
+      "featured": false
+    },
+    {
+      "title": "Romeo und Julia",
+      "date": "2026-10-06",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-10-06",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
       "featured": false
     },
     {
@@ -144,6 +75,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
+      "title": "Offener Spielenachmittag",
+      "date": "2026-10-08",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Offener-Spielenachmittag",
+      "featured": false
+    },
+    {
       "title": "KiezKultur Festival",
       "date": "2026-10-09",
       "endDate": "2026-10-10",
@@ -153,6 +92,14 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/KiezKultur-Festival",
       "featured": true,
       "description": "Zwei Hannoveraner Kieze und viele Kulturorte feiern gemeinsam."
+    },
+    {
+      "title": "Laternenumzug zum Oktoberfest",
+      "date": "2026-10-09",
+      "venue": "Platz der Menschenrechte (ehemals Trammplatz)",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-zum-Oktoberfest",
+      "featured": false
     },
     {
       "title": "Tiergartenfest Hannover",
@@ -202,6 +149,14 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Figurentheater: Wo die wilden Kerle wohnen",
+      "date": "2026-10-11",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Wo-die-wilden-Kerle-wohnen",
+      "featured": false
     },
     {
       "title": "Flohmarkt Großburgwedel",
@@ -398,6 +353,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht",
+      "featured": false
+    },
+    {
+      "title": "Solawi Winterfest",
+      "date": "2026-11-30",
+      "venue": "Gärtnerei Solawi Bunte Beete",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Solawi-Winterfest",
       "featured": false
     },
     {

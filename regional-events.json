@@ -1,22 +1,14 @@
 {
-  "updatedAt": "2026-10-05T04:33:53.261Z",
+  "updatedAt": "2026-10-06T04:31:45.163Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "Die Jugendgruppe BE:TwEEN 2026",
-      "date": "2026-10-05",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
-      "featured": false
-    },
-    {
-      "title": "Propadanga",
-      "date": "2026-10-05",
-      "venue": "Ballhof Zwei",
+      "title": "2:22 Eine Geistergeschichte",
+      "date": "2026-10-06",
+      "venue": "Neues Theater",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Propadanga",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/2-22-Eine-Geistergeschichte",
       "featured": false
     },
     {
@@ -33,6 +25,46 @@
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag",
+      "featured": false
+    },
+    {
+      "title": "Figurentheater Tonne: Es rappelt in der Kiste",
+      "date": "2026-10-06",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste",
+      "featured": false
+    },
+    {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-10-06",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-10-06",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
+      "featured": false
+    },
+    {
+      "title": "Heldengeschichten für Erwachsene und Kinder",
+      "date": "2026-10-06",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Heldengeschichten-f%C3%BCr-Erwachsene-und-Kinder",
+      "featured": false
+    },
+    {
+      "title": "Pen & Paper",
+      "date": "2026-10-06",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
       "featured": false
     },
     {
@@ -60,6 +92,14 @@
       "featured": false
     },
     {
+      "title": "Antigone im Mittwoch:Theater",
+      "date": "2026-10-07",
+      "venue": "Mittwoch:Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Antigone-im-Mittwoch-Theater",
+      "featured": false
+    },
+    {
       "title": "Lerne die Welt der Sphero Bolts kennen",
       "date": "2026-10-07",
       "venue": "Stadtbibliothek",
@@ -73,6 +113,38 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Oktoberfest 2026",
+      "date": "2026-10-07",
+      "venue": "Schützenplatz Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Oktoberfest-2026",
+      "featured": false
+    },
+    {
+      "title": "Zum letzten Mal: Wanja",
+      "date": "2026-10-07",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Zum-letzten-Mal-Wanja",
+      "featured": false
+    },
+    {
+      "title": "Zusammenhalt in Europa | Poetry-Slam-Reihe",
+      "date": "2026-10-07",
+      "venue": "Stadtteilzentrum Lister Turm",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Zusammenhalt-in-Europa-|-Poetry-Slam-Reihe",
+      "featured": false
+    },
+    {
+      "title": "Der Großinquisitor",
+      "date": "2026-10-08",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Gro%C3%9Finquisitor",
+      "featured": false
     },
     {
       "title": "Offener Spielenachmittag",
@@ -92,6 +164,14 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/KiezKultur-Festival",
       "featured": true,
       "description": "Zwei Hannoveraner Kieze und viele Kulturorte feiern gemeinsam."
+    },
+    {
+      "title": "Hannover Wies'n",
+      "date": "2026-10-09",
+      "venue": "Parkbühne",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
+      "featured": false
     },
     {
       "title": "Laternenumzug zum Oktoberfest",
@@ -136,11 +216,27 @@
       "featured": false
     },
     {
+      "title": "Georgengarten Parkrun",
+      "date": "2026-10-10",
+      "venue": "Georgengarten",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
+      "featured": false
+    },
+    {
       "title": "Vintage Wonderland",
       "date": "2026-10-10",
       "venue": "Vintage Wonderland",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
+      "featured": false
+    },
+    {
+      "title": "Wassersause und „Dicke Berta“ fahren im Ersepark",
+      "date": "2026-10-10",
+      "venue": "Erse Park Uetze",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wassersause-und-%E2%80%9EDicke-Berta%E2%80%9C-fahren-im-Ersepark",
       "featured": false
     },
     {
@@ -164,6 +260,14 @@
       "venue": "Flohmarkt bei IKEA in Großburgwedel",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel",
+      "featured": false
+    },
+    {
+      "title": "TOMMI Games Award: Kinderjury gesucht!",
+      "date": "2026-10-12",
+      "venue": "Stadtbibliothek Kronsberg",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TOMMI-Games-Award-Kinderjury-gesucht",
       "featured": false
     },
     {

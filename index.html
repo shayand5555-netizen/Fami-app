@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.30.5" />
+  <link rel="stylesheet" href="styles.css?v=0.30.6" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -66,7 +66,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version"><span>v0.30.5</span><span class="version-stage"> BETA</span></span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version"><span>v0.30.6</span><span class="version-stage"> BETA</span></span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu erstellen</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -81,7 +81,7 @@
         <section class="card meal-plan-card">
           <div class="card-head"><div><span class="section-icon gold">🍽️</span><span><h2>Wochenessenplan</h2><p id="mealPlanRange">Diese Woche</p></span></div><div class="meal-week-actions"><button id="mealWeekPrev" aria-label="Vorherige Woche">‹</button><button id="mealWeekToday">Heute</button><button id="mealWeekNext" aria-label="Nächste Woche">›</button></div></div>
           <div class="meal-week" id="mealWeek"></div>
-          <button class="add-row nav-link" data-target="recipes"><svg><use href="#i-plus"/></svg> Gericht aus den Rezepten einplanen</button>
+          <div class="meal-plan-add-actions"><button class="add-row nav-link" data-target="recipes"><svg><use href="#i-plus"/></svg> Aus Rezepten wählen</button><button class="add-row" id="addFreeMeal"><svg><use href="#i-plus"/></svg> Freies Gericht eintragen</button></div>
         </section>
         <section class="card schedule-card">
           <div class="card-head"><div><span class="section-icon coral"><svg><use href="#i-cal"/></svg></span><span><h2>Heute</h2><p>4 Termine</p></span></div><button class="text-btn nav-link" data-target="calendar">Kalender öffnen <svg><use href="#i-arrow"/></svg></button></div>
@@ -129,7 +129,7 @@
     <button data-view="tasks"><svg><use href="#i-check"/></svg><span>Aufgaben</span></button>
     <button data-view="more"><svg><use href="#i-more"/></svg><span>Mehr</span></button>
   </nav>
-  <span class="mobile-version" title="Installierte Fami-Version">v0.30.5</span>
+  <span class="mobile-version" title="Installierte Fami-Version">v0.30.6</span>
 
   <div class="modal-wrap" id="modal" aria-hidden="true">
     <div class="modal-backdrop" data-close></div>
@@ -209,11 +209,11 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="push-config.js?v=0.30.5"></script>
-  <script src="cloud.js?v=0.30.5"></script>
-  <script src="notifications.js?v=0.30.5"></script>
-  <script src="family-recipes.js?v=0.30.5"></script>
-  <script src="recipe-scanner.js?v=0.30.5"></script>
-  <script src="app.js?v=0.30.5"></script>
+  <script src="push-config.js?v=0.30.6"></script>
+  <script src="cloud.js?v=0.30.6"></script>
+  <script src="notifications.js?v=0.30.6"></script>
+  <script src="family-recipes.js?v=0.30.6"></script>
+  <script src="recipe-scanner.js?v=0.30.6"></script>
+  <script src="app.js?v=0.30.6"></script>
 </body>
 </html>

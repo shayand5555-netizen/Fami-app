@@ -121,3 +121,21 @@
 .person-choice:has(input:checked){border-color:var(--green);color:var(--green);box-shadow:0 0 0 2px #2e6d5b12;opacity:1}
 .person-choice strong{font-size:10px}
 .person-choice .avatar{width:23px;height:23px}
+
+/* Größere Monatsübersicht mit natürlichem Wischen zwischen Monaten. */
+.month-calendar,.week-calendar{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+.month-day{min-height:118px}
+.calendar-pill{font-size:8.5px;padding:4px 5px}
+.meal-plan-add-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.meal-plan-add-actions .add-row{width:100%;justify-content:center}
+.meal-day-add{width:100%;margin-top:8px;border:1px dashed #c9d9d1;border-radius:7px;background:#f2f7f4;color:var(--green);padding:5px 4px;font-size:8px;font-weight:800}
+@media(max-width:760px){
+  .month-shell{margin-left:-16px;margin-right:-16px;padding:10px 3px;border-left:0;border-right:0;border-radius:0;box-shadow:none}
+  .month-calendar{grid-template-columns:26px repeat(7,minmax(0,1fr))}
+  .month-day{min-height:112px;padding:4px 3px}
+  .month-week-head{padding:7px 1px;font-size:8px}
+  .week-number{font-size:8px}
+  .day-number{font-size:10px}
+  .calendar-pill{padding:4px 3px;font-size:7.2px}
+  .meal-plan-add-actions{grid-template-columns:1fr}
+}

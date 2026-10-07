@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.30.6-beta.1 – 7. Oktober 2026
+
+- Push-Benachrichtigungen für neue Familientermine, Aufgaben, Essensplan- und Einkaufslisteneinträge ergänzt
+- Monatskalender auf dem iPhone vergrößert, unnötige Kalenderzeilen entfernt und Wischen zwischen Monaten ermöglicht
+- Freie Gerichte können ohne hinterlegtes Rezept direkt in den Wochenessenplan eingetragen werden
+
 ## 0.30.5-beta.1 – 4. Oktober 2026
 
 - Persönliche Bewertung mit ein bis fünf Sternen für alle Rezeptkarten ergänzt

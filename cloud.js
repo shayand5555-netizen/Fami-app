@@ -211,6 +211,16 @@
     if (error) throw error;
   }
 
+  async function notifyNewEntry(entry) {
+    if (!client || !session || !familyInfo || !entry?.title) return;
+    try {
+      const {error}=await client.functions.invoke('send-family-update',{body:{...entry,familyId:familyInfo.id}});
+      if(error)console.warn('Familien-Push konnte nicht gesendet werden',error);
+    } catch(error) {
+      console.warn('Familien-Push konnte nicht gesendet werden',error);
+    }
+  }
+
   async function uploadFiles(entity, files) {
     if (!client || !familyInfo || !session || !files?.length) return [];
     const uploaded = [];
@@ -334,6 +344,7 @@
     deleteFile,
     analyzeRecipePhoto,
     registerPush,
+    notifyNewEntry,
     isConnected:() => Boolean(client && familyInfo && session)
   };
 })();

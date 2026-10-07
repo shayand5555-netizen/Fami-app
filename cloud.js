@@ -270,7 +270,15 @@
         const details = await error.context?.clone?.().json();
         message = details?.error || details?.message || '';
       } catch {}
-      throw new Error(message || error.message || 'Die Supabase-KI-Funktion konnte nicht erreicht werden.');
+      const rawMessage=message || error.message || '';
+      const friendlyMessage=/high demand|overloaded|resource exhausted|try again later/i.test(rawMessage)
+        ? 'Die KI ist gerade stark ausgelastet. Bitte versuche es in ein paar Minuten erneut.'
+        : /credit|quota|billing|payment/i.test(rawMessage)
+          ? 'Das kostenlose KI-Kontingent ist momentan aufgebraucht. Bitte versuche es später erneut.'
+          : /network|fetch|timeout/i.test(rawMessage)
+            ? 'Die KI ist gerade nicht erreichbar. Bitte prüfe deine Verbindung und versuche es erneut.'
+            : rawMessage;
+      throw new Error(friendlyMessage || 'Die KI-Fotoanalyse konnte nicht erreicht werden.');
     }
     if (!data?.recipe) throw new Error(data?.error || 'Die KI konnte auf diesem Foto kein Rezept erkennen.');
     return data.recipe;

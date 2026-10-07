@@ -1,5 +1,16 @@
 # Fami – Versionsverlauf
 
+## 0.31.0-beta.1 – 7. Oktober 2026
+
+- Oberfläche nach Apple-Grundsätzen vereinfacht: ruhigere Karten, größere Schriften und Tippflächen
+- Navigation auf Heute, Kalender, Aufgaben, Essen und Mehr vereinheitlicht
+- Startseite priorisiert Termine und Aufgaben; Dateien bleiben unter „Mehr“ erreichbar
+- Erstellen-Formular zeigt zusätzliche Angaben erst unter „Weitere Optionen“
+- Kalenderansichten und mobile Monatsnavigation besser lesbar und vollständig bedienbar
+- Rezeptfilter eingeklappt und technische KI-Fehler in verständliches Deutsch übersetzt
+- Versionsanzeige in den Bereich „Mehr“ verschoben
+- Cloud-Synchronisierung führt gleichzeitig erstellte Einträge zusammen und merkt Löschungen
+
 ## 0.30.6-beta.1 – 7. Oktober 2026
 
 - Push-Benachrichtigungen für neue Familientermine, Aufgaben, Essensplan- und Einkaufslisteneinträge ergänzt

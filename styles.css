@@ -139,3 +139,108 @@
   .calendar-pill{padding:4px 3px;font-size:7.2px}
   .meal-plan-add-actions{grid-template-columns:1fr}
 }
+
+/* v0.31 — ruhige, vertraute Oberfläche nach Apple-Grundsätzen. */
+:root{
+  --ink:#202925;
+  --muted:#69736e;
+  --bg:#f5f5f1;
+  --card:#fff;
+  --line:#e4e6e1;
+  --green:#246b57;
+  --shadow:0 1px 2px rgba(24,39,33,.04),0 8px 28px rgba(24,39,33,.045);
+}
+html{-webkit-text-size-adjust:100%}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","DM Sans",sans-serif;font-size:15px}
+h1,h2,.brand,.brand-mark{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Manrope",sans-serif}
+button,input,select,textarea{font-size:16px}
+button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:3px solid rgba(36,107,87,.22);outline-offset:2px}
+.card,.empty-shell,.month-shell,.youtube-library,.activity-card,.family-invite-guide{box-shadow:var(--shadow)}
+.card{border-color:#e7e8e4;border-radius:20px;padding:24px}
+.sync-banner{width:max-content;max-width:100%;margin:18px 0 14px;padding:7px 11px;border-radius:999px;background:transparent;border-color:transparent;font-size:12px}
+.sync-banner .synced-people{display:none}
+.sync-banner[data-mode="online"]{color:#4f7165}
+.sync-banner[data-mode="online"] strong{font-weight:600}
+.sync-banner:not([data-mode="online"]){background:#fff;border-color:var(--line)}
+.dashboard-grid>.schedule-card{order:1}.dashboard-grid>.tasks-card{order:2}.dashboard-grid>.meal-plan-card{order:3}.dashboard-grid>.files-card{order:4}
+.schedule-card,.tasks-card{align-self:start}
+.advanced-options{margin:14px 0 2px;border:1px solid var(--line);border-radius:13px;background:#fafaf8;overflow:hidden}
+.advanced-options summary{min-height:44px;display:flex;align-items:center;padding:0 14px;color:var(--green);font-size:13px;font-weight:700;cursor:pointer;list-style:none}
+.advanced-options summary::-webkit-details-marker{display:none}
+.advanced-options summary:after{content:"⌄";margin-left:auto;font-size:18px;transition:transform .2s}
+.advanced-options[open] summary:after{transform:rotate(180deg)}
+.advanced-options-body{padding:0 14px 12px;border-top:1px solid var(--line)}
+.more-grid button{min-height:104px;text-align:left}
+.about-version{display:block;margin-top:9px;color:var(--green);font-size:11px;font-weight:700}
+.calendar-options summary{min-height:44px;font-size:13px;display:flex;align-items:center}
+.month-toolbar button,.calendar-view-switch button,.meal-week-actions button,.icon-btn{min-width:44px;min-height:44px}
+.calendar-view-switch{width:min(320px,100%)}
+.calendar-view-switch button{font-size:13px}
+.month-toolbar h2{font-size:19px}
+.calendar-pill{font-size:10px;min-height:22px}
+.week-day .calendar-pill{font-size:12px}
+.week-day header strong{font-size:13px}
+.list-heading{font-size:18px}
+.event-body strong,.calendar-entry strong,.managed-copy strong{font-size:14px}
+.event-body p,.calendar-entry small,.managed-copy small,.card-head p{font-size:12px}
+.card h2{font-size:17px}
+.text-btn,.add-row,.upload-row{font-size:13px;min-height:44px}
+.mobile-version{display:none!important}
+.catalog-filters{border:1px solid var(--line);border-radius:13px;background:#fafaf8;overflow:hidden}
+.catalog-filters>summary{min-height:44px;display:flex;align-items:center;padding:0 14px;font-size:13px;font-weight:700;color:var(--green);cursor:pointer}
+.catalog-filters>.youtube-catalog-tools{padding:12px;border-top:1px solid var(--line)}
+.calendar-mobile-file-actions{display:none}
+.youtube-video-card h2{font-size:17px}.youtube-video-card>p{font-size:12px}.youtube-video-card small{font-size:11px}
+.youtube-video-tags span,.food-badge{font-size:10px}
+
+@media(max-width:760px){
+  body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+  main,.content,.subview,.calendar-head,.calendar-head-actions,.month-shell,.month-calendar{min-width:0;max-width:100%}
+  .topbar{height:64px;padding:0 16px}
+  .top-actions{gap:8px}.top-actions .version-badge{display:none}
+  .content{padding:24px 16px 36px}
+  .welcome{align-items:flex-start}.welcome h1{font-size:28px}.welcome>div>p:last-child{font-size:14px;line-height:1.45}
+  .weather{display:none}
+  .sync-banner{margin:13px 0 9px;font-size:11px;padding-left:4px}
+  .dashboard-grid{display:flex;flex-direction:column;gap:14px}
+  .dashboard-grid>.schedule-card{order:1}.dashboard-grid>.tasks-card{order:2}.dashboard-grid>.meal-plan-card{order:3}.dashboard-grid>.files-card{display:none}
+  .card{padding:18px 17px;border-radius:19px;box-shadow:0 1px 2px rgba(24,39,33,.035),0 6px 20px rgba(24,39,33,.035)}
+  .card-head{margin-bottom:16px}.section-icon{width:36px;height:36px}
+  .mobile-nav{height:calc(66px + env(safe-area-inset-bottom));padding:6px 8px env(safe-area-inset-bottom);display:grid;grid-template-columns:repeat(5,1fr);align-items:start;background:rgba(255,255,255,.92);backdrop-filter:blur(18px);border-top:1px solid rgba(220,224,219,.9)}
+  .mobile-nav>button:not(.mobile-create){min-width:0;min-height:52px;padding:5px 1px;gap:2px;font-size:10px}
+  .mobile-nav>button:not(.mobile-create) svg{width:22px;height:22px}
+  .mobile-create{position:fixed!important;right:17px!important;bottom:calc(79px + env(safe-area-inset-bottom))!important;width:54px!important;height:54px!important;border-radius:18px!important;box-shadow:0 9px 24px rgba(36,107,87,.28)!important;z-index:28}
+  .mobile-create svg{width:25px!important;height:25px!important}
+  .subview-head{margin-bottom:18px}.subview-head h1{font-size:28px}.subview-head p:last-child{font-size:14px;line-height:1.45}
+  .calendar-head-actions{display:block;width:100%;min-width:0}
+  .calendar-head-actions>.calendar-import,.calendar-head-actions>.calendar-export{display:none}
+  .calendar-head-actions>.sub-add{display:flex;width:100%;min-width:0;justify-content:center;font-size:14px;min-height:44px}
+  .calendar-head-actions>.sub-add span{display:inline}
+  .calendar-mobile-file-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+  .calendar-mobile-file-actions .btn{min-width:0;justify-content:center;font-size:12px}
+  .calendar-mobile-file-actions input{display:none}
+  .month-shell{margin:0 -16px 18px;padding:12px 8px 14px;background:#fff}
+  .month-toolbar{grid-template-columns:44px minmax(0,1fr) 44px;margin-bottom:10px}
+  .month-toolbar #todayMonth{grid-column:1/-1;justify-self:stretch;min-height:38px}
+  .month-toolbar h2{font-size:18px}
+  .month-calendar{grid-template-columns:24px repeat(7,minmax(0,1fr))}
+  .month-week-head{font-size:9px;padding:8px 0}.week-number{font-size:9px}
+  .month-day{min-height:104px;padding:4px 3px}.day-number{font-size:11px}
+  .calendar-pill{font-size:8.5px;line-height:1.25;min-height:20px;padding:4px 3px}
+  .week-calendar{gap:9px}.week-day{min-height:92px;padding:12px}.week-day header strong{font-size:14px}.week-day .calendar-pill{font-size:12px;min-height:34px;padding:8px 9px}
+  .calendar-options{margin-bottom:20px}.calendar-options summary{font-size:13px}
+  .form-modal .modal-form-scroll>label,form>label,.form-row label{font-size:13px}
+  .people-multi legend{font-size:13px}.person-choice strong{font-size:12px}
+  .modal input,.modal select,.modal textarea{min-height:44px;font-size:16px}
+  .modal-actions .btn{min-height:46px;font-size:14px}
+  .youtube-library{padding:17px 0;border:0;background:transparent;box-shadow:none}.youtube-library>div:first-child,.youtube-library>.catalog-filters,.youtube-library>#youtubeVideoStatus,.youtube-library>#youtubeVideoMore{margin-left:0;margin-right:0}
+  .youtube-video-grid{gap:13px}.youtube-video-card{padding:12px;border-radius:17px;box-shadow:none}
+  .youtube-video-card h2{font-size:16px}.youtube-video-card>p{font-size:12px}
+  .catalog-filters>.youtube-catalog-tools{display:grid}
+}
+
+@media(max-width:390px){
+  .content{padding-left:13px;padding-right:13px}.month-shell{margin-left:-13px;margin-right:-13px}
+  .mobile-nav>button:not(.mobile-create){font-size:9px}
+  .month-day{min-height:96px}.calendar-pill{font-size:8px}
+}

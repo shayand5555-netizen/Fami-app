@@ -244,3 +244,13 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .mobile-nav>button:not(.mobile-create){font-size:9px}
   .month-day{min-height:96px}.calendar-pill{font-size:8px}
 }
+
+/* Mehrtägige Termine laufen als ein durchgehender Balken über die Woche. */
+.month-calendar{--calendar-cell-padding:7px}
+.day-items{position:relative}
+.month-day .calendar-pill.multi-day{position:relative;z-index:2;width:calc(100% + (var(--calendar-cell-padding) * 2));margin-left:calc(var(--calendar-cell-padding) * -1);margin-right:calc(var(--calendar-cell-padding) * -1);border-radius:0;text-overflow:clip}
+.month-day .calendar-pill.multi-day.segment-start{z-index:3;width:calc(100% + var(--calendar-cell-padding));margin-left:0;border-radius:5px 0 0 5px;overflow:visible}
+.month-day .calendar-pill.multi-day.segment-end{width:calc(100% + var(--calendar-cell-padding));margin-right:0;border-radius:0 5px 5px 0}
+.month-day .calendar-pill.multi-day.segment-start.segment-end{width:100%;margin-left:0;margin-right:0;border-radius:5px}
+.week-day .calendar-pill.multi-day{width:100%;margin-left:0;margin-right:0;border-radius:6px;overflow:hidden}
+@media(max-width:760px){.month-calendar{--calendar-cell-padding:3px}}

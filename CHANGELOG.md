@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.31.1-beta.1 – 7. Oktober 2026
+
+- Mehrtägige Termine werden in der Monatsansicht als zusammenhängende Balken dargestellt
+- Enddatum beim Erstellen und Bearbeiten von Terminen ergänzt
+- Mehrtägige Termine bleiben beim Kalender-Import und -Export erhalten
+
 ## 0.31.0-beta.1 – 7. Oktober 2026
 
 - Oberfläche nach Apple-Grundsätzen vereinfacht: ruhigere Karten, größere Schriften und Tippflächen

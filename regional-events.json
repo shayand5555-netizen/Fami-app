@@ -1,96 +1,8 @@
 {
-  "updatedAt": "2026-10-06T04:31:45.163Z",
+  "updatedAt": "2026-10-07T04:32:48.502Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "2:22 Eine Geistergeschichte",
-      "date": "2026-10-06",
-      "venue": "Neues Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/2-22-Eine-Geistergeschichte",
-      "featured": false
-    },
-    {
-      "title": "Deutsch, du Schuft!",
-      "date": "2026-10-06",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Deutsch,-du-Schuft",
-      "featured": false
-    },
-    {
-      "title": "Digitaler Dienstag",
-      "date": "2026-10-06",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater Tonne: Es rappelt in der Kiste",
-      "date": "2026-10-06",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-10-06",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "Hannover Kiosk",
-      "date": "2026-10-06",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
-      "featured": false
-    },
-    {
-      "title": "Heldengeschichten für Erwachsene und Kinder",
-      "date": "2026-10-06",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Heldengeschichten-f%C3%BCr-Erwachsene-und-Kinder",
-      "featured": false
-    },
-    {
-      "title": "Pen & Paper",
-      "date": "2026-10-06",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
-      "featured": false
-    },
-    {
-      "title": "Regions­versamm­lung am 6. Oktober 2026",
-      "date": "2026-10-06",
-      "venue": "Region Hannover | Standort Hildesheimer Str. 18",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Regions%C2%ADversamm%C2%ADlung-am-6.-Oktober-2026",
-      "featured": false
-    },
-    {
-      "title": "Romeo und Julia",
-      "date": "2026-10-06",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia",
-      "featured": false
-    },
-    {
-      "title": "Sprachkurs goes digital | 60+",
-      "date": "2026-10-06",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
-      "featured": false
-    },
     {
       "title": "Antigone im Mittwoch:Theater",
       "date": "2026-10-07",
@@ -166,11 +78,27 @@
       "description": "Zwei Hannoveraner Kieze und viele Kulturorte feiern gemeinsam."
     },
     {
+      "title": "Bora",
+      "date": "2026-10-09",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Bora",
+      "featured": false
+    },
+    {
       "title": "Hannover Wies'n",
       "date": "2026-10-09",
       "venue": "Parkbühne",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
+      "featured": false
+    },
+    {
+      "title": "Haus zur Sonne",
+      "date": "2026-10-09",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Haus-zur-Sonne",
       "featured": false
     },
     {
@@ -247,6 +175,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Faust-Flohmarkt",
+      "date": "2026-10-11",
+      "venue": "Kulturzentrum Faust",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
+      "featured": false
+    },
+    {
       "title": "Figurentheater: Wo die wilden Kerle wohnen",
       "date": "2026-10-11",
       "venue": "Theatrio Figuren Theaterhaus Hannover",
@@ -260,6 +196,22 @@
       "venue": "Flohmarkt bei IKEA in Großburgwedel",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel",
+      "featured": false
+    },
+    {
+      "title": "H/21: Hannover Halbmarathon",
+      "date": "2026-10-11",
+      "venue": "Innenstadt",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/H-21-Hannover-Halbmarathon",
+      "featured": false
+    },
+    {
+      "title": "MineCity – wir bauen unsere Stadt!",
+      "date": "2026-10-12",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/MineCity-%E2%80%93-wir-bauen-unsere-Stadt",
       "featured": false
     },
     {
@@ -338,6 +290,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Winterzauber Herrenhausen",
+      "date": "2026-10-28",
+      "venue": "Galerie Herrenhausen",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterzauber-Herrenhausen",
+      "featured": false
     },
     {
       "title": "EXIT x Electric Sunday",
@@ -457,14 +417,6 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht",
-      "featured": false
-    },
-    {
-      "title": "Solawi Winterfest",
-      "date": "2026-11-30",
-      "venue": "Gärtnerei Solawi Bunte Beete",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Solawi-Winterfest",
       "featured": false
     },
     {

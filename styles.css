@@ -254,3 +254,23 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .month-day .calendar-pill.multi-day.segment-start.segment-end{width:100%;margin-left:0;margin-right:0;border-radius:5px}
 .week-day .calendar-pill.multi-day{width:100%;margin-left:0;margin-right:0;border-radius:6px;overflow:hidden}
 @media(max-width:760px){.month-calendar{--calendar-cell-padding:3px}}
+
+/* Kompakter Wochenessensplan: Montag bis Sonntag ohne seitliches Scrollen. */
+.meal-day-long{display:none}
+@media(max-width:760px){
+  .meal-week{display:grid;grid-template-columns:1fr;gap:5px;width:100%;overflow:visible;scroll-snap-type:none;margin:12px 0}
+  .meal-day{display:grid;grid-template-columns:66px minmax(0,1fr) 38px;align-items:center;gap:7px;min-height:50px;padding:6px 7px;border-radius:10px;scroll-snap-align:none}
+  .meal-day>header{display:grid;gap:1px;margin:0;align-self:center}
+  .meal-day>header strong{font-size:11px;line-height:1.2;text-transform:none}
+  .meal-day>header>span{font-size:9px}
+  .meal-day-short{display:none}.meal-day-long{display:inline;text-transform:capitalize}
+  .meal-day-items{display:grid;grid-column:2;grid-row:1;gap:4px;min-width:0}
+  .meal-day>p{grid-column:2;grid-row:1;margin:0;text-align:left;font-size:10px}
+  .meal-day-add{grid-column:3;grid-row:1;align-self:center;width:36px;height:36px;margin:0;padding:0;border:0;border-radius:10px;font-size:0}
+  .meal-day-add:before{content:"+";font-size:22px;font-weight:500}
+  .planned-meal{grid-template-columns:25px minmax(0,1fr) auto;align-items:center;gap:6px;padding:4px 5px;border:0;background:#fff}
+  .planned-meal img,.planned-meal>span{width:25px;height:25px;border-radius:6px;font-size:14px}
+  .planned-meal small{font-size:7px}.planned-meal strong{font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .meal-move{grid-column:3;grid-row:1;gap:2px}
+  .meal-move button{min-width:23px;width:23px;height:25px;padding:0;font-size:13px}
+}

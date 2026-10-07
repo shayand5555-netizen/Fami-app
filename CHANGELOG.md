@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.31.2-beta.1 – 7. Oktober 2026
+
+- Wochenessensplan auf dem Handy als kompakte Liste von Montag bis Sonntag dargestellt
+- Alle sieben Tage sind ohne seitliches Scrollen auf einen Blick erfassbar
+- Gerichte lassen sich weiterhin direkt je Tag hinzufügen, verschieben und entfernen
+
 ## 0.31.1-beta.1 – 7. Oktober 2026
 
 - Mehrtägige Termine werden in der Monatsansicht als zusammenhängende Balken dargestellt

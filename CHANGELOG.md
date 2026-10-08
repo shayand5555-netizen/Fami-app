@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.31.5-beta.1 – 8. Oktober 2026
+
+- Kalendertexte und Tageszahlen auf dem iPhone vergrößert
+- Einzeltermine mit hellen Flächen und gut lesbarer farbiger Schrift gestaltet
+- Kräftige Farben gezielt für Zeiträume, Geburtstage und wichtige Termine beibehalten
+
 ## 0.31.4-beta.1 – 8. Oktober 2026
 
 - Mobile Monatsansicht optisch an TimeTree angenähert

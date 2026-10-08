@@ -298,3 +298,21 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .event-pill.blue{background:#48afe5;color:#fff}.event-pill.coral{background:#aa7ad8;color:#fff}.event-pill.yellow{background:#f0b82f;color:#fff}.event-pill.green{background:#38bf85;color:#fff}
   .month-day .calendar-pill.multi-day.range-label{z-index:4;overflow:visible;text-align:center;text-overflow:clip}
 }
+
+/* Bessere Lesbarkeit: Einzeltermine leicht, Zeiträume deutlich. */
+@media(max-width:760px){
+  .month-week-head{font-size:10px;font-weight:650;letter-spacing:.02em}
+  .week-number{font-size:9px}
+  .day-number{width:26px;height:26px;font-size:13px;font-weight:650}
+  .calendar-pill{min-height:20px;padding:3px 2px;font-size:10px;line-height:1.25;font-weight:700;letter-spacing:-.018em}
+  .month-day .calendar-pill:not(.multi-day){width:calc(100% - 3px);max-width:none;margin-right:3px;border-radius:3px;overflow:hidden;text-overflow:clip;white-space:nowrap}
+  .month-day .calendar-pill.multi-day{font-size:10.5px;font-weight:750}
+  .month-day .event-pill.blue:not(.multi-day){background:#eaf7fc;color:#147ba9}
+  .month-day .event-pill.green:not(.multi-day){background:#e8f7f0;color:#176f50}
+  .month-day .event-pill.yellow:not(.multi-day){background:#fff5d9;color:#846000}
+  .month-day .event-pill.coral:not(.multi-day){background:#ef4b4b;color:#fff}
+  .month-day .event-pill.blue.multi-day{background:#48afe5;color:#fff}
+  .month-day .event-pill.green.multi-day{background:#38bf85;color:#fff}
+  .month-day .event-pill.yellow.multi-day{background:#f0b82f;color:#fff}
+  .month-day .event-pill.coral.multi-day{background:#aa7ad8;color:#fff}
+}

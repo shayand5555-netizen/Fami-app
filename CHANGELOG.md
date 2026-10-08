@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.31.4-beta.1 – 8. Oktober 2026
+
+- Mobile Monatsansicht optisch an TimeTree angenähert
+- Vertikale Kästchenlinien entfernt und Wochentrennung ruhiger gestaltet
+- Terminfarben klarer und mehrtägige Beschriftungen mittig platziert
+
 ## 0.31.3-beta.1 – 8. Oktober 2026
 
 - Monatskalender auf dem iPhone vertikal vergrößert

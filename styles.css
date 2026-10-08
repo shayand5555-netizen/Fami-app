@@ -281,3 +281,20 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .month-day,.week-number{min-height:0}
   .month-day{align-content:start}
 }
+
+/* Ruhige TimeTree-artige Monatsansicht auf dem iPhone. */
+@media(max-width:760px){
+  .month-calendar{border:0;background:#fff}
+  .month-week-head{border-right:0;border-bottom:1px solid #e9ece9;padding:11px 1px;background:#fff;color:#7b827e}
+  .week-number,.month-day{border-right:0;border-bottom:1px solid #edf0ee}
+  .week-number{background:#fff;color:#9aa09d;align-items:start;padding-top:13px}
+  .month-day,.month-day.outside{padding:9px 3px;background:#fff}
+  .month-day.outside{color:#b9bebb}
+  .month-day[role="button"]:hover,.month-day[role="button"]:focus-visible{background:#f8faf9;box-shadow:none;outline:0}
+  .day-number{width:24px;height:24px;font-size:11px}
+  .day-items{gap:3px;margin-top:8px}
+  .calendar-pill{min-height:20px;border-radius:4px;padding:4px 3px;font-size:8.5px;font-weight:700}
+  .calendar-pill.public{background:#ef4b4b;color:#fff}.calendar-pill.school{background:#36c88a;color:#fff}
+  .event-pill.blue{background:#48afe5;color:#fff}.event-pill.coral{background:#aa7ad8;color:#fff}.event-pill.yellow{background:#f0b82f;color:#fff}.event-pill.green{background:#38bf85;color:#fff}
+  .month-day .calendar-pill.multi-day.range-label{z-index:4;overflow:visible;text-align:center;text-overflow:clip}
+}

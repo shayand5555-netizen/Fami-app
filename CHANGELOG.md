@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.32.0-rc.1 – 8. Oktober 2026
+
+- Großer interner Release-Test der wichtigsten Bedienwege auf mobiler Bildschirmgröße durchgeführt
+- Teilen klar in „Familienmitglied einladen“ und „Fami für eine eigene Gruppe empfehlen“ getrennt
+- Erklärung ergänzt, dass jede Familiengruppe eine eigene Gruppen-ID und vollständig getrennte Daten besitzt
+- Einladungsablauf und Sicherheitswarnung direkt in „Familie bearbeiten“ verständlicher gemacht
+- Release-Testbericht mit automatisierten, visuellen und noch offenen echten Gerätetests ergänzt
+
 ## 0.31.6-beta.1 – 8. Oktober 2026
 
 - Terminliste auf heute bis einschließlich der nächsten sieben Tage begrenzt

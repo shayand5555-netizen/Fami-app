@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.32.1-rc.1 – 8. Oktober 2026
+
+- Einkaufsliste automatisch nach einem typischen Aldi-Rundgang sortiert
+- Vorhandene und neue Einträge werden anhand ihres Namens neu kategorisiert
+- Erledigte Artikel stehen innerhalb ihrer Kategorie am Ende
+- „Wochenessenplan“ einheitlich in „Wochenessensplan“ umbenannt
+
 ## 0.32.0-rc.1 – 8. Oktober 2026
 
 - Großer interner Release-Test der wichtigsten Bedienwege auf mobiler Bildschirmgröße durchgeführt

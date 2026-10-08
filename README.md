@@ -17,7 +17,7 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Bearbeitbare Aufgaben und Termine
 - Lokale Foto- und Dateianhänge
 - Gemeinsame Einkaufsliste auf einem Gerät
-- Gemeinsamer Wochenessenplan mit Rezeptbildern, Verschieben und Löschen direkt auf der Startseite
+- Gemeinsamer Wochenessensplan mit Rezeptbildern, Verschieben und Löschen direkt auf der Startseite
 - Konfigurierbarer Putzplan mit sinnvollen Intervallen und fair rotierenden Aufgaben
 - Rezeptideen mit direkter Zutatenübernahme
 - Je 100 beliebte, ausführliche Rezeptkarten von Schmale Schulter und Yummy Gastronomy mit Mahlzeit-, Küchen- und Beliebtheitsfiltern

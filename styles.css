@@ -274,3 +274,10 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .meal-move{grid-column:3;grid-row:1;gap:2px}
   .meal-move button{min-width:23px;width:23px;height:25px;padding:0;font-size:13px}
 }
+
+/* Die Monatsansicht nutzt auf dem iPhone die verfügbare Bildschirmhöhe. */
+@media(max-width:760px){
+  .month-calendar{grid-template-rows:40px repeat(var(--calendar-weeks,6),minmax(0,1fr));min-height:calc(100dvh - 240px)}
+  .month-day,.week-number{min-height:0}
+  .month-day{align-content:start}
+}

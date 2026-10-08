@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.31.3-beta.1 – 8. Oktober 2026
+
+- Monatskalender auf dem iPhone vertikal vergrößert
+- Kalenderhöhe passt sich automatisch an Monate mit fünf oder sechs Wochen an
+- Verfügbarer Bildschirm wird ähnlich wie bei TimeTree besser ausgenutzt
+
 ## 0.31.2-beta.1 – 7. Oktober 2026
 
 - Wochenessensplan auf dem Handy als kompakte Liste von Montag bis Sonntag dargestellt

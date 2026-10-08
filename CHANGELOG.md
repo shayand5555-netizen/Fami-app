@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.33.0-rc.1 – 8. Oktober 2026
+
+- Offizielle aha-Abholtermine 2026 für Waldstraße 71A, 30629 Hannover-Misburg ergänzt
+- Papier, Gelber Sack und Restmüll erinnern alle Familienmitglieder am Vorabend um 18:30 Uhr
+- Feiertagsverschiebungen aus dem offiziellen aha-Jahreskalender übernommen
+- „+ Gericht“ öffnet zuerst eine klare Auswahl zwischen gespeichertem Rezept und freiem Gericht
+- Gespeicherte Familienrezepte lassen sich direkt im Auswahlfenster für den gewählten Tag übernehmen
+
 ## 0.32.1-rc.1 – 8. Oktober 2026
 
 - Einkaufsliste automatisch nach einem typischen Aldi-Rundgang sortiert

@@ -147,6 +147,9 @@
 .meal-choice-actions>button>span{grid-row:1/3;display:grid;place-items:center;width:42px;height:42px;border-radius:12px;background:#fff;font-size:21px}
 .meal-choice-actions strong{font:700 13px Manrope}.meal-choice-actions small{color:var(--muted);font-size:9px;line-height:1.4}
 .meal-recipe-choice label{margin-top:8px}
+.meal-plan-picker-modal{width:min(780px,calc(100vw - 28px))}
+.meal-plan-week-field{margin:18px 0 12px;padding:0;border:0}.meal-plan-week-field legend{font-size:11px;font-weight:800}.meal-plan-week-field>p{margin:4px 0 11px;color:var(--muted);font-size:10px}
+.meal-plan-week-picker{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px}.meal-plan-day-choice{min-width:0;min-height:104px;padding:10px 8px;border:1px solid var(--line);border-radius:12px;background:#fafbf9;text-align:left;display:flex;flex-direction:column;gap:3px}.meal-plan-day-choice>span{text-transform:uppercase;font-size:9px;font-weight:800}.meal-plan-day-choice>small{color:var(--muted);font-size:8px}.meal-plan-day-choice>strong{margin-top:7px;font-size:10px;line-height:1.3;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}.meal-plan-day-choice>em{margin-top:auto;color:var(--muted);font-size:8px;font-style:normal}.meal-plan-day-choice.free:hover,.meal-plan-day-choice.free:focus-visible{border-color:#73a58f;background:#f1f7f4;outline:0}.meal-plan-day-choice.selected{border-color:var(--green);background:#edf6f1;box-shadow:0 0 0 2px rgba(36,107,87,.13)}.meal-plan-day-choice.selected>em{color:var(--green);font-weight:800}.meal-plan-day-choice.planned{background:#f1f0ec;color:#6f7572;cursor:not-allowed;opacity:.82}.meal-plan-week-full{padding:10px 12px;border-radius:10px;background:#fff4e7;color:#8b551f;font-size:10px;font-weight:700}
 @media(max-width:760px){
   .month-shell{margin-left:-16px;margin-right:-16px;padding:10px 3px;border-left:0;border-right:0;border-radius:0;box-shadow:none}
   .month-calendar{grid-template-columns:26px repeat(7,minmax(0,1fr))}
@@ -157,6 +160,7 @@
   .calendar-pill{padding:4px 3px;font-size:7.2px}
   .meal-plan-add-actions{grid-template-columns:1fr}
   .meal-choice-actions{grid-template-columns:1fr}
+  .meal-plan-picker-modal{width:min(520px,calc(100vw - 18px));padding:20px 16px}.meal-plan-week-field{margin-top:13px}.meal-plan-week-picker{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}.meal-plan-day-choice{min-height:66px;padding:8px}.meal-plan-day-choice>strong{margin-top:3px;-webkit-line-clamp:1}.meal-plan-day-choice>em{margin-top:2px}
 }
 
 /* v0.31 — ruhige, vertraute Oberfläche nach Apple-Grundsätzen. */

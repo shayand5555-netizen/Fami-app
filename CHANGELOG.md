@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.34.0-rc.1 – 8. Oktober 2026
+
+- Nach der Essensauswahl erscheint die komplette Woche direkt im Einplanungsfenster
+- Bereits geplante Tage zeigen ihr Gericht und sind klar als belegt markiert
+- Freie Tage lassen sich mit einem Tipp auswählen
+- Einplanen ist erst möglich, nachdem ein freier Tag gewählt wurde
+- Kompakte Zwei-Spalten-Ansicht auf dem iPhone ergänzt
+
 ## 0.33.1-rc.1 – 8. Oktober 2026
 
 - Alle aha-Abholtermine werden einheitlich orange dargestellt

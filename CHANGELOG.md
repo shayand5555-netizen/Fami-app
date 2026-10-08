@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.31.6-beta.1 – 8. Oktober 2026
+
+- Terminliste auf heute bis einschließlich der nächsten sieben Tage begrenzt
+- Laufende mehrtägige Termine werden im Sieben-Tage-Zeitraum berücksichtigt
+- Monatskalender und Terminliste lassen sich unabhängig voneinander verwenden
+
 ## 0.31.5-beta.1 – 8. Oktober 2026
 
 - Kalendertexte und Tageszahlen auf dem iPhone vergrößert

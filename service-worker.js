@@ -1,5 +1,5 @@
-const CACHE = 'fami-v0.31.5';
-const APP_FILES = ['./','./index.html','./styles.css?v=0.31.5','./push-config.js?v=0.31.5','./cloud.js?v=0.31.5','./notifications.js?v=0.31.5','./family-recipes.js?v=0.31.5','./recipe-scanner.js?v=0.31.5','./app.js?v=0.31.5','./regional-events.json','./recipe-videos.json','./manifest.webmanifest','./icons/fami-icon.svg'];
+const CACHE = 'fami-v0.31.6';
+const APP_FILES = ['./','./index.html','./styles.css?v=0.31.6','./push-config.js?v=0.31.6','./cloud.js?v=0.31.6','./notifications.js?v=0.31.6','./family-recipes.js?v=0.31.6','./recipe-scanner.js?v=0.31.6','./app.js?v=0.31.6','./regional-events.json','./recipe-videos.json','./manifest.webmanifest','./icons/fami-icon.svg'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(APP_FILES)));

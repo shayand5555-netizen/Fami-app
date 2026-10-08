@@ -62,6 +62,15 @@
   .modal-actions:not(.split) .btn.primary{flex:1}
 }
 
+/* v0.33.1 - einheitliche aha-Abholfarbe */
+.event-line.orange,.calendar-entry>i.orange{background:#e58a3a}
+.event-pill.orange{background:#f8e4cf;color:#985016}
+@media(max-width:760px){
+  .event-pill.orange{background:#ed8b32;color:#fff}
+  .month-day .event-pill.orange:not(.multi-day){background:#fff0df;color:#a75210}
+  .month-day .event-pill.orange.multi-day{background:#ed8b32;color:#fff}
+}
+
 /* OCR and link based recipe import. */
 .recipe-analyze,.recipe-finalize{width:100%;justify-content:center}
 .recipe-analyze:disabled{opacity:.6;cursor:wait}

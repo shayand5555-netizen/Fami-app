@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.33.0" />
+  <link rel="stylesheet" href="styles.css?v=0.33.1" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -66,7 +66,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version"><span>v0.33.0</span><span class="version-stage"> RC</span></span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version"><span>v0.33.1</span><span class="version-stage"> RC</span></span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -145,7 +145,7 @@
         <div class="form-row event-only hidden"><label>Beginn<input type="time" id="itemTime" value="12:00"></label><label>Ende<input type="time" id="itemEndTime" value="13:00"></label></div>
         <label class="event-only hidden">Enddatum <small>Nur für mehrtägige Termine</small><input type="date" id="itemEndDate"></label>
         <details class="advanced-options"><summary>Weitere Optionen</summary><div class="advanced-options-body">
-          <div class="form-row event-only hidden"><label>Wiederholen<select id="itemRecurrence"><option value="none">Einmalig</option><option value="weekly">Jede Woche</option><option value="biweekly">Alle 2 Wochen</option><option value="monthly">Jeden Monat</option><option value="yearly">Jedes Jahr, z. B. Geburtstag</option></select></label><label>Erinnerung<select id="itemReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60" selected>1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="1440">1 Tag vorher</option></select></label></div>
+          <div class="form-row event-only hidden"><label>Wiederholen<select id="itemRecurrence"><option value="none">Einmalig</option><option value="weekly">Jede Woche</option><option value="biweekly">Alle 2 Wochen</option><option value="monthly">Jeden Monat</option><option value="yearly">Jedes Jahr, z. B. Geburtstag</option></select></label><label>Erinnerung<select id="itemReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60" selected>1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="690">11 Std. 30 Min. vorher</option><option value="1440">1 Tag vorher</option></select></label></div>
           <label>Details<textarea id="itemDetails" placeholder="Ort, Checkliste oder kurze Notiz …"></textarea></label>
           <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Dateien oder Fotos anhängen<small>Optional · mehrere Dateien möglich</small></span><input type="file" id="newItemFiles" multiple></label>
         </div></details>
@@ -186,9 +186,9 @@
         <div class="form-row"><label>Ende<input required type="time" id="editEventEndTime"></label><label>Enddatum<input required type="date" id="editEventEndDate"></label></div>
         <label>Wiederholen<select id="editEventRecurrence"><option value="none">Einmalig</option><option value="weekly">Jede Woche</option><option value="biweekly">Alle 2 Wochen</option><option value="monthly">Jeden Monat</option><option value="yearly">Jedes Jahr, z. B. Geburtstag</option></select></label>
         <fieldset class="people-multi"><legend>Zuständig · mehrere möglich</legend><div id="editEventPeople"></div></fieldset>
-        <label>Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option></select></label>
+        <label>Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option><option value="orange">Orange</option></select></label>
         <label>Ort oder Details<input id="editEventPlace" placeholder="Wo findet der Termin statt?"></label>
-        <label>Erinnerung<select id="editEventReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60">1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="1440">1 Tag vorher</option></select></label>
+        <label>Erinnerung<select id="editEventReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60">1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="690">11 Std. 30 Min. vorher</option><option value="1440">1 Tag vorher</option></select></label>
         <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto hinzufügen<small>Wird lokal auf diesem Gerät gespeichert</small></span><input type="file" id="eventAttachmentInput" multiple></label>
         <div class="attachment-list" id="eventAttachments"></div>
         </div>
@@ -213,11 +213,11 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="push-config.js?v=0.33.0"></script>
-  <script src="cloud.js?v=0.33.0"></script>
-  <script src="notifications.js?v=0.33.0"></script>
-  <script src="family-recipes.js?v=0.33.0"></script>
-  <script src="recipe-scanner.js?v=0.33.0"></script>
-  <script src="app.js?v=0.33.0"></script>
+  <script src="push-config.js?v=0.33.1"></script>
+  <script src="cloud.js?v=0.33.1"></script>
+  <script src="notifications.js?v=0.33.1"></script>
+  <script src="family-recipes.js?v=0.33.1"></script>
+  <script src="recipe-scanner.js?v=0.33.1"></script>
+  <script src="app.js?v=0.33.1"></script>
 </body>
 </html>

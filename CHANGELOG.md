@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.33.1-rc.1 – 8. Oktober 2026
+
+- Alle aha-Abholtermine werden einheitlich orange dargestellt
+- Sieben offizielle Bioabfall-Termine bis Jahresende ergänzt
+- Bereits importierte aha-Termine werden automatisch auf Orange umgestellt
+- Erinnerung bleibt für alle Abfallarten am Vorabend um 18:30 Uhr
+
 ## 0.33.0-rc.1 – 8. Oktober 2026
 
 - Offizielle aha-Abholtermine 2026 für Waldstraße 71A, 30629 Hannover-Misburg ergänzt

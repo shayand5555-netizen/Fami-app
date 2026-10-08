@@ -1,61 +1,22 @@
 {
-  "updatedAt": "2026-10-07T04:32:48.502Z",
+  "updatedAt": "2026-10-08T04:32:18.120Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Antigone im Mittwoch:Theater",
-      "date": "2026-10-07",
-      "venue": "Mittwoch:Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Antigone-im-Mittwoch-Theater",
-      "featured": false
-    },
-    {
-      "title": "Lerne die Welt der Sphero Bolts kennen",
-      "date": "2026-10-07",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lerne-die-Welt-der-Sphero-Bolts-kennen",
-      "featured": false
-    },
-    {
-      "title": "Offener Palettengarten Misburg-Anderten",
-      "date": "2026-10-07",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
-    {
-      "title": "Oktoberfest 2026",
-      "date": "2026-10-07",
-      "venue": "Schützenplatz Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Oktoberfest-2026",
-      "featured": false
-    },
-    {
-      "title": "Zum letzten Mal: Wanja",
-      "date": "2026-10-07",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Zum-letzten-Mal-Wanja",
-      "featured": false
-    },
-    {
-      "title": "Zusammenhalt in Europa | Poetry-Slam-Reihe",
-      "date": "2026-10-07",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Zusammenhalt-in-Europa-|-Poetry-Slam-Reihe",
-      "featured": false
-    },
     {
       "title": "Der Großinquisitor",
       "date": "2026-10-08",
       "venue": "Ballhof Zwei",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Gro%C3%9Finquisitor",
+      "featured": false
+    },
+    {
+      "title": "Katrin Ribbe. In die Wildnis",
+      "date": "2026-10-08",
+      "venue": "Region Hannover | Standort Hildesheimer Str. 20",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Katrin-Ribbe.-In-die-Wildnis",
       "featured": false
     },
     {
@@ -86,6 +47,14 @@
       "featured": false
     },
     {
+      "title": "Caveman",
+      "date": "2026-10-09",
+      "venue": "Theatersaal Langenhagen",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Caveman",
+      "featured": false
+    },
+    {
       "title": "Hannover Wies'n",
       "date": "2026-10-09",
       "venue": "Parkbühne",
@@ -110,6 +79,14 @@
       "featured": false
     },
     {
+      "title": "Pique Dame",
+      "date": "2026-10-09",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
+      "featured": false
+    },
+    {
       "title": "Tiergartenfest Hannover",
       "date": "2026-10-10",
       "time": "13:00",
@@ -125,6 +102,22 @@
       "venue": "Flohmarkt Hannover",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
+    },
+    {
+      "title": "Das offene Foyer der Staatsoper Hannover",
+      "date": "2026-10-10",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
+      "featured": false
+    },
+    {
+      "title": "De 4. groote Plattdüütsch Gala",
+      "date": "2026-10-10",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/De-4.-groote-Plattd%C3%BC%C3%BCtsch-Gala",
       "featured": false
     },
     {
@@ -220,6 +213,30 @@
       "venue": "Stadtbibliothek Kronsberg",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TOMMI-Games-Award-Kinderjury-gesucht",
+      "featured": false
+    },
+    {
+      "title": "Code Week - virtuelle Reality mit der Metaquest 3",
+      "date": "2026-10-13",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-virtuelle-Reality-mit-der-Metaquest-3",
+      "featured": false
+    },
+    {
+      "title": "Code Week: Erfindungen mit Arduino",
+      "date": "2026-10-13",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Erfindungen-mit-Arduino",
+      "featured": false
+    },
+    {
+      "title": "Lichterzauber aus der Natur",
+      "date": "2026-10-14",
+      "venue": "Naturpark-Haus Mardorf",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lichterzauber-aus-der-Natur",
       "featured": false
     },
     {

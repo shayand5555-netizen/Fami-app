@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.36.1-rc.1 – 9. Oktober 2026
+
+- Geplante Gerichte im Wochenessensplan öffnen jetzt direkt die vollständige Rezeptansicht
+- Mehrere Gerichte lassen sich am selben Tag einplanen; vorhandene Gerichte können bereits in der Tagesauswahl entfernt werden
+- Die Wochen-Einkaufsliste fasst gleiche Zutaten und kompatible Mengen automatisch zusammen, zum Beispiel 500 g + 1 kg zu 1,5 kg
+
 ## 0.36.0-rc.1 – 9. Oktober 2026
 
 - Papierkorb mit 30 Tagen Wiederherstellungszeit für Aufgaben, Termine, Rezepte, Gerichte und Einkäufe ergänzt

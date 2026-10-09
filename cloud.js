@@ -2,6 +2,7 @@
   const CONFIG_KEY = 'fami-cloud-config';
   const FAMILY_KEY = 'fami-cloud-family';
   const LOGIN_EMAIL_KEY = 'fami-login-email';
+  const PENDING_KEY = 'fami-cloud-pending';
   let client = null;
   let session = null;
   let familyInfo = null;
@@ -13,6 +14,9 @@
   let applyingRemote = false;
   let initialized = false;
   const LOCAL_ONLY_STATE_KEYS = ['taskPeople','calendarPeople','holidaySettings','recipeFoodFilter','recipeIngredientFilter','videoFoodFilter','videoIngredientFilter','recipeRatings','recipeSort','videoSort','videoChannel','videoMeal','videoCuisine','calendarView'];
+  const readPending = () => {try{const entry=JSON.parse(localStorage.getItem(PENDING_KEY)||'null');return entry?.payload||null}catch{return null}};
+  const savePending = payload => {pendingSnapshot=JSON.parse(JSON.stringify(payload));localStorage.setItem(PENDING_KEY,JSON.stringify({familyId:familyInfo?.id||localStorage.getItem(FAMILY_KEY)||'',savedAt:new Date().toISOString(),payload:pendingSnapshot}))};
+  const clearPending = () => {pendingSnapshot=null;localStorage.removeItem(PENDING_KEY)};
 
   const readConfig = () => {
     const bundled = window.FAMI_CLOUD_CONFIG;
@@ -98,6 +102,7 @@
     familyInfo = {id:data.family_id, role:data.role, ...(data.families || {})};
     localStorage.setItem(FAMILY_KEY, familyInfo.id);
     await pullState(true);
+    if(pendingSnapshot)await pushNow(callbacks.getState());
     subscribe();
     setStatus(displayFamilyName(), 'online');
     renderSetup();
@@ -135,8 +140,8 @@
   }
 
   async function pushNow(payload) {
-    if (!client || !familyInfo || !session || applyingRemote) return;
-    pendingSnapshot = JSON.parse(JSON.stringify(payload));
+    savePending(payload);
+    if (!client || !familyInfo || !session || applyingRemote || !navigator.onLine) {setStatus('Offline gespeichert','offline','Wird automatisch übertragen, sobald die Verbindung wieder da ist');return;}
     setStatus('Wird synchronisiert', 'working');
     const {error} = await client.from('family_state').upsert({
       family_id:familyInfo.id,
@@ -145,15 +150,16 @@
       updated_at:new Date().toISOString()
     }, {onConflict:'family_id'});
     if (error) { console.error(error); setStatus('Noch nicht synchronisiert', 'offline', navigator.onLine?'Erneuter Versuch bei der nächsten Änderung':'Offline · wird nach der Verbindung übertragen'); return; }
-    pendingSnapshot = null;lastSyncedAt = new Date();
+    clearPending();lastSyncedAt = new Date();
     setStatus(displayFamilyName(), 'online', `Gerade synchronisiert · ${lastSyncedAt.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})}`);
   }
 
   function schedulePush(payload) {
-    if (!client || !familyInfo || applyingRemote) return;
+    if (applyingRemote) return;
+    if(!familyInfo&&!localStorage.getItem(FAMILY_KEY))return;
     clearTimeout(pushTimer);
     const snapshot = JSON.parse(JSON.stringify(payload));
-    pendingSnapshot = snapshot;setStatus('Änderungen gespeichert', 'working');
+    savePending(snapshot);if(!client||!familyInfo||!session||!navigator.onLine){setStatus('Offline gespeichert','offline','Wird automatisch übertragen');return}setStatus('Änderungen gespeichert', 'working');
     pushTimer = setTimeout(() => pushNow(snapshot), 500);
   }
 
@@ -345,11 +351,13 @@
     if (initialized) return;
     initialized = true;
     callbacks = options;
+    pendingSnapshot=readPending();
     document.querySelector('#cloudStatus')?.addEventListener('click', openSetup);
     document.querySelectorAll('[data-cloud-close]').forEach(button => button.addEventListener('click', closeSetup));
     await connect();
     window.addEventListener('offline',()=>setStatus('Offline', 'offline', 'Änderungen bleiben sicher auf diesem Gerät'));
     window.addEventListener('online',()=>{if(pendingSnapshot)pushNow(pendingSnapshot);else if(familyInfo)setStatus(displayFamilyName(),'online','Verbindung wiederhergestellt')});
+    setInterval(()=>{if(navigator.onLine&&pendingSnapshot&&client&&familyInfo&&session)pushNow(pendingSnapshot)},20000);
   }
 
   window.FamiCloud = {

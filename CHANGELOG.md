@@ -1,5 +1,17 @@
 # Fami – Versionsverlauf
 
+## 0.36.0-rc.1 – 9. Oktober 2026
+
+- Papierkorb mit 30 Tagen Wiederherstellungszeit für Aufgaben, Termine, Rezepte, Gerichte und Einkäufe ergänzt
+- Familienweiter Änderungsverlauf mit Person, Zeitpunkt und Aktion ergänzt
+- Offline-Änderungen werden dauerhaft vorgemerkt und nach Rückkehr der Verbindung automatisch übertragen
+- Zusammenführung gleichzeitiger Änderungen berücksichtigt den jeweils neueren Bearbeitungszeitpunkt
+- Einladungsassistent ist direkt über „Mehr“ erreichbar und unterscheidet private Familie und getrennte Testgruppe
+- Test-Feedback erfasst Bereich und Bedienbewertung, ohne private Familiendaten anzuhängen
+- Intelligente Wochenplanung berücksichtigt Favoriten, Bewertungen, Nährwerte, vergangene Planung und vorhandene Vorräte
+- Vorgeschlagene Gerichte können vor dem Speichern pro Tag ausgetauscht werden
+- Fehlende Zutaten lassen sich nach der Wochenplanung automatisch zusammengefasst zur Einkaufsliste hinzufügen
+
 ## 0.35.0-rc.1 – 9. Oktober 2026
 
 - Schnellerfassung erkennt Termine, Aufgaben, Einkäufe und Gerichte aus einem kurzen Satz

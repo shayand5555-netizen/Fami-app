@@ -8,6 +8,8 @@
   let channel = null;
   let callbacks = null;
   let pushTimer = null;
+  let pendingSnapshot = null;
+  let lastSyncedAt = null;
   let applyingRemote = false;
   let initialized = false;
   const LOCAL_ONLY_STATE_KEYS = ['taskPeople','calendarPeople','holidaySettings','recipeFoodFilter','recipeIngredientFilter','videoFoodFilter','videoIngredientFilter','recipeRatings','recipeSort','videoSort','videoChannel','videoMeal','videoCuisine','calendarView'];
@@ -18,12 +20,12 @@
     try { return JSON.parse(localStorage.getItem(CONFIG_KEY) || 'null'); } catch { return null; }
   };
   const statusButton = () => document.querySelector('#cloudStatus');
-  const setStatus = (label, mode = 'offline') => {
+  const setStatus = (label, mode = 'offline', detail = '') => {
     const button = statusButton();
     if (!button) return;
     button.dataset.mode = mode;
     button.querySelector('strong').textContent = label;
-    button.querySelector('small').textContent = mode === 'online' ? 'Live synchronisiert' : mode === 'working' ? 'Wird verbunden …' : 'Antippen zum Einrichten';
+    button.querySelector('small').textContent = detail || (mode === 'online' ? 'Live synchronisiert' : mode === 'working' ? 'Änderungen werden übertragen …' : navigator.onLine ? 'Antippen zum Einrichten' : 'Offline · wird später synchronisiert');
     const familyLabel = document.querySelector('#familySyncLabel');
     if (familyLabel) {
       const memberCount = callbacks?.getState?.().familyMembers?.length || 1;
@@ -134,20 +136,24 @@
 
   async function pushNow(payload) {
     if (!client || !familyInfo || !session || applyingRemote) return;
+    pendingSnapshot = JSON.parse(JSON.stringify(payload));
+    setStatus('Wird synchronisiert', 'working');
     const {error} = await client.from('family_state').upsert({
       family_id:familyInfo.id,
       payload,
       updated_by:session.user.id,
       updated_at:new Date().toISOString()
     }, {onConflict:'family_id'});
-    if (error) { console.error(error); setStatus('Synchronisierung gestört'); return; }
-    setStatus(displayFamilyName(), 'online');
+    if (error) { console.error(error); setStatus('Noch nicht synchronisiert', 'offline', navigator.onLine?'Erneuter Versuch bei der nächsten Änderung':'Offline · wird nach der Verbindung übertragen'); return; }
+    pendingSnapshot = null;lastSyncedAt = new Date();
+    setStatus(displayFamilyName(), 'online', `Gerade synchronisiert · ${lastSyncedAt.toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})}`);
   }
 
   function schedulePush(payload) {
     if (!client || !familyInfo || applyingRemote) return;
     clearTimeout(pushTimer);
     const snapshot = JSON.parse(JSON.stringify(payload));
+    pendingSnapshot = snapshot;setStatus('Änderungen gespeichert', 'working');
     pushTimer = setTimeout(() => pushNow(snapshot), 500);
   }
 
@@ -342,6 +348,8 @@
     document.querySelector('#cloudStatus')?.addEventListener('click', openSetup);
     document.querySelectorAll('[data-cloud-close]').forEach(button => button.addEventListener('click', closeSetup));
     await connect();
+    window.addEventListener('offline',()=>setStatus('Offline', 'offline', 'Änderungen bleiben sicher auf diesem Gerät'));
+    window.addEventListener('online',()=>{if(pendingSnapshot)pushNow(pendingSnapshot);else if(familyInfo)setStatus(displayFamilyName(),'online','Verbindung wiederhergestellt')});
   }
 
   window.FamiCloud = {
@@ -354,6 +362,7 @@
     analyzeRecipePhoto,
     registerPush,
     notifyNewEntry,
+    getSyncStatus:() => ({connected:Boolean(client&&familyInfo&&session),pending:Boolean(pendingSnapshot),lastSyncedAt:lastSyncedAt?.toISOString()||'',online:navigator.onLine}),
     isConnected:() => Boolean(client && familyInfo && session)
   };
 })();

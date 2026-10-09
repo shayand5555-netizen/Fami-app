@@ -98,6 +98,8 @@ const state = {
   familyProfile: stored.familyProfile || {location:'Hannover-Misburg',emmaAge:10,noahAge:7},
   holidaySettings: storedDevicePreferences.holidaySettings || stored.holidaySettings || {subdivision:'DE-NI',showPublic:true,showSchool:true},
   shoppingItems: stored.shoppingItems || [],
+  pantryItems: Array.isArray(stored.pantryItems) ? stored.pantryItems : [],
+  feedbackItems: Array.isArray(stored.feedbackItems) ? stored.feedbackItems : [],
   customRecipes: Array.isArray(stored.customRecipes) ? stored.customRecipes : [],
   watchedRecipes: Array.isArray(stored.watchedRecipes) ? stored.watchedRecipes : [],
   favoriteRecipes: Array.isArray(stored.favoriteRecipes) ? stored.favoriteRecipes : [],
@@ -133,6 +135,7 @@ let createType = 'task';
 let taskFilter = 'open';
 let currentView = 'home';
 let installPrompt = null;
+let undoEntry = null;
 const today = new Date();
 let mealWeekOffset = 0;
 let calendarCursor = new Date(today.getFullYear(),today.getMonth(),1);
@@ -155,7 +158,9 @@ function setDeviceUser(name){state.currentUser=family.includes(name)?name:family
 function save(){localStorage.setItem('fami-state',JSON.stringify(state));saveDevicePreferences();window.FamiCloud?.schedulePush(sharedState())}
 function saveDeviceView(){localStorage.setItem('fami-state',JSON.stringify(state));saveDevicePreferences()}
 function notifyNewEntry(kind,id,title,detail=''){window.FamiCloud?.notifyNewEntry({kind,id,title,detail})}
-function toast(message){ const t=$('#toast'); $('p',t).textContent=message;t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),2400); }
+function toast(message,action=null){const t=$('#toast'),button=$('[data-toast-action]',t);$('p',t).textContent=message;button.classList.toggle('hidden',!action);button.textContent=action?.label||'Rückgängig';button.onclick=()=>{if(action?.run)action.run();t.classList.remove('show')};t.classList.add('show');clearTimeout(t._timer);t._timer=setTimeout(()=>t.classList.remove('show'),action?6000:2400)}
+function rememberUndo(label){undoEntry={label,state:JSON.stringify(state),deviceUser:state.currentUser};return undoEntry}
+function offerUndo(message,entry=undoEntry){toast(message,{label:'Rückgängig',run:()=>{if(!entry)return;const previous=JSON.parse(entry.state);Object.keys(state).forEach(key=>delete state[key]);Object.assign(state,previous);family=[...(state.familyMembers||family)];setDeviceUser(entry.deviceUser);save();syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();if(currentView!=='home')switchView(currentView);toast(`${entry.label} wurde rückgängig gemacht`)}})}
 function initials(person){ return person === 'Alle' ? 'A' : person.charAt(0); }
 function avatarClass(person){const classes=['lena','tom','emma','noah'];const index=Math.max(0,family.indexOf(person));return classes[index%classes.length]}
 function prettyDate(raw, fallback='Heute'){
@@ -228,6 +233,19 @@ function updateProgress(){
   const visible=state.tasks.filter(task=>isVisible(task.person));const total=visible.length; const done=visible.filter(task=>task.done).length;
   $('#doneCount').textContent=done; $('.tasks-card .card-head p').innerHTML=`<span id="doneCount">${done}</span> von ${total} erledigt`;
   $('#taskCount').textContent=Math.max(total-done,0); $('#taskProgress').style.width=`${total ? done/total*100 : 0}%`;
+}
+
+function renderFamilyBriefing(){
+  let host=$('#familyBriefing');
+  if(!host){host=document.createElement('section');host.id='familyBriefing';host.className='family-briefing';$('#cloudStatus').after(host)}
+  const todayKey=isoDate(today),weekEnd=isoDate(addDays(today,6));
+  const todayEvents=state.events.filter(event=>eventVisible(event)&&(event.date||todayKey)<=todayKey&&(event.endDate||event.date||todayKey)>=todayKey);
+  const weekEvents=state.events.filter(event=>eventVisible(event)&&(event.date||todayKey)<=weekEnd&&(event.endDate||event.date||todayKey)>=todayKey);
+  const openTasks=state.tasks.filter(task=>!task.done&&(!task.date||task.date<=weekEnd)&&isVisible(task.person));
+  const todayMeals=state.mealPlan.filter(meal=>meal.date===todayKey);
+  const tomorrowWaste=state.events.filter(event=>event.date===isoDate(addDays(today,1))&&String(event.source||'').startsWith('aha '));
+  host.innerHTML=`<div><p class="eyebrow">EURE NÄCHSTEN TAGE</p><h2>${todayEvents.length} ${todayEvents.length===1?'Termin':'Termine'} heute</h2><span>${openTasks.length} offene Aufgaben · ${weekEvents.length} Termine bis ${new Date(`${weekEnd}T12:00:00`).toLocaleDateString('de-DE',{weekday:'short',day:'2-digit',month:'short'})}</span></div><div class="briefing-facts"><button data-briefing="calendar"><strong>${weekEvents.length}</strong><span>Diese Woche</span></button><button data-briefing="tasks"><strong>${openTasks.length}</strong><span>Aufgaben</span></button><button data-briefing="recipes"><strong>${todayMeals.length?escapeHtml(todayMeals.map(meal=>meal.title).join(', ')):'Noch frei'}</strong><span>Heute essen</span></button><button data-briefing="calendar"><strong>${tomorrowWaste.length?escapeHtml(tomorrowWaste.map(event=>event.title).join(', ')):'Alles ruhig'}</strong><span>Morgen</span></button></div>`;
+  $$('[data-briefing]',host).forEach(button=>button.onclick=()=>switchView(button.dataset.briefing));
 }
 
 function setDone(id,done){
@@ -351,8 +369,17 @@ function renderMealPlan(){
   }
   $$('img',host).forEach(img=>img.onerror=()=>img.remove());
 }
-function moveMeal(id,offset){const meal=state.mealPlan.find(item=>item.id===id);if(!meal)return;meal.date=isoDate(addDays(new Date(`${meal.date}T12:00`),offset));save();renderMealPlan();toast('Essen wurde verschoben')}
-function deleteMeal(id){state.mealPlan=state.mealPlan.filter(item=>item.id!==id);if(!state.deletedIds.includes(id))state.deletedIds.push(id);save();renderMealPlan();toast('Essen wurde aus dem Wochenplan entfernt')}
+function moveMeal(id,offset){const meal=state.mealPlan.find(item=>item.id===id);if(!meal)return;const undo=rememberUndo('Verschieben');meal.date=isoDate(addDays(new Date(`${meal.date}T12:00`),offset));save();renderMealPlan();renderFamilyBriefing();offerUndo('Essen wurde verschoben',undo)}
+function deleteMeal(id){const undo=rememberUndo('Löschen');state.mealPlan=state.mealPlan.filter(item=>item.id!==id);if(!state.deletedIds.includes(id))state.deletedIds.push(id);save();renderMealPlan();renderFamilyBriefing();offerUndo('Essen wurde aus dem Wochenplan entfernt',undo)}
+function recipeForMeal(meal){return [...state.customRecipes,...recipes,...(window.FAMI_FAMILY_RECIPES||[])].find(recipe=>recipe.id===meal.recipeId)}
+function ingredientParts(item){if(Array.isArray(item))return{name:String(item[0]||'').trim(),quantity:String(item[1]||'nach Bedarf').trim()};const text=String(item||'').trim(),match=text.match(/^([\d½¼¾.,]+(?:\s*(?:g|kg|ml|l|EL|TL|Stück|Dose|Bund))?)\s+(.+)$/i);return match?{name:match[2].trim(),quantity:match[1].trim()}:{name:text,quantity:'nach Bedarf'}}
+function normalizeIngredientName(name){return String(name||'').toLocaleLowerCase('de').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9äöüß]+/g,' ').trim()}
+function addMealWeekToShopping(){
+  const start=mealWeekStart(),end=isoDate(addDays(start,6)),meals=state.mealPlan.filter(meal=>meal.date>=isoDate(start)&&meal.date<=end),pantry=new Set(state.pantryItems.map(normalizeIngredientName)),combined=new Map();
+  meals.forEach(meal=>{const recipe=recipeForMeal(meal),ingredients=recipe?.ingredients||recipe?.recipe?.ingredients||[];ingredients.map(ingredientParts).filter(item=>item.name&&!pantry.has(normalizeIngredientName(item.name))).forEach(item=>{const key=normalizeIngredientName(item.name),current=combined.get(key)||{name:item.name,quantities:[],sources:new Set()};if(item.quantity)current.quantities.push(item.quantity);current.sources.add(meal.title);combined.set(key,current)})});
+  if(!combined.size){toast(meals.length?'Für diese Gerichte sind keine Zutaten hinterlegt.':'Diese Woche sind noch keine Rezepte geplant.');return}
+  const undo=rememberUndo('Einkaufsliste');combined.forEach(item=>addShoppingItem(item.name,[...new Set(item.quantities)].join(' + ')||'nach Bedarf',[...item.sources].join(', ')));save();updateShoppingCount();offerUndo(`${combined.size} zusammengefasste Zutaten hinzugefügt`,undo);
+}
 function mealPickerRecipes(){
   const combined=[...state.customRecipes,...recipes,...(window.FAMI_FAMILY_RECIPES||[])],favorites=new Set([...state.favoriteRecipes,...state.favoriteVideos]);
   return [...new Map(combined.filter(recipe=>recipe?.id&&recipe?.title&&!isPoorlyRated(recipe.id)).map(recipe=>[recipe.id,recipe])).values()].sort((a,b)=>Number(favorites.has(b.id))-Number(favorites.has(a.id))||a.title.localeCompare(b.title,'de'));
@@ -455,6 +482,26 @@ function renderMonthCalendar(){
   bindCalendarSwipe(host);
 }
 
+function dateFromQuickText(text){
+  const value=text.toLocaleLowerCase('de');if(/\bheute\b/.test(value))return isoDate(today);if(/\bmorgen\b/.test(value))return isoDate(addDays(today,1));if(/\bübermorgen\b/.test(value))return isoDate(addDays(today,2));
+  const explicit=value.match(/\b(\d{1,2})[.\/-](\d{1,2})(?:[.\/-](\d{2,4}))?\b/);if(explicit){const year=explicit[3]?Number(explicit[3].length===2?`20${explicit[3]}`:explicit[3]):today.getFullYear();return `${year}-${String(explicit[2]).padStart(2,'0')}-${String(explicit[1]).padStart(2,'0')}`}
+  const weekdays=['sonntag','montag','dienstag','mittwoch','donnerstag','freitag','samstag'];const weekday=weekdays.findIndex(day=>value.includes(day));if(weekday>=0){let offset=(weekday-today.getDay()+7)%7;if(!offset)offset=7;return isoDate(addDays(today,offset))}return isoDate(today)
+}
+function parseQuickEntry(text,forcedType=''){
+  const lower=text.toLocaleLowerCase('de'),timeMatch=lower.match(/\b(?:um\s*)?(\d{1,2})(?::|\.)(\d{2})\b|\b(?:um\s+)(\d{1,2})\s*uhr\b/),time=timeMatch?`${String(timeMatch[1]||timeMatch[3]).padStart(2,'0')}:${timeMatch[2]||'00'}`:'12:00',people=family.filter(person=>lower.includes(person.toLocaleLowerCase('de'))),date=dateFromQuickText(lower);
+  let type=forcedType||(/\b(einkauf|kaufen|besorgen)\b/.test(lower)?'shopping':/\b(essen|gericht|kochen)\b/.test(lower)?'meal':/\b(aufgabe|erledigen|machen)\b/.test(lower)?'task':'event');
+  let title=text.replace(/\b(heute|morgen|übermorgen|am\s+)?(montag|dienstag|mittwoch|donnerstag|freitag|samstag|sonntag)\b/gi,'').replace(/\b(heute|morgen|übermorgen)\b/gi,'').replace(/\b(?:um\s*)?\d{1,2}(?::|\.)\d{2}(?:\s*uhr)?\b/gi,'').replace(/\b(?:um\s+)\d{1,2}\s*uhr\b/gi,'').replace(/\s{2,}/g,' ').trim().replace(/^[,;\-]+|[,;\-]+$/g,'').trim();
+  if(type==='shopping')title=title.replace(/\b(einkaufen|kaufen|besorgen)\b/gi,'').trim();if(type==='meal')title=title.replace(/\b(essen|kochen|gericht)\b/gi,'').trim();if(type==='task')title=title.replace(/\b(aufgabe|erledigen|machen)\b/gi,'').trim();
+  return{type,title:title||({event:'Neuer Termin',task:'Neue Aufgabe',shopping:'Einkauf',meal:'Gericht'}[type]),date,time,people:people.length?people:[state.currentUser||family[0]]};
+}
+function openQuickCapture(){
+  let wrap=$('#quickCaptureModal');if(!wrap){wrap=document.createElement('div');wrap.id='quickCaptureModal';wrap.className='modal-wrap';document.body.append(wrap)}
+  wrap.innerHTML=`<div class="modal-backdrop"></div><section class="modal quick-capture-modal" role="dialog" aria-modal="true"><button class="icon-btn modal-close">×</button><p class="eyebrow">SCHNELL ERFASST</p><h2>Was möchtet ihr planen?</h2><p class="quick-help">Zum Beispiel: „Morgen 16:00 Zahnarzt Emma“ oder „Freitag Lasagne essen“.</p><form><input id="quickCaptureText" required autocomplete="off" placeholder="Einfach losschreiben …"><div class="quick-types"><button type="button" data-quick-type="">Automatisch</button><button type="button" data-quick-type="event">Termin</button><button type="button" data-quick-type="task">Aufgabe</button><button type="button" data-quick-type="shopping">Einkauf</button><button type="button" data-quick-type="meal">Essen</button></div><div class="quick-preview" id="quickPreview"></div><div class="quick-templates"><span>Vorlagen</span><button type="button" data-template="Arzttermin morgen 10:00">Arzttermin</button><button type="button" data-template="Fußballtraining Dienstag 17:00">Training</button><button type="button" data-template="Wocheneinkauf Samstag 10:00">Wocheneinkauf</button><button type="button" data-template="Geburtstag 12:00">Geburtstag</button></div><div class="modal-actions"><button type="button" class="btn ghost" data-cancel>Abbrechen</button><button class="btn primary">Übernehmen</button></div></form></section>`;
+  wrap.classList.add('open');let forcedType='';const input=$('#quickCaptureText',wrap),preview=$('#quickPreview',wrap),close=()=>wrap.classList.remove('open'),update=()=>{const result=parseQuickEntry(input.value||'Neuer Termin',forcedType);preview.innerHTML=`<strong>${{event:'Termin',task:'Aufgabe',shopping:'Einkauf',meal:'Essen'}[result.type]} · ${prettyDate(result.date)}</strong><span>${escapeHtml(result.title)}${result.type==='event'?` · ${result.time}`:''}</span>`};
+  $('.modal-backdrop',wrap).onclick=close;$('.modal-close',wrap).onclick=close;$('[data-cancel]',wrap).onclick=close;input.oninput=update;$$('[data-quick-type]',wrap).forEach(button=>button.onclick=()=>{forcedType=button.dataset.quickType;$$('[data-quick-type]',wrap).forEach(item=>item.classList.toggle('active',item===button));update()});$$('[data-template]',wrap).forEach(button=>button.onclick=()=>{input.value=button.dataset.template;forcedType=/Einkauf/i.test(input.value)?'shopping':'event';$$('[data-quick-type]',wrap).forEach(item=>item.classList.toggle('active',item.dataset.quickType===forcedType));update();input.focus()});$$('[data-quick-type]',wrap)[0]?.classList.add('active');
+  $('form',wrap).onsubmit=event=>{event.preventDefault();const result=parseQuickEntry(input.value,forcedType),id=`${result.type}-${Date.now()}`;if(result.type==='event'){state.events.push({id,title:result.title,date:result.date,endDate:result.date,time:result.time,endTime:addMinutesToTime(result.time,60),startsAt:eventStartsAt(result.date,result.time),reminderMinutes:60,place:'',people:result.people,color:'green',recurrence:'none'});notifyNewEntry('event',id,result.title,`${prettyDate(result.date)} · ${result.time}`)}else if(result.type==='task'){state.tasks.push({id,title:result.title,person:result.people[0],date:result.date,dateLabel:prettyDate(result.date),note:'',done:false});notifyNewEntry('task',id,result.title,prettyDate(result.date))}else if(result.type==='shopping'){result.title.split(/,|\bund\b/i).map(item=>item.trim()).filter(Boolean).forEach(item=>addShoppingItem(item,'1','Schnellerfassung'));notifyNewEntry('shopping',id,result.title,'Schnellerfassung')}else{close();openMealPlanner(null,result.date);setTimeout(()=>{const title=$('#mealPlanTitle');if(title)title.value=result.title},50);return}save();renderHomeTasks();applyHomeCalendarFilter();renderFamilyBriefing();updateShoppingCount();close();toast('Eintrag wurde übernommen')};update();setTimeout(()=>input.focus(),60)
+}
+
 function openModal(type='task',selectedDate=''){
   createType=type;$('#modal').classList.add('open');$('#modal').setAttribute('aria-hidden','false');
   if(selectedDate){$('#itemDate').value=selectedDate;$('#itemEndDate').value=selectedDate}
@@ -471,11 +518,13 @@ function closeTaskEditor(){ $('#editTaskModal').classList.remove('open');$('#edi
 async function openEventEditor(id){
   const event=getEvent(id);if(!event)return;
   $('#editEventId').value=id;$('#editEventName').value=event.title;$('#editEventDate').value=event.date||today.toISOString().slice(0,10);$('#editEventTime').value=event.time;$('#editEventEndTime').value=event.endTime||addMinutesToTime(event.time,60);$('#editEventEndDate').value=event.endDate||event.date;$('#editEventRecurrence').value=event.recurrence||'none';renderEventPeoplePicker($('#editEventPeople'),event.people||[]);$('#editEventColor').value=event.color;$('#editEventPlace').value=event.place||'';$('#editEventReminder').value=String(event.reminderMinutes??-1);
+  event.responses=event.responses||{};event.comments=event.comments||[];$('#eventResponses').innerHTML=(event.people||[]).map(person=>`<label><span class="avatar ${avatarClass(person)} mini">${initials(person)}</span><strong>${escapeHtml(person)}</strong><select data-event-response="${escapeHtml(person)}"><option value="open">Noch offen</option><option value="yes">Dabei</option><option value="maybe">Vielleicht</option><option value="no">Kann nicht</option></select></label>`).join('');$$('[data-event-response]').forEach(select=>{select.value=event.responses[select.dataset.eventResponse]||'open';select.onchange=()=>{event.responses[select.dataset.eventResponse]=select.value;save();toast('Teilnahme aktualisiert')}});renderEventComments(event);
   $('#editEventModal').classList.add('open');$('#editEventModal').setAttribute('aria-hidden','false');await renderAttachments(`event:${id}`,$('#eventAttachments'));setTimeout(()=>$('#editEventName').focus(),80);
 }
+function renderEventComments(event){const host=$('#eventCommentList');if(!host)return;host.innerHTML=(event.comments||[]).map(comment=>`<article><strong>${escapeHtml(comment.author)}</strong><span>${escapeHtml(comment.text)}</span><small>${new Date(comment.createdAt).toLocaleString('de-DE',{day:'2-digit',month:'2-digit',hour:'2-digit',minute:'2-digit'})}</small></article>`).join('')||'<p>Noch keine Absprachen.</p>'}
 function closeEventEditor(){ $('#editEventModal').classList.remove('open');$('#editEventModal').setAttribute('aria-hidden','true'); }
 
-$('#quickAdd').onclick=()=>openModal();$('#mobileAdd').onclick=()=>openModal();
+$('#quickAdd').onclick=openQuickCapture;$('#mobileAdd').onclick=openQuickCapture;
 $$('[data-kind]').forEach(b=>b.onclick=()=>openModal(b.dataset.kind));$$('[data-close]').forEach(b=>b.onclick=closeModal);$$('[data-edit-close]').forEach(b=>b.onclick=closeTaskEditor);$$('[data-event-close]').forEach(b=>b.onclick=closeEventEditor);
 $$('.type-tabs button').forEach(b=>b.onclick=()=>{createType=b.dataset.type;$$('.type-tabs button').forEach(x=>x.classList.toggle('active',x===b));$$('.event-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType!=='event'));$$('.task-only',$('#modal')).forEach(element=>element.classList.toggle('hidden',createType==='event'));if(createType==='event')renderEventPeoplePicker($('#itemEventPeople'),[state.currentUser||family[0]])});
 $('#itemTime').addEventListener('change',()=>{$('#itemEndTime').value=addMinutesToTime($('#itemTime').value||'12:00',60)});
@@ -502,9 +551,10 @@ $('#editTaskForm').addEventListener('submit',e=>{
 });
 
 $('#deleteTask').addEventListener('click',()=>{
-  const id=$('#editTaskId').value;const task=getTask(id);if(!task)return;
-  state.tasks=state.tasks.filter(item=>item.id!==id);state.deletedIds.push(id);save();renderHomeTasks();renderTaskManager();closeTaskEditor();toast('Aufgabe wurde gelöscht');
+  const id=$('#editTaskId').value;const task=getTask(id);if(!task)return;const undo=rememberUndo('Löschen');
+  state.tasks=state.tasks.filter(item=>item.id!==id);state.deletedIds.push(id);save();renderHomeTasks();renderTaskManager();renderFamilyBriefing();closeTaskEditor();offerUndo('Aufgabe wurde gelöscht',undo);
 });
+$('#duplicateTask').addEventListener('click',()=>{const source=getTask($('#editTaskId').value);if(!source)return;const copy={...source,id:`task-${Date.now()}`,title:`${source.title} (Kopie)`,done:false,date:source.date?isoDate(addDays(new Date(`${source.date}T12:00:00`),7)):''};copy.dateLabel=prettyDate(copy.date);state.tasks.push(copy);save();closeTaskEditor();renderHomeTasks();renderFamilyBriefing();switchView('tasks');toast('Aufgabe wurde für nächste Woche dupliziert')});
 
 $('#editEventForm').addEventListener('submit',e=>{
   e.preventDefault();const event=getEvent($('#editEventId').value);if(!event)return;
@@ -515,8 +565,10 @@ $('#editEventForm').addEventListener('submit',e=>{
 });
 
 $('#deleteEvent').addEventListener('click',()=>{
-  const id=$('#editEventId').value;state.events=state.events.filter(event=>event.id!==id);if(!state.deletedIds.includes(id))state.deletedIds.push(id);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();closeEventEditor();toast('Kalendereintrag wurde gelöscht');
+  const id=$('#editEventId').value,undo=rememberUndo('Löschen');state.events=state.events.filter(event=>event.id!==id);if(!state.deletedIds.includes(id))state.deletedIds.push(id);save();applyHomeCalendarFilter();renderCalendarManager();renderMonthCalendar();renderFamilyBriefing();closeEventEditor();offerUndo('Kalendereintrag wurde gelöscht',undo);
 });
+$('#duplicateEvent').addEventListener('click',()=>{const source=getEvent($('#editEventId').value);if(!source)return;const nextDate=isoDate(addDays(new Date(`${source.date}T12:00:00`),7)),span=daysBetween(source.date,source.endDate||source.date),copy={...source,id:`event-${Date.now()}`,title:`${source.title} (Kopie)`,date:nextDate,endDate:isoDate(addDays(new Date(`${nextDate}T12:00:00`),span)),startsAt:eventStartsAt(nextDate,source.time),recurrence:'none',seriesId:''};state.events.push(copy);save();closeEventEditor();applyHomeCalendarFilter();renderFamilyBriefing();switchView('calendar');toast('Termin wurde für nächste Woche dupliziert')});
+$('#addEventComment').addEventListener('click',()=>{const event=getEvent($('#editEventId').value),text=$('#eventCommentText').value.trim();if(!event||!text)return;event.comments=event.comments||[];event.comments.push({id:`comment-${Date.now()}`,author:state.currentUser,text,createdAt:new Date().toISOString()});save();$('#eventCommentText').value='';renderEventComments(event);notifyNewEntry('event',event.id,`Neue Absprache: ${event.title}`,`${state.currentUser}: ${text}`);toast('Kommentar wurde geteilt')});
 
 $('#taskAttachmentInput').addEventListener('change',async e=>{const id=$('#editTaskId').value;await storeAttachments(`task:${id}`,e.target.files);await renderAttachments(`task:${id}`,$('#taskAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
 $('#eventAttachmentInput').addEventListener('change',async e=>{const id=$('#editEventId').value;await storeAttachments(`event:${id}`,e.target.files);await renderAttachments(`event:${id}`,$('#eventAttachments'));e.target.value='';toast('Anhang hinzugefügt')});
@@ -606,7 +658,7 @@ async function loadYouTubeCatalog(root){
   const resetAndRender=()=>{limit=48;render()};search.oninput=resetAndRender;sort.value=state.videoSort;channel.value=state.videoChannel;meal.value=state.videoMeal;cuisine.value=state.videoCuisine;food.value=state.videoFoodFilter;ingredient.value=state.videoIngredientFilter;sort.onchange=()=>{state.videoSort=sort.value;saveDeviceView();resetAndRender()};channel.onchange=()=>{state.videoChannel=channel.value;saveDeviceView();resetAndRender()};meal.onchange=()=>{state.videoMeal=meal.value;saveDeviceView();resetAndRender()};cuisine.onchange=()=>{state.videoCuisine=cuisine.value;saveDeviceView();resetAndRender()};food.onchange=()=>{state.videoFoodFilter=food.value;saveDeviceView();resetAndRender()};ingredient.onchange=()=>{state.videoIngredientFilter=ingredient.value;saveDeviceView();resetAndRender()};more.onclick=()=>{limit+=48;render()};
   try{const response=await fetch(`./recipe-videos.json?update=${Date.now()}`,{cache:'no-store'});if(!response.ok)throw new Error(`Videokatalog ${response.status}`);const data=await response.json();const youtubeVideos=data.videos||[],ordered=[...youtubeVideos.filter(video=>video.featured),...youtubeVideos.filter(video=>!video.featured)];videos=[...new Map([...(window.FAMI_FAMILY_RECIPES||[]),...curatedVideoRecipes(),...ordered].map(video=>[video.id,video])).values()];render()}catch(error){console.error(error);videos=[...(window.FAMI_FAMILY_RECIPES||[]),...curatedVideoRecipes()];if(videos.length){status.textContent='Familienrezepte geladen · Rezeptvideos derzeit offline';render()}else{status.textContent='Rezeptkatalog konnte gerade nicht geladen werden';grid.innerHTML='<a class="btn ghost" href="https://www.youtube.com/@SchmaleSchulter/videos" target="_blank" rel="noopener">Schmale Schulter bei YouTube öffnen ↗</a><a class="btn ghost" href="https://www.youtube.com/channel/UCvd5wsIuZzEYA55cZkt7hIQ/videos" target="_blank" rel="noopener">Yummy Gastronomy bei YouTube öffnen ↗</a>';more.classList.add('hidden')}}
 }
-function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.34.0-rc.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
+function exportBackup(){const blob=new Blob([JSON.stringify({version:'0.35.0-rc.1',exportedAt:new Date().toISOString(),state},null,2)],{type:'application/json'});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=`fami-backup-${isoDate(new Date())}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Sicherung heruntergeladen – Fotos und Anhänge sind nicht enthalten')}
 async function importBackup(file){try{const data=JSON.parse(await file.text());if(!data.state?.tasks||!data.state?.events)throw new Error();localStorage.setItem('fami-state',JSON.stringify(data.state));toast('Sicherung importiert – App wird neu geladen');setTimeout(()=>location.reload(),800)}catch{toast('Diese Sicherungsdatei ist ungültig')}}
 async function renderFileLibrary(){
   const host=$('#fileLibrary');if(!host)return;const files=await getAllAttachments();host.innerHTML='';files.forEach(file=>{const card=document.createElement('article');card.className='library-file';card.innerHTML=`<span class="file-kind">${file.type?.startsWith('image/')?'FOTO':'DATEI'}</span><strong></strong><small></small><div><button class="open-library-file">Öffnen</button><button class="delete-library-file">Löschen</button></div>`;$('strong',card).textContent=file.name;$('small',card).textContent=`${Math.max(1,Math.round(file.size/1024))} KB · ${file.entity.startsWith('task:')?'Aufgabe':file.entity.startsWith('event:')?'Termin':'Allgemein'}`;$('.open-library-file',card).onclick=()=>{const url=URL.createObjectURL(file.blob);const a=document.createElement('a');a.href=url;a.download=file.name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)};$('.delete-library-file',card).onclick=async()=>{await removeAttachment(file);renderFileLibrary();toast('Datei gelöscht')};host.append(card)});if(!files.length)host.innerHTML='<div class="task-empty">Noch keine Dateien gespeichert.</div>';
@@ -656,6 +708,18 @@ async function loadRegionalEvents(){
     if(currentView==='calendar')switchView('calendar');
   }catch(error){console.error(error);activitySource='Regionaler Veranstaltungskalender derzeit nicht erreichbar';discoveredActivityIdeas=[...fallbackActivityIdeas];if(currentView==='calendar')switchView('calendar');toast('Regionale Termine konnten nicht geladen werden – zuletzt bekannte Ideen werden angezeigt')}
 }
+function openOnboarding(force=false){
+  if(!force&&localStorage.getItem('fami-onboarding-complete'))return;
+  let wrap=$('#onboardingModal');if(!wrap){wrap=document.createElement('div');wrap.id='onboardingModal';wrap.className='modal-wrap';document.body.append(wrap)}
+  const connected=Boolean(window.FamiCloud?.isConnected()),notifications='Notification'in window&&Notification.permission==='granted',installed=matchMedia('(display-mode: standalone)').matches||navigator.standalone===true;
+  wrap.innerHTML=`<div class="modal-backdrop"></div><section class="modal onboarding-modal" role="dialog" aria-modal="true"><button class="icon-btn modal-close">×</button><p class="eyebrow">WILLKOMMEN BEI FAMI</p><h2>In vier Schritten startklar</h2><p>Jede Person meldet sich mit der eigenen E-Mail an und wählt anschließend ihr Profil auf diesem Gerät.</p><div class="onboarding-steps"><button data-onboard="cloud" class="${connected?'done':''}"><b>${connected?'✓':'1'}</b><span><strong>Familie verbinden</strong><small>${connected?'Live-Synchronisierung ist aktiv':'Eigene Gruppe erstellen oder Einladung annehmen'}</small></span></button><button data-onboard="profile" class="done"><b>✓</b><span><strong>Dieses Gerät gehört ${escapeHtml(state.currentUser)}</strong><small>Kann unter „Familie“ jederzeit geändert werden</small></span></button><button data-onboard="notifications" class="${notifications?'done':''}"><b>${notifications?'✓':'3'}</b><span><strong>Benachrichtigungen</strong><small>${notifications?'Auf diesem Gerät erlaubt':'Erinnerungen und Familienupdates einschalten'}</small></span></button><button data-onboard="install" class="${installed?'done':''}"><b>${installed?'✓':'4'}</b><span><strong>Auf dem Home-Bildschirm</strong><small>${installed?'Fami ist als App geöffnet':'Im Browsermenü „Zum Home-Bildschirm“ wählen'}</small></span></button></div><div class="modal-actions"><button class="btn ghost" data-later>Später</button><button class="btn primary" data-finish>Fami verwenden</button></div></section>`;
+  const close=complete=>{wrap.classList.remove('open');if(complete)localStorage.setItem('fami-onboarding-complete','1')};wrap.classList.add('open');$('.modal-backdrop',wrap).onclick=()=>close(false);$('.modal-close',wrap).onclick=()=>close(false);$('[data-later]',wrap).onclick=()=>close(false);$('[data-finish]',wrap).onclick=()=>close(true);$('[data-onboard="cloud"]',wrap).onclick=()=>window.FamiCloud?.openSetup();$('[data-onboard="profile"]',wrap).onclick=()=>{close(false);switchView('family')};$('[data-onboard="notifications"]',wrap).onclick=()=>{$('#notificationSettings').click()};$('[data-onboard="install"]',wrap).onclick=()=>{if(installPrompt)$('#installApp').click();else toast('Auf dem iPhone: Teilen → Zum Home-Bildschirm')}
+}
+async function shareFeedback(item){
+  const text=`Fami Feedback (${item.kind})\nVersion 0.35.0\n${item.text}\n\nGerät: ${navigator.userAgent}\nOnline: ${navigator.onLine?'ja':'nein'}`;
+  if(navigator.share){try{await navigator.share({title:'Fami Feedback',text});return}catch(error){if(error.name==='AbortError')return}}
+  await navigator.clipboard.writeText(text);toast('Feedback wurde kopiert – jetzt im gewünschten Messenger einfügen')
+}
 function switchView(name){
   currentView=name;
   const navigationView=['shopping','cleaning'].includes(name)?'tasks':name;
@@ -670,6 +734,7 @@ $$('.nav-item,.mobile-nav button[data-view]').forEach(b=>b.classList.toggle('act
     $('.sub-add',box).onclick=()=>openModal('task');$$('[data-section]',box).forEach(button=>button.onclick=()=>switchView(button.dataset.section));$$('[data-filter]',box).forEach(b=>b.onclick=()=>{taskFilter=b.dataset.filter;$$('[data-filter]',box).forEach(x=>x.classList.toggle('active',x===b));renderTaskManager()});bindPeoplePicker(box,'task');renderTaskManager();return;
   }
   if(name==='shopping'){
+    setTimeout(()=>renderPantryManager(box),0);
     box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">GEMEINSAM ORGANISIERT</p><h1>Aufgaben & Einkaufen</h1><p>Aufgaben verteilen und gemeinsame Einkäufe planen.</p></div></div><nav class="section-tabs" aria-label="Aufgaben, Einkauf und Putzplan"><button data-section="tasks"><svg><use href="#i-check"/></svg>Aufgaben</button><button class="active" data-section="shopping"><svg><use href="#i-cart"/></svg>Einkaufsliste <span>${state.shoppingItems.filter(item=>!item.done).length}</span></button><button data-section="cleaning">🧹 Putzplan</button></nav><form class="shopping-add" id="shoppingForm"><input id="shoppingName" required placeholder="Was wird benötigt?"><input id="shoppingQuantity" placeholder="Menge, z. B. 2 Stück"><button class="btn primary">Hinzufügen</button></form><p class="shopping-route">Automatisch wie beim Einkauf sortiert: Obst & Gemüse → Backwaren → Kühlung → Vorrat → Haushalt</p><div class="shopping-actions"><span id="shoppingSummary"></span><button id="clearBought">Erledigte entfernen</button></div><div class="shopping-list" id="shoppingList"></div>`;
     $$('[data-section]',box).forEach(button=>button.onclick=()=>switchView(button.dataset.section));$('#shoppingForm').onsubmit=e=>{e.preventDefault();const name=$('#shoppingName').value.trim(),quantity=$('#shoppingQuantity').value.trim()||'1';addShoppingItem(name,quantity);notifyNewEntry('shopping',`shop-${Date.now()}`,name,quantity);e.target.reset();switchView('shopping');toast('Zur Einkaufsliste hinzugefügt')};$('#clearBought').onclick=()=>{state.shoppingItems.filter(item=>item.done).forEach(item=>{if(!state.deletedIds.includes(item.id))state.deletedIds.push(item.id)});state.shoppingItems=state.shoppingItems.filter(item=>!item.done);save();switchView('shopping');toast('Erledigte Einkäufe entfernt')};renderShoppingList();return;
   }
@@ -694,10 +759,15 @@ $$('.nav-item,.mobile-nav button[data-view]').forEach(b=>b.classList.toggle('act
     $('#recipePhoto').onchange=()=>{if($('#recipePhoto').files[0])analyzeButton.click()};
     form.onsubmit=async e=>{e.preventDefault();if(scanReview.classList.contains('hidden'))return analyzeButton.click();const ingredients=parseIngredients($('#recipeIngredients').value);const steps=$('#recipeSteps').value.split('\n').map(step=>step.trim()).filter(Boolean);if(!ingredients.length||!steps.length)return toast('Bitte Zutaten und Kochanleitung prüfen');const id=`recipe-${Date.now()}`,scanPhoto=$('#recipePhoto').files[0],dishPhoto=$('#recipeDishPhoto').files[0],coverPhoto=dishPhoto||($('#useScanPhoto').checked?scanPhoto:null),portions=Math.max(1,Number($('#recipePortions').value)||4);const nutrition={kcal:Number($('#recipeKcal').value)||0,protein:Number($('#recipeProtein').value)||0,carbs:Number($('#recipeCarbs').value)||0,fat:Number($('#recipeFat').value)||0,label:scannedRecipe?.nutrition?.label||'pro Portion',estimated:scannedRecipe?.nutrition?.estimated!==false,note:scannedRecipe?.nutrition?.note||'KI-Schätzung auf Basis der erkannten Zutaten und Mengen.'};const tags=$('#recipeTags').value.split(',').map(tag=>tag.trim()).filter(Boolean);const recipe={id,title:$('#recipeTitle').value.trim(),emoji:'🍲',source:scannedRecipe?.source||'Eigenes Rezept',url:safeRecipeUrl($('#recipeUrl').value.trim()),image:scannedRecipe?.image||'',time:$('#recipeTime').value.trim()||'Eigene Sammlung',portions:`${portions} Portionen`,tags:tags.length?tags:['Eigenes Rezept'],nutrition,ingredients,steps,custom:true,hasPhoto:Boolean(coverPhoto)};state.customRecipes.unshift(recipe);if(coverPhoto){await storeAttachments(`recipe-cover:${id}`,[coverPhoto]);state.recipePhotoIds.push(id)}save();switchView('recipes');toast('Fertige Rezeptkachel wurde erstellt')};bindRecipeCards(box);return;
   }
+  if(name==='feedback'){
+    box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">FAMI GEMEINSAM VERBESSERN</p><h1>Feedback senden</h1><p>Fehler und Ideen lassen sich ohne private Familiendaten teilen.</p></div></div><section class="feedback-panel"><form id="feedbackForm"><label>Art<select id="feedbackKind"><option>Fehler</option><option>Verbesserung</option><option>Unverständlich</option></select></label><label>Was ist passiert oder was wünschst du dir?<textarea id="feedbackText" required rows="6" placeholder="Bitte möglichst genau beschreiben …"></textarea></label><label class="feedback-consent"><input type="checkbox" id="feedbackDiagnostics" checked> App-Version und technische Geräteangaben beifügen</label><button class="btn primary">Feedback teilen</button></form><div class="feedback-note"><strong>Privat bleibt privat</strong><p>Termine, Namen, Familiencode, Aufgaben und Einkaufslisten werden nicht automatisch angehängt.</p></div></section>`;
+    $('#feedbackForm',box).onsubmit=async event=>{event.preventDefault();const item={id:`feedback-${Date.now()}`,kind:$('#feedbackKind',box).value,text:$('#feedbackText',box).value.trim(),createdAt:new Date().toISOString(),diagnostics:$('#feedbackDiagnostics',box).checked};state.feedbackItems.push(item);save();await shareFeedback(item);event.currentTarget.reset()};return;
+  }
   if(name==='files'){
     box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">ALLES WICHTIGE</p><h1>Fotos & Dateien</h1><p>Anhänge aus Aufgaben und Terminen – online geteilt oder offline auf diesem Gerät.</p></div><label class="btn primary library-upload"><svg><use href="#i-upload"/></svg><span>Dateien hinzufügen</span><input type="file" id="libraryUploadInput" multiple></label></div><section class="file-library" id="fileLibrary"></section>`;$('#libraryUploadInput').onchange=async e=>{await storeAttachments('general:shared',e.target.files);e.target.value='';renderFileLibrary();toast('Dateien gespeichert')};renderFileLibrary();return;
   }
   if(name==='more'){
+    setTimeout(()=>enhanceMoreView(box),0);
     box.innerHTML=`<div class="subview-head"><div><p class="eyebrow">EINSTELLUNGEN & BEREICHE</p><h1>Mehr</h1><p>Alles Weitere für euren Familienalltag.</p></div></div><section class="more-grid"><button data-jump="family"><svg><use href="#i-people"/></svg><strong>Familie</strong><span>${family.length} Profile · ${escapeHtml(state.familyName)}</span></button><button data-jump="shopping"><svg><use href="#i-cart"/></svg><strong>Einkaufsliste</strong><span>${state.shoppingItems.filter(item=>!item.done).length} offene Einträge</span></button><button data-jump="recipes"><svg><use href="#i-book"/></svg><strong>Essen & Rezepte</strong><span>Favoriten, Wochenplan und Ideen</span></button><button data-jump="files"><svg><use href="#i-folder"/></svg><strong>Dateien</strong><span>Fotos & Dokumente</span></button></section><section class="backup-panel"><div><strong>Datensicherung</strong><span>Aufgaben, Termine, Filter und Einkaufsliste sichern. Anhänge sind nicht enthalten.</span><small class="about-version">Fami v0.34.0 · Release Candidate</small></div><button class="btn ghost" id="exportBackup">Sicherung herunterladen</button><label class="btn ghost">Sicherung importieren<input type="file" id="importBackup" accept="application/json"></label></section>`;$$('[data-jump]',box).forEach(button=>button.onclick=()=>switchView(button.dataset.jump));$('#exportBackup').onclick=exportBackup;$('#importBackup').onchange=e=>{if(e.target.files[0])importBackup(e.target.files[0])};return;
   }
   if(name==='calendar'){
@@ -711,7 +781,8 @@ $$('.nav-item,.mobile-nav button[data-view]').forEach(b=>b.classList.toggle('act
 }
 $$('[data-view]').forEach(b=>b.onclick=()=>switchView(b.dataset.view));$$('.nav-link').forEach(b=>b.onclick=()=>switchView(b.dataset.target));
 $('#familySettingsBtn').onclick=()=>switchView('family');$('#profileBtn').onclick=()=>switchView('family');
-$('#mealWeekPrev').onclick=()=>{mealWeekOffset--;renderMealPlan()};$('#mealWeekNext').onclick=()=>{mealWeekOffset++;renderMealPlan()};$('#mealWeekToday').onclick=()=>{mealWeekOffset=0;renderMealPlan()};$('#addFreeMeal').onclick=()=>openMealPlanner();
+$('#feedbackBtn').onclick=()=>switchView('feedback');
+$('#mealWeekPrev').onclick=()=>{mealWeekOffset--;renderMealPlan()};$('#mealWeekNext').onclick=()=>{mealWeekOffset++;renderMealPlan()};$('#mealWeekToday').onclick=()=>{mealWeekOffset=0;renderMealPlan()};$('#addFreeMeal').onclick=()=>openMealPlanner();$('#mealWeekShopping').onclick=addMealWeekToShopping;
 $('#globalSearch').addEventListener('input',e=>{const q=e.target.value.toLowerCase();$$('.event,.task,.file-tile').forEach(el=>el.style.display=el.textContent.toLowerCase().includes(q)?'':'none')});
 
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;$('#installApp').classList.remove('hidden')});
@@ -719,7 +790,7 @@ $('#installApp').onclick=async()=>{if(!installPrompt)return;installPrompt.prompt
 window.addEventListener('appinstalled',()=>toast('Fami ist jetzt auf deinem Gerät'));
 if('serviceWorker' in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js'));
 
-ensureFeatureState();importTimeTreeCalendar();syncCleaningTasks();syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();save();
+ensureFeatureState();importTimeTreeCalendar();syncCleaningTasks();syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();renderFamilyBriefing();updateShoppingCount();save();
 window.FamiCloud?.init({
   getState:()=>sharedState(),
   applyState:payload=>{
@@ -729,19 +800,27 @@ window.FamiCloud?.init({
     if(payload.calendarImportVersion===undefined)state.calendarImportVersion=0;
     const deletedIds=[...new Set([...(state.deletedIds||[]),...(payload.deletedIds||[])])];
     const mergedCollections={};
-    ['tasks','events','shoppingItems','customRecipes','mealPlan','cleaningRules'].forEach(key=>{mergedCollections[key]=mergeSharedCollection(state[key],payload[key],deletedIds)});
+    ['tasks','events','shoppingItems','pantryItems','feedbackItems','customRecipes','mealPlan','cleaningRules'].forEach(key=>{mergedCollections[key]=mergeSharedCollection(state[key],payload[key],deletedIds)});
     Object.assign(state,payload,mergedCollections,{deletedIds});
     Object.assign(state,localPreferences);
     family=Array.isArray(state.familyMembers)&&state.familyMembers.length?[...state.familyMembers]:family;
     setDeviceUser(deviceUser);
     ensureFeatureState();const imported=importTimeTreeCalendar();syncCleaningTasks();
     localStorage.setItem('fami-state',JSON.stringify(state));saveDevicePreferences();if(imported)window.FamiCloud?.schedulePush(sharedState());
-    syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();updateShoppingCount();
+    syncFamilyUi();renderHomeTasks();renderMealPlan();applyHomeCalendarFilter();renderFamilyBriefing();updateShoppingCount();
     if(currentView!=='home')switchView(currentView);
   },
   notify:toast
 });
+function renderPantryManager(root){
+  const route=$('.shopping-route',root);if(!route)return;const panel=document.createElement('details');panel.className='pantry-panel';panel.innerHTML=`<summary>Vorräte berücksichtigen <span>${state.pantryItems.length}</span></summary><div class="pantry-body"><p>Diese Zutaten werden beim Erstellen der Wocheneinkaufsliste ausgelassen.</p><form><input required placeholder="z. B. Reis, Salz oder Olivenöl"><button class="btn ghost">Vorrat hinzufügen</button></form><div class="pantry-chips">${state.pantryItems.map(item=>`<button type="button" data-pantry-id="${item.id}">${escapeHtml(item.name)} ×</button>`).join('')}</div></div>`;route.after(panel);$('form',panel).onsubmit=event=>{event.preventDefault();const name=$('input',panel).value.trim();if(!name||state.pantryItems.some(item=>normalizeIngredientName(item.name)===normalizeIngredientName(name)))return;state.pantryItems.push({id:`pantry-${Date.now()}`,name});save();renderPantryManagerRefresh(root)};$$('[data-pantry-id]',panel).forEach(button=>button.onclick=()=>{state.pantryItems=state.pantryItems.filter(item=>item.id!==button.dataset.pantryId);save();renderPantryManagerRefresh(root)})
+}
+function renderPantryManagerRefresh(root){$('.pantry-panel',root)?.remove();renderPantryManager(root)}
+function enhanceMoreView(root){
+  const grid=$('.more-grid',root);if(!grid)return;grid.insertAdjacentHTML('beforeend','<button data-jump="feedback"><svg><use href="#i-check"/></svg><strong>Feedback senden</strong><span>Fehler oder Verbesserung teilen</span></button><button id="restartOnboarding"><svg><use href="#i-people"/></svg><strong>Einführung anzeigen</strong><span>Fami Schritt für Schritt einrichten</span></button>');$('[data-jump="feedback"]',grid).onclick=()=>switchView('feedback');$('#restartOnboarding',grid).onclick=()=>openOnboarding(true);const version=$('.about-version',root);if(version)version.textContent='Fami v0.35.0 · Release Candidate'
+}
 window.FamiNotifications?.init({getState:()=>state,notify:toast});
 const initialParams=new URLSearchParams(location.search),initialView=initialParams.get('view'),initialCalendarView=initialParams.get('calendarView');
 if(['month','week'].includes(initialCalendarView))state.calendarView=initialCalendarView;
-if(initialView&&['calendar','tasks','shopping','cleaning','recipes','files','family','more'].includes(initialView))switchView(initialView);
+if(initialView&&['calendar','tasks','shopping','cleaning','recipes','files','family','feedback','more'].includes(initialView))switchView(initialView);
+setTimeout(()=>openOnboarding(false),700);

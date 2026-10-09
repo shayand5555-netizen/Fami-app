@@ -1,5 +1,19 @@
 # Fami – Versionsverlauf
 
+## 0.35.0-rc.1 – 9. Oktober 2026
+
+- Schnellerfassung erkennt Termine, Aufgaben, Einkäufe und Gerichte aus einem kurzen Satz
+- Tages- und Wochenüberblick auf „Heute“ ergänzt
+- Rückgängig-Funktion für wichtige Lösch- und Verschiebeaktionen ergänzt
+- Aufgaben und Termine lassen sich als Vorlage für die nächste Woche duplizieren
+- Teilnahmeabfrage und kurze Familienabsprachen direkt am Termin ergänzt
+- Wochenessensplan kann benötigte Rezeptzutaten in die Einkaufsliste übertragen
+- Vorräte lassen sich hinterlegen und werden beim Erstellen der Einkaufsliste ausgelassen
+- Ruhezeiten für Erinnerungen pro Gerät ergänzt
+- Synchronisationsstatus zeigt lokale Speicherung, Übertragung, Offlinezustand und Wiederholung klarer
+- Einführung für neue Familien und ein datensparsamer Feedback-Bereich ergänzt
+- Mobile Darstellung und Bedienflächen für die neuen Funktionen optimiert
+
 ## 0.34.0-rc.1 – 8. Oktober 2026
 
 - Nach der Essensauswahl erscheint die komplette Woche direkt im Einplanungsfenster

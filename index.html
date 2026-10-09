@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=0.34.0" />
+  <link rel="stylesheet" href="styles.css?v=0.35.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -66,7 +66,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version"><span>v0.34.0</span><span class="version-stage"> RC</span></span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
+      <div class="top-actions"><span class="version-badge" id="appVersion" title="Installierte Fami-Version"><span>v0.35.0</span><span class="version-stage"> RC</span></span><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn feedback-shortcut" id="feedbackBtn" aria-label="Feedback senden">?</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -81,7 +81,7 @@
         <section class="card meal-plan-card">
           <div class="card-head"><div><span class="section-icon gold">🍽️</span><span><h2>Wochenessensplan</h2><p id="mealPlanRange">Diese Woche</p></span></div><div class="meal-week-actions"><button id="mealWeekPrev" aria-label="Vorherige Woche">‹</button><button id="mealWeekToday">Heute</button><button id="mealWeekNext" aria-label="Nächste Woche">›</button></div></div>
           <div class="meal-week" id="mealWeek"></div>
-          <div class="meal-plan-add-actions"><button class="add-row nav-link" data-target="recipes"><svg><use href="#i-plus"/></svg> Aus Rezepten wählen</button><button class="add-row" id="addFreeMeal"><svg><use href="#i-plus"/></svg> Freies Gericht eintragen</button></div>
+          <div class="meal-plan-add-actions"><button class="add-row nav-link" data-target="recipes"><svg><use href="#i-plus"/></svg> Aus Rezepten wählen</button><button class="add-row" id="addFreeMeal"><svg><use href="#i-plus"/></svg> Freies Gericht eintragen</button><button class="add-row meal-shopping" id="mealWeekShopping"><svg><use href="#i-cart"/></svg> Woche zur Einkaufsliste</button></div>
         </section>
         <section class="card schedule-card">
           <div class="card-head"><div><span class="section-icon coral"><svg><use href="#i-cal"/></svg></span><span><h2>Heute</h2><p>4 Termine</p></span></div><button class="text-btn nav-link" data-target="calendar">Kalender öffnen <svg><use href="#i-arrow"/></svg></button></div>
@@ -169,7 +169,7 @@
         <div class="attachment-list" id="taskAttachments"></div>
         <label class="complete-toggle"><input type="checkbox" id="editTaskDone"><span class="checkmark"></span><span>Aufgabe ist erledigt</span></label>
         </div>
-        <div class="modal-actions split"><button type="button" class="btn danger" id="deleteTask">Aufgabe löschen</button><span></span><button type="button" class="btn ghost" data-edit-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
+        <div class="modal-actions split"><button type="button" class="btn danger" id="deleteTask">Aufgabe löschen</button><button type="button" class="btn ghost" id="duplicateTask">Duplizieren</button><span></span><button type="button" class="btn ghost" data-edit-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
       </form>
     </section>
   </div>
@@ -189,10 +189,12 @@
         <label>Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option><option value="orange">Orange</option></select></label>
         <label>Ort oder Details<input id="editEventPlace" placeholder="Wo findet der Termin statt?"></label>
         <label>Erinnerung<select id="editEventReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60">1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="690">11 Std. 30 Min. vorher</option><option value="1440">1 Tag vorher</option></select></label>
+        <fieldset class="event-responses"><legend>Wer ist dabei?</legend><div id="eventResponses"></div></fieldset>
+        <section class="event-comments"><strong>Absprachen zum Termin</strong><div id="eventCommentList"></div><div class="event-comment-add"><input id="eventCommentText" maxlength="300" placeholder="Kommentar hinzufügen …"><button class="btn ghost" type="button" id="addEventComment">Senden</button></div></section>
         <label class="file-drop"><svg><use href="#i-upload"/></svg><span>Datei oder Foto hinzufügen<small>Wird lokal auf diesem Gerät gespeichert</small></span><input type="file" id="eventAttachmentInput" multiple></label>
         <div class="attachment-list" id="eventAttachments"></div>
         </div>
-        <div class="modal-actions split"><button type="button" class="btn danger" id="deleteEvent">Termin löschen</button><span></span><button type="button" class="btn ghost" data-event-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
+        <div class="modal-actions split"><button type="button" class="btn danger" id="deleteEvent">Termin löschen</button><button type="button" class="btn ghost" id="duplicateEvent">Duplizieren</button><span></span><button type="button" class="btn ghost" data-event-close>Abbrechen</button><button class="btn primary" type="submit">Änderungen speichern</button></div>
       </form>
     </section>
   </div>
@@ -209,15 +211,15 @@
     <section class="modal notification-modal" role="dialog" aria-modal="true" aria-labelledby="notificationModalTitle">
       <button class="icon-btn modal-close" data-notification-close><svg><use href="#i-x"/></svg></button>
       <p class="eyebrow">TERMINERINNERUNGEN</p><h2 id="notificationModalTitle">Benachrichtigungen</h2>
-      <div class="notification-setup"><div class="notification-status" id="notificationStatus"></div><button class="btn primary" id="enableNotifications">Benachrichtigungen aktivieren</button><button class="btn ghost" id="testNotification">Testnachricht senden</button><p>Wähle anschließend bei jedem Termin aus, wie lange vorher du erinnert werden möchtest.</p><small>Für Erinnerungen bei vollständig geschlossener App muss Fami installiert und der Online-Pushdienst verbunden sein.</small></div>
+      <div class="notification-setup"><div class="notification-status" id="notificationStatus"></div><button class="btn primary" id="enableNotifications">Benachrichtigungen aktivieren</button><button class="btn ghost" id="testNotification">Testnachricht senden</button><fieldset class="quiet-hours"><legend>Ruhezeit auf diesem Gerät</legend><label>Von<input type="time" id="quietFrom" value="21:00"></label><label>Bis<input type="time" id="quietUntil" value="07:00"></label><label class="calendar-toggle"><input type="checkbox" id="quietEnabled"><span></span>Aktiv</label></fieldset><p>Wähle anschließend bei jedem Termin aus, wie lange vorher du erinnert werden möchtest.</p><small>Für Erinnerungen bei vollständig geschlossener App muss Fami installiert und der Online-Pushdienst verbunden sein.</small></div>
     </section>
   </div>
-  <div class="toast" id="toast"><span>✓</span><p></p></div>
-  <script src="push-config.js?v=0.34.0"></script>
-  <script src="cloud.js?v=0.34.0"></script>
-  <script src="notifications.js?v=0.34.0"></script>
-  <script src="family-recipes.js?v=0.34.0"></script>
-  <script src="recipe-scanner.js?v=0.34.0"></script>
-  <script src="app.js?v=0.34.0"></script>
+  <div class="toast" id="toast"><span>✓</span><p></p><button class="toast-action hidden" data-toast-action>Rückgängig</button></div>
+  <script src="push-config.js?v=0.35.0"></script>
+  <script src="cloud.js?v=0.35.0"></script>
+  <script src="notifications.js?v=0.35.0"></script>
+  <script src="family-recipes.js?v=0.35.0"></script>
+  <script src="recipe-scanner.js?v=0.35.0"></script>
+  <script src="app.js?v=0.35.0"></script>
 </body>
 </html>

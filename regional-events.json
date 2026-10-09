@@ -1,32 +1,8 @@
 {
-  "updatedAt": "2026-10-08T04:32:18.120Z",
+  "updatedAt": "2026-10-09T04:32:57.832Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Der Großinquisitor",
-      "date": "2026-10-08",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Gro%C3%9Finquisitor",
-      "featured": false
-    },
-    {
-      "title": "Katrin Ribbe. In die Wildnis",
-      "date": "2026-10-08",
-      "venue": "Region Hannover | Standort Hildesheimer Str. 20",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Katrin-Ribbe.-In-die-Wildnis",
-      "featured": false
-    },
-    {
-      "title": "Offener Spielenachmittag",
-      "date": "2026-10-08",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Offener-Spielenachmittag",
-      "featured": false
-    },
     {
       "title": "KiezKultur Festival",
       "date": "2026-10-09",
@@ -87,6 +63,14 @@
       "featured": false
     },
     {
+      "title": "Schüler*innen schulen Senior*innen",
+      "date": "2026-10-09",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sch%C3%BCler*innen-schulen-Senior*innen",
+      "featured": false
+    },
+    {
       "title": "Tiergartenfest Hannover",
       "date": "2026-10-10",
       "time": "13:00",
@@ -118,6 +102,14 @@
       "venue": "Theater am Aegi",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/De-4.-groote-Plattd%C3%BC%C3%BCtsch-Gala",
+      "featured": false
+    },
+    {
+      "title": "Der Sandmann",
+      "date": "2026-10-10",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Sandmann",
       "featured": false
     },
     {
@@ -245,6 +237,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Zu Besuch im Wasserwerk & Wasser-Erlebnispark Steinhude",
+      "date": "2026-10-15",
+      "venue": "Wassererlebnispark Steinhude",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Zu-Besuch-im-Wasserwerk-Wasser-Erlebnispark-Steinhude",
+      "featured": false
     },
     {
       "title": "Hannover 96 vs. FC St. Pauli",

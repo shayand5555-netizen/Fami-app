@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.43.0-rc.1 – 10. Oktober 2026
+
+- Kitchen Stories und die Verbraucherzentrale ergänzen die empfohlenen Rezept-Webseiten neben Chefkoch, Essen & Trinken und LECKER.
+- Eigene Rezept-Webseiten und YouTube-Kanäle lassen sich familienweit speichern, öffnen, entfernen und 30 Tage aus dem Papierkorb wiederherstellen.
+- Vorgegebene Familienrezepte können als eigene Variante kopiert und anschließend vollständig bearbeitet werden, ohne das Original zu verändern.
+- Vollständige KI-Video-Rezepte lassen sich ebenfalls in eine eigene, bearbeitbare Rezeptkopie übernehmen.
+
 ## 0.42.1-rc.1 – 10. Oktober 2026
 
 - Das ausgewählte Familienmitglied wird jetzt getrennt pro angemeldetem Konto und Gerät gespeichert, damit Benachrichtigungen die tatsächlich handelnde Person nennen.

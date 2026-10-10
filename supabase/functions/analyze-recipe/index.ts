@@ -31,7 +31,26 @@ Deno.serve(async request => {
 - Schätze Nährwerte pro Portion realistisch. Sie sind nur Orientierungswerte.
 - confidence liegt zwischen 0 und 1. Bei unklarem Foto niedrig ansetzen.
 - imageType ist recipe_page oder dish.`;
-    const videoPrompt=`Erstelle für eine deutsche Familien-Rezept-App einen brauchbaren Rezeptentwurf aus den folgenden Katalogdaten eines Rezeptvideos:
+    const videoUrl=String(video.url||'').trim();
+    const directVideoUrl=mode==='video'&&/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(videoUrl)?videoUrl:'';
+    const actualVideoPrompt=`Analysiere das tatsächlich beigefügte öffentliche YouTube-Rezeptvideo für eine deutsche Familien-Rezept-App.
+Nutze die gesprochene Anleitung, sichtbare Zutaten, eingeblendete Mengen und die gezeigten Arbeitsschritte. Erstelle daraus ein nachkochbares Rezept für vier Portionen.
+
+Katalogangaben zur Einordnung:
+Titel: ${String(video.title).slice(0,300)}
+Kanal: ${String(video.channel||'').slice(0,120)}
+Kategorie: ${String(video.meal||'').slice(0,80)}
+Küche: ${String(video.cuisine||'').slice(0,80)}
+
+Wichtig:
+- Behaupte nicht, Kommentare gelesen zu haben. YouTube-Kommentare sind nicht Teil dieser Analyse.
+- Bevorzuge Angaben, die im Ton, Bild oder eingeblendeten Text tatsächlich vorkommen.
+- Fehlt eine genaue Menge, ergänze nur eine plausible Menge und senke confidence entsprechend.
+- Gib mindestens 5 konkrete Zutaten und 4 klare Arbeitsschritte aus.
+- Nutze deutsche Bezeichnungen und metrische Mengen.
+- Nährwerte pro Portion sind eine gekennzeichnete Schätzung.
+- imageType ist video.`;
+    const catalogVideoPrompt=`Erstelle für eine deutsche Familien-Rezept-App einen brauchbaren Rezeptentwurf aus den folgenden Katalogdaten eines Rezeptvideos:
 Titel: ${String(video.title).slice(0,300)}
 Kanal: ${String(video.channel||'').slice(0,120)}
 Kategorie: ${String(video.meal||'').slice(0,80)}
@@ -47,24 +66,28 @@ Wichtig:
 - Nährwerte pro Portion sind eine gekennzeichnete Schätzung.
 - confidence liegt zwischen 0 und 1 und muss bei einem unklaren Titel niedriger sein.
 - imageType ist video.`;
-    const prompt=mode==='video'?videoPrompt:imagePrompt;
     const recipeSchema={type:'object',additionalProperties:false,properties:{title:{type:'string'},imageType:{type:'string',enum:['recipe_page','dish','video']},confidence:{type:'number'},portions:{type:'integer'},time:{type:'string'},tags:{type:'array',items:{type:'string'}},ingredients:{type:'array',items:{type:'object',additionalProperties:false,properties:{name:{type:'string'},quantity:{type:'string'}},required:['name','quantity']}},steps:{type:'array',items:{type:'string'}},nutrition:{type:'object',additionalProperties:false,properties:{kcal:{type:'number'},protein:{type:'number'},carbs:{type:'number'},fat:{type:'number'}},required:['kcal','protein','carbs','fat']}},required:['title','imageType','confidence','portions','time','tags','ingredients','steps','nutrition']};
     const models=['gemini-3.8-flash','gemini-3.7-flash','gemini-3.5-flash-lite'];
-    const parts=mode==='video'?[{text:prompt}]:[{text:prompt},{inlineData:{mimeType,data:imageData}}];
-    const body=JSON.stringify({contents:[{role:'user',parts}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:recipeSchema,temperature:mode==='video'?.35:.2}});
+    const variants=mode==='image'
+      ?[{source:'image',parts:[{text:imagePrompt},{inlineData:{mimeType,data:imageData}}]}]
+      :directVideoUrl
+        ?[{source:'video',parts:[{fileData:{fileUri:directVideoUrl}},{text:actualVideoPrompt}]},{source:'catalog',parts:[{text:catalogVideoPrompt}]}]
+        :[{source:'catalog',parts:[{text:catalogVideoPrompt}]}];
     let response:Response|undefined;
     let data:any;
     let lastDetail='';
-    for(const model of models){
-      response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{
-        method:'POST',headers:{'x-goog-api-key':key,'content-type':'application/json'},body
-      });
-      data=await response.json();
-      if(response.ok)break;
-      lastDetail=data?.error?.message||`Gemini antwortet mit ${response.status}`;
-      if(response.status===401||response.status===403)throw new Error('Der Gemini-API-Schlüssel ist ungültig oder für dieses Projekt nicht freigegeben.');
-      const retryable=[429,500,502,503,504].includes(response.status)||/high demand|temporar|unavailable|overload|quota|resource.*exhausted/i.test(lastDetail);
-      if(!retryable)throw new Error(lastDetail);
+    let usedSource='';
+    requestLoop:for(const variant of variants){
+      const requestBody=JSON.stringify({contents:[{role:'user',parts:variant.parts}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:recipeSchema,temperature:mode==='video'?.25:.2}});
+      for(const model of models){
+        response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{
+          method:'POST',headers:{'x-goog-api-key':key,'content-type':'application/json'},body:requestBody
+        });
+        data=await response.json();
+        if(response.ok){usedSource=variant.source;break requestLoop}
+        lastDetail=data?.error?.message||`Gemini antwortet mit ${response.status}`;
+        if(response.status===401||response.status===403)throw new Error('Der Gemini-API-Schlüssel ist ungültig oder für dieses Projekt nicht freigegeben.');
+      }
     }
     if(!response?.ok){
       if(/quota|resource.*exhausted/i.test(lastDetail))throw new Error('Das kostenlose Gemini-Kontingent ist momentan ausgeschöpft. Bitte später erneut versuchen oder die Limits in Google AI Studio prüfen.');
@@ -72,6 +95,6 @@ Wichtig:
     }
     const text=data?.candidates?.[0]?.content?.parts?.map((part:{text?:string})=>part.text||'').join('').trim();
     if(!text)throw new Error('Die KI hat kein auswertbares Ergebnis geliefert.');
-    return reply({recipe:JSON.parse(text)});
+    return reply({recipe:{...JSON.parse(text),analysisSource:usedSource}});
   }catch(error){console.error(error);return reply({error:error instanceof Error?error.message:String(error)},500)}
 });

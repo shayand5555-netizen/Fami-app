@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.40.0-rc.1 – 10. Oktober 2026
+
+- Familien-Pushs verwenden zuverlässig das ausschließlich auf dem jeweiligen Gerät gewählte Profil als Absender
+- Die aktuelle Supabase-Push-Funktion wurde neu veröffentlicht, damit Änderungen von Selina auch als Selina erscheinen
+- Fehlende Rezepte öffentlicher YouTube-Videos werden bevorzugt aus Ton, Bild und eingeblendeten Angaben analysiert
+- Falls ein Video nicht direkt auswertbar ist, nutzt Fami transparent einen KI-Entwurf aus Titel und Katalogdaten
+- Die Rezeptansicht zeigt klar, ob das tatsächliche Video analysiert wurde; YouTube-Kommentare werden nicht fälschlich als Quelle genannt
+
 ## 0.39.0-rc.1 – 10. Oktober 2026
 
 - Gleichzeitige Änderungen auf mehreren Handys werden vor dem Speichern nochmals zusammengeführt

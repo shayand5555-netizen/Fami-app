@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.37.0-rc.1 – 10. Oktober 2026
+
+- Intelligente Wochenplanung verbindet Familienbewertungen, Favoriten, Nährwerte, Vorräte und bereits offene Einkäufe
+- Wocheneinkauf fasst gleiche Zutaten zusammen und überspringt alles, was schon im Vorrat oder auf der Einkaufsliste steht
+- Rezeptbewertungen werden innerhalb der Familie synchronisiert, persönliche Filter bleiben weiterhin gerätebezogen
+- Papierkorb auf erledigte Einkäufe, Vorräte und Putzregeln erweitert; einzelne Einträge können endgültig gelöscht werden
+- Bis zu fünf lokale Sicherheitskopien werden automatisch angelegt und lassen sich direkt aus dem Papierkorb wiederherstellen
+- Familien-Einladungen öffnen auf dem iPhone direkt das Teilen-Menü und unterscheiden klar zwischen privater Gruppe und eigener Testgruppe
+- Vor Cloud-Übernahmen wird automatisch ein lokaler Rückfallstand angelegt
+
 ## 0.36.1-rc.1 – 9. Oktober 2026
 
 - Geplante Gerichte im Wochenessensplan öffnen jetzt direkt die vollständige Rezeptansicht

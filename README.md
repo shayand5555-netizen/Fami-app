@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.36.1-rc.1**
+Version: **0.37.0-rc.1**
 
 Die einmalige Server-Einrichtung für die reine KI-Fotoanalyse steht in [AI_RECIPE_SETUP.md](AI_RECIPE_SETUP.md). Eine lokale OCR-Texterkennung wird nicht verwendet.
 
@@ -16,8 +16,10 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Feiertage und Schulferien nach Bundesland
 - Bearbeitbare Aufgaben und Termine
 - Lokale Foto- und Dateianhänge
-- Gemeinsame Einkaufsliste auf einem Gerät
+- Gemeinsame, nach Einkaufsweg sortierte Einkaufsliste auf allen verbundenen Geräten
 - Gemeinsamer Wochenessensplan mit Rezeptbildern, Verschieben und Löschen direkt auf der Startseite
+- Intelligente Wochenplanung aus Familienbewertungen, Favoriten, Vorräten und bereits offenen Einkäufen
+- Automatisch zusammengefasste Wochen-Einkaufsliste ohne Zutaten, die schon vorhanden oder eingetragen sind
 - Konfigurierbarer Putzplan mit sinnvollen Intervallen und fair rotierenden Aufgaben
 - Rezeptideen mit direkter Zutatenübernahme
 - Je 100 beliebte, ausführliche Rezeptkarten von Schmale Schulter und Yummy Gastronomy mit Mahlzeit-, Küchen- und Beliebtheitsfiltern
@@ -29,7 +31,7 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Gemeinsamer Aufgabenbereich
 - Familienaktivitäten im Kalenderbereich
 - Automatisch geladene Hannover-Termine mit hervorgehobenen Stadtteil-, Tiergarten-, Kürbis- und Familienfesten
-- Lokale Sicherung und Wiederherstellung
+- Papierkorb mit 30 Tagen Wiederherstellungszeit und fünf automatischen lokalen Sicherheitskopien
 - Installierbare Progressive Web App
 - Optionaler Online-Modus mit E-Mail-Anmeldung und Familien-Einladungscode
 - Live-Synchronisierung zwischen mehreren Geräten
@@ -57,6 +59,6 @@ Die Startrezepte sind kompakte, eigenständig dargestellte Zusammenfassungen auf
 
 Regionale Ferien und Feiertage werden über die [OpenHolidays API](https://www.openholidaysapi.org/) geladen.
 
-## Vor dem produktiven Einsatz
+## Vor der öffentlichen Freigabe
 
-Für echte Familienkonten sind noch ein Backend, Anmeldung, Geräte-Synchronisation, Cloud-Dateispeicher, Push-Benachrichtigungen sowie ein Datenschutz- und Berechtigungskonzept erforderlich.
+Die Release-Candidate-Version besitzt bereits Anmeldung, Familiengruppen, Live-Synchronisierung, geschützte Dateien und Push-Benachrichtigungen. Vor einer breiteren Freigabe sollten Einladungen, Offline-Wiederherstellung und gleichzeitige Änderungen noch einmal mit zwei echten Geräten geprüft werden.

@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.45.0-rc.1 – 10. Oktober 2026
+
+- Der Wocheneinkauf verrechnet benötigte Rezeptmengen jetzt mit den tatsächlich eingetragenen Vorratsmengen; bei 1,5 kg Bedarf und 500 g Vorrat landen nur noch 1 kg auf der Einkaufsliste.
+- Gleiche Zutaten aus mehreren Gerichten werden weiterhin zusammengefasst, bereits vorhandene Listeneinträge nicht doppelt angelegt und unklare Vorratsmengen vorsichtshalber nicht abgezogen.
+- Im Papierkorb lassen sich Einträge nach Bereich filtern und gesammelt wiederherstellen; vor einer Sammelwiederherstellung entsteht automatisch eine lokale Sicherheitskopie.
+- Die Stabilitätsanzeige zeigt ausstehende Cloud-Übertragungen, die letzte Synchronisierung und lokale Fehlerhinweise, ohne private Familiendaten zu übertragen.
+- Private Einladungen zeigen vor dem Teilen noch einmal deutlich den Absender und den vollständigen Zugriffsumfang; die Nachricht nennt außerdem Familiengruppe und handelndes Profil.
+
 ## 0.44.0-rc.1 – 10. Oktober 2026
 
 - Rezept- und Videobilder bleiben auf dem iPhone sichtbar, wenn Favoriten, Gekocht-Status oder eigene Fotos geändert werden; die Karten werden dafür nicht mehr vollständig neu aufgebaut.

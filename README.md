@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.41.1-rc.1**
+Version: **0.42.0-rc.1**
 
 Die einmalige Server-Einrichtung für die reine KI-Fotoanalyse steht in [AI_RECIPE_SETUP.md](AI_RECIPE_SETUP.md). Eine lokale OCR-Texterkennung wird nicht verwendet.
 

@@ -386,3 +386,8 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .quiet-hours{grid-template-columns:1fr}.quiet-hours label:first-of-type{grid-column:auto}
   .meal-week-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px}.meal-week-actions button{min-width:0;padding:8px;font-size:11px}.meal-shopping{grid-column:1/-1}
 }
+/* v0.42: Stabilität, Datenprüfung und intelligente Vorratsplanung. */
+.smart-plan-facts{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:14px 0}.smart-plan-facts span{padding:10px;border:1px solid #d8e7df;border-radius:12px;background:#f3faf7;color:var(--muted);font-size:10px;line-height:1.35}.smart-plan-facts strong{display:block;color:var(--green);font-size:17px;margin-bottom:2px}
+.data-health{display:flex;align-items:center;justify-content:space-between;gap:14px;margin:0 0 14px;padding:14px 16px;border:1px solid #cfe3dc;border-radius:15px;background:#f3faf7}.data-health div,.data-health strong,.data-health span,.data-health small{display:block}.data-health strong{color:var(--green)}.data-health span,.data-health small{margin-top:3px;color:var(--muted);font-size:11px}
+.pantry-body form{grid-template-columns:minmax(150px,1.2fr) minmax(110px,.7fr) minmax(130px,.8fr) auto}.pantry-body form label{font-size:9px;color:var(--muted)}.pantry-body form label input{margin-top:3px}.pantry-chips button.use-soon{border-color:#e4c46e;background:#fff8df;color:#7a621f}
+@media(max-width:760px){.smart-plan-facts{grid-template-columns:1fr 1fr}.data-health{align-items:stretch;flex-direction:column}.data-health .btn{width:100%}.pantry-body form{grid-template-columns:1fr}.pantry-body form .btn{width:100%}}

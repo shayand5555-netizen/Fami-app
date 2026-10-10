@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.42.0-rc.1 – 10. Oktober 2026
+
+- Eine Stabilitätsprüfung bereinigt doppelte oder beschädigte gemeinsame Datensätze und zeigt den Zustand im Papierkorb an.
+- Rezept-Webseiten und YouTube-Kanäle bleiben nach dem Löschen 30 Tage wiederherstellbar.
+- Vorräte können mit Menge und Mindesthaltbarkeitsdatum gepflegt werden; bald benötigte Lebensmittel erhalten bei der Wochenplanung Vorrang.
+- Planungsvorschläge erklären Favoriten, Familienbewertungen, Vorräte, offene Einkäufe und ausgeschlossene Gerichte sichtbar.
+- Der Einladungsassistent trennt private Familienbeitritte weiterhin klar von eigenen Testgruppen.
+
 ## 0.41.1-rc.1 – 10. Oktober 2026
 
 - Eigene Rezept-Webseiten lassen sich familienweit speichern, öffnen und wieder entfernen

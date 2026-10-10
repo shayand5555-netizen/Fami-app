@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.41.1-rc.1 – 10. Oktober 2026
+
+- Eigene Rezept-Webseiten lassen sich familienweit speichern, öffnen und wieder entfernen
+- Chefkoch, Essen & Trinken und LECKER stehen optional als Startempfehlungen bereit
+- Quellenverwaltung trennt Rezept-Webseiten und YouTube-Kanäle übersichtlich
+- Die iPhone-Ansicht der Quellenformulare und Quellenkarten wurde kompakter gestaltet
+
 ## 0.41.0-rc.1 – 10. Oktober 2026
 
 - Öffentliche Rezeptseiten lassen sich serverseitig mit Gemini URL Context als prüfbarer Rezeptentwurf importieren

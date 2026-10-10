@@ -309,6 +309,21 @@
     return data.recipe;
   }
 
+  async function analyzeRecipeUrl(url) {
+    if (!client || !session) throw new Error('Für den KI-Linkimport ist eine Anmeldung bei Fami Online erforderlich.');
+    const {data, error} = await client.functions.invoke('analyze-recipe', {body:{mode:'url',url}});
+    if (error) {
+      let message = '';
+      try { const details = await error.context?.clone?.().json(); message = details?.error || details?.message || ''; } catch {}
+      const rawMessage=message || error.message || '';
+      if(/high demand|overloaded|resource exhausted|try again later/i.test(rawMessage))throw new Error('Die KI ist gerade stark ausgelastet. Bitte versuche es in ein paar Minuten erneut.');
+      if(/credit|quota|billing|payment/i.test(rawMessage))throw new Error('Das kostenlose KI-Kontingent ist momentan aufgebraucht. Bitte versuche es später erneut.');
+      throw new Error(rawMessage || 'Der Rezeptlink konnte nicht ausgewertet werden.');
+    }
+    if (!data?.recipe) throw new Error(data?.error || 'Auf dieser Seite wurde kein vollständiges Rezept gefunden.');
+    return data.recipe;
+  }
+
   async function analyzeVideoRecipe(video) {
     if (!client || !session) throw new Error('Für die KI-Rezeptergänzung ist eine Anmeldung bei Fami Online erforderlich.');
     const {data, error} = await client.functions.invoke('analyze-recipe', {body:{mode:'video',video}});
@@ -399,6 +414,7 @@
     listFiles,
     deleteFile,
     analyzeRecipePhoto,
+    analyzeRecipeUrl,
     analyzeVideoRecipe,
     registerPush,
     notifyNewEntry,

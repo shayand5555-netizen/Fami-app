@@ -172,6 +172,18 @@
 
   async function analyzeLink(url, progress = () => {}) {
     const normalized = new URL(url).href; progress('Rezeptseite wird gelesen …',20);
+    if (window.FamiCloud?.isConnected?.() && window.FamiCloud?.analyzeRecipeUrl) {
+      progress('KI liest Zutaten und Kochanleitung …',35);
+      const aiResult = await window.FamiCloud.analyzeRecipeUrl(normalized);
+      const recipe = normalizeAiRecipe(aiResult);
+      recipe.url = normalized;
+      recipe.source = new URL(normalized).hostname.replace(/^www\./,'');
+      recipe.image = aiResult.image || '';
+      recipe.imageType = 'recipe_page';
+      recipe.tags = [...(aiResult.tags || []),'Link-Import','Eigenes Rezept'].filter((item,index,list)=>item&&list.indexOf(item)===index);
+      progress('Rezeptdaten erkannt',100);
+      return recipe;
+    }
     try { const result = await fetchDirectRecipe(normalized); if (result.ingredients.length) { progress('Rezeptdaten gefunden',100); return result; } } catch {}
     progress('Öffentlichen Lesetext auswerten …',45);
     const response = await fetch(`https://r.jina.ai/${normalized}`, {headers:{Accept:'text/plain'}});

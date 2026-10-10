@@ -13,9 +13,10 @@ Deno.serve(async request => {
     const key=Deno.env.get('GEMINI_API_KEY');
     if(!key)throw new Error('GEMINI_API_KEY ist in Supabase noch nicht eingerichtet.');
     const input=await request.json();
-    const mode=input?.mode==='video'?'video':'image';
+    const mode=input?.mode==='video'?'video':input?.mode==='url'?'url':'image';
     const video=input?.video||{};
     const image=input?.image;
+    const pageUrl=String(input?.url||'').trim();
     let mimeType='',imageData='';
     if(mode==='image'){
       if(typeof image!=='string'||!image.startsWith('data:image/'))return reply({error:'Ungültiges Bild.'},400);
@@ -23,7 +24,11 @@ Deno.serve(async request => {
       const imageMatch=image.match(/^data:(image\/[a-zA-Z0-9.+-]+);base64,(.+)$/s);
       if(!imageMatch)return reply({error:'Das Bildformat wird nicht unterstützt.'},400);
       [,mimeType,imageData]=imageMatch;
-    }else if(typeof video?.title!=='string'||!video.title.trim())return reply({error:'Der Videotitel fehlt.'},400);
+    }else if(mode==='video'&&(typeof video?.title!=='string'||!video.title.trim()))return reply({error:'Der Videotitel fehlt.'},400);
+    else if(mode==='url'){
+      let parsed:URL;try{parsed=new URL(pageUrl)}catch{return reply({error:'Der Rezeptlink ist ungültig.'},400)}
+      if(parsed.protocol!=='https:'||/^(?:localhost|127\.|10\.|192\.168\.|172\.(?:1[6-9]|2\d|3[01])\.)/i.test(parsed.hostname))return reply({error:'Bitte einen öffentlichen HTTPS-Rezeptlink verwenden.'},400);
+    }
     const imagePrompt=`Analysiere das Foto für eine deutsche Familien-Rezept-App. Es kann entweder eine fotografierte Rezeptseite oder ein fertiges Gericht zeigen.
 - Bei einer Rezeptseite: lies Titel, Zutaten, Mengen und Schritte möglichst genau ab.
 - Bei einem fertigen Gericht: erkenne das wahrscheinlichste Gericht und erstelle einen plausiblen, klar als Schätzung behandelbaren Rezeptvorschlag für vier Portionen.
@@ -66,10 +71,21 @@ Wichtig:
 - Nährwerte pro Portion sind eine gekennzeichnete Schätzung.
 - confidence liegt zwischen 0 und 1 und muss bei einem unklaren Titel niedriger sein.
 - imageType ist video.`;
+    const urlPrompt=`Lies ausschließlich die öffentlich erreichbare Rezeptseite ${pageUrl} und übertrage das dort beschriebene Rezept in strukturiertes Deutsch.
+Nutze bevorzugt die auf der Seite vorhandenen Recipe-/JSON-LD-Daten. Übernimm Titel, Portionen, Zeit, Zutaten mit metrischen Mengen, Kochschritte und vorhandene Nährwerte. Übersetze fremdsprachige Angaben ins Deutsche.
+Wichtig:
+- Erfinde kein anderes Gericht und keine ungewöhnlichen Zutaten.
+- Wenn Mengen oder Nährwerte fehlen, ergänze nur eine plausible Schätzung und senke confidence.
+- Gib mindestens 3 Zutaten und 3 klare Arbeitsschritte aus.
+- Nährwerte gelten pro Portion und bleiben eine Schätzung, wenn die Seite keine vollständigen Werte nennt.
+- imageType ist recipe_page.
+- Antworte ausschließlich als JSON passend zum verlangten Schema, ohne Markdown oder Erläuterung.`;
     const recipeSchema={type:'object',additionalProperties:false,properties:{title:{type:'string'},imageType:{type:'string',enum:['recipe_page','dish','video']},confidence:{type:'number'},portions:{type:'integer'},time:{type:'string'},tags:{type:'array',items:{type:'string'}},ingredients:{type:'array',items:{type:'object',additionalProperties:false,properties:{name:{type:'string'},quantity:{type:'string'}},required:['name','quantity']}},steps:{type:'array',items:{type:'string'}},nutrition:{type:'object',additionalProperties:false,properties:{kcal:{type:'number'},protein:{type:'number'},carbs:{type:'number'},fat:{type:'number'}},required:['kcal','protein','carbs','fat']}},required:['title','imageType','confidence','portions','time','tags','ingredients','steps','nutrition']};
     const models=['gemini-3.8-flash','gemini-3.7-flash','gemini-3.5-flash-lite'];
-    const variants=mode==='image'
+    const variants:any[]=mode==='image'
       ?[{source:'image',parts:[{text:imagePrompt},{inlineData:{mimeType,data:imageData}}]}]
+      :mode==='url'
+        ?[{source:'url',parts:[{text:urlPrompt}],tools:[{urlContext:{}}]}]
       :directVideoUrl
         ?[{source:'video',parts:[{fileData:{fileUri:directVideoUrl}},{text:actualVideoPrompt}]},{source:'catalog',parts:[{text:catalogVideoPrompt}]}]
         :[{source:'catalog',parts:[{text:catalogVideoPrompt}]}];
@@ -78,7 +94,7 @@ Wichtig:
     let lastDetail='';
     let usedSource='';
     requestLoop:for(const variant of variants){
-      const requestBody=JSON.stringify({contents:[{role:'user',parts:variant.parts}],generationConfig:{responseMimeType:'application/json',responseJsonSchema:recipeSchema,temperature:mode==='video'?.25:.2}});
+      const requestBody=JSON.stringify({contents:[{role:'user',parts:variant.parts}],...(variant.tools?{tools:variant.tools}:{}),generationConfig:{responseMimeType:'application/json',responseJsonSchema:recipeSchema,temperature:mode==='video'?.25:.2}});
       for(const model of models){
         response=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent`,{
           method:'POST',headers:{'x-goog-api-key':key,'content-type':'application/json'},body:requestBody

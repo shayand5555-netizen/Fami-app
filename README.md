@@ -4,7 +4,7 @@ Fami ist ein installierbarer Familienplaner mit Kalender, Aufgaben, Dateien, Ein
 
 ## Aktueller Stand
 
-Version: **0.40.0-rc.1**
+Version: **0.41.0-rc.1**
 
 Die einmalige Server-Einrichtung für die reine KI-Fotoanalyse steht in [AI_RECIPE_SETUP.md](AI_RECIPE_SETUP.md). Eine lokale OCR-Texterkennung wird nicht verwendet.
 
@@ -27,7 +27,9 @@ Diese Online-Beta ist für Bedienungs- und Mehrgeräte-Tests vorgesehen. Ohne Cl
 - Einheitliche, filterbare Rezeptkarten mit Nährwerten und direkter Übernahme in die Einkaufsliste
 - 100 zusätzliche Familiengerichte mit jeweils eigenem, passend generiertem Rezeptbild, Zutaten, Nährwertschätzung und eigener Kochanleitung ohne YouTube
 - Kochanleitungen an Rezeptkarten und in jedem Videotreffer
-- Eigene Rezepte per Foto oder Link lokal speichern
+- Eigene Rezepte per Foto oder öffentlichem Rezeptlink mit KI importieren und mit Originalquelle speichern
+- Eigene und importierte Rezepte nachträglich bearbeiten
+- Eigene YouTube-Kanäle als Rezeptquellen speichern oder entfernen und einzelne Videos als Rezept importieren
 - Gemeinsamer Aufgabenbereich
 - Familienaktivitäten im Kalenderbereich
 - Automatisch geladene Hannover-Termine mit hervorgehobenen Stadtteil-, Tiergarten-, Kürbis- und Familienfesten

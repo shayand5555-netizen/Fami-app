@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.41.0-rc.1 – 10. Oktober 2026
+
+- Öffentliche Rezeptseiten lassen sich serverseitig mit Gemini URL Context als prüfbarer Rezeptentwurf importieren
+- Originalquelle und Link bleiben an jedem importierten Rezept sichtbar
+- Eigene YouTube-Kanäle lassen sich familienweit speichern, öffnen und wieder entfernen
+- Einzelne öffentliche YouTube-Videos können unabhängig vom eingebauten Katalog als eigenes Rezept importiert werden
+- Eigene, per Link und per Video importierte Rezepte lassen sich vollständig bearbeiten
+- Rezeptquellen bleiben bewusst persönliche Links; fremde Webseiten werden nicht automatisiert als kompletter Katalog kopiert
+
 ## 0.40.0-rc.1 – 10. Oktober 2026
 
 - Familien-Pushs verwenden zuverlässig das ausschließlich auf dem jeweiligen Gerät gewählte Profil als Absender

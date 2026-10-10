@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.39.0-rc.1 – 10. Oktober 2026
+
+- Gleichzeitige Änderungen auf mehreren Handys werden vor dem Speichern nochmals zusammengeführt
+- Beim Beitritt zu einer Familie werden lokale Demo- oder Altdaten nicht mehr in die fremde Gruppe übernommen
+- Papierkorb-Wiederherstellung bleibt cloudfest und übernimmt vorhandene Anhänge sowie Rezeptfotos
+- Erledigte Lebensmitteleinkäufe lassen sich mit einem Tipp in die Vorräte übernehmen
+- Wochenessensplan, Vorräte und Einkaufsliste berücksichtigen gleiche Zutaten, Mengen und Quellen gemeinsam
+- Geplante Rezepte behalten eine eigene Zutatenkopie, damit auch Video- und KI-Rezepte später vollständig einkaufbar bleiben
+- Unvollständige Gerichte ohne Zutaten werden beim Erstellen des Wocheneinkaufs klar gemeldet
+
 ## 0.38.0-rc.1 – 10. Oktober 2026
 
 - Familien-Pushs nennen jetzt eindeutig das aktive Geräteprofil, zum Beispiel „Selina · Neuer Termin“.

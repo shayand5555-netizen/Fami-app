@@ -65,6 +65,8 @@
 /* v0.33.1 - einheitliche aha-Abholfarbe */
 .event-line.orange,.calendar-entry>i.orange{background:#e58a3a}
 .event-pill.orange{background:#f8e4cf;color:#985016}
+.shopping-actions{align-items:center;gap:12px}.shopping-actions #stockBought{color:var(--green);font-weight:750}
+
 @media(max-width:760px){
   .event-pill.orange{background:#ed8b32;color:#fff}
   .month-day .event-pill.orange:not(.multi-day){background:#fff0df;color:#a75210}

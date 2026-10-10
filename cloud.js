@@ -96,7 +96,7 @@
     }
   }
 
-  async function loadFamily() {
+  async function loadFamily(options = {}) {
     if (!client || !session) return;
     const preferred = localStorage.getItem(FAMILY_KEY);
     let query = client.from('family_members').select('family_id,role,families(id,name,invite_code)');
@@ -106,14 +106,14 @@
     if (!data) { familyInfo = null; setStatus('Familie verbinden'); renderSetup(); return; }
     familyInfo = {id:data.family_id, role:data.role, ...(data.families || {})};
     localStorage.setItem(FAMILY_KEY, familyInfo.id);
-    await pullState(true);
+    await pullState(true, Boolean(options.replaceState));
     if(pendingSnapshot)await pushNow(callbacks.getState());
     subscribe();
     setStatus(displayFamilyName(), 'online');
     renderSetup();
   }
 
-  async function pullState(initial = false) {
+  async function pullState(initial = false, replaceState = false) {
     if (!client || !familyInfo) return;
     const {data, error} = await client.from('family_state').select('payload,updated_by').eq('family_id', familyInfo.id).maybeSingle();
     if (error) throw error;
@@ -125,7 +125,7 @@
     const containedSharedDeviceUser=Object.prototype.hasOwnProperty.call(payload,'currentUser');
     const containedSharedDevicePreferences=LOCAL_ONLY_STATE_KEYS.some(key=>Object.prototype.hasOwnProperty.call(payload,key));
     applyingRemote = true;
-    callbacks.applyState(payload);
+    callbacks.applyState(payload,{replace:replaceState});
     applyingRemote = false;
     if(containedSharedDeviceUser||containedSharedDevicePreferences)await pushNow(callbacks.getState());
   }
@@ -148,6 +148,14 @@
     savePending(payload);
     if (!client || !familyInfo || !session || applyingRemote || !navigator.onLine) {setStatus('Offline gespeichert','offline','Wird automatisch übertragen, sobald die Verbindung wieder da ist');return;}
     setStatus('Wird synchronisiert', 'working');
+    const remote=await client.from('family_state').select('payload').eq('family_id',familyInfo.id).maybeSingle();
+    if(!remote.error&&remote.data?.payload&&Object.keys(remote.data.payload).length){
+      applyingRemote=true;
+      callbacks.applyState(remote.data.payload);
+      applyingRemote=false;
+      payload=callbacks.getState();
+      savePending(payload);
+    }
     const {error} = await client.from('family_state').upsert({
       family_id:familyInfo.id,
       payload,
@@ -186,7 +194,7 @@
     if (error) throw error;
     familyInfo = data?.[0];
     localStorage.setItem(FAMILY_KEY, familyInfo.id);
-    await loadFamily();
+    await loadFamily({replaceState:true});
     notify('Familie verbunden');
   }
 

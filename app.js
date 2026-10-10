@@ -165,7 +165,7 @@ function mergeSharedCollection(localItems=[],remoteItems=[],deletedIds=[]){
 }
 function setDeviceUser(name,accountId=''){state.currentUser=family.includes(name)?name:family[0];localStorage.setItem(DEVICE_USER_KEY,state.currentUser);const id=accountId||window.FamiCloud?.getCurrentAccount?.()?.id;if(id)localStorage.setItem(`${ACCOUNT_DEVICE_USER_PREFIX}${id}`,state.currentUser)}
 function ensureDeviceProfile(account){
-  if(!account?.id)return;const accountKey=`${ACCOUNT_DEVICE_USER_PREFIX}${account.id}`,saved=localStorage.getItem(accountKey),emailName=String(account.email||'').split('@')[0].toLocaleLowerCase('de').replace(/[^a-zäöüß]+/g,' '),inferred=family.find(name=>{const normalized=String(name).toLocaleLowerCase('de').replace(/[^a-zäöüß]+/g,' ');return normalized&&emailName.includes(normalized)}),selected=family.includes(saved)?saved:inferred;
+  if(!account?.id)return;const accountKey=`${ACCOUNT_DEVICE_USER_PREFIX}${account.id}`,saved=localStorage.getItem(accountKey),deviceSaved=localStorage.getItem(DEVICE_USER_KEY),emailName=String(account.email||'').split('@')[0].toLocaleLowerCase('de').replace(/[^a-zäöüß]+/g,' '),inferred=family.find(name=>{const normalized=String(name).toLocaleLowerCase('de').replace(/[^a-zäöüß]+/g,' ');return normalized&&emailName.includes(normalized)}),selected=family.includes(saved)?saved:family.includes(deviceSaved)?deviceSaved:inferred;
   if(selected){setDeviceUser(selected,account.id);syncFamilyUi();if(currentView==='family')switchView('family');return}
   localStorage.setItem(accountKey,state.currentUser);toast(`Bitte kurz prüfen: Dieses Gerät ist als ${state.currentUser} eingerichtet.`)
 }

@@ -3,7 +3,7 @@
 ## 0.42.1-rc.1 – 10. Oktober 2026
 
 - Das ausgewählte Familienmitglied wird jetzt getrennt pro angemeldetem Konto und Gerät gespeichert, damit Benachrichtigungen die tatsächlich handelnde Person nennen.
-- Bei passenden E-Mail-Namen ordnet Fami das Konto automatisch dem Familienprofil zu; andernfalls erinnert die App einmal an die kurze Profilprüfung.
+- Eine vorhandene Geräteauswahl wie „Selina“ bleibt beim Update erhalten; nur auf neuen Geräten hilft der E-Mail-Name bei der ersten Zuordnung.
 - Fehlende Video-Rezepte werden mit KI aus Video, Ton und Einblendungen vervollständigt und erst mit mindestens fünf Zutaten und vier Schritten gespeichert.
 - Wenn ein Video technisch nicht direkt analysiert werden kann, bleibt der Ersatzentwurf deutlich als Schätzung aus Titel und Kategorie gekennzeichnet.
 

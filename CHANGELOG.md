@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.46.0-rc.1 – 10. Oktober 2026
+
+- Neue Quellenzentrale mit geprüften Empfehlungen für DGE, Verbraucherzentrale, EAT SMARTER, LECKER, Kitchen Stories, Essen & Trinken und Chefkoch.
+- Eigene Rezept-Webseiten und YouTube-Kanäle lassen sich weiterhin frei speichern oder entfernen; einzelne Links werden bewusst ausgewählt und per KI importiert.
+- Rezepte können nun auch vollständig manuell angelegt werden.
+- Der Rezepteditor bearbeitet zusätzlich Quelle, Original-Link, Kategorien, Zutaten, Kochschritte und Nährwerte; Vorlagen werden als eigene Variante kopiert.
+
 ## 0.45.1-rc.1 – 10. Oktober 2026
 
 - Familien-Push nennt jetzt zuverlässig das kontoabhängige Geräteprofil (z. B. Selina statt Shayan), auch nach einer Cloud-Synchronisierung.

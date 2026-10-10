@@ -80,7 +80,7 @@ Wichtig:
 - Nährwerte gelten pro Portion und bleiben eine Schätzung, wenn die Seite keine vollständigen Werte nennt.
 - imageType ist recipe_page.
 - Antworte ausschließlich als JSON passend zum verlangten Schema, ohne Markdown oder Erläuterung.`;
-    const recipeSchema={type:'object',additionalProperties:false,properties:{title:{type:'string'},imageType:{type:'string',enum:['recipe_page','dish','video']},confidence:{type:'number'},portions:{type:'integer'},time:{type:'string'},tags:{type:'array',items:{type:'string'}},ingredients:{type:'array',items:{type:'object',additionalProperties:false,properties:{name:{type:'string'},quantity:{type:'string'}},required:['name','quantity']}},steps:{type:'array',items:{type:'string'}},nutrition:{type:'object',additionalProperties:false,properties:{kcal:{type:'number'},protein:{type:'number'},carbs:{type:'number'},fat:{type:'number'}},required:['kcal','protein','carbs','fat']}},required:['title','imageType','confidence','portions','time','tags','ingredients','steps','nutrition']};
+    const recipeSchema={type:'object',additionalProperties:false,properties:{title:{type:'string'},imageType:{type:'string',enum:['recipe_page','dish','video']},confidence:{type:'number'},portions:{type:'integer'},time:{type:'string'},tags:{type:'array',items:{type:'string'}},ingredients:{type:'array',minItems:mode==='video'?5:3,items:{type:'object',additionalProperties:false,properties:{name:{type:'string'},quantity:{type:'string'}},required:['name','quantity']}},steps:{type:'array',minItems:mode==='video'?4:3,items:{type:'string'}},nutrition:{type:'object',additionalProperties:false,properties:{kcal:{type:'number'},protein:{type:'number'},carbs:{type:'number'},fat:{type:'number'}},required:['kcal','protein','carbs','fat']}},required:['title','imageType','confidence','portions','time','tags','ingredients','steps','nutrition']};
     const models=['gemini-3.8-flash','gemini-3.7-flash','gemini-3.5-flash-lite'];
     const variants:any[]=mode==='image'
       ?[{source:'image',parts:[{text:imagePrompt},{inlineData:{mimeType,data:imageData}}]}]
@@ -111,6 +111,8 @@ Wichtig:
     }
     const text=data?.candidates?.[0]?.content?.parts?.map((part:{text?:string})=>part.text||'').join('').trim();
     if(!text)throw new Error('Die KI hat kein auswertbares Ergebnis geliefert.');
-    return reply({recipe:{...JSON.parse(text),analysisSource:usedSource}});
+    const parsed=JSON.parse(text),minimumIngredients=mode==='video'?5:3,minimumSteps=mode==='video'?4:3;
+    if(!Array.isArray(parsed.ingredients)||parsed.ingredients.length<minimumIngredients||!Array.isArray(parsed.steps)||parsed.steps.length<minimumSteps)throw new Error('Die KI konnte noch kein vollständiges Rezept erstellen. Bitte erneut versuchen.');
+    return reply({recipe:{...parsed,analysisSource:usedSource}});
   }catch(error){console.error(error);return reply({error:error instanceof Error?error.message:String(error)},500)}
 });

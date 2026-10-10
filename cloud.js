@@ -107,6 +107,7 @@
     familyInfo = {id:data.family_id, role:data.role, ...(data.families || {})};
     localStorage.setItem(FAMILY_KEY, familyInfo.id);
     await pullState(true, Boolean(options.replaceState));
+    callbacks?.ensureDeviceProfile?.({id:session.user.id,email:session.user.email||''});
     if(pendingSnapshot)await pushNow(callbacks.getState());
     subscribe();
     setStatus(displayFamilyName(), 'online');
@@ -418,6 +419,7 @@
     analyzeVideoRecipe,
     registerPush,
     notifyNewEntry,
+    getCurrentAccount:() => session?.user ? {id:session.user.id,email:session.user.email||''} : null,
     getSyncStatus:() => ({connected:Boolean(client&&familyInfo&&session),pending:Boolean(pendingSnapshot),lastSyncedAt:lastSyncedAt?.toISOString()||'',online:navigator.onLine}),
     isConnected:() => Boolean(client && familyInfo && session)
   };

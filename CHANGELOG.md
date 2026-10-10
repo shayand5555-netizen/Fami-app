@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.42.1-rc.1 – 10. Oktober 2026
+
+- Das ausgewählte Familienmitglied wird jetzt getrennt pro angemeldetem Konto und Gerät gespeichert, damit Benachrichtigungen die tatsächlich handelnde Person nennen.
+- Bei passenden E-Mail-Namen ordnet Fami das Konto automatisch dem Familienprofil zu; andernfalls erinnert die App einmal an die kurze Profilprüfung.
+- Fehlende Video-Rezepte werden mit KI aus Video, Ton und Einblendungen vervollständigt und erst mit mindestens fünf Zutaten und vier Schritten gespeichert.
+- Wenn ein Video technisch nicht direkt analysiert werden kann, bleibt der Ersatzentwurf deutlich als Schätzung aus Titel und Kategorie gekennzeichnet.
+
 ## 0.42.0-rc.1 – 10. Oktober 2026
 
 - Eine Stabilitätsprüfung bereinigt doppelte oder beschädigte gemeinsame Datensätze und zeigt den Zustand im Papierkorb an.

@@ -30,7 +30,7 @@ Deno.serve(async request=>{
     if(userError||!user)return json({error:'Ungültige Anmeldung'},401);
 
     const body=await request.json().catch(()=>({}));
-    const familyId=clean(body.familyId,60),kind=clean(body.kind,30),title=clean(body.title,120),detail=clean(body.detail,180),entryId=clean(body.id,120);
+    const familyId=clean(body.familyId,60),kind=clean(body.kind,30),title=clean(body.title,120),detail=clean(body.detail,180),entryId=clean(body.id,120),actor=clean(body.actor,60)||'Ein Familienmitglied';
     if(!familyId||!title||!['event','task','meal','shopping'].includes(kind))return json({error:'Ungültiger Eintrag'},400);
 
     const {data:membership}=await supabase.from('family_members').select('family_id').eq('family_id',familyId).eq('user_id',user.id).maybeSingle();
@@ -46,8 +46,8 @@ Deno.serve(async request=>{
     for(const subscription of (subscriptions||[]) as Subscription[]){
       try{
         await webpush.sendNotification({endpoint:subscription.endpoint,keys:{p256dh:subscription.p256dh,auth:subscription.auth}},JSON.stringify({
-          title:`${labels[kind]}: ${title}`,
-          body:detail||'Ein Familienmitglied hat einen neuen Eintrag hinzugefügt.',
+          title:`${actor} · ${labels[kind]}`,
+          body:`${actor} hat „${title}“ hinzugefügt${detail?` · ${detail}`:'.'}`,
           tag:`fami-new-${kind}-${entryId||crypto.randomUUID()}`,
           url:urls[kind],
           eventId:kind==='event'?entryId:null

@@ -301,6 +301,24 @@
     return data.recipe;
   }
 
+  async function analyzeVideoRecipe(video) {
+    if (!client || !session) throw new Error('Für die KI-Rezeptergänzung ist eine Anmeldung bei Fami Online erforderlich.');
+    const {data, error} = await client.functions.invoke('analyze-recipe', {body:{mode:'video',video}});
+    if (error) {
+      let message = '';
+      try {
+        const details = await error.context?.clone?.().json();
+        message = details?.error || details?.message || '';
+      } catch {}
+      const rawMessage=message || error.message || '';
+      if(/high demand|overloaded|resource exhausted|try again later/i.test(rawMessage))throw new Error('Die KI ist gerade stark ausgelastet. Bitte versuche es in ein paar Minuten erneut.');
+      if(/credit|quota|billing|payment/i.test(rawMessage))throw new Error('Das kostenlose KI-Kontingent ist momentan aufgebraucht. Bitte versuche es später erneut.');
+      throw new Error(rawMessage || 'Das KI-Rezept konnte nicht erstellt werden.');
+    }
+    if (!data?.recipe) throw new Error(data?.error || 'Die KI konnte zu diesem Video kein Rezept erstellen.');
+    return data.recipe;
+  }
+
   function openSetup() {
     renderSetup();
     const modal = document.querySelector('#cloudModal');
@@ -373,6 +391,7 @@
     listFiles,
     deleteFile,
     analyzeRecipePhoto,
+    analyzeVideoRecipe,
     registerPush,
     notifyNewEntry,
     getSyncStatus:() => ({connected:Boolean(client&&familyInfo&&session),pending:Boolean(pendingSnapshot),lastSyncedAt:lastSyncedAt?.toISOString()||'',online:navigator.onLine}),

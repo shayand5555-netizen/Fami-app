@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.38.0-rc.1 – 10. Oktober 2026
+
+- Familien-Pushs nennen jetzt eindeutig das aktive Geräteprofil, zum Beispiel „Selina · Neuer Termin“.
+- Auch Änderungen an bestehenden Aufgaben und Terminen lösen eine verständliche Familienbenachrichtigung aus.
+- Fehlende Rezepte bei Videos lassen sich mit Gemini als prüfbarer KI-Entwurf ergänzen.
+- KI-Videorezepte werden in der Familie synchronisiert; Quelle und Schätzcharakter bleiben transparent.
+
 ## 0.37.0-rc.1 – 10. Oktober 2026
 
 - Intelligente Wochenplanung verbindet Familienbewertungen, Favoriten, Nährwerte, Vorräte und bereits offene Einkäufe

@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.47.0-rc.1 – 10. Oktober 2026
+
+- Ein Tipp auf die Versionsnummer öffnet jetzt eine kurze, übersichtliche Änderungshistorie direkt in Fami.
+- Rezeptbilder und Video-Vorschaubilder bleiben auf dem iPhone stabil sichtbar; Bewertungen aktualisieren nur noch die betroffene Karte statt der ganzen Liste.
+- Eigene Bilder werden bei erneutem Anzeigen sofort aus dem Gerätespeicher übernommen und parallel geladen.
+- Stabilität, Papierkorb, Einladungen sowie das Zusammenspiel aus Wochenessensplan, Vorräten und Einkaufsliste wurden gemeinsam geprüft.
+
 ## 0.46.0-rc.1 – 10. Oktober 2026
 
 - Neue Quellenzentrale mit geprüften Empfehlungen für DGE, Verbraucherzentrale, EAT SMARTER, LECKER, Kitchen Stories, Essen & Trinken und Chefkoch.

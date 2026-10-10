@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T04:32:57.832Z",
+  "updatedAt": "2026-10-10T04:31:14.941Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
@@ -15,62 +15,6 @@
       "description": "Zwei Hannoveraner Kieze und viele Kulturorte feiern gemeinsam."
     },
     {
-      "title": "Bora",
-      "date": "2026-10-09",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Bora",
-      "featured": false
-    },
-    {
-      "title": "Caveman",
-      "date": "2026-10-09",
-      "venue": "Theatersaal Langenhagen",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Caveman",
-      "featured": false
-    },
-    {
-      "title": "Hannover Wies'n",
-      "date": "2026-10-09",
-      "venue": "Parkbühne",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
-      "featured": false
-    },
-    {
-      "title": "Haus zur Sonne",
-      "date": "2026-10-09",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Haus-zur-Sonne",
-      "featured": false
-    },
-    {
-      "title": "Laternenumzug zum Oktoberfest",
-      "date": "2026-10-09",
-      "venue": "Platz der Menschenrechte (ehemals Trammplatz)",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-zum-Oktoberfest",
-      "featured": false
-    },
-    {
-      "title": "Pique Dame",
-      "date": "2026-10-09",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
-      "featured": false
-    },
-    {
-      "title": "Schüler*innen schulen Senior*innen",
-      "date": "2026-10-09",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sch%C3%BCler*innen-schulen-Senior*innen",
-      "featured": false
-    },
-    {
       "title": "Tiergartenfest Hannover",
       "date": "2026-10-10",
       "time": "13:00",
@@ -81,11 +25,27 @@
       "description": "Familienfest mit Naturerlebnis, Waldwissen, Mitmachaktionen und Laternenumzug."
     },
     {
+      "title": "\"Love is in the Air...\" Online Dating für alle",
+      "date": "2026-10-10",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/%22Love-is-in-the-Air-%22-Online-Dating-f%C3%BCr-alle",
+      "featured": false
+    },
+    {
       "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
       "date": "2026-10-10",
       "venue": "Flohmarkt Hannover",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
+    },
+    {
+      "title": "Blutbuch",
+      "date": "2026-10-10",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Blutbuch",
       "featured": false
     },
     {
@@ -137,6 +97,38 @@
       "featured": false
     },
     {
+      "title": "Il Viaggio, Dante",
+      "date": "2026-10-10",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Il-Viaggio,-Dante",
+      "featured": false
+    },
+    {
+      "title": "Infoveranstaltung zum Grünen Star",
+      "date": "2026-10-10",
+      "venue": "Medizinische Hochschule Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infoveranstaltung-zum-Gr%C3%BCnen-Star",
+      "featured": false
+    },
+    {
+      "title": "Jan van Weyde",
+      "date": "2026-10-10",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Jan-van-Weyde",
+      "featured": false
+    },
+    {
+      "title": "MONSIEUR PIERRE GEHT ONLINE | Film",
+      "date": "2026-10-10",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/MONSIEUR-PIERRE-GEHT-ONLINE-|-Film",
+      "featured": false
+    },
+    {
       "title": "Vintage Wonderland",
       "date": "2026-10-10",
       "venue": "Vintage Wonderland",
@@ -184,11 +176,35 @@
       "featured": false
     },
     {
+      "title": "Geheimrat Leibniz in der Stadt unterwegs",
+      "date": "2026-10-11",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Geheimrat-Leibniz-in-der-Stadt-unterwegs",
+      "featured": false
+    },
+    {
       "title": "H/21: Hannover Halbmarathon",
       "date": "2026-10-11",
-      "venue": "Innenstadt",
+      "venue": "Verschiedene Veranstaltungsorte in Hannover",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/H-21-Hannover-Halbmarathon",
+      "featured": false
+    },
+    {
+      "title": "Hannover? Typisch!",
+      "date": "2026-10-11",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Typisch",
+      "featured": false
+    },
+    {
+      "title": "Walk&Talk für Frauen*",
+      "date": "2026-10-11",
+      "venue": "Stadtteilzentrum Lister Turm",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Walk-Talk-f%C3%BCr-Frauen*",
       "featured": false
     },
     {
@@ -237,6 +253,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Code Week: Lego Spike Essential",
+      "date": "2026-10-15",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Lego-Spike-Essential",
+      "featured": false
     },
     {
       "title": "Zu Besuch im Wasserwerk & Wasser-Erlebnispark Steinhude",

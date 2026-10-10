@@ -1,5 +1,14 @@
 # Fami – Versionsverlauf
 
+## 0.44.0-rc.1 – 10. Oktober 2026
+
+- Rezept- und Videobilder bleiben auf dem iPhone sichtbar, wenn Favoriten, Gekocht-Status oder eigene Fotos geändert werden; die Karten werden dafür nicht mehr vollständig neu aufgebaut.
+- Eigene Rezeptbilder werden einmal geladen, sicher zwischengespeichert und erst nach vollständig geladener Ersatzgrafik ausgetauscht.
+- Der große Videokatalog wird pro App-Sitzung nur einmal geladen und nutzt anschließend den App-Cache statt bei jedem Öffnen erneut heruntergeladen zu werden.
+- Unabhängige Familienänderungen führen in der Rezeptansicht nicht mehr zu unnötigem Bild- und Video-Flackern.
+- Intelligente Wochenvorschläge sichern die vollständigen Rezeptdaten direkt im Wochenplan, damit Zutaten, Anleitung und Einkaufsliste auch offline erhalten bleiben.
+- Die Stabilitätsprüfung kontrolliert zusätzlich Papierkorb-Einträge, Löschmarkierungen und fehlende Einkaufskategorien.
+
 ## 0.43.1-rc.1 – 10. Oktober 2026
 
 - Gespeicherte Rezept-Webseiten führen jetzt mit „Rezeptlink importieren“ direkt zum vorbereiteten Link-Scanner.

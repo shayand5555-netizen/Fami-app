@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.43.1-rc.1 – 10. Oktober 2026
+
+- Gespeicherte Rezept-Webseiten führen jetzt mit „Rezeptlink importieren“ direkt zum vorbereiteten Link-Scanner.
+- Gespeicherte YouTube-Kanäle öffnen mit „Video importieren“ sofort das KI-Formular und tragen den Kanalnamen bereits ein.
+- Die Quellenaktionen sind auf dem iPhone kompakt, eindeutig und ohne unnötige Zwischenschritte angeordnet.
+
 ## 0.43.0-rc.1 – 10. Oktober 2026
 
 - Kitchen Stories und die Verbraucherzentrale ergänzen die empfohlenen Rezept-Webseiten neben Chefkoch, Essen & Trinken und LECKER.

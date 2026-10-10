@@ -37,6 +37,8 @@ Deno.serve(async request => {
 - confidence liegt zwischen 0 und 1. Bei unklarem Foto niedrig ansetzen.
 - imageType ist recipe_page oder dish.`;
     const videoUrl=String(video.url||'').trim();
+    const suppliedDescription=String(video.description||'').trim().slice(0,6000);
+    const suppliedComments=String(video.commentsSummary||'').trim().slice(0,3000);
     const directVideoUrl=mode==='video'&&/^https:\/\/(?:www\.)?(?:youtube\.com|youtu\.be)\//i.test(videoUrl)?videoUrl:'';
     const actualVideoPrompt=`Analysiere das tatsächlich beigefügte öffentliche YouTube-Rezeptvideo für eine deutsche Familien-Rezept-App.
 Nutze die gesprochene Anleitung, sichtbare Zutaten, eingeblendete Mengen und die gezeigten Arbeitsschritte. Erstelle daraus ein nachkochbares Rezept für vier Portionen.
@@ -55,6 +57,26 @@ Wichtig:
 - Nutze deutsche Bezeichnungen und metrische Mengen.
 - Nährwerte pro Portion sind eine gekennzeichnete Schätzung.
 - imageType ist video.`;
+    const descriptionVideoPrompt=`Lies die öffentlich erreichbare YouTube-Seite ${videoUrl} für eine deutsche Familien-Rezept-App.
+Erstelle aus Videobeschreibung, Kapiteltext, sichtbaren öffentlichen Angaben und gegebenenfalls dem vom Ersteller angehefteten Rezepttext ein nachkochbares Rezept für vier Portionen.
+
+Katalogangaben:
+Titel: ${String(video.title).slice(0,300)}
+Kanal: ${String(video.channel||'').slice(0,120)}
+Kategorie: ${String(video.meal||'').slice(0,80)}
+Küche: ${String(video.cuisine||'').slice(0,80)}
+Zusätzliche Beschreibung: ${suppliedDescription||'nicht mitgeliefert'}
+Vom Nutzer bereitgestellte Kommentar-Zusammenfassung: ${suppliedComments||'nicht mitgeliefert'}
+
+Wichtig:
+- Behaupte nur, Informationen gelesen zu haben, die über die öffentliche Seite tatsächlich erreichbar waren.
+- Kopiere keine Zuschauerkommentare wörtlich. Verwende nur klare Rezeptangaben des Videoerstellers oder vom Nutzer bereitgestellte Zusammenfassungen.
+- Fehlt eine genaue Menge, nutze eine vorsichtige plausible Menge und senke confidence.
+- Gib mindestens 5 konkrete Zutaten und 4 klare Arbeitsschritte aus.
+- Nutze deutsche Bezeichnungen und metrische Mengen.
+- Nährwerte pro Portion sind eine gekennzeichnete Schätzung.
+- imageType ist video.
+- Antworte ausschließlich als JSON passend zum verlangten Schema.`;
     const catalogVideoPrompt=`Erstelle für eine deutsche Familien-Rezept-App einen brauchbaren Rezeptentwurf aus den folgenden Katalogdaten eines Rezeptvideos:
 Titel: ${String(video.title).slice(0,300)}
 Kanal: ${String(video.channel||'').slice(0,120)}
@@ -81,13 +103,13 @@ Wichtig:
 - imageType ist recipe_page.
 - Antworte ausschließlich als JSON passend zum verlangten Schema, ohne Markdown oder Erläuterung.`;
     const recipeSchema={type:'object',additionalProperties:false,properties:{title:{type:'string'},imageType:{type:'string',enum:['recipe_page','dish','video']},confidence:{type:'number'},portions:{type:'integer'},time:{type:'string'},tags:{type:'array',items:{type:'string'}},ingredients:{type:'array',minItems:mode==='video'?5:3,items:{type:'object',additionalProperties:false,properties:{name:{type:'string'},quantity:{type:'string'}},required:['name','quantity']}},steps:{type:'array',minItems:mode==='video'?4:3,items:{type:'string'}},nutrition:{type:'object',additionalProperties:false,properties:{kcal:{type:'number'},protein:{type:'number'},carbs:{type:'number'},fat:{type:'number'}},required:['kcal','protein','carbs','fat']}},required:['title','imageType','confidence','portions','time','tags','ingredients','steps','nutrition']};
-    const models=['gemini-3.8-flash','gemini-3.7-flash','gemini-3.5-flash-lite'];
+    const models=['gemini-3.8-flash','gemini-3.5-flash-lite','gemini-2.5-flash','gemini-2.5-flash-lite'];
     const variants:any[]=mode==='image'
       ?[{source:'image',parts:[{text:imagePrompt},{inlineData:{mimeType,data:imageData}}]}]
       :mode==='url'
         ?[{source:'url',parts:[{text:urlPrompt}],tools:[{urlContext:{}}]}]
       :directVideoUrl
-        ?[{source:'video',parts:[{fileData:{fileUri:directVideoUrl}},{text:actualVideoPrompt}]},{source:'catalog',parts:[{text:catalogVideoPrompt}]}]
+        ?[{source:'video',parts:[{fileData:{fileUri:directVideoUrl}},{text:actualVideoPrompt}]},{source:'description',parts:[{text:descriptionVideoPrompt}],tools:[{urlContext:{}}]},{source:'catalog',parts:[{text:catalogVideoPrompt}]}]
         :[{source:'catalog',parts:[{text:catalogVideoPrompt}]}];
     let response:Response|undefined;
     let data:any;

@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.45.1-rc.1 – 10. Oktober 2026
+
+- Familien-Push nennt jetzt zuverlässig das kontoabhängige Geräteprofil (z. B. Selina statt Shayan), auch nach einer Cloud-Synchronisierung.
+- Fehlende Videorezepte werden beim Öffnen automatisch per KI aus Video, Ton, Einblendungen und öffentlich erreichbarer Videobeschreibung ergänzt.
+- Bei ausgelasteter Videoanalyse folgen weitere Gemini-Modelle und ein klar gekennzeichneter Rezeptentwurf als sichere Ausweichstufen.
+
 ## 0.45.0-rc.1 – 10. Oktober 2026
 
 - Der Wocheneinkauf verrechnet benötigte Rezeptmengen jetzt mit den tatsächlich eingetragenen Vorratsmengen; bei 1,5 kg Bedarf und 500 g Vorrat landen nur noch 1 kg auf der Einkaufsliste.

@@ -240,7 +240,8 @@
   async function notifyNewEntry(entry) {
     if (!client || !session || !familyInfo || !entry?.title) return;
     try {
-      const {error}=await client.functions.invoke('send-family-update',{body:{...entry,familyId:familyInfo.id}});
+      const actor=callbacks?.getDeviceUser?.()||entry.actor||'Ein Familienmitglied';
+      const {error}=await client.functions.invoke('send-family-update',{body:{...entry,actor,familyId:familyInfo.id}});
       if(error)console.warn('Familien-Push konnte nicht gesendet werden',error);
     } catch(error) {
       console.warn('Familien-Push konnte nicht gesendet werden',error);

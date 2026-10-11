@@ -1,155 +1,23 @@
 {
-  "updatedAt": "2026-10-10T04:31:14.941Z",
+  "updatedAt": "2026-10-11T04:31:47.609Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "KiezKultur Festival",
-      "date": "2026-10-09",
-      "endDate": "2026-10-10",
-      "time": "18:00",
-      "venue": "Faust und Glocksee, Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/KiezKultur-Festival",
-      "featured": true,
-      "description": "Zwei Hannoveraner Kieze und viele Kulturorte feiern gemeinsam."
-    },
-    {
-      "title": "Tiergartenfest Hannover",
-      "date": "2026-10-10",
-      "time": "13:00",
-      "venue": "Tiergarten, Tiergartenstraße 117, 30559 Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Naherholung/Infos%2C-Projekte%2C-Termine/Termine/Tiergartenfest-Hannover",
-      "featured": true,
-      "description": "Familienfest mit Naturerlebnis, Waldwissen, Mitmachaktionen und Laternenumzug."
-    },
-    {
-      "title": "\"Love is in the Air...\" Online Dating für alle",
-      "date": "2026-10-10",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/%22Love-is-in-the-Air-%22-Online-Dating-f%C3%BCr-alle",
-      "featured": false
-    },
-    {
-      "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
-      "date": "2026-10-10",
-      "venue": "Flohmarkt Hannover",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
-      "featured": false
-    },
-    {
-      "title": "Blutbuch",
-      "date": "2026-10-10",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Blutbuch",
-      "featured": false
-    },
-    {
-      "title": "Das offene Foyer der Staatsoper Hannover",
-      "date": "2026-10-10",
+      "title": "Ballett: Verwandlungen",
+      "date": "2026-10-11",
       "venue": "Opernhaus Hannover",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ballett-Verwandlungen",
       "featured": false
     },
     {
-      "title": "De 4. groote Plattdüütsch Gala",
-      "date": "2026-10-10",
-      "venue": "Theater am Aegi",
+      "title": "Burn, Baby, Burn!",
+      "date": "2026-10-11",
+      "venue": "Schauspielhaus",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/De-4.-groote-Plattd%C3%BC%C3%BCtsch-Gala",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Burn,-Baby,-Burn",
       "featured": false
-    },
-    {
-      "title": "Der Sandmann",
-      "date": "2026-10-10",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Sandmann",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt auf der Neuen Bult",
-      "date": "2026-10-10",
-      "venue": "Pferderennbahn Neue Bult",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt der Johanniter Langenhagen",
-      "date": "2026-10-10",
-      "venue": "Johanniter-Unfall-Hilfe e.V. Nordhannoverscher Ortsverband Langenhagen",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-der-Johanniter-Langenhagen",
-      "featured": false
-    },
-    {
-      "title": "Georgengarten Parkrun",
-      "date": "2026-10-10",
-      "venue": "Georgengarten",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
-      "featured": false
-    },
-    {
-      "title": "Il Viaggio, Dante",
-      "date": "2026-10-10",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Il-Viaggio,-Dante",
-      "featured": false
-    },
-    {
-      "title": "Infoveranstaltung zum Grünen Star",
-      "date": "2026-10-10",
-      "venue": "Medizinische Hochschule Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infoveranstaltung-zum-Gr%C3%BCnen-Star",
-      "featured": false
-    },
-    {
-      "title": "Jan van Weyde",
-      "date": "2026-10-10",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Jan-van-Weyde",
-      "featured": false
-    },
-    {
-      "title": "MONSIEUR PIERRE GEHT ONLINE | Film",
-      "date": "2026-10-10",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/MONSIEUR-PIERRE-GEHT-ONLINE-|-Film",
-      "featured": false
-    },
-    {
-      "title": "Vintage Wonderland",
-      "date": "2026-10-10",
-      "venue": "Vintage Wonderland",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
-      "featured": false
-    },
-    {
-      "title": "Wassersause und „Dicke Berta“ fahren im Ersepark",
-      "date": "2026-10-10",
-      "venue": "Erse Park Uetze",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wassersause-und-%E2%80%9EDicke-Berta%E2%80%9C-fahren-im-Ersepark",
-      "featured": false
-    },
-    {
-      "title": "Wochenmarkt Misburg",
-      "date": "2026-10-10",
-      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
       "title": "Faust-Flohmarkt",
@@ -200,11 +68,27 @@
       "featured": false
     },
     {
+      "title": "Krise der Männlichkeit?",
+      "date": "2026-10-11",
+      "venue": "Gedenkstätte Ahlem",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Krise-der-M%C3%A4nnlichkeit",
+      "featured": false
+    },
+    {
       "title": "Walk&Talk für Frauen*",
       "date": "2026-10-11",
       "venue": "Stadtteilzentrum Lister Turm",
       "category": "Kostenlos",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Walk-Talk-f%C3%BCr-Frauen*",
+      "featured": false
+    },
+    {
+      "title": "Henna",
+      "date": "2026-10-12",
+      "venue": "Region Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Henna",
       "featured": false
     },
     {
@@ -417,6 +301,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "KREATIVMARKT",
+      "date": "2026-11-15",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-18",
       "venue": "Bürgerhaus Misburg",
@@ -461,6 +353,14 @@
       "featured": false
     },
     {
+      "title": "Solawi Winterfest",
+      "date": "2026-11-30",
+      "venue": "Gärtnerei Solawi Bunte Beete",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Solawi-Winterfest",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-12-02",
       "venue": "Bürgerhaus Misburg",
@@ -494,6 +394,14 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Irish Spring Festival 2027",
+      "date": "2027-03-08",
+      "venue": "Schloss Landestrost",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
+      "featured": false
     }
   ]
 }

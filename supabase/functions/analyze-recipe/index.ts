@@ -50,8 +50,9 @@ Kategorie: ${String(video.meal||'').slice(0,80)}
 Küche: ${String(video.cuisine||'').slice(0,80)}
 
 Wichtig:
-- Behaupte nicht, Kommentare gelesen zu haben. YouTube-Kommentare sind nicht Teil dieser Analyse.
 - Bevorzuge Angaben, die im Ton, Bild oder eingeblendeten Text tatsächlich vorkommen.
+- Falls auf der öffentlichen Videoseite ein angehefteter Kommentar des Videoerstellers mit Rezeptangaben erreichbar ist, darfst du ihn ergänzend verwenden. Verwende keine Vermutungen aus gewöhnlichen Zuschauerkommentaren.
+- Behaupte niemals, Kommentare gelesen zu haben, wenn sie technisch nicht erreichbar waren.
 - Fehlt eine genaue Menge, ergänze nur eine plausible Menge und senke confidence entsprechend.
 - Gib mindestens 5 konkrete Zutaten und 4 klare Arbeitsschritte aus.
 - Nutze deutsche Bezeichnungen und metrische Mengen.
@@ -70,7 +71,8 @@ Vom Nutzer bereitgestellte Kommentar-Zusammenfassung: ${suppliedComments||'nicht
 
 Wichtig:
 - Behaupte nur, Informationen gelesen zu haben, die über die öffentliche Seite tatsächlich erreichbar waren.
-- Kopiere keine Zuschauerkommentare wörtlich. Verwende nur klare Rezeptangaben des Videoerstellers oder vom Nutzer bereitgestellte Zusammenfassungen.
+- Prüfe nach der Beschreibung einen öffentlich sichtbaren, angehefteten Kommentar des Videoerstellers auf Zutaten und Schritte.
+- Kopiere keine Zuschauerkommentare wörtlich. Verwende nur klare Rezeptangaben des Videoerstellers oder vom Nutzer bereitgestellte Zusammenfassungen; gewöhnliche Zuschauervermutungen sind keine Rezeptquelle.
 - Fehlt eine genaue Menge, nutze eine vorsichtige plausible Menge und senke confidence.
 - Gib mindestens 5 konkrete Zutaten und 4 klare Arbeitsschritte aus.
 - Nutze deutsche Bezeichnungen und metrische Mengen.

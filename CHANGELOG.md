@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.48.1-rc.1 – 11. Oktober 2026
+
+- Rezeptfenster im Wochenessensplan zeigen jetzt immer den Link zum Originalvideo; fehlende YouTube-Links können direkt verbunden werden.
+- Verknüpfte Gerichte lassen sich aus Ton, Bild, Einblendungen, Beschreibung und erreichbaren angehefteten Erstellerangaben erneut mit KI prüfen.
+- Alle 1.670 Videos wurden erneut geladen: 736 Beschreibungen sind verfügbar, 639 davon enthalten verwertbare Rezeptangaben.
+- Nicht am Originalvideo bestätigte Anleitungen sind klar als ungeprüfter KI-Entwurf markiert und können nicht mehr mit einem geprüften Rezept verwechselt werden.
+
 ## 0.48.0-rc.1 – 11. Oktober 2026
 
 - Alle 1.670 Videorezepte besitzen jetzt Zutaten und eine vollständige Kochanleitung.

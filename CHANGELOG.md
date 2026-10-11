@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.48.0-rc.1 – 11. Oktober 2026
+
+- Alle 1.670 Videorezepte besitzen jetzt Zutaten und eine vollständige Kochanleitung.
+- Zutaten aus erreichbaren Videobeschreibungen werden bevorzugt; fehlende Angaben werden als prüfbarer KI-Entwurf ergänzt.
+- Freie Gerichte im Wochenessensplan erhalten ebenfalls einen Rezeptentwurf und können vollständig zur Einkaufsliste hinzugefügt werden.
+- Unvollständige Videoentwürfe lassen sich direkt mit der KI aus dem Video verfeinern.
+
 ## 0.47.0-rc.1 – 10. Oktober 2026
 
 - Ein Tipp auf die Versionsnummer öffnet jetzt eine kurze, übersichtliche Änderungshistorie direkt in Fami.

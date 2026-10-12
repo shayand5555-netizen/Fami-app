@@ -1,86 +1,14 @@
 {
-  "updatedAt": "2026-10-11T04:31:47.609Z",
+  "updatedAt": "2026-10-12T04:34:54.683Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "Ballett: Verwandlungen",
-      "date": "2026-10-11",
-      "venue": "Opernhaus Hannover",
+      "title": "Hausmeister Krause: Du lebst nur zweimal",
+      "date": "2026-10-12",
+      "venue": "Theater am Aegi",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ballett-Verwandlungen",
-      "featured": false
-    },
-    {
-      "title": "Burn, Baby, Burn!",
-      "date": "2026-10-11",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Burn,-Baby,-Burn",
-      "featured": false
-    },
-    {
-      "title": "Faust-Flohmarkt",
-      "date": "2026-10-11",
-      "venue": "Kulturzentrum Faust",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater: Wo die wilden Kerle wohnen",
-      "date": "2026-10-11",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Wo-die-wilden-Kerle-wohnen",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt Großburgwedel",
-      "date": "2026-10-11",
-      "venue": "Flohmarkt bei IKEA in Großburgwedel",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-Gro%C3%9Fburgwedel",
-      "featured": false
-    },
-    {
-      "title": "Geheimrat Leibniz in der Stadt unterwegs",
-      "date": "2026-10-11",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Geheimrat-Leibniz-in-der-Stadt-unterwegs",
-      "featured": false
-    },
-    {
-      "title": "H/21: Hannover Halbmarathon",
-      "date": "2026-10-11",
-      "venue": "Verschiedene Veranstaltungsorte in Hannover",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/H-21-Hannover-Halbmarathon",
-      "featured": false
-    },
-    {
-      "title": "Hannover? Typisch!",
-      "date": "2026-10-11",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Typisch",
-      "featured": false
-    },
-    {
-      "title": "Krise der Männlichkeit?",
-      "date": "2026-10-11",
-      "venue": "Gedenkstätte Ahlem",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Krise-der-M%C3%A4nnlichkeit",
-      "featured": false
-    },
-    {
-      "title": "Walk&Talk für Frauen*",
-      "date": "2026-10-11",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Walk-Talk-f%C3%BCr-Frauen*",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Hausmeister-Krause-Du-lebst-nur-zweimal",
       "featured": false
     },
     {
@@ -121,6 +49,14 @@
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Erfindungen-mit-Arduino",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-10-13",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
       "featured": false
     },
     {
@@ -323,11 +259,27 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Kleidertauschparty in der Südstadt",
+      "date": "2026-11-22",
+      "venue": "Adventgemeinde Hannover-Süd - Bistro",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Kleidertauschparty-in-der-S%C3%BCdstadt",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-25",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Ladies' Weekend im November",
+      "date": "2026-11-27",
+      "venue": "Freizeitheim Döhren",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-November",
+      "featured": false
     },
     {
       "title": "Fairground Festival 2026",
@@ -401,6 +353,14 @@
       "venue": "Schloss Landestrost",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
+      "featured": false
+    },
+    {
+      "title": "Irish Spring Festival 2027",
+      "date": "2027-03-09",
+      "venue": "Schloss Landestrost",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-2027",
       "featured": false
     }
   ]

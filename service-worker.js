@@ -1,5 +1,5 @@
-const CACHE = 'fami-v0.49.0';
-const APP_FILES = ['./','./index.html','./styles.css?v=0.49.0','./push-config.js?v=0.49.0','./cloud.js?v=0.49.0','./notifications.js?v=0.49.0','./family-recipes.js?v=0.49.0','./recipe-scanner.js?v=0.49.0','./app.js?v=0.49.0','./CHANGELOG.md?v=0.49.0','./regional-events.json','./recipe-videos.json','./manifest.webmanifest','./icons/fami-icon.svg'];
+const CACHE = 'fami-v0.49.1';
+const APP_FILES = ['./','./index.html','./styles.css?v=0.49.1','./push-config.js?v=0.49.1','./cloud.js?v=0.49.1','./notifications.js?v=0.49.1','./family-recipes.js?v=0.49.1','./recipe-scanner.js?v=0.49.1','./app.js?v=0.49.1','./CHANGELOG.md?v=0.49.1','./regional-events.json','./recipe-videos.json','./manifest.webmanifest','./icons/fami-icon.svg'];
 
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(APP_FILES)));
@@ -7,7 +7,15 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('activate', event => {
-  event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key)))).then(() => self.clients.claim()));
+  event.waitUntil((async()=>{
+    const keys=await caches.keys();
+    await Promise.all(keys.filter(key=>key!==CACHE).map(key=>caches.delete(key)));
+    await self.clients.claim();
+    // Auch eine bereits geoeffnete iPhone-PWA muss nach dem Update wirklich
+    // den neuen Programmcode laden und darf nicht im alten Fenster weiterlaufen.
+    const windows=await self.clients.matchAll({type:'window',includeUncontrolled:true});
+    await Promise.all(windows.map(client=>client.navigate(client.url).catch(()=>null)));
+  })());
 });
 
 self.addEventListener('fetch', event => {

@@ -420,9 +420,27 @@
     setInterval(()=>{if(navigator.onLine&&pendingSnapshot&&client&&familyInfo&&session)pushNow(pendingSnapshot)},20000);
   }
 
+  async function syncNow() {
+    if (!client || !familyInfo || !session) {
+      openSetup();
+      return false;
+    }
+    try {
+      if (pendingSnapshot) await pushNow(pendingSnapshot);
+      else await pullState();
+      setStatus(displayFamilyName(), 'online', `Gerade synchronisiert · ${new Date().toLocaleTimeString('de-DE',{hour:'2-digit',minute:'2-digit'})}`);
+      return true;
+    } catch (error) {
+      console.error(error);
+      setStatus('Noch nicht synchronisiert', 'offline', 'Bitte Verbindung prüfen und erneut versuchen');
+      return false;
+    }
+  }
+
   window.FamiCloud = {
     init,
     openSetup,
+    syncNow,
     schedulePush,
     uploadFiles,
     listFiles,

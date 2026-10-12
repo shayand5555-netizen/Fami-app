@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.49.1-rc.1 – 12. Oktober 2026
+
+- Die installierte iPhone-App prüft beim Öffnen und anschließend regelmäßig auf eine neue Version und lädt sie automatisch.
+- Offizielle aha-Abholtermine bleiben immer sichtbar, auch wenn auf einem Gerät ein Personenfilter aktiv ist.
+- Beim Öffnen oder Zurückkehren in die App wird die Cloud-Synchronisierung sofort erneut geprüft; Fehler werden verständlicher angezeigt.
+
 ## 0.49.0-rc.1 – 12. Oktober 2026
 
 - iPhone und Rechner übernehmen Termine jetzt auch dann live, wenn auf beiden Geräten dasselbe Fami-Konto angemeldet ist.

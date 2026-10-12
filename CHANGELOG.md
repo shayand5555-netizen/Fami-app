@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.49.2-rc.1 – 12. Oktober 2026
+
+- „Lokal gespeichert“ öffnet den Anmelde- und Synchronisierungsdialog auf dem iPhone wieder zuverlässig.
+- Große lokale Kalender- und Rezeptstände blockieren das Speichern neuer Termine nicht mehr.
+- Die Cloud-Warteschlange benötigt bei knappem iPhone-Speicher nur noch einen kleinen Änderungsmerker statt einer zweiten vollständigen Datenkopie.
+
 ## 0.49.1-rc.1 – 12. Oktober 2026
 
 - Die installierte iPhone-App prüft beim Öffnen und anschließend regelmäßig auf eine neue Version und lädt sie automatisch.

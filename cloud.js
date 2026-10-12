@@ -14,8 +14,17 @@
   let applyingRemote = false;
   let initialized = false;
   const LOCAL_ONLY_STATE_KEYS = ['taskPeople','calendarPeople','holidaySettings','recipeFoodFilter','recipeIngredientFilter','videoFoodFilter','videoIngredientFilter','recipeRatings','recipeSort','videoSort','videoChannel','videoMeal','videoCuisine','calendarView'];
-  const readPending = () => {try{const entry=JSON.parse(localStorage.getItem(PENDING_KEY)||'null');return entry?.payload||null}catch{return null}};
-  const savePending = payload => {pendingSnapshot=JSON.parse(JSON.stringify(payload));localStorage.setItem(PENDING_KEY,JSON.stringify({familyId:familyInfo?.id||localStorage.getItem(FAMILY_KEY)||'',savedAt:new Date().toISOString(),payload:pendingSnapshot}))};
+  const readPending = () => {try{const entry=JSON.parse(localStorage.getItem(PENDING_KEY)||'null');return entry?.dirty?{__useCurrentState:true}:entry?.payload||null}catch{return null}};
+  const savePending = payload => {
+    pendingSnapshot=JSON.parse(JSON.stringify(payload));
+    const familyId=familyInfo?.id||localStorage.getItem(FAMILY_KEY)||'',savedAt=new Date().toISOString();
+    try{localStorage.setItem(PENDING_KEY,JSON.stringify({familyId,savedAt,payload:pendingSnapshot}))}
+    catch{
+      // Auf iPhones ist localStorage klein. Die vollstaendige Kopie darf das
+      // eigentliche Speichern eines Termins niemals blockieren.
+      try{localStorage.removeItem(PENDING_KEY);localStorage.setItem(PENDING_KEY,JSON.stringify({familyId,savedAt,dirty:true}))}catch{}
+    }
+  };
   const clearPending = () => {pendingSnapshot=null;localStorage.removeItem(PENDING_KEY)};
 
   const readConfig = () => {
@@ -357,6 +366,7 @@
     const modal = document.querySelector('#cloudModal');
     modal.classList.add('open');
     modal.setAttribute('aria-hidden', 'false');
+    if(!client&&navigator.onLine)connect().then(renderSetup).catch(()=>{});
   }
 
   function closeSetup() {
@@ -408,7 +418,8 @@
     initialized = true;
     callbacks = options;
     pendingSnapshot=readPending();
-    document.querySelector('#cloudStatus')?.addEventListener('click', openSetup);
+    if(pendingSnapshot?.__useCurrentState)pendingSnapshot=callbacks.getState();
+    const cloudStatus=document.querySelector('#cloudStatus');if(cloudStatus)cloudStatus.onclick=openSetup;
     document.querySelectorAll('[data-cloud-close]').forEach(button => button.addEventListener('click', closeSetup));
     await connect();
     window.addEventListener('offline',()=>setStatus('Offline', 'offline', 'Änderungen bleiben sicher auf diesem Gerät'));
@@ -454,4 +465,5 @@
     getSyncStatus:() => ({connected:Boolean(client&&familyInfo&&session),pending:Boolean(pendingSnapshot),lastSyncedAt:lastSyncedAt?.toISOString()||'',online:navigator.onLine}),
     isConnected:() => Boolean(client && familyInfo && session)
   };
+  const cloudStatus=document.querySelector('#cloudStatus');if(cloudStatus)cloudStatus.onclick=openSetup;
 })();

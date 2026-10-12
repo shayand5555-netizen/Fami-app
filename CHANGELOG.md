@@ -1,5 +1,12 @@
 # Fami – Versionsverlauf
 
+## 0.49.0-rc.1 – 12. Oktober 2026
+
+- iPhone und Rechner übernehmen Termine jetzt auch dann live, wenn auf beiden Geräten dasselbe Fami-Konto angemeldet ist.
+- Die aha-Abholtermine werden nach jeder Cloud-Synchronisierung geprüft, der aktuellen Familie zugeordnet und auf allen Geräten eingeblendet.
+- Das Speichern neuer Termine reagiert auf dem iPhone sofort; Anhänge werden anschließend im Hintergrund übertragen.
+- Pflichtangaben und Speicherfehler werden verständlich angezeigt, statt das Terminfenster scheinbar ohne Reaktion offen zu lassen.
+
 ## 0.48.1-rc.1 – 11. Oktober 2026
 
 - Rezeptfenster im Wochenessensplan zeigen jetzt immer den Link zum Originalvideo; fehlende YouTube-Links können direkt verbunden werden.

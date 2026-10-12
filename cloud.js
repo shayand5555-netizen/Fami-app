@@ -125,21 +125,29 @@
     }
     const containedSharedDeviceUser=Object.prototype.hasOwnProperty.call(payload,'currentUser');
     const containedSharedDevicePreferences=LOCAL_ONLY_STATE_KEYS.some(key=>Object.prototype.hasOwnProperty.call(payload,key));
+    let repairedSharedState = false;
     applyingRemote = true;
-    callbacks.applyState(payload,{replace:replaceState});
-    applyingRemote = false;
-    if(containedSharedDeviceUser||containedSharedDevicePreferences)await pushNow(callbacks.getState());
+    try { repairedSharedState = callbacks.applyState(payload,{replace:replaceState}); }
+    finally { applyingRemote = false; }
+    if(containedSharedDeviceUser||containedSharedDevicePreferences||repairedSharedState)await pushNow(callbacks.getState());
   }
 
   function subscribe() {
     if (channel) client.removeChannel(channel);
     channel = client.channel(`fami-${familyInfo.id}`)
       .on('postgres_changes', {event:'*', schema:'public', table:'family_state', filter:`family_id=eq.${familyInfo.id}`}, payload => {
-        if (payload.new?.updated_by === session?.user?.id) return;
         if (payload.new?.payload) {
+          // Ein Konto darf auf mehreren Geräten genutzt werden. Deshalb nicht nur nach
+          // updated_by filtern: Ein iPhone und ein Rechner haben dieselbe Benutzer-ID.
+          // Lediglich das unveränderte Echo des eigenen Schreibvorgangs wird übersprungen.
+          try {
+            if (JSON.stringify(payload.new.payload) === JSON.stringify(callbacks.getState())) return;
+          } catch {}
+          let repairedSharedState = false;
           applyingRemote = true;
-          callbacks.applyState(payload.new.payload);
-          applyingRemote = false;
+          try { repairedSharedState = callbacks.applyState(payload.new.payload); }
+          finally { applyingRemote = false; }
+          if(repairedSharedState)schedulePush(callbacks.getState());
           notify('Änderung aus der Familie übernommen');
         }
       }).subscribe();
@@ -404,7 +412,11 @@
     document.querySelectorAll('[data-cloud-close]').forEach(button => button.addEventListener('click', closeSetup));
     await connect();
     window.addEventListener('offline',()=>setStatus('Offline', 'offline', 'Änderungen bleiben sicher auf diesem Gerät'));
-    window.addEventListener('online',()=>{if(pendingSnapshot)pushNow(pendingSnapshot);else if(familyInfo)setStatus(displayFamilyName(),'online','Verbindung wiederhergestellt')});
+    let lastResumeSync=0;
+    const syncAfterResume=()=>{if(!navigator.onLine||!client||!familyInfo||!session||Date.now()-lastResumeSync<4000)return;lastResumeSync=Date.now();if(pendingSnapshot)pushNow(pendingSnapshot);else pullState().catch(error=>{console.error(error);setStatus('Synchronisierung wird wiederholt','offline')})};
+    window.addEventListener('online',syncAfterResume);
+    window.addEventListener('focus',syncAfterResume);
+    document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')syncAfterResume()});
     setInterval(()=>{if(navigator.onLine&&pendingSnapshot&&client&&familyInfo&&session)pushNow(pendingSnapshot)},20000);
   }
 

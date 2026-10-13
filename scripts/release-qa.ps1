@@ -1,6 +1,6 @@
 param(
   [string]$Url = 'https://shayand5555-netizen.github.io/Fami-app/',
-  [string]$ExpectedVersion = '0.49.2'
+  [string]$ExpectedVersion = '0.49.3'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -126,6 +126,13 @@ try{
   $advancedCalendar=Invoke-Js $socket "(()=>{const backup=JSON.parse(JSON.stringify(state.events));const weekly=addEventSeries({id:'qa-series-start',title:'QA Wiederholung',date:'2026-10-13',endDate:'2026-10-15',time:'09:00',endTime:'10:00',people:[family[0]],color:'blue'},'weekly');const series=state.events.filter(item=>item.title==='QA Wiederholung'),multiDay=series.length&&series.every(item=>daysBetween(item.date,item.endDate)===2),unique=new Set(series.map(item=>item.date)).size===series.length;state.events=backup;save();return{weekly,count:series.length,multiDay,unique}})()"
   Add-Result 'Kalender' 'Wiederholung erzeugt eindeutige Termine' ($advancedCalendar.weekly -gt 50 -and $advancedCalendar.unique) "$($advancedCalendar.count) Termine"
   Add-Result 'Kalender' 'Mehrtägige Dauer bleibt in Serie erhalten' ([bool]$advancedCalendar.multiDay) '2 Tage pro Termin'
+
+  $personColors=Invoke-Js $socket "(()=>{const single=document.createElement('button'),multiple=document.createElement('button'),fixed=document.createElement('button');single.className='event-pill blue';multiple.className='event-pill blue';single.setAttribute('aria-label','Einzeltermin');multiple.setAttribute('aria-label','Familientermin');applyEventPersonColors(single,{people:[family[0]]});applyEventPersonColors(multiple,{people:[family[0],family[1]]});applyEventPersonColors(fixed,{people:[family[0]],source:'aha Abfuhrkalender 2026'});document.body.append(single,multiple);const computedSingle=getComputedStyle(single).backgroundColor,computedMultiple=getComputedStyle(multiple).backgroundImage;single.remove();multiple.remove();return{single:single.style.getPropertyValue('--event-person-background'),singleExpected:familyColor(family[0]).background,multiple:multiple.style.getPropertyValue('--event-person-background'),count:multiple.dataset.personCount,label:multiple.getAttribute('aria-label'),fixed:fixed.hasAttribute('data-person-colors'),computedSingle,computedMultiple}})()"
+  Add-Result 'Kalenderfarben' 'Einzeltermin nutzt Profilfarbe' ($personColors.single -eq $personColors.singleExpected -and $personColors.computedSingle -match '237') "$($personColors.single) / $($personColors.computedSingle)"
+  Add-Result 'Kalenderfarben' 'Mehrere Personen werden mehrfarbig' ($personColors.multiple -match '^linear-gradient' -and $personColors.computedMultiple -match '^linear-gradient' -and $personColors.count -eq '2' -and $personColors.label -match 'Familientermin') $personColors.multiple
+  Add-Result 'Kalenderfarben' 'Aha-Termine bleiben fest orange' (-not $personColors.fixed)
+  $colorUi=Invoke-Js $socket "(()=>{const select=document.querySelector('#editEventColor'),hint=document.querySelector('.event-color-hint');return{hidden:select?.closest('label')?.classList.contains('hidden')||false,hint:hint?.textContent||''}})()"
+  Add-Result 'Kalenderfarben' 'Automatische Farbe wird im Terminfenster erklärt' ($colorUi.hidden -and $colorUi.hint -match 'automatisch') $colorUi.hint
 
   $trashResult=Invoke-Js $socket "(async()=>{const original={id:'qa-trash-task',title:'QA Papierkorb',person:family[0],date:'2026-12-13',done:false};state.tasks.push(original);moveToTrash('tasks',original,'Aufgabe');state.tasks=state.tasks.filter(item=>item.id!==original.id);const trash=state.trashItems.find(item=>item.item?.id===original.id);const moved=!!trash;if(trash)await restoreTrashItem(trash.id,{save:false,render:false,notify:false});const restored=state.tasks.find(item=>item.restoredFrom===original.id);state.tasks=state.tasks.filter(item=>item.id!==original.id&&item.restoredFrom!==original.id);state.trashItems=state.trashItems.filter(item=>item.item?.id!==original.id);save();return{moved,restored:!!restored,newId:!!restored&&restored.id!==original.id}})()"
   Add-Result 'Papierkorb' 'Gelöschten Eintrag sicher verschieben' ([bool]$trashResult.moved)

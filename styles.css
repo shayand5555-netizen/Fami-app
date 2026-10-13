@@ -70,6 +70,9 @@
 /* v0.33.1 - einheitliche aha-Abholfarbe */
 .event-line.orange,.calendar-entry>i.orange{background:#e58a3a}
 .event-pill.orange{background:#f8e4cf;color:#985016}
+.event-pill[data-person-colors]{background:var(--event-person-background)!important;color:var(--event-person-foreground)!important;text-shadow:0 1px 0 #ffffff66}
+.event-line[data-person-colors],.calendar-entry>i[data-person-colors]{background:var(--event-person-background)!important}
+.event-color-hint{display:block;margin:-5px 0 10px;color:var(--muted);font-size:10px;line-height:1.4}
 .shopping-actions{align-items:center;gap:12px}.shopping-actions #stockBought{color:var(--green);font-weight:750}
 
 @media(max-width:760px){

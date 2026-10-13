@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=0.49.2" />
+<link rel="stylesheet" href="styles.css?v=0.49.3" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -66,7 +66,7 @@
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
       <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-<div class="top-actions"><button type="button" class="version-badge" id="appVersion" title="Versionsverlauf öffnen" aria-label="Versionsverlauf öffnen"><span>v0.49.2</span><span class="version-stage"> RC</span></button><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn feedback-shortcut" id="feedbackBtn" aria-label="Feedback senden">?</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
+<div class="top-actions"><button type="button" class="version-badge" id="appVersion" title="Versionsverlauf öffnen" aria-label="Versionsverlauf öffnen"><span>v0.49.3</span><span class="version-stage"> RC</span></button><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn feedback-shortcut" id="feedbackBtn" aria-label="Feedback senden">?</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -186,7 +186,8 @@
         <div class="form-row"><label>Ende<input required type="time" id="editEventEndTime"></label><label>Enddatum<input required type="date" id="editEventEndDate"></label></div>
         <label>Wiederholen<select id="editEventRecurrence"><option value="none">Einmalig</option><option value="weekly">Jede Woche</option><option value="biweekly">Alle 2 Wochen</option><option value="monthly">Jeden Monat</option><option value="yearly">Jedes Jahr, z. B. Geburtstag</option></select></label>
         <fieldset class="people-multi"><legend>Zuständig · mehrere möglich</legend><div id="editEventPeople"></div></fieldset>
-        <label>Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option><option value="orange">Orange</option></select></label>
+        <small class="event-color-hint">Die Kalenderfarbe folgt automatisch den ausgewählten Personen.</small>
+        <label class="hidden">Farbe<select id="editEventColor"><option value="blue">Blau</option><option value="coral">Koralle</option><option value="yellow">Gelb</option><option value="green">Grün</option><option value="orange">Orange</option></select></label>
         <label>Ort oder Details<input id="editEventPlace" placeholder="Wo findet der Termin statt?"></label>
         <label>Erinnerung<select id="editEventReminder"><option value="-1">Keine</option><option value="10">10 Minuten vorher</option><option value="30">30 Minuten vorher</option><option value="60">1 Stunde vorher</option><option value="120">2 Stunden vorher</option><option value="690">11 Std. 30 Min. vorher</option><option value="1440">1 Tag vorher</option></select></label>
         <fieldset class="event-responses"><legend>Wer ist dabei?</legend><div id="eventResponses"></div></fieldset>
@@ -215,11 +216,11 @@
     </section>
   </div>
   <div class="toast" id="toast"><span>✓</span><p></p><button class="toast-action hidden" data-toast-action>Rückgängig</button></div>
-<script src="push-config.js?v=0.49.2"></script>
-<script src="cloud.js?v=0.49.2"></script>
-<script src="notifications.js?v=0.49.2"></script>
-<script src="family-recipes.js?v=0.49.2"></script>
-<script src="recipe-scanner.js?v=0.49.2"></script>
-<script src="app.js?v=0.49.2"></script>
+<script src="push-config.js?v=0.49.3"></script>
+<script src="cloud.js?v=0.49.3"></script>
+<script src="notifications.js?v=0.49.3"></script>
+<script src="family-recipes.js?v=0.49.3"></script>
+<script src="recipe-scanner.js?v=0.49.3"></script>
+<script src="app.js?v=0.49.3"></script>
 </body>
 </html>

@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.49.3-rc.1 – 13. Oktober 2026
+
+- Termine verwenden automatisch die Profilfarbe der zuständigen Person.
+- Termine mit mehreren Personen zeigen deren Profilfarben gemeinsam als übersichtliche Farbbereiche.
+- Offizielle aha-Abholtermine behalten ihre feste orange Farbe.
+
 ## 0.49.2-rc.1 – 12. Oktober 2026
 
 - „Lokal gespeichert“ öffnet den Anmelde- und Synchronisierungsdialog auf dem iPhone wieder zuverlässig.

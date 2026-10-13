@@ -5,6 +5,8 @@
 - „Lokal gespeichert“ öffnet den Anmelde- und Synchronisierungsdialog auf dem iPhone wieder zuverlässig.
 - Große lokale Kalender- und Rezeptstände blockieren das Speichern neuer Termine nicht mehr.
 - Die Cloud-Warteschlange benötigt bei knappem iPhone-Speicher nur noch einen kleinen Änderungsmerker statt einer zweiten vollständigen Datenkopie.
+- Der Rezeptvideokatalog verwendet jetzt ebenfalls die aktuelle Cache-Kennung, damit neue und korrigierte Rezepte auf dem iPhone schneller erscheinen.
+- Ein automatisierter Release-Test prüft 40 Kernfälle einschließlich Offline-Start, drei iPhone-Breiten, Kalender, Papierkorb, Einladungen und alle Videorezepte.
 
 ## 0.49.1-rc.1 – 12. Oktober 2026
 

@@ -1,6 +1,6 @@
 param(
   [string]$Url = 'https://shayand5555-netizen.github.io/Fami-app/',
-  [string]$ExpectedVersion = '0.49.3'
+  [string]$ExpectedVersion = '0.49.4'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -116,6 +116,8 @@ try{
 
   $taskResult=Invoke-Js $socket "(()=>{openModal('task');document.querySelector('#itemTitle').value='QA Aufgabe';document.querySelector('#itemDate').value='2026-12-12';document.querySelector('#createForm').requestSubmit();return state.tasks.some(item=>item.title==='QA Aufgabe')})()"
   Add-Result 'Aufgaben' 'Aufgabe anlegen' ([bool]$taskResult)
+  $taskSyncResult=Invoke-Js $socket "(()=>{const tasks=JSON.parse(JSON.stringify(state.tasks)),activity=JSON.parse(JSON.stringify(state.activityLog)),id='qa-task-sync',old='2026-01-01T08:00:00.000Z';state.tasks.push({id,title:'QA dauerhaft erledigt',person:family[0],date:'2026-12-12',dateLabel:'12. Dez.',note:'',done:false,updatedAt:old});setDone(id,true);const completed=state.tasks.find(item=>item.id===id),stale={...completed,done:false,updatedAt:old},merged=mergeSharedCollection([completed],[stale]).find(item=>item.id===id),result={done:completed?.done===true,timestamp:Date.parse(completed?.updatedAt||'')>Date.parse(old),survives:merged?.done===true};state.tasks=tasks;state.activityLog=activity;save();return result})()"
+  Add-Result 'Aufgaben' 'Abhaken bleibt nach Cloud-Abgleich erhalten' ($taskSyncResult.done -and $taskSyncResult.timestamp -and $taskSyncResult.survives)
 
   $calendarResult=Invoke-Js $socket "(()=>{switchView('calendar');const aha=state.events.filter(item=>String(item.source||'').startsWith('aha Abfuhrkalender'));return{aha:aha.length,bio:aha.some(item=>item.title==='Bioabfall'),orange:aha.every(item=>item.color==='orange'),visible:aha.every(item=>eventVisible(item)),days:document.querySelectorAll('.month-day').length,weekButton:!!document.querySelector('[data-calendar-view=week]')}})()"
   Add-Result 'Kalender' '25 aha-Abholtermine vollständig' ([int]$calendarResult.aha -eq 25) "$($calendarResult.aha) Termine"

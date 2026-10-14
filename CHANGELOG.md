@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.49.4-rc.1 – 14. Oktober 2026
+
+- Erledigte Aufgaben bleiben nach dem Abhaken auf iPhone und PC dauerhaft erledigt.
+- Der Cloud-Abgleich erkennt den neuesten Aufgabenstatus jetzt zuverlässig anhand des Änderungszeitpunkts.
+- Schnellerfassung, kopierte Aufgaben und Putzplan-Aufgaben erhalten ebenfalls einen eindeutigen Änderungszeitpunkt.
+
 ## 0.49.3-rc.1 – 13. Oktober 2026
 
 - Termine verwenden automatisch die Profilfarbe der zuständigen Person.

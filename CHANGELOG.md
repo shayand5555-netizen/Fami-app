@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.49.5-rc.1 – 14. Oktober 2026
+
+- Shayan wird jetzt durchgängig blau und Selina rot beziehungsweise korall dargestellt.
+- Änderungen an Intervall, Zuständigkeit, Datum und Aktivstatus im Putzplan bleiben nach der Synchronisierung erhalten.
+- Neue Putzplan-Regeln erhalten sofort einen eindeutigen Änderungszeitpunkt für den Geräteabgleich.
+
 ## 0.49.4-rc.1 – 14. Oktober 2026
 
 - Erledigte Aufgaben bleiben nach dem Abhaken auf iPhone und PC dauerhaft erledigt.

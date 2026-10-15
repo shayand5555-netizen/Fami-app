@@ -1,39 +1,8 @@
 {
-  "updatedAt": "2026-10-14T04:46:36.513Z",
+  "updatedAt": "2026-10-15T04:43:37.741Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Da lacht der Bär!",
-      "date": "2026-10-14",
-      "venue": "Marlene Bar & Bühne",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Da-lacht-der-B%C3%A4r",
-      "featured": false
-    },
-    {
-      "title": "Die Frau mit den vier Armen",
-      "date": "2026-10-14",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-Frau-mit-den-vier-Armen",
-      "featured": false
-    },
-    {
-      "title": "Lichterzauber aus der Natur",
-      "date": "2026-10-14",
-      "venue": "Naturpark-Haus Mardorf",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lichterzauber-aus-der-Natur",
-      "featured": false
-    },
-    {
-      "title": "Offener Palettengarten Misburg-Anderten",
-      "date": "2026-10-14",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
     {
       "title": "Code Week: Lego Spike Essential",
       "date": "2026-10-15",
@@ -83,6 +52,14 @@
       "featured": false
     },
     {
+      "title": "Der Troubadour",
+      "date": "2026-10-16",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Troubadour",
+      "featured": false
+    },
+    {
       "title": "Hannover Wies'n",
       "date": "2026-10-16",
       "venue": "Parkbühne",
@@ -91,11 +68,27 @@
       "featured": false
     },
     {
+      "title": "Romeo und Julia",
+      "date": "2026-10-16",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia",
+      "featured": false
+    },
+    {
       "title": "Tischtennis auf dem Holzmarkt",
       "date": "2026-10-16",
       "venue": "Holzmarkt",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Tischtennis-auf-dem-Holzmarkt",
+      "featured": false
+    },
+    {
+      "title": "Urban Priol im Theater am Aegi",
+      "date": "2026-10-16",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Urban-Priol-im-Theater-am-Aegi",
       "featured": false
     },
     {
@@ -156,11 +149,51 @@
       "description": "Hoffest mit Kunst, Kürbissen und buntem Familienprogramm im Umland."
     },
     {
+      "title": "Code Week: Fußball Action mit den Sphero Bolts",
+      "date": "2026-10-19",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Fu%C3%9Fball-Action-mit-den-Sphero-Bolts",
+      "featured": false
+    },
+    {
+      "title": "Figurentheater Tonne: Es rappelt in der Kiste",
+      "date": "2026-10-19",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste",
+      "featured": false
+    },
+    {
+      "title": "Aquarellmalen für Kinder und Jugendliche",
+      "date": "2026-10-20",
+      "venue": "Naturpark-Scheune Steinhude",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Aquarellmalen-f%C3%BCr-Kinder-und-Jugendliche",
+      "featured": false
+    },
+    {
+      "title": "Code Week: Virtuelle Reality mit der Metaquest 3",
+      "date": "2026-10-20",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Virtuelle-Reality-mit-der-Metaquest-32",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-10-21",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Die Recken vs. TBV Lemgo Lippe",
+      "date": "2026-10-23",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-TBV-Lemgo-Lippe",
+      "featured": false
     },
     {
       "title": "Erstes 25-Stunden-Schwimmen in der Wasserwelt",
@@ -186,11 +219,35 @@
       "featured": false
     },
     {
+      "title": "\"Dance Fit\"",
+      "date": "2026-10-27",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/%22Dance-Fit%22",
+      "featured": false
+    },
+    {
+      "title": "Zirkusgruppe No Limits (zurzeit ausgebucht)",
+      "date": "2026-10-27",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Zirkusgruppe-No-Limits-zurzeit-ausgebucht",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-10-28",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Offenes Singen",
+      "date": "2026-10-28",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offenes-Singen",
+      "featured": false
     },
     {
       "title": "Winterzauber Herrenhausen",
@@ -201,11 +258,51 @@
       "featured": false
     },
     {
+      "title": "Kreativ-Werkstatt",
+      "date": "2026-10-29",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Kreativ-Werkstatt",
+      "featured": false
+    },
+    {
       "title": "EXIT x Electric Sunday",
       "date": "2026-10-30",
       "venue": "Hannover Congress Centrum (HCC)",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday",
+      "featured": false
+    },
+    {
+      "title": "Hannover Indians vs. Hannover Scorpions",
+      "date": "2026-10-30",
+      "venue": "Eisstadion am Pferdeturm",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-Hannover-Scorpions",
+      "featured": false
+    },
+    {
+      "title": "MAX UND DIE WILDE 7 – DIE GEISTER-OMA",
+      "date": "2026-10-30",
+      "venue": "Misburg-Anderten",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/MAX-UND-DIE-WILDE-7-%E2%80%93-DIE-GEISTER-OMA",
+      "featured": false
+    },
+    {
+      "title": "Offene Trommelgruppe",
+      "date": "2026-10-30",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offene-Trommelgruppe",
+      "featured": false
+    },
+    {
+      "title": "Die Recken vs. Bergischer HC",
+      "date": "2026-10-31",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-Bergischer-HC",
       "featured": false
     },
     {
@@ -225,6 +322,14 @@
       "featured": false
     },
     {
+      "title": "Hannover 96 vs. Dynamo Dresden",
+      "date": "2026-11-01",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Dynamo-Dresden",
+      "featured": false
+    },
+    {
       "title": "Stoffmarkt Holland",
       "date": "2026-11-01",
       "venue": "Schützenplatz Hannover",
@@ -240,19 +345,19 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
+      "title": "Mozarts Zauberklarinetten- Ein musikalisches Märchen",
+      "date": "2026-11-06",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Mozarts-Zauberklarinetten-Ein-musikalisches-M%C3%A4rchen",
+      "featured": false
+    },
+    {
       "title": "Wochenmarkt Misburg",
       "date": "2026-11-07",
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
-    },
-    {
-      "title": "Zum dritten Mal in Hannover: OKTAGON MMA",
-      "date": "2026-11-07",
-      "venue": "ZAG-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Zum-dritten-Mal-in-Hannover-OKTAGON-MMA",
-      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -267,6 +372,14 @@
       "venue": "Bürgerhaus & Kulturbüro",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tanzparty-in-Misburg",
+      "featured": false
+    },
+    {
+      "title": "Klavierduo Maria & Sofia: GOLDENE KLÄNGE",
+      "date": "2026-11-13",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Klavierduo-Maria-Sofia-GOLDENE-KL%C3%84NGE",
       "featured": false
     },
     {
@@ -335,14 +448,6 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
-    },
-    {
-      "title": "Flohmarkt - Standplätze bereits ausgebucht",
-      "date": "2026-11-29",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht",
-      "featured": false
     },
     {
       "title": "Solawi Winterfest",

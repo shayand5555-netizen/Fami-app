@@ -1,56 +1,8 @@
 {
-  "updatedAt": "2026-10-16T04:44:47.659Z",
+  "updatedAt": "2026-10-17T04:43:14.230Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Code Week: Lego Spike Essential",
-      "date": "2026-10-16",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Lego-Spike-Essential2",
-      "featured": false
-    },
-    {
-      "title": "Der Troubadour",
-      "date": "2026-10-16",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Troubadour",
-      "featured": false
-    },
-    {
-      "title": "Hannover Wies'n",
-      "date": "2026-10-16",
-      "venue": "Parkbühne",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
-      "featured": false
-    },
-    {
-      "title": "Romeo und Julia",
-      "date": "2026-10-16",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia",
-      "featured": false
-    },
-    {
-      "title": "Tischtennis auf dem Holzmarkt",
-      "date": "2026-10-16",
-      "venue": "Holzmarkt",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Tischtennis-auf-dem-Holzmarkt",
-      "featured": false
-    },
-    {
-      "title": "Urban Priol im Theater am Aegi",
-      "date": "2026-10-16",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Urban-Priol-im-Theater-am-Aegi",
-      "featured": false
-    },
     {
       "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
       "date": "2026-10-17",
@@ -100,11 +52,27 @@
       "featured": false
     },
     {
+      "title": "La Bohème",
+      "date": "2026-10-17",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/La-Boh%C3%A8me",
+      "featured": false
+    },
+    {
       "title": "Sliding Away",
       "date": "2026-10-17",
       "venue": "Ballhof Eins",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sliding-Away",
+      "featured": false
+    },
+    {
+      "title": "Starbugs Comedy: Showtime",
+      "date": "2026-10-17",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Starbugs-Comedy-Showtime",
       "featured": false
     },
     {
@@ -131,6 +99,14 @@
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Kunst-K%C3%BCrbis-in-Eldagsen",
       "featured": true,
       "description": "Hoffest mit Kunst, Kürbissen und buntem Familienprogramm im Umland."
+    },
+    {
+      "title": "Lichterkinder: Die große Familienparty",
+      "date": "2026-10-18",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Lichterkinder-Die-gro%C3%9Fe-Familienparty",
+      "featured": false
     },
     {
       "title": "Code Week: Fußball Action mit den Sphero Bolts",
@@ -178,6 +154,14 @@
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-3D-Druck-Konstruktion-f%C3%BCr-Anf%C3%A4nger*innen",
+      "featured": false
+    },
+    {
+      "title": "Die Ringelreihe",
+      "date": "2026-10-21",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Ringelreihe",
       "featured": false
     },
     {

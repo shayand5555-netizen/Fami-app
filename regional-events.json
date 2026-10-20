@@ -1,30 +1,14 @@
 {
-  "updatedAt": "2026-10-19T04:46:15.763Z",
+  "updatedAt": "2026-10-20T04:43:23.915Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "Code Week: Fußball Action mit den Sphero Bolts",
-      "date": "2026-10-19",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Fu%C3%9Fball-Action-mit-den-Sphero-Bolts",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater Tonne: Es rappelt in der Kiste",
-      "date": "2026-10-19",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Tonne-Es-rappelt-in-der-Kiste",
-      "featured": false
-    },
-    {
-      "title": "Robert Marc Lehmann: Mission Erde Live",
-      "date": "2026-10-19",
-      "venue": "Theater am Aegi",
+      "title": "2:22 Eine Geistergeschichte",
+      "date": "2026-10-20",
+      "venue": "Neues Theater",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Robert-Marc-Lehmann-Mission-Erde-Live",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/2-22-Eine-Geistergeschichte",
       "featured": false
     },
     {
@@ -52,11 +36,43 @@
       "featured": false
     },
     {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-10-20",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Sixx Paxx: Dreams Tour",
+      "date": "2026-10-20",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sixx-Paxx-Dreams-Tour",
+      "featured": false
+    },
+    {
+      "title": "Steh-auf-Comedy-Show",
+      "date": "2026-10-20",
+      "venue": "Béi Chéz Heinz",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Steh-auf-Comedy-Show",
+      "featured": false
+    },
+    {
       "title": "Code Week: 3D-Druck-Konstruktion für Anfänger*innen",
       "date": "2026-10-21",
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-3D-Druck-Konstruktion-f%C3%BCr-Anf%C3%A4nger*innen",
+      "featured": false
+    },
+    {
+      "title": "Der Großinquisitor",
+      "date": "2026-10-21",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Gro%C3%9Finquisitor",
       "featured": false
     },
     {
@@ -68,11 +84,43 @@
       "featured": false
     },
     {
+      "title": "Höhere Gewalt",
+      "date": "2026-10-21",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/H%C3%B6here-Gewalt",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-10-21",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Pique Dame",
+      "date": "2026-10-21",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
+      "featured": false
+    },
+    {
+      "title": "Rock the Circus im Theater am Aegi",
+      "date": "2026-10-21",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Rock-the-Circus-im-Theater-am-Aegi",
+      "featured": false
+    },
+    {
+      "title": "Stand-up-Comedy mit Hinnerk Köhn: Noir",
+      "date": "2026-10-21",
+      "venue": "Warenannahme (Faust-Gelände)",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Stand-up-Comedy-mit-Hinnerk-K%C3%B6hn-Noir",
+      "featured": false
     },
     {
       "title": "Code Week: Gamedesign und –programmierung",
@@ -96,6 +144,14 @@
       "venue": "Wasserwelt Langenhagen",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Erstes-25-Stunden-Schwimmen-in-der-Wasserwelt",
+      "featured": false
+    },
+    {
+      "title": "Georgengarten Parkrun",
+      "date": "2026-10-24",
+      "venue": "Georgengarten",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
       "featured": false
     },
     {

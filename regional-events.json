@@ -1,64 +1,8 @@
 {
-  "updatedAt": "2026-10-20T04:43:23.915Z",
+  "updatedAt": "2026-10-21T04:44:00.252Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "2:22 Eine Geistergeschichte",
-      "date": "2026-10-20",
-      "venue": "Neues Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/2-22-Eine-Geistergeschichte",
-      "featured": false
-    },
-    {
-      "title": "Aquarellmalen für Kinder und Jugendliche",
-      "date": "2026-10-20",
-      "venue": "Naturpark-Scheune Steinhude",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Aquarellmalen-f%C3%BCr-Kinder-und-Jugendliche",
-      "featured": false
-    },
-    {
-      "title": "Code Week: Virtuelle Reality mit der Metaquest 3",
-      "date": "2026-10-20",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Virtuelle-Reality-mit-der-Metaquest-32",
-      "featured": false
-    },
-    {
-      "title": "Digitaler Dienstag",
-      "date": "2026-10-20",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Digitaler-Dienstag",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-10-20",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "Sixx Paxx: Dreams Tour",
-      "date": "2026-10-20",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sixx-Paxx-Dreams-Tour",
-      "featured": false
-    },
-    {
-      "title": "Steh-auf-Comedy-Show",
-      "date": "2026-10-20",
-      "venue": "Béi Chéz Heinz",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Steh-auf-Comedy-Show",
-      "featured": false
-    },
     {
       "title": "Code Week: 3D-Druck-Konstruktion für Anfänger*innen",
       "date": "2026-10-21",
@@ -89,6 +33,14 @@
       "venue": "Schauspielhaus",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/H%C3%B6here-Gewalt",
+      "featured": false
+    },
+    {
+      "title": "Ich, Fritz Haarmann",
+      "date": "2026-10-21",
+      "venue": "Marlene Bar & Bühne",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-Fritz-Haarmann",
       "featured": false
     },
     {
@@ -123,6 +75,14 @@
       "featured": false
     },
     {
+      "title": "30 Jahr Perlen – Queer Film Festival Hannover",
+      "date": "2026-10-22",
+      "venue": "Kino im Künstlerhaus Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/30-Jahr-Perlen-%E2%80%93-Queer-Film-Festival-Hannover",
+      "featured": false
+    },
+    {
       "title": "Code Week: Gamedesign und –programmierung",
       "date": "2026-10-22",
       "venue": "Stadtbibliothek",
@@ -139,6 +99,22 @@
       "featured": false
     },
     {
+      "title": "Hannover Wies'n",
+      "date": "2026-10-23",
+      "venue": "Parkbühne",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
+      "featured": false
+    },
+    {
+      "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
+      "date": "2026-10-24",
+      "venue": "Flohmarkt Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
+    },
+    {
       "title": "Erstes 25-Stunden-Schwimmen in der Wasserwelt",
       "date": "2026-10-24",
       "venue": "Wasserwelt Langenhagen",
@@ -147,11 +123,27 @@
       "featured": false
     },
     {
+      "title": "Flohmarkt auf der Neuen Bult",
+      "date": "2026-10-24",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
+      "featured": false
+    },
+    {
       "title": "Georgengarten Parkrun",
       "date": "2026-10-24",
       "venue": "Georgengarten",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
+      "featured": false
+    },
+    {
+      "title": "Pilzexkursionen in der Wedemark",
+      "date": "2026-10-24",
+      "venue": "verschiedene Veranstaltungsorte in der Wedemark",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Pilzexkursionen-in-der-Wedemark",
       "featured": false
     },
     {
@@ -167,6 +159,30 @@
       "venue": "Pferderennbahn Neue Bult",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Galopprennen-Neue-Bult",
+      "featured": false
+    },
+    {
+      "title": "Geschichte zum Ausprobieren 2026",
+      "date": "2026-10-25",
+      "venue": "Hannover Kiosk",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
+      "featured": false
+    },
+    {
+      "title": "SPIEL:ZEIT Kaleidoskope - Magisch, bunte Farben",
+      "date": "2026-10-25",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Kaleidoskope-Magisch,-bunte-Farben",
+      "featured": false
+    },
+    {
+      "title": "Super-Willi setzt sich ein",
+      "date": "2026-10-25",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Super-Willi-setzt-sich-ein",
       "featured": false
     },
     {
@@ -198,6 +214,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offenes-Singen",
+      "featured": false
+    },
+    {
+      "title": "Pokal: Hannover 96 vs. 1. FC Kaiserslautern",
+      "date": "2026-10-28",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Pokal-Hannover-96-vs.-1.-FC-Kaiserslautern",
       "featured": false
     },
     {
@@ -273,6 +297,22 @@
       "featured": false
     },
     {
+      "title": "Faust-Flohmarkt",
+      "date": "2026-11-01",
+      "venue": "Kulturzentrum Faust",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
+      "featured": false
+    },
+    {
+      "title": "Handgemacht!",
+      "date": "2026-11-01",
+      "venue": "Warenannahme (Faust-Gelände)",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Handgemacht",
+      "featured": false
+    },
+    {
       "title": "Hannover 96 vs. Dynamo Dresden",
       "date": "2026-11-01",
       "venue": "Heinz-von-Heiden-Arena",
@@ -311,14 +351,6 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
-      "title": "Zum dritten Mal in Hannover: OKTAGON MMA",
-      "date": "2026-11-07",
-      "venue": "ZAG-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Zum-dritten-Mal-in-Hannover-OKTAGON-MMA",
-      "featured": false
-    },
-    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-11",
       "venue": "Bürgerhaus Misburg",
@@ -339,6 +371,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Klavierduo-Maria-Sofia-GOLDENE-KL%C3%84NGE",
+      "featured": false
+    },
+    {
+      "title": "Vintage Wonderland",
+      "date": "2026-11-14",
+      "venue": "Vintage Wonderland",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
       "featured": false
     },
     {
@@ -371,27 +411,11 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
-      "title": "Kleidertauschparty in der Südstadt",
-      "date": "2026-11-22",
-      "venue": "Adventgemeinde Hannover-Süd - Bistro",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Kleidertauschparty-in-der-S%C3%BCdstadt",
-      "featured": false
-    },
-    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-25",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
-    {
-      "title": "Ladies' Weekend im November",
-      "date": "2026-11-27",
-      "venue": "Freizeitheim Döhren",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-November",
-      "featured": false
     },
     {
       "title": "Fairground Festival 2026",
@@ -465,14 +489,6 @@
       "venue": "Innenstadt Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Karnevalsumzug-2027",
-      "featured": false
-    },
-    {
-      "title": "Opernball 2027",
-      "date": "2027-02-19",
-      "venue": "Opernhaus Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Opernball-2027",
       "featured": false
     }
   ]

@@ -1,79 +1,8 @@
 {
-  "updatedAt": "2026-10-21T04:44:00.252Z",
+  "updatedAt": "2026-10-22T04:44:13.318Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Code Week: 3D-Druck-Konstruktion für Anfänger*innen",
-      "date": "2026-10-21",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-3D-Druck-Konstruktion-f%C3%BCr-Anf%C3%A4nger*innen",
-      "featured": false
-    },
-    {
-      "title": "Der Großinquisitor",
-      "date": "2026-10-21",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Gro%C3%9Finquisitor",
-      "featured": false
-    },
-    {
-      "title": "Die Ringelreihe",
-      "date": "2026-10-21",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Ringelreihe",
-      "featured": false
-    },
-    {
-      "title": "Höhere Gewalt",
-      "date": "2026-10-21",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/H%C3%B6here-Gewalt",
-      "featured": false
-    },
-    {
-      "title": "Ich, Fritz Haarmann",
-      "date": "2026-10-21",
-      "venue": "Marlene Bar & Bühne",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-Fritz-Haarmann",
-      "featured": false
-    },
-    {
-      "title": "Offener Palettengarten Misburg-Anderten",
-      "date": "2026-10-21",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
-    {
-      "title": "Pique Dame",
-      "date": "2026-10-21",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
-      "featured": false
-    },
-    {
-      "title": "Rock the Circus im Theater am Aegi",
-      "date": "2026-10-21",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Rock-the-Circus-im-Theater-am-Aegi",
-      "featured": false
-    },
-    {
-      "title": "Stand-up-Comedy mit Hinnerk Köhn: Noir",
-      "date": "2026-10-21",
-      "venue": "Warenannahme (Faust-Gelände)",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Stand-up-Comedy-mit-Hinnerk-K%C3%B6hn-Noir",
-      "featured": false
-    },
     {
       "title": "30 Jahr Perlen – Queer Film Festival Hannover",
       "date": "2026-10-22",
@@ -88,6 +17,22 @@
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Gamedesign-und-%E2%80%93programmierung",
+      "featured": false
+    },
+    {
+      "title": "Fräsch: Young Comedy im Pavillon",
+      "date": "2026-10-22",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Fr%C3%A4sch-Young-Comedy-im-Pavillon",
+      "featured": false
+    },
+    {
+      "title": "Teresa Reichl",
+      "date": "2026-10-22",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Teresa-Reichl",
       "featured": false
     },
     {
@@ -183,6 +128,14 @@
       "venue": "Theatrio Figuren Theaterhaus Hannover",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Super-Willi-setzt-sich-ein",
+      "featured": false
+    },
+    {
+      "title": "Elektronisches Spielzeug: Lego Spike-Special",
+      "date": "2026-10-26",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Elektronisches-Spielzeug-Lego-Spike-Special",
       "featured": false
     },
     {

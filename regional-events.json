@@ -1,38 +1,14 @@
 {
-  "updatedAt": "2026-10-22T04:44:13.318Z",
+  "updatedAt": "2026-10-23T04:44:00.959Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "30 Jahr Perlen – Queer Film Festival Hannover",
-      "date": "2026-10-22",
-      "venue": "Kino im Künstlerhaus Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/30-Jahr-Perlen-%E2%80%93-Queer-Film-Festival-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Code Week: Gamedesign und –programmierung",
-      "date": "2026-10-22",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Code-Week-Gamedesign-und-%E2%80%93programmierung",
-      "featured": false
-    },
-    {
-      "title": "Fräsch: Young Comedy im Pavillon",
-      "date": "2026-10-22",
-      "venue": "Kulturzentrum Pavillon",
+      "title": "Die Bösen Schwestern: Abschied ist ein schweres Schaf",
+      "date": "2026-10-23",
+      "venue": "Marlene Bar & Bühne",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Fr%C3%A4sch-Young-Comedy-im-Pavillon",
-      "featured": false
-    },
-    {
-      "title": "Teresa Reichl",
-      "date": "2026-10-22",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Teresa-Reichl",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-B%C3%B6sen-Schwestern-Abschied-ist-ein-schweres-Schaf",
       "featured": false
     },
     {
@@ -44,6 +20,14 @@
       "featured": false
     },
     {
+      "title": "Figurentheater: Theater der Nacht",
+      "date": "2026-10-23",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Figurentheater-Theater-der-Nacht",
+      "featured": false
+    },
+    {
       "title": "Hannover Wies'n",
       "date": "2026-10-23",
       "venue": "Parkbühne",
@@ -52,11 +36,35 @@
       "featured": false
     },
     {
+      "title": "Il Viaggio, Dante",
+      "date": "2026-10-23",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Il-Viaggio,-Dante",
+      "featured": false
+    },
+    {
+      "title": "Romeo und Julia",
+      "date": "2026-10-23",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia",
+      "featured": false
+    },
+    {
       "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
       "date": "2026-10-24",
       "venue": "Flohmarkt Hannover",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
+    },
+    {
+      "title": "Das offene Foyer der Staatsoper Hannover",
+      "date": "2026-10-24",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
       "featured": false
     },
     {
@@ -81,6 +89,14 @@
       "venue": "Georgengarten",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
+      "featured": false
+    },
+    {
+      "title": "La Bohème",
+      "date": "2026-10-24",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/La-Boh%C3%A8me",
       "featured": false
     },
     {
@@ -131,11 +147,35 @@
       "featured": false
     },
     {
+      "title": "Die Jugendgruppe BE:TwEEN 2026",
+      "date": "2026-10-26",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
+      "featured": false
+    },
+    {
       "title": "Elektronisches Spielzeug: Lego Spike-Special",
       "date": "2026-10-26",
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Elektronisches-Spielzeug-Lego-Spike-Special",
+      "featured": false
+    },
+    {
+      "title": "Glühende Städte",
+      "date": "2026-10-26",
+      "venue": "Hörsaal Kirchenkanzlei",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Gl%C3%BChende-St%C3%A4dte",
+      "featured": false
+    },
+    {
+      "title": "Selbständige Berufsbetreuer*innen gesucht",
+      "date": "2026-10-26",
+      "venue": "Reines Onlineangebot",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Selbst%C3%A4ndige-Berufsbetreuer*innen-gesucht",
       "featured": false
     },
     {
@@ -152,6 +192,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Zirkusgruppe-No-Limits-zurzeit-ausgebucht",
+      "featured": false
+    },
+    {
+      "title": "Figurentheater: Willi und das Grün der Affen",
+      "date": "2026-10-28",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Willi-und-das-Gr%C3%BCn-der-Affen",
       "featured": false
     },
     {
@@ -191,6 +239,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Kreativ-Werkstatt",
+      "featured": false
+    },
+    {
+      "title": "Wanderausstellung über Anne Frank in Wunstorf",
+      "date": "2026-10-29",
+      "venue": "Stadtkirche Wunstorf",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wanderausstellung-%C3%BCber-Anne-Frank-in-Wunstorf",
       "featured": false
     },
     {
@@ -364,6 +420,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Winterfest der Bio-Handwerksbäckerei Backwerk",
+      "date": "2026-11-22",
+      "venue": "Backwerk Bio Handwerksbäckerei",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterfest-der-Bio-Handwerksb%C3%A4ckerei-Backwerk",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-25",
       "venue": "Bürgerhaus Misburg",
@@ -434,14 +498,6 @@
       "venue": "Verschiedene Veranstaltungsorte in Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Real-Dance-Festival",
-      "featured": false
-    },
-    {
-      "title": "Karnevalsumzug 2027",
-      "date": "2027-02-06",
-      "venue": "Innenstadt Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Karnevalsumzug-2027",
       "featured": false
     }
   ]

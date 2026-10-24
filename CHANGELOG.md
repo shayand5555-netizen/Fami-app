@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.50.0-rc.1 – 24. Oktober 2026
+
+- Rezeptzutaten werden gesammelt zur Einkaufsliste übernommen und nur noch einmal gespeichert.
+- Mehrere Zutaten lassen sich ohne Wartezeit direkt nacheinander erfassen.
+- Eigene Rezepte können vollständig ohne KI angelegt werden.
+- Die manuelle Rezeptmaske bietet für jede Zutat eine eigene Zeile mit Menge sowie Hinzufügen und Entfernen.
+- Das vollständige eigene Rezept wird erst über „Rezept speichern“ gemeinsam gesichert und synchronisiert.
+
 ## 0.49.5-rc.1 – 14. Oktober 2026
 
 - Shayan wird jetzt durchgängig blau und Selina rot beziehungsweise korall dargestellt.

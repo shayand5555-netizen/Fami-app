@@ -1,56 +1,8 @@
 {
-  "updatedAt": "2026-10-25T04:43:27.391Z",
+  "updatedAt": "2026-10-26T04:47:00.007Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Die Frau mit den vier Armen",
-      "date": "2026-10-25",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-Frau-mit-den-vier-Armen",
-      "featured": false
-    },
-    {
-      "title": "Galopprennen Neue Bult",
-      "date": "2026-10-25",
-      "venue": "Pferderennbahn Neue Bult",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Galopprennen-Neue-Bult",
-      "featured": false
-    },
-    {
-      "title": "Geschichte zum Ausprobieren 2026",
-      "date": "2026-10-25",
-      "venue": "Hannover Kiosk",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
-      "featured": false
-    },
-    {
-      "title": "Ich, ich, ich!",
-      "date": "2026-10-25",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-ich,-ich",
-      "featured": false
-    },
-    {
-      "title": "SPIEL:ZEIT Kaleidoskope - Magisch, bunte Farben",
-      "date": "2026-10-25",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Kaleidoskope-Magisch,-bunte-Farben",
-      "featured": false
-    },
-    {
-      "title": "Super-Willi setzt sich ein",
-      "date": "2026-10-25",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Super-Willi-setzt-sich-ein",
-      "featured": false
-    },
     {
       "title": "Die Jugendgruppe BE:TwEEN 2026",
       "date": "2026-10-26",
@@ -121,6 +73,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/%22Dance-Fit%22",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-10-27",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
       "featured": false
     },
     {
@@ -195,6 +155,14 @@
       "featured": false
     },
     {
+      "title": "Halloween-Party",
+      "date": "2026-10-30",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Halloween-Party",
+      "featured": false
+    },
+    {
       "title": "Hannover Indians vs. Hannover Scorpions",
       "date": "2026-10-30",
       "venue": "Eisstadion am Pferdeturm",
@@ -216,6 +184,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offene-Trommelgruppe",
+      "featured": false
+    },
+    {
+      "title": "Vorlesenachmittage",
+      "date": "2026-10-30",
+      "venue": "Museum August Kestner",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Vorlesenachmittage",
       "featured": false
     },
     {
@@ -305,6 +281,14 @@
       "featured": false
     },
     {
+      "title": "50 Jahre Lönsparklauf",
+      "date": "2026-11-08",
+      "venue": "Kleefelder Bad (Annabad)",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/50-Jahre-L%C3%B6nsparklauf",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-11",
       "venue": "Bürgerhaus Misburg",
@@ -356,6 +340,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Die Recken vs. TVB Stuttgart",
+      "date": "2026-11-20",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-TVB-Stuttgart",
+      "featured": false
     },
     {
       "title": "Wochenmarkt Misburg",

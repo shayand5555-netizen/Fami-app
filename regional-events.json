@@ -1,78 +1,38 @@
 {
-  "updatedAt": "2026-10-26T04:47:00.007Z",
+  "updatedAt": "2026-10-27T04:44:36.569Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Die Jugendgruppe BE:TwEEN 2026",
-      "date": "2026-10-26",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
-      "featured": false
-    },
-    {
-      "title": "Elektronisches Spielzeug: Lego Spike-Special",
-      "date": "2026-10-26",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Elektronisches-Spielzeug-Lego-Spike-Special",
-      "featured": false
-    },
-    {
-      "title": "Glühende Städte",
-      "date": "2026-10-26",
-      "venue": "Hörsaal Kirchenkanzlei",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Gl%C3%BChende-St%C3%A4dte",
-      "featured": false
-    },
-    {
-      "title": "Henna",
-      "date": "2026-10-26",
-      "venue": "Region Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Henna",
-      "featured": false
-    },
-    {
-      "title": "Jan Becker: Hypnotize the World",
-      "date": "2026-10-26",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Jan-Becker-Hypnotize-the-World",
-      "featured": false
-    },
-    {
-      "title": "Just Leo",
-      "date": "2026-10-26",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Just-Leo",
-      "featured": false
-    },
-    {
-      "title": "Kay Ray im GOP",
-      "date": "2026-10-26",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Kay-Ray-im-GOP",
-      "featured": false
-    },
-    {
-      "title": "Selbständige Berufsbetreuer*innen gesucht",
-      "date": "2026-10-26",
-      "venue": "Reines Onlineangebot",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Selbst%C3%A4ndige-Berufsbetreuer*innen-gesucht",
-      "featured": false
-    },
     {
       "title": "\"Dance Fit\"",
       "date": "2026-10-27",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/%22Dance-Fit%22",
+      "featured": false
+    },
+    {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-10-27",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-10-27",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
+      "featured": false
+    },
+    {
+      "title": "Sliding Away",
+      "date": "2026-10-27",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sliding-Away",
       "featured": false
     },
     {
@@ -84,11 +44,59 @@
       "featured": false
     },
     {
+      "title": "Super-Willi setzt sich ein",
+      "date": "2026-10-27",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Super-Willi-setzt-sich-ein",
+      "featured": false
+    },
+    {
       "title": "Zirkusgruppe No Limits (zurzeit ausgebucht)",
       "date": "2026-10-27",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Zirkusgruppe-No-Limits-zurzeit-ausgebucht",
+      "featured": false
+    },
+    {
+      "title": "All the Sex I've Ever Had",
+      "date": "2026-10-28",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/All-the-Sex-I%27ve-Ever-Had",
+      "featured": false
+    },
+    {
+      "title": "Antigone im Mittwoch:Theater",
+      "date": "2026-10-28",
+      "venue": "Mittwoch:Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Antigone-im-Mittwoch-Theater",
+      "featured": false
+    },
+    {
+      "title": "Bjarne Mädel und Sven Stricker: Sörensen geht aufs Haus",
+      "date": "2026-10-28",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Bjarne-M%C3%A4del-und-Sven-Stricker-S%C3%B6rensen-geht-aufs-Haus",
+      "featured": false
+    },
+    {
+      "title": "Deutsch, du Schuft!",
+      "date": "2026-10-28",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Deutsch,-du-Schuft",
+      "featured": false
+    },
+    {
+      "title": "Die Empathie-Rebellion mit Markus Mauthe",
+      "date": "2026-10-28",
+      "venue": "Warenannahme (Faust-Gelände)",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-Empathie-Rebellion-mit-Markus-Mauthe",
       "featured": false
     },
     {
@@ -123,11 +131,43 @@
       "featured": false
     },
     {
+      "title": "Schwindel",
+      "date": "2026-10-28",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Schwindel",
+      "featured": false
+    },
+    {
       "title": "Winterzauber Herrenhausen",
       "date": "2026-10-28",
       "venue": "Galerie Herrenhausen",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterzauber-Herrenhausen",
+      "featured": false
+    },
+    {
+      "title": "40 Jahre Capitol mit Badmómzjay und Open House",
+      "date": "2026-10-29",
+      "venue": "Capitol",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/40-Jahre-Capitol-mit-Badm%C3%B3mzjay-und-Open-House",
+      "featured": false
+    },
+    {
+      "title": "Addams Family: Das Musical",
+      "date": "2026-10-29",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Addams-Family-Das-Musical",
+      "featured": false
+    },
+    {
+      "title": "Hannover Wies'n",
+      "date": "2026-10-29",
+      "venue": "Parkbühne",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
       "featured": false
     },
     {
@@ -139,11 +179,27 @@
       "featured": false
     },
     {
+      "title": "Wahnsinn – Die große Wolfgang Petry Geburtstagsparty",
+      "date": "2026-10-29",
+      "venue": "Swiss Life Hall",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wahnsinn-%E2%80%93-Die-gro%C3%9Fe-Wolfgang-Petry-Geburtstagsparty",
+      "featured": false
+    },
+    {
       "title": "Wanderausstellung über Anne Frank in Wunstorf",
       "date": "2026-10-29",
       "venue": "Stadtkirche Wunstorf",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wanderausstellung-%C3%BCber-Anne-Frank-in-Wunstorf",
+      "featured": false
+    },
+    {
+      "title": "Disney in Concert 2026 – Jubiläumstour",
+      "date": "2026-10-30",
+      "venue": "ZAG-Arena",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Disney-in-Concert-2026-%E2%80%93-Jubil%C3%A4umstour",
       "featured": false
     },
     {
@@ -203,11 +259,27 @@
       "featured": false
     },
     {
+      "title": "Georgengarten Parkrun",
+      "date": "2026-10-31",
+      "venue": "Georgengarten",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
+      "featured": false
+    },
+    {
       "title": "Glitterbox Hannover",
       "date": "2026-10-31",
       "venue": "Kuppelsaal im HCC Congress Centrum Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover",
+      "featured": false
+    },
+    {
+      "title": "Lichterfest im Straßenbahn-Museum",
+      "date": "2026-10-31",
+      "venue": "Hannoversches Straßenbahn-Museum e.V.",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lichterfest-im-Stra%C3%9Fenbahn-Museum",
       "featured": false
     },
     {
@@ -224,6 +296,14 @@
       "venue": "Kulturzentrum Faust",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Faust-Flohmarkt",
+      "featured": false
+    },
+    {
+      "title": "Geschichte zum Ausprobieren 2026",
+      "date": "2026-11-01",
+      "venue": "Hannover Kiosk",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
       "featured": false
     },
     {
@@ -387,14 +467,6 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
-      "title": "Solawi Winterfest",
-      "date": "2026-11-30",
-      "venue": "Gärtnerei Solawi Bunte Beete",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Solawi-Winterfest",
-      "featured": false
-    },
-    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-12-02",
       "venue": "Bürgerhaus Misburg",
@@ -428,14 +500,6 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
-    },
-    {
-      "title": "Real Dance Festival",
-      "date": "2027-01-27",
-      "venue": "Verschiedene Veranstaltungsorte in Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Real-Dance-Festival",
-      "featured": false
     }
   ]
 }

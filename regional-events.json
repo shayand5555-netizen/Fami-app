@@ -1,64 +1,8 @@
 {
-  "updatedAt": "2026-10-27T04:44:36.569Z",
+  "updatedAt": "2026-10-28T04:55:39.356Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "\"Dance Fit\"",
-      "date": "2026-10-27",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/%22Dance-Fit%22",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-10-27",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "Hannover Kiosk",
-      "date": "2026-10-27",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
-      "featured": false
-    },
-    {
-      "title": "Sliding Away",
-      "date": "2026-10-27",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sliding-Away",
-      "featured": false
-    },
-    {
-      "title": "Sprachkurs goes digital | 60+",
-      "date": "2026-10-27",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
-      "featured": false
-    },
-    {
-      "title": "Super-Willi setzt sich ein",
-      "date": "2026-10-27",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Super-Willi-setzt-sich-ein",
-      "featured": false
-    },
-    {
-      "title": "Zirkusgruppe No Limits (zurzeit ausgebucht)",
-      "date": "2026-10-27",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Zirkusgruppe-No-Limits-zurzeit-ausgebucht",
-      "featured": false
-    },
     {
       "title": "All the Sex I've Ever Had",
       "date": "2026-10-28",
@@ -163,6 +107,14 @@
       "featured": false
     },
     {
+      "title": "Andy Ost",
+      "date": "2026-10-29",
+      "venue": "daunstärs",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Andy-Ost",
+      "featured": false
+    },
+    {
       "title": "Hannover Wies'n",
       "date": "2026-10-29",
       "venue": "Parkbühne",
@@ -176,6 +128,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Kreativ-Werkstatt",
+      "featured": false
+    },
+    {
+      "title": "Reis Against The Spülmachine",
+      "date": "2026-10-29",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Reis-Against-The-Sp%C3%BClmachine",
       "featured": false
     },
     {
@@ -251,11 +211,27 @@
       "featured": false
     },
     {
+      "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
+      "date": "2026-10-31",
+      "venue": "Flohmarkt Hannover",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
+    },
+    {
       "title": "Die Recken vs. Bergischer HC",
       "date": "2026-10-31",
       "venue": "ZAG-Arena",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-Bergischer-HC",
+      "featured": false
+    },
+    {
+      "title": "Flohmarkt auf der Neuen Bult",
+      "date": "2026-10-31",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
       "featured": false
     },
     {
@@ -320,6 +296,22 @@
       "venue": "Heinz-von-Heiden-Arena",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Dynamo-Dresden",
+      "featured": false
+    },
+    {
+      "title": "Singen von Anfang an",
+      "date": "2026-11-01",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Singen-von-Anfang-an",
+      "featured": false
+    },
+    {
+      "title": "SPIEL:ZEIT - Community Drum Circle für Familien",
+      "date": "2026-11-01",
+      "venue": "Stadtteilzentrum Weiße Rose",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Community-Drum-Circle-f%C3%BCr-Familien",
       "featured": false
     },
     {

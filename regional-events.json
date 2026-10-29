@@ -1,95 +1,8 @@
 {
-  "updatedAt": "2026-10-28T04:55:39.356Z",
+  "updatedAt": "2026-10-29T04:57:17.658Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "All the Sex I've Ever Had",
-      "date": "2026-10-28",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/All-the-Sex-I%27ve-Ever-Had",
-      "featured": false
-    },
-    {
-      "title": "Antigone im Mittwoch:Theater",
-      "date": "2026-10-28",
-      "venue": "Mittwoch:Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Antigone-im-Mittwoch-Theater",
-      "featured": false
-    },
-    {
-      "title": "Bjarne Mädel und Sven Stricker: Sörensen geht aufs Haus",
-      "date": "2026-10-28",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Bjarne-M%C3%A4del-und-Sven-Stricker-S%C3%B6rensen-geht-aufs-Haus",
-      "featured": false
-    },
-    {
-      "title": "Deutsch, du Schuft!",
-      "date": "2026-10-28",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Deutsch,-du-Schuft",
-      "featured": false
-    },
-    {
-      "title": "Die Empathie-Rebellion mit Markus Mauthe",
-      "date": "2026-10-28",
-      "venue": "Warenannahme (Faust-Gelände)",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-Empathie-Rebellion-mit-Markus-Mauthe",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater: Willi und das Grün der Affen",
-      "date": "2026-10-28",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Willi-und-das-Gr%C3%BCn-der-Affen",
-      "featured": false
-    },
-    {
-      "title": "Offener Palettengarten Misburg-Anderten",
-      "date": "2026-10-28",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
-    {
-      "title": "Offenes Singen",
-      "date": "2026-10-28",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offenes-Singen",
-      "featured": false
-    },
-    {
-      "title": "Pokal: Hannover 96 vs. 1. FC Kaiserslautern",
-      "date": "2026-10-28",
-      "venue": "Heinz-von-Heiden-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Pokal-Hannover-96-vs.-1.-FC-Kaiserslautern",
-      "featured": false
-    },
-    {
-      "title": "Schwindel",
-      "date": "2026-10-28",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Schwindel",
-      "featured": false
-    },
-    {
-      "title": "Winterzauber Herrenhausen",
-      "date": "2026-10-28",
-      "venue": "Galerie Herrenhausen",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterzauber-Herrenhausen",
-      "featured": false
-    },
     {
       "title": "40 Jahre Capitol mit Badmómzjay und Open House",
       "date": "2026-10-29",
@@ -152,6 +65,22 @@
       "venue": "Stadtkirche Wunstorf",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wanderausstellung-%C3%BCber-Anne-Frank-in-Wunstorf",
+      "featured": false
+    },
+    {
+      "title": "Wieder im Programm: Gewässer im Ziplock",
+      "date": "2026-10-29",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wieder-im-Programm-Gew%C3%A4sser-im-Ziplock",
+      "featured": false
+    },
+    {
+      "title": "Wieder im Programm: Heimsuchung",
+      "date": "2026-10-29",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wieder-im-Programm-Heimsuchung",
       "featured": false
     },
     {
@@ -323,11 +252,27 @@
       "featured": false
     },
     {
+      "title": "TechnoThek – November Special",
+      "date": "2026-11-02",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-04",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Bücherflohmarkt mit Vorleseabend",
+      "date": "2026-11-05",
+      "venue": "ka:punkt",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/B%C3%BCcherflohmarkt-mit-Vorleseabend",
+      "featured": false
     },
     {
       "title": "Mozarts Zauberklarinetten- Ein musikalisches Märchen",
@@ -384,6 +329,14 @@
       "featured": false
     },
     {
+      "title": "Die Mäusephilharmonie",
+      "date": "2026-11-14",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Die-M%C3%A4usephilharmonie",
+      "featured": false
+    },
+    {
       "title": "Vintage Wonderland",
       "date": "2026-11-14",
       "venue": "Vintage Wonderland",
@@ -399,14 +352,6 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
-      "title": "KREATIVMARKT",
-      "date": "2026-11-15",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
-      "featured": false
-    },
-    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-18",
       "venue": "Bürgerhaus Misburg",
@@ -419,6 +364,14 @@
       "venue": "ZAG-Arena",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-TVB-Stuttgart",
+      "featured": false
+    },
+    {
+      "title": "Hannover 96 vs. Greuther Fürth",
+      "date": "2026-11-21",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Greuther-F%C3%BCrth",
       "featured": false
     },
     {

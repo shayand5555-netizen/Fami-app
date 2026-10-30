@@ -1,86 +1,22 @@
 {
-  "updatedAt": "2026-10-29T04:57:17.658Z",
+  "updatedAt": "2026-10-30T04:57:28.152Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "40 Jahre Capitol mit Badmómzjay und Open House",
-      "date": "2026-10-29",
-      "venue": "Capitol",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/40-Jahre-Capitol-mit-Badm%C3%B3mzjay-und-Open-House",
-      "featured": false
-    },
-    {
-      "title": "Addams Family: Das Musical",
-      "date": "2026-10-29",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Addams-Family-Das-Musical",
-      "featured": false
-    },
-    {
-      "title": "Andy Ost",
-      "date": "2026-10-29",
-      "venue": "daunstärs",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Andy-Ost",
-      "featured": false
-    },
-    {
-      "title": "Hannover Wies'n",
-      "date": "2026-10-29",
-      "venue": "Parkbühne",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
-      "featured": false
-    },
-    {
-      "title": "Kreativ-Werkstatt",
-      "date": "2026-10-29",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Kreativ-Werkstatt",
-      "featured": false
-    },
-    {
-      "title": "Reis Against The Spülmachine",
-      "date": "2026-10-29",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Reis-Against-The-Sp%C3%BClmachine",
-      "featured": false
-    },
-    {
-      "title": "Wahnsinn – Die große Wolfgang Petry Geburtstagsparty",
-      "date": "2026-10-29",
-      "venue": "Swiss Life Hall",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wahnsinn-%E2%80%93-Die-gro%C3%9Fe-Wolfgang-Petry-Geburtstagsparty",
-      "featured": false
-    },
-    {
-      "title": "Wanderausstellung über Anne Frank in Wunstorf",
-      "date": "2026-10-29",
-      "venue": "Stadtkirche Wunstorf",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Wanderausstellung-%C3%BCber-Anne-Frank-in-Wunstorf",
-      "featured": false
-    },
-    {
-      "title": "Wieder im Programm: Gewässer im Ziplock",
-      "date": "2026-10-29",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wieder-im-Programm-Gew%C3%A4sser-im-Ziplock",
-      "featured": false
-    },
-    {
-      "title": "Wieder im Programm: Heimsuchung",
-      "date": "2026-10-29",
+      "title": "Burn, Baby, Burn!",
+      "date": "2026-10-30",
       "venue": "Schauspielhaus",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wieder-im-Programm-Heimsuchung",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Burn,-Baby,-Burn",
+      "featured": false
+    },
+    {
+      "title": "Der Sandmann",
+      "date": "2026-10-30",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Sandmann",
       "featured": false
     },
     {
@@ -97,6 +33,14 @@
       "venue": "Hannover Congress Centrum (HCC)",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday",
+      "featured": false
+    },
+    {
+      "title": "Friedemann Weise",
+      "date": "2026-10-30",
+      "venue": "TAK – die Kabarett-Bühne",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Friedemann-Weise",
       "featured": false
     },
     {
@@ -129,6 +73,22 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offene-Trommelgruppe",
+      "featured": false
+    },
+    {
+      "title": "Propadanga",
+      "date": "2026-10-30",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Propadanga",
+      "featured": false
+    },
+    {
+      "title": "TINY KULTUR TOUR - Vahrenwald",
+      "date": "2026-10-30",
+      "venue": "Jahnplatz",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/TINY-KULTUR-TOUR-Vahrenwald",
       "featured": false
     },
     {

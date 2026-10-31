@@ -1,110 +1,22 @@
 {
-  "updatedAt": "2026-10-30T04:57:28.152Z",
+  "updatedAt": "2026-10-31T10:24:42.837Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Burn, Baby, Burn!",
-      "date": "2026-10-30",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Burn,-Baby,-Burn",
-      "featured": false
-    },
-    {
-      "title": "Der Sandmann",
-      "date": "2026-10-30",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Sandmann",
-      "featured": false
-    },
-    {
-      "title": "Disney in Concert 2026 – Jubiläumstour",
-      "date": "2026-10-30",
-      "venue": "ZAG-Arena",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Disney-in-Concert-2026-%E2%80%93-Jubil%C3%A4umstour",
-      "featured": false
-    },
-    {
-      "title": "EXIT x Electric Sunday",
-      "date": "2026-10-30",
-      "venue": "Hannover Congress Centrum (HCC)",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/EXIT-x-Electric-Sunday",
-      "featured": false
-    },
-    {
-      "title": "Friedemann Weise",
-      "date": "2026-10-30",
-      "venue": "TAK – die Kabarett-Bühne",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Friedemann-Weise",
-      "featured": false
-    },
-    {
-      "title": "Halloween-Party",
-      "date": "2026-10-30",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Halloween-Party",
-      "featured": false
-    },
-    {
-      "title": "Hannover Indians vs. Hannover Scorpions",
-      "date": "2026-10-30",
-      "venue": "Eisstadion am Pferdeturm",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-Hannover-Scorpions",
-      "featured": false
-    },
-    {
-      "title": "MAX UND DIE WILDE 7 – DIE GEISTER-OMA",
-      "date": "2026-10-30",
-      "venue": "Misburg-Anderten",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/MAX-UND-DIE-WILDE-7-%E2%80%93-DIE-GEISTER-OMA",
-      "featured": false
-    },
-    {
-      "title": "Offene Trommelgruppe",
-      "date": "2026-10-30",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Offene-Trommelgruppe",
-      "featured": false
-    },
-    {
-      "title": "Propadanga",
-      "date": "2026-10-30",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Propadanga",
-      "featured": false
-    },
-    {
-      "title": "TINY KULTUR TOUR - Vahrenwald",
-      "date": "2026-10-30",
-      "venue": "Jahnplatz",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/TINY-KULTUR-TOUR-Vahrenwald",
-      "featured": false
-    },
-    {
-      "title": "Vorlesenachmittage",
-      "date": "2026-10-30",
-      "venue": "Museum August Kestner",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Vorlesenachmittage",
-      "featured": false
-    },
     {
       "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
       "date": "2026-10-31",
       "venue": "Flohmarkt Hannover",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
+      "featured": false
+    },
+    {
+      "title": "Das offene Foyer der Staatsoper Hannover",
+      "date": "2026-10-31",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
       "featured": false
     },
     {
@@ -209,6 +121,22 @@
       "venue": "Schützenplatz Hannover",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Stoffmarkt-Holland",
+      "featured": false
+    },
+    {
+      "title": "Calliope - Mein erster Minicomputer",
+      "date": "2026-11-02",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Calliope-Mein-erster-Minicomputer",
+      "featured": false
+    },
+    {
+      "title": "Die Jugendgruppe BE:TwEEN 2026",
+      "date": "2026-11-02",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
       "featured": false
     },
     {
@@ -350,6 +278,14 @@
       "featured": false
     },
     {
+      "title": "\"Orange Day\" in Hannover",
+      "date": "2026-11-25",
+      "venue": "Neues Rathaus",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/%22Orange-Day%22-in-Hannover",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-25",
       "venue": "Bürgerhaus Misburg",
@@ -370,6 +306,22 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Flohmarkt - Standplätze bereits ausgebucht",
+      "date": "2026-11-29",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Flohmarkt-Standpl%C3%A4tze-bereits-ausgebucht",
+      "featured": false
+    },
+    {
+      "title": "Solawi Winterfest",
+      "date": "2026-11-30",
+      "venue": "Gärtnerei Solawi Bunte Beete",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Solawi-Winterfest",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -405,6 +357,14 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Real Dance Festival",
+      "date": "2027-01-27",
+      "venue": "Verschiedene Veranstaltungsorte in Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Real-Dance-Festival",
+      "featured": false
     }
   ]
 }

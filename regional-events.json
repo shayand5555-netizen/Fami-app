@@ -1,72 +1,8 @@
 {
-  "updatedAt": "2026-10-31T10:24:42.837Z",
+  "updatedAt": "2026-11-01T11:16:45.899Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Altstadtflohmarkt Hannover am Hohen Ufer",
-      "date": "2026-10-31",
-      "venue": "Flohmarkt Hannover",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Altstadtflohmarkt-Hannover-am-Hohen-Ufer",
-      "featured": false
-    },
-    {
-      "title": "Das offene Foyer der Staatsoper Hannover",
-      "date": "2026-10-31",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Die Recken vs. Bergischer HC",
-      "date": "2026-10-31",
-      "venue": "ZAG-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-Bergischer-HC",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt auf der Neuen Bult",
-      "date": "2026-10-31",
-      "venue": "Pferderennbahn Neue Bult",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
-      "featured": false
-    },
-    {
-      "title": "Georgengarten Parkrun",
-      "date": "2026-10-31",
-      "venue": "Georgengarten",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
-      "featured": false
-    },
-    {
-      "title": "Glitterbox Hannover",
-      "date": "2026-10-31",
-      "venue": "Kuppelsaal im HCC Congress Centrum Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Glitterbox-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Lichterfest im Straßenbahn-Museum",
-      "date": "2026-10-31",
-      "venue": "Hannoversches Straßenbahn-Museum e.V.",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lichterfest-im-Stra%C3%9Fenbahn-Museum",
-      "featured": false
-    },
-    {
-      "title": "Second-Hand-Basar für Kinder- und Babyartikel",
-      "date": "2026-10-31",
-      "venue": "Pavillon Hannover",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Second-Hand-Basar-f%C3%BCr-Kinder-und-Babyartikel",
-      "featured": false
-    },
     {
       "title": "Faust-Flohmarkt",
       "date": "2026-11-01",
@@ -145,6 +81,14 @@
       "venue": "Stadtbibliothek",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
+      "featured": false
+    },
+    {
+      "title": "Bilderbuchkino in der Zentralbibliothek",
+      "date": "2026-11-03",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Bilderbuchkino-in-der-Zentralbibliothek",
       "featured": false
     },
     {
@@ -240,6 +184,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "KREATIVMARKT",
+      "date": "2026-11-15",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-18",
       "venue": "Bürgerhaus Misburg",
@@ -268,6 +220,14 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Kleidertauschparty in der Südstadt",
+      "date": "2026-11-22",
+      "venue": "Adventgemeinde Hannover-Süd - Bistro",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Kleidertauschparty-in-der-S%C3%BCdstadt",
+      "featured": false
     },
     {
       "title": "Winterfest der Bio-Handwerksbäckerei Backwerk",
@@ -359,11 +319,51 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Handball-WM in Hannover",
+      "date": "2027-01-20",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Handball-WM-in-Hannover",
+      "featured": false
+    },
+    {
       "title": "Real Dance Festival",
       "date": "2027-01-27",
       "venue": "Verschiedene Veranstaltungsorte in Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Real-Dance-Festival",
+      "featured": false
+    },
+    {
+      "title": "Karnevalsumzug 2027",
+      "date": "2027-02-06",
+      "venue": "Innenstadt Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Karnevalsumzug-2027",
+      "featured": false
+    },
+    {
+      "title": "Opernball 2027",
+      "date": "2027-02-19",
+      "venue": "Opernhaus Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Opernball-2027",
+      "featured": false
+    },
+    {
+      "title": "Irish Spring Festival 2027",
+      "date": "2027-03-08",
+      "venue": "Schloss Landestrost",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
+      "featured": false
+    },
+    {
+      "title": "35. Hannover Marathon",
+      "date": "2027-04-11",
+      "venue": "Platz der Menschenrechte (ehemals Trammplatz)",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/35.-Hannover-Marathon",
       "featured": false
     }
   ]

@@ -1,40 +1,8 @@
 {
-  "updatedAt": "2026-11-02T12:25:22.531Z",
+  "updatedAt": "2026-11-03T11:56:45.200Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Calliope - Mein erster Minicomputer",
-      "date": "2026-11-02",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Calliope-Mein-erster-Minicomputer",
-      "featured": false
-    },
-    {
-      "title": "Die Jugendgruppe BE:TwEEN 2026",
-      "date": "2026-11-02",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
-      "featured": false
-    },
-    {
-      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
-      "date": "2026-11-02",
-      "venue": "SEA LIFE Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
-      "featured": false
-    },
-    {
-      "title": "TechnoThek – November Special",
-      "date": "2026-11-02",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
-      "featured": false
-    },
     {
       "title": "Bilderbuchkino in der Zentralbibliothek",
       "date": "2026-11-03",
@@ -52,11 +20,27 @@
       "featured": false
     },
     {
+      "title": "Fokuswoche Vorsorge: Kosten­lose Vor­träge",
+      "date": "2026-11-03",
+      "venue": "Online-Veranstaltung",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Fokuswoche-Vorsorge-Kosten%C2%ADlose-Vor%C2%ADtr%C3%A4ge",
+      "featured": false
+    },
+    {
       "title": "GOP: Streng geheim!",
       "date": "2026-11-03",
       "venue": "GOP Varieté-Theater",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-11-03",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
       "featured": false
     },
     {
@@ -84,11 +68,27 @@
       "featured": false
     },
     {
+      "title": "Pen & Paper",
+      "date": "2026-11-03",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
+      "featured": false
+    },
+    {
       "title": "Präventionstheater „K“ein Happy End",
       "date": "2026-11-03",
       "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pr%C3%A4ventionstheater-%E2%80%9EK%E2%80%9Cein-Happy-End",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pr%C3%A4ventionstheater-%E2%80%9EK%E2%80%9Cein-Happy-End",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-11-03",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
       "featured": false
     },
     {
@@ -105,6 +105,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Weihnachten kommt!",
+      "date": "2026-11-04",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Weihnachten-kommt",
+      "featured": false
     },
     {
       "title": "Bücherflohmarkt mit Vorleseabend",
@@ -171,6 +179,22 @@
       "featured": false
     },
     {
+      "title": "Flohmarkt auf der Neuen Bult",
+      "date": "2026-11-07",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
+      "featured": false
+    },
+    {
+      "title": "Georgengarten Parkrun",
+      "date": "2026-11-07",
+      "venue": "Georgengarten",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
+      "featured": false
+    },
+    {
       "title": "Kinderatelier - Traumhäuser",
       "date": "2026-11-07",
       "venue": "Stadtteilzentrum Lister Turm",
@@ -210,14 +234,6 @@
       "featured": false
     },
     {
-      "title": "Familienkonzert \"Des Kaisers Nachtigall\" | Klassik",
-      "date": "2026-11-08",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Familienkonzert-%22Des-Kaisers-Nachtigall%22-|-Klassik",
-      "featured": false
-    },
-    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-11",
       "venue": "Bürgerhaus Misburg",
@@ -246,6 +262,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Die-M%C3%A4usephilharmonie",
+      "featured": false
+    },
+    {
+      "title": "Lichterfest im Kinderwald",
+      "date": "2026-11-14",
+      "venue": "Kinderwald Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Lichterfest-im-Kinderwald",
       "featured": false
     },
     {
@@ -460,14 +484,6 @@
       "venue": "Schloss Landestrost",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
-      "featured": false
-    },
-    {
-      "title": "Irish Spring Festival 2027",
-      "date": "2027-03-09",
-      "venue": "Schloss Landestrost",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-2027",
       "featured": false
     },
     {

@@ -1,102 +1,22 @@
 {
-  "updatedAt": "2026-11-03T11:56:45.200Z",
+  "updatedAt": "2026-11-04T12:09:27.056Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Bilderbuchkino in der Zentralbibliothek",
-      "date": "2026-11-03",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Bilderbuchkino-in-der-Zentralbibliothek",
-      "featured": false
-    },
-    {
-      "title": "Dalida. Ciao Amore!",
-      "date": "2026-11-03",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Dalida.-Ciao-Amore",
-      "featured": false
-    },
-    {
-      "title": "Fokuswoche Vorsorge: Kosten­lose Vor­träge",
-      "date": "2026-11-03",
-      "venue": "Online-Veranstaltung",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Fokuswoche-Vorsorge-Kosten%C2%ADlose-Vor%C2%ADtr%C3%A4ge",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-11-03",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "Hannover Kiosk",
-      "date": "2026-11-03",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
-      "featured": false
-    },
-    {
-      "title": "Hannoversches Rudelsingen",
-      "date": "2026-11-03",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Hannoversches-Rudelsingen",
-      "featured": false
-    },
-    {
-      "title": "Haus zur Sonne",
-      "date": "2026-11-03",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Haus-zur-Sonne",
-      "featured": false
-    },
-    {
-      "title": "Ich, ich, ich!",
-      "date": "2026-11-03",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-ich,-ich",
-      "featured": false
-    },
-    {
-      "title": "Pen & Paper",
-      "date": "2026-11-03",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
-      "featured": false
-    },
-    {
-      "title": "Präventionstheater „K“ein Happy End",
-      "date": "2026-11-03",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pr%C3%A4ventionstheater-%E2%80%9EK%E2%80%9Cein-Happy-End",
-      "featured": false
-    },
-    {
-      "title": "Sprachkurs goes digital | 60+",
-      "date": "2026-11-03",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
-      "featured": false
-    },
     {
       "title": "Burn, Baby, Burn!",
       "date": "2026-11-04",
       "venue": "Schauspielhaus",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Burn,-Baby,-Burn",
+      "featured": false
+    },
+    {
+      "title": "Hannoversches Rudelsingen",
+      "date": "2026-11-04",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Hannoversches-Rudelsingen",
       "featured": false
     },
     {
@@ -147,6 +67,14 @@
       "featured": false
     },
     {
+      "title": "Comedy-Show: Illegale Straßentherapie",
+      "date": "2026-11-06",
+      "venue": "Warenannahme (Faust-Gelände)",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Comedy-Show-Illegale-Stra%C3%9Fentherapie",
+      "featured": false
+    },
+    {
       "title": "Comiclesung mit Josephine Mark",
       "date": "2026-11-06",
       "venue": "Wilhelm Busch Museum",
@@ -176,6 +104,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Mozarts-Zauberklarinetten-Ein-musikalisches-M%C3%A4rchen",
+      "featured": false
+    },
+    {
+      "title": "Science Slam in Hannover",
+      "date": "2026-11-06",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Science-Slam-in-Hannover",
       "featured": false
     },
     {
@@ -424,6 +360,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Winterbasar",
+      "date": "2026-12-13",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Winterbasar",
+      "featured": false
+    },
+    {
       "title": "Wochenmarkt Misburg",
       "date": "2026-12-19",
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
@@ -444,14 +388,6 @@
       "venue": "Freizeitheim Döhren",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-Januar",
-      "featured": false
-    },
-    {
-      "title": "Ladies' Weekend im Januar",
-      "date": "2027-01-23",
-      "venue": "Freizeitheim Döhren",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-Januar2",
       "featured": false
     },
     {

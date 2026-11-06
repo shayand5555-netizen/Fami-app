@@ -1,56 +1,8 @@
 {
-  "updatedAt": "2026-11-05T12:21:51.428Z",
+  "updatedAt": "2026-11-06T12:07:29.446Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Bücherflohmarkt mit Vorleseabend",
-      "date": "2026-11-05",
-      "venue": "ka:punkt",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/B%C3%BCcherflohmarkt-mit-Vorleseabend",
-      "featured": false
-    },
-    {
-      "title": "Einbruchsicherheit: Infos und Aktionen der Polizei",
-      "date": "2026-11-05",
-      "venue": "Verschiedene Veranstaltungsorte in der Region Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Einbruchsicherheit-Infos-und-Aktionen-der-Polizei",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-11-05",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "HannoverSingInternational",
-      "date": "2026-11-05",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/HannoverSingInternational",
-      "featured": false
-    },
-    {
-      "title": "Maria Vollmer",
-      "date": "2026-11-05",
-      "venue": "daunstärs",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Maria-Vollmer",
-      "featured": false
-    },
-    {
-      "title": "Propadanga",
-      "date": "2026-11-05",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Propadanga",
-      "featured": false
-    },
     {
       "title": "Ballett-Premiere: Romeo und Julia",
       "date": "2026-11-06",
@@ -76,11 +28,43 @@
       "featured": false
     },
     {
+      "title": "Fokuswoche Vorsorge: Kosten­lose Vor­träge",
+      "date": "2026-11-06",
+      "venue": "Online-Veranstaltung",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Fokuswoche-Vorsorge-Kosten%C2%ADlose-Vor%C2%ADtr%C3%A4ge",
+      "featured": false
+    },
+    {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-11-06",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-11-06",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
+      "featured": false
+    },
+    {
       "title": "Hannover Wies'n",
       "date": "2026-11-06",
       "venue": "Parkbühne",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Hannover-Wies%27n",
+      "featured": false
+    },
+    {
+      "title": "Infos zur Vorsorgevollmacht in Hannover",
+      "date": "2026-11-06",
+      "venue": "Betreuungsstelle der Region Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Hannover",
       "featured": false
     },
     {
@@ -100,11 +84,19 @@
       "featured": false
     },
     {
-      "title": "Romeo und Julia (Ballett)",
+      "title": "Propadanga",
       "date": "2026-11-06",
-      "venue": "Opernhaus Hannover",
+      "venue": "Ballhof Zwei",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia-Ballett",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Propadanga",
+      "featured": false
+    },
+    {
+      "title": "Schüler*innen schulen Senior*innen",
+      "date": "2026-11-06",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sch%C3%BCler*innen-schulen-Senior*innen",
       "featured": false
     },
     {
@@ -116,11 +108,59 @@
       "featured": false
     },
     {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-06",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
+      "title": "TechnoThek – November Special",
+      "date": "2026-11-06",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
+      "featured": false
+    },
+    {
+      "title": "Was bringt die Zukunft der Mobilität?",
+      "date": "2026-11-06",
+      "venue": "Schloss Herrenhausen",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Was-bringt-die-Zukunft-der-Mobilit%C3%A4t",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-06",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
+      "featured": false
+    },
+    {
+      "title": "Zivilisation versus Archaikum",
+      "date": "2026-11-06",
+      "venue": "Produzentengalerie 4h-art",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Zivilisation-versus-Archaikum",
+      "featured": false
+    },
+    {
       "title": "Das offene Foyer der Staatsoper Hannover",
       "date": "2026-11-07",
       "venue": "Opernhaus Hannover",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
+      "featured": false
+    },
+    {
+      "title": "Der Sandmann",
+      "date": "2026-11-07",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Sandmann",
       "featured": false
     },
     {
@@ -148,11 +188,11 @@
       "featured": false
     },
     {
-      "title": "Kinderatelier - Traumhäuser",
+      "title": "Gude Leude vs. KI",
       "date": "2026-11-07",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kinderatelier-Traumh%C3%A4user",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Gude-Leude-vs.-KI",
       "featured": false
     },
     {
@@ -169,6 +209,14 @@
       "venue": "verschiedene Veranstaltungsorte in der Wedemark",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Pilzexkursionen-in-der-Wedemark",
+      "featured": false
+    },
+    {
+      "title": "Pique Dame",
+      "date": "2026-11-07",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
       "featured": false
     },
     {
@@ -208,6 +256,14 @@
       "venue": "Hannover Kiosk",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
+      "featured": false
+    },
+    {
+      "title": "Jim Knopf und die Wilde 13",
+      "date": "2026-11-08",
+      "venue": "GOP Varieté",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
       "featured": false
     },
     {
@@ -380,11 +436,27 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
+      "title": "Hannover 96 vs. Hertha BSC",
+      "date": "2026-12-05",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Hertha-BSC",
+      "featured": false
+    },
+    {
       "title": "Wochenmarkt Misburg",
       "date": "2026-12-05",
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Die Recken vs. HSG Wetzlar",
+      "date": "2026-12-06",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-HSG-Wetzlar",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -416,11 +488,11 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
-      "title": "Handball-WM in Hannover",
-      "date": "2027-01-20",
-      "venue": "ZAG-Arena",
+      "title": "Hannover 96 vs. 1. FC Kaiserslautern",
+      "date": "2026-12-20",
+      "venue": "Heinz-von-Heiden-Arena",
       "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Handball-WM-in-Hannover",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-1.-FC-Kaiserslautern",
       "featured": false
     },
     {
@@ -461,14 +533,6 @@
       "venue": "Schloss Landestrost",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
-      "featured": false
-    },
-    {
-      "title": "35. Hannover Marathon",
-      "date": "2027-04-11",
-      "venue": "Platz der Menschenrechte (ehemals Trammplatz)",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/35.-Hannover-Marathon",
       "featured": false
     }
   ]

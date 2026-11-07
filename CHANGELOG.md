@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.50.3-rc.1 – 7. November 2026
+
+- Gleiche Zutaten aus mehreren Rezepten werden in der Einkaufsliste zu einem Eintrag mit gemeinsamer Menge zusammengefasst.
+- Bereits getrennt gespeicherte Rezeptzutaten werden beim Öffnen der Einkaufsliste automatisch bereinigt.
+- Mengen aus YouTube-Rezepten werden jetzt korrekt vom Zutatennamen getrennt.
+
 ## 0.50.2-rc.1 – 7. November 2026
 
 - Fotos werden stärker komprimiert, damit das Rechen- und Speicherlimit der Supabase-KI-Funktion nicht überschritten wird.

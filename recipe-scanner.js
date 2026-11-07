@@ -196,17 +196,48 @@
     progress('Rezeptdaten erkannt',100); return result;
   }
 
-  function imageDataUrl(file, maxSize = 1600) {
+  const supportedPhoto = file => Boolean(file && (String(file.type || '').startsWith('image/') || /\.(?:jpe?g|png|webp|heic|heif)$/i.test(String(file.name || ''))));
+
+  const blobDataUrl = blob => new Promise((resolve,reject) => {
+    const reader=new FileReader();
+    reader.onload=()=>resolve(String(reader.result||''));
+    reader.onerror=()=>reject(new Error('Das vorbereitete Foto konnte nicht gelesen werden.'));
+    reader.readAsDataURL(blob);
+  });
+
+  const canvasBlob = (canvas, quality=.78) => new Promise((resolve,reject) => {
+    canvas.toBlob(blob=>blob?resolve(blob):reject(new Error('Das Foto konnte nicht verkleinert werden.')),'image/jpeg',quality);
+  });
+
+  async function decodePhoto(file) {
+    if(typeof createImageBitmap==='function'){
+      try{
+        const bitmap=await createImageBitmap(file,{imageOrientation:'from-image'});
+        if(bitmap.width&&bitmap.height)return{source:bitmap,width:bitmap.width,height:bitmap.height,close:()=>bitmap.close?.()};
+      }catch{}
+    }
     return new Promise((resolve,reject) => {
-      const image = new Image(); const url = URL.createObjectURL(file);
-      image.onload = () => {
-        const scale=Math.min(1,maxSize/Math.max(image.naturalWidth,image.naturalHeight));
-        const canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(image.naturalWidth*scale));canvas.height=Math.max(1,Math.round(image.naturalHeight*scale));
-        canvas.getContext('2d').drawImage(image,0,0,canvas.width,canvas.height);URL.revokeObjectURL(url);
-        resolve(canvas.toDataURL('image/jpeg',.82));
-      };
-      image.onerror=()=>{URL.revokeObjectURL(url);reject(new Error('Das Foto konnte nicht geöffnet werden.'))};image.src=url;
+      const image=new Image(),url=URL.createObjectURL(file),timer=setTimeout(()=>finish(new Error('Das Öffnen des Fotos dauert zu lange. Bitte wähle ein kleineres Foto.')),20000),finish=(error,value)=>{clearTimeout(timer);URL.revokeObjectURL(url);error?reject(error):resolve(value)};
+      image.onload=()=>image.naturalWidth&&image.naturalHeight?finish(null,{source:image,width:image.naturalWidth,height:image.naturalHeight,close:()=>{}}):finish(new Error('Das Foto enthält keine lesbare Bildgröße.'));
+      image.onerror=()=>finish(new Error(/\.(?:heic|heif)$/i.test(String(file.name||''))?'Dieses HEIC-Foto konnte auf dem Gerät nicht geöffnet werden. Bitte in der Foto-App „In Dateien sichern“ oder als JPEG teilen und erneut auswählen.':'Das Foto konnte nicht geöffnet werden. Bitte verwende JPG, PNG, WebP oder ein direkt aufgenommenes iPhone-Foto.'));
+      image.src=url;
     });
+  }
+
+  async function imageDataUrl(file, maxSize = 1400) {
+    if(file.size>30*1024*1024)throw new Error('Das Foto ist größer als 30 MB. Bitte wähle eine kleinere Aufnahme.');
+    const decoded=await decodePhoto(file);
+    try{
+      const scale=Math.min(1,maxSize/Math.max(decoded.width,decoded.height)),width=Math.max(1,Math.round(decoded.width*scale)),height=Math.max(1,Math.round(decoded.height*scale)),canvas=document.createElement('canvas');
+      canvas.width=width;canvas.height=height;
+      const context=canvas.getContext('2d',{alpha:false});
+      if(!context)throw new Error('Die Bildverarbeitung ist auf diesem Gerät nicht verfügbar.');
+      context.fillStyle='#fff';context.fillRect(0,0,width,height);context.drawImage(decoded.source,0,0,width,height);
+      const blob=await canvasBlob(canvas,.78),dataUrl=await blobDataUrl(blob);
+      if(!dataUrl.startsWith('data:image/jpeg;base64,'))throw new Error('Das Foto konnte nicht in ein unterstütztes Format umgewandelt werden.');
+      if(dataUrl.length>7_500_000)throw new Error('Das vorbereitete Foto ist noch zu groß. Bitte den Bildausschnitt verkleinern und erneut versuchen.');
+      return dataUrl;
+    }finally{decoded.close()}
   }
 
   function normalizeAiRecipe(value) {
@@ -216,7 +247,7 @@
   }
 
   async function analyzePhoto(file, progress = () => {}) {
-    if (!file?.type?.startsWith('image/')) throw new Error('Bitte wähle ein Foto des Rezepts aus.');
+    if (!supportedPhoto(file)) throw new Error('Bitte wähle ein Foto im Format JPG, PNG, WebP, HEIC oder HEIF aus.');
     if(!window.FamiCloud?.isConnected?.()) throw new Error('Bitte melde dich zuerst bei Fami Online an. Die Fotoanalyse läuft ausschließlich über die KI.');
     if(!window.FamiCloud?.analyzeRecipePhoto) throw new Error('Die KI-Fotoanalyse konnte nicht geladen werden. Bitte aktualisiere die App und versuche es erneut.');
     progress('Foto wird für die KI vorbereitet …',8);

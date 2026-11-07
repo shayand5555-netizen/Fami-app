@@ -305,9 +305,22 @@
     return true;
   }
 
+  async function invokeRecipeAnalysis(body) {
+    if (!client || !session) throw new Error('Für die KI-Analyse ist eine Anmeldung bei Fami Online erforderlich.');
+    let result=await client.functions.invoke('analyze-recipe',{body});
+    const status=Number(result.error?.context?.status)||0,authExpired=status===401||/jwt|token.*expired|unauthorized/i.test(result.error?.message||'');
+    if(authExpired){
+      const refreshed=await client.auth.refreshSession();
+      if(refreshed.error||!refreshed.data?.session)throw new Error('Deine Anmeldung ist abgelaufen. Bitte öffne „Familie“, melde dich erneut an und versuche das Foto noch einmal.');
+      session=refreshed.data.session;
+      result=await client.functions.invoke('analyze-recipe',{body});
+    }
+    return result;
+  }
+
   async function analyzeRecipePhoto(image) {
     if (!client || !session) throw new Error('Für die KI-Fotoanalyse ist eine Anmeldung bei Fami Online erforderlich.');
-    const {data, error} = await client.functions.invoke('analyze-recipe', {body:{image}});
+    const {data, error} = await invokeRecipeAnalysis({image});
     if (error) {
       let message = '';
       try {
@@ -330,7 +343,7 @@
 
   async function analyzeRecipeUrl(url) {
     if (!client || !session) throw new Error('Für den KI-Linkimport ist eine Anmeldung bei Fami Online erforderlich.');
-    const {data, error} = await client.functions.invoke('analyze-recipe', {body:{mode:'url',url}});
+    const {data, error} = await invokeRecipeAnalysis({mode:'url',url});
     if (error) {
       let message = '';
       try { const details = await error.context?.clone?.().json(); message = details?.error || details?.message || ''; } catch {}
@@ -345,7 +358,7 @@
 
   async function analyzeVideoRecipe(video) {
     if (!client || !session) throw new Error('Für die KI-Rezeptergänzung ist eine Anmeldung bei Fami Online erforderlich.');
-    const {data, error} = await client.functions.invoke('analyze-recipe', {body:{mode:'video',video}});
+    const {data, error} = await invokeRecipeAnalysis({mode:'video',video});
     if (error) {
       let message = '';
       try {

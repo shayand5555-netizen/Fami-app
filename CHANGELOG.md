@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.50.1-rc.1 – 7. November 2026
+
+- Große iPhone-Kamerafotos werden vor der KI-Analyse speicherschonend verkleinert und zuverlässig als JPEG übertragen.
+- Fotos ohne korrekte MIME-Angabe werden anhand ihres Dateinamens trotzdem erkannt.
+- HEIC- und HEIF-Aufnahmen erhalten eine verständliche Hilfe, falls das Gerät sie nicht öffnen kann.
+- Eine abgelaufene Fami-Anmeldung wird vor der KI-Analyse automatisch erneuert.
+- Der ausgewählte Dateiname und der Fortschritt der Bildvorbereitung werden sichtbar angezeigt.
+
 ## 0.50.0-rc.1 – 24. Oktober 2026
 
 - Rezeptzutaten werden gesammelt zur Einkaufsliste übernommen und nur noch einmal gespeichert.

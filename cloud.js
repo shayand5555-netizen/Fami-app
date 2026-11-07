@@ -328,14 +328,19 @@
         message = details?.error || details?.message || '';
       } catch {}
       const rawMessage=message || error.message || '';
-      const friendlyMessage=/high demand|overloaded|resource exhausted|try again later/i.test(rawMessage)
+      const computeLimited=/not having enough compute resources|compute resources|insufficient compute|memory limit|worker.*limit/i.test(rawMessage);
+      const friendlyMessage=computeLimited
+        ? 'Das Foto benötigt zu viele Rechenressourcen. Fami versucht es automatisch noch einmal mit einer kleineren Bildversion.'
+        : /high demand|overloaded|resource exhausted|try again later/i.test(rawMessage)
         ? 'Die KI ist gerade stark ausgelastet. Bitte versuche es in ein paar Minuten erneut.'
         : /credit|quota|billing|payment/i.test(rawMessage)
           ? 'Das kostenlose KI-Kontingent ist momentan aufgebraucht. Bitte versuche es später erneut.'
           : /network|fetch|timeout/i.test(rawMessage)
             ? 'Die KI ist gerade nicht erreichbar. Bitte prüfe deine Verbindung und versuche es erneut.'
             : rawMessage;
-      throw new Error(friendlyMessage || 'Die KI-Fotoanalyse konnte nicht erreicht werden.');
+      const failure=new Error(friendlyMessage || 'Die KI-Fotoanalyse konnte nicht erreicht werden.');
+      if(computeLimited)failure.code='compute_limit';
+      throw failure;
     }
     if (!data?.recipe) throw new Error(data?.error || 'Die KI konnte auf diesem Foto kein Rezept erkennen.');
     return data.recipe;

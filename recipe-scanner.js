@@ -224,18 +224,16 @@
     });
   }
 
-  async function imageDataUrl(file, maxSize = 1400) {
+  async function imageDataUrl(file, maxSize = 1050, quality = .68, maxBytes = 700 * 1024) {
     if(file.size>30*1024*1024)throw new Error('Das Foto ist größer als 30 MB. Bitte wähle eine kleinere Aufnahme.');
     const decoded=await decodePhoto(file);
     try{
-      const scale=Math.min(1,maxSize/Math.max(decoded.width,decoded.height)),width=Math.max(1,Math.round(decoded.width*scale)),height=Math.max(1,Math.round(decoded.height*scale)),canvas=document.createElement('canvas');
-      canvas.width=width;canvas.height=height;
-      const context=canvas.getContext('2d',{alpha:false});
-      if(!context)throw new Error('Die Bildverarbeitung ist auf diesem Gerät nicht verfügbar.');
-      context.fillStyle='#fff';context.fillRect(0,0,width,height);context.drawImage(decoded.source,0,0,width,height);
-      const blob=await canvasBlob(canvas,.78),dataUrl=await blobDataUrl(blob);
+      const render=async(size,jpegQuality)=>{const scale=Math.min(1,size/Math.max(decoded.width,decoded.height)),width=Math.max(1,Math.round(decoded.width*scale)),height=Math.max(1,Math.round(decoded.height*scale)),canvas=document.createElement('canvas');canvas.width=width;canvas.height=height;const context=canvas.getContext('2d',{alpha:false});if(!context)throw new Error('Die Bildverarbeitung ist auf diesem Gerät nicht verfügbar.');context.fillStyle='#fff';context.fillRect(0,0,width,height);context.drawImage(decoded.source,0,0,width,height);return canvasBlob(canvas,jpegQuality)};
+      let blob=await render(maxSize,quality);
+      if(blob.size>maxBytes){const smaller=Math.max(640,Math.round(maxSize*Math.min(.85,Math.sqrt(maxBytes/blob.size)*.9)));blob=await render(smaller,Math.min(quality,.6))}
+      const dataUrl=await blobDataUrl(blob);
       if(!dataUrl.startsWith('data:image/jpeg;base64,'))throw new Error('Das Foto konnte nicht in ein unterstütztes Format umgewandelt werden.');
-      if(dataUrl.length>7_500_000)throw new Error('Das vorbereitete Foto ist noch zu groß. Bitte den Bildausschnitt verkleinern und erneut versuchen.');
+      if(dataUrl.length>2_000_000)throw new Error('Das vorbereitete Foto ist noch zu groß. Bitte den Bildausschnitt verkleinern und erneut versuchen.');
       return dataUrl;
     }finally{decoded.close()}
   }
@@ -251,9 +249,16 @@
     if(!window.FamiCloud?.isConnected?.()) throw new Error('Bitte melde dich zuerst bei Fami Online an. Die Fotoanalyse läuft ausschließlich über die KI.');
     if(!window.FamiCloud?.analyzeRecipePhoto) throw new Error('Die KI-Fotoanalyse konnte nicht geladen werden. Bitte aktualisiere die App und versuche es erneut.');
     progress('Foto wird für die KI vorbereitet …',8);
-    const image=await imageDataUrl(file);
+    let image=await imageDataUrl(file);
     progress('KI erkennt Gericht, Zutaten und Zubereitung …',30);
-    const aiResult=await window.FamiCloud.analyzeRecipePhoto(image);
+    let aiResult;
+    try{aiResult=await window.FamiCloud.analyzeRecipePhoto(image)}catch(error){
+      if(error?.code!=='compute_limit')throw error;
+      progress('Foto wird für einen zweiten Versuch stärker verkleinert …',45);
+      image=await imageDataUrl(file,720,.56,300*1024);
+      progress('KI analysiert die kleinere Bildversion …',60);
+      try{aiResult=await window.FamiCloud.analyzeRecipePhoto(image)}catch(retryError){if(retryError?.code==='compute_limit')throw new Error('Auch die kleinere Bildversion konnte gerade nicht verarbeitet werden. Bitte schneide das Foto auf das Gericht oder die Rezeptseite zu und versuche es erneut.');throw retryError}
+    }
     const recipe=normalizeAiRecipe(aiResult);
     if(!recipe.ingredients.length||!recipe.steps.length)throw new Error('Die KI konnte aus diesem Foto noch kein vollständiges Rezept erstellen. Bitte verwende ein helles, scharfes Foto und versuche es erneut.');
     progress('KI-Rezeptvorschlag ist bereit',100);

@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.50.2-rc.1 – 7. November 2026
+
+- Fotos werden stärker komprimiert, damit das Rechen- und Speicherlimit der Supabase-KI-Funktion nicht überschritten wird.
+- Meldet Supabase trotzdem ein Rechenlimit, startet Fami automatisch einen zweiten Versuch mit einer kleineren Bildversion.
+- Technische englische Supabase-Fehler werden nicht mehr direkt angezeigt.
+
 ## 0.50.1-rc.1 – 7. November 2026
 
 - Große iPhone-Kamerafotos werden vor der KI-Analyse speicherschonend verkleinert und zuverlässig als JPEG übertragen.

@@ -1,6 +1,6 @@
 param(
   [string]$Url = 'https://shayand5555-netizen.github.io/Fami-app/',
-  [string]$ExpectedVersion = '0.50.3'
+  [string]$ExpectedVersion = '0.50.4'
 )
 
 $ErrorActionPreference = 'Stop'
@@ -192,3 +192,4 @@ $failed=@($script:results | Where-Object {-not $_.Passed})
 $script:results | Format-Table -AutoSize
 "`nGesamt: $($script:results.Count) | Bestanden: $($script:results.Count-$failed.Count) | Fehlgeschlagen: $($failed.Count)"
 if($failed.Count){exit 1}
+

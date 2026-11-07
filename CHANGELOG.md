@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.50.4-rc.1 – 7. November 2026
+
+- Zutaten werden bei manueller Eingabe, Rezeptübernahme und im Wocheneinkauf einheitlich verarbeitet; vertauschte Angaben wie „400 g | Hähnchenbrust“ werden korrigiert.
+- Gleiche Lebensmittel erscheinen mit addierten Mengen in einer festen Kategorie. Auch identische Einzelmengen werden zusammengezählt und passende Einheiten umgerechnet.
+- Bestehende Einkaufspositionen werden vereinheitlicht und gemeinsam angezeigt. Ihre ursprünglichen IDs und Mengen bleiben für Geräteabgleich, Papierkorb und Wochenplanung erhalten.
+- Abhaken, Löschen und Übertragen in die Vorräte erfassen alle Positionen einer zusammengefassten Einkaufszeile.
+- Fehlende Einheiten und nicht eindeutig umrechenbare Mengen bleiben erhalten.
+- Ein portabler Funktionstest prüft Zutatenformate, Mengen, vorhandene Einträge, Geräteabgleich und Vorräte.
+
+
 ## 0.50.3-rc.1 – 7. November 2026
 
 - Gleiche Zutaten aus mehreren Rezepten werden in der Einkaufsliste zu einem Eintrag mit gemeinsamer Menge zusammengefasst.
@@ -692,3 +702,4 @@
 - Erste testbare Version
 - Familien-Dashboard, Kalender, Aufgaben, Timer und Dateien
 - PWA-Installation und Offline-Unterstützung
+

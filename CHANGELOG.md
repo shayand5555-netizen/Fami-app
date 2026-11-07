@@ -1,5 +1,13 @@
 # Fami – Versionsverlauf
 
+## 0.50.5-rc.1 – 7. November 2026
+
+- Beim Fotoimport ist das ausgewählte Foto auch bei einer fotografierten Rezeptseite als Rezeptbild vorausgewählt. Die Auswahl kann vor dem Speichern ausgeschaltet werden.
+- Neue eigene Rezeptbilder werden als verkleinerte JPEG-Datei gespeichert; auch iPhone-Fotos ohne Dateityp-Angabe werden verarbeitet.
+- Vorhandene eigene Rezeptbilder werden unabhängig von fehlenden Foto-Markierungen wieder gesucht. Lokale Fotos erscheinen ohne Wartezeit auf einen Cloud-Download.
+- Beim Ersetzen bleibt das bisherige Bild erhalten, bis das neue gespeichert ist. Rezeptbilder bekommen zusätzlich eine lokale Kopie für die Anzeige ohne Netzverbindung.
+- Speicherfehler werden angezeigt und verhindern nicht mehr unbemerkt das Speichern des Rezepts.
+
 ## 0.50.4-rc.1 – 7. November 2026
 
 - Zutaten werden bei manueller Eingabe, Rezeptübernahme und im Wocheneinkauf einheitlich verarbeitet; vertauschte Angaben wie „400 g | Hähnchenbrust“ werden korrigiert.

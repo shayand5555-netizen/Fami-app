@@ -265,5 +265,13 @@
     return recipe;
   }
 
-  window.FamiRecipeScanner = {analyzePhoto, analyzeLink, estimateNutrition, parseText:parseRecipeText};
+  async function preparePhoto(file){
+    if(!supportedPhoto(file))throw new Error('Bitte wähle ein Foto im Format JPG, PNG, WebP, HEIC oder HEIF aus.');
+    const image=await imageDataUrl(file,1400,.78,900*1024),encoded=image.split(',')[1],binary=atob(encoded),bytes=Uint8Array.from(binary,character=>character.charCodeAt(0));
+    const name=String(file.name||'Rezeptfoto').replace(/\.[^.]+$/,'')+'.jpg';
+    return new File([bytes],name,{type:'image/jpeg',lastModified:file.lastModified||Date.now()});
+  }
+
+  window.FamiRecipeScanner = {analyzePhoto, analyzeLink, preparePhoto, estimateNutrition, parseText:parseRecipeText};
 })();
+

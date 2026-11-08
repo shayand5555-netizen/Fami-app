@@ -1,95 +1,8 @@
 {
-  "updatedAt": "2026-11-07T11:04:45.692Z",
+  "updatedAt": "2026-11-08T11:17:54.232Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Das offene Foyer der Staatsoper Hannover",
-      "date": "2026-11-07",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Der Sandmann",
-      "date": "2026-11-07",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Der-Sandmann",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt auf der Neuen Bult",
-      "date": "2026-11-07",
-      "venue": "Pferderennbahn Neue Bult",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
-      "featured": false
-    },
-    {
-      "title": "Fräsch: Young Comedy im Pavillon",
-      "date": "2026-11-07",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Fr%C3%A4sch-Young-Comedy-im-Pavillon",
-      "featured": false
-    },
-    {
-      "title": "Georgengarten Parkrun",
-      "date": "2026-11-07",
-      "venue": "Georgengarten",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
-      "featured": false
-    },
-    {
-      "title": "Gude Leude vs. KI",
-      "date": "2026-11-07",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Gude-Leude-vs.-KI",
-      "featured": false
-    },
-    {
-      "title": "Mädchen in Bewegung",
-      "date": "2026-11-07",
-      "venue": "Stöckener Bad",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/M%C3%A4dchen-in-Bewegung",
-      "featured": false
-    },
-    {
-      "title": "Pilzexkursionen in der Wedemark",
-      "date": "2026-11-07",
-      "venue": "verschiedene Veranstaltungsorte in der Wedemark",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Pilzexkursionen-in-der-Wedemark",
-      "featured": false
-    },
-    {
-      "title": "Pique Dame",
-      "date": "2026-11-07",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pique-Dame",
-      "featured": false
-    },
-    {
-      "title": "Wochenmarkt Misburg",
-      "date": "2026-11-07",
-      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
-    },
-    {
-      "title": "Zum dritten Mal in Hannover: OKTAGON MMA",
-      "date": "2026-11-07",
-      "venue": "ZAG-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Zum-dritten-Mal-in-Hannover-OKTAGON-MMA",
-      "featured": false
-    },
     {
       "title": "50 Jahre Lönsparklauf",
       "date": "2026-11-08",
@@ -276,6 +189,14 @@
       "venue": "Backwerk Bio Handwerksbäckerei",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterfest-der-Bio-Handwerksb%C3%A4ckerei-Backwerk",
+      "featured": false
+    },
+    {
+      "title": "\"Orange Day\" in Hannover",
+      "date": "2026-11-25",
+      "venue": "Neues Rathaus",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/%22Orange-Day%22-in-Hannover",
       "featured": false
     },
     {

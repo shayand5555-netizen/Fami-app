@@ -1,40 +1,8 @@
 {
-  "updatedAt": "2026-11-08T11:17:54.232Z",
+  "updatedAt": "2026-11-09T12:53:59.393Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "50 Jahre Lönsparklauf",
-      "date": "2026-11-08",
-      "venue": "Kleefelder Bad (Annabad)",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/50-Jahre-L%C3%B6nsparklauf",
-      "featured": false
-    },
-    {
-      "title": "Familienkonzert \"Des Kaisers Nachtigall\" | Klassik",
-      "date": "2026-11-08",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Familienkonzert-%22Des-Kaisers-Nachtigall%22-|-Klassik",
-      "featured": false
-    },
-    {
-      "title": "Geschichte zum Ausprobieren 2026",
-      "date": "2026-11-08",
-      "venue": "Hannover Kiosk",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
-      "featured": false
-    },
-    {
-      "title": "Jim Knopf und die Wilde 13",
-      "date": "2026-11-08",
-      "venue": "GOP Varieté",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
-      "featured": false
-    },
     {
       "title": "Calliope - Mein erster Minicomputer",
       "date": "2026-11-09",
@@ -52,11 +20,211 @@
       "featured": false
     },
     {
+      "title": "Die rote Zora",
+      "date": "2026-11-09",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
+      "featured": false
+    },
+    {
+      "title": "Ferdinand von Schirach: Der stille Freund",
+      "date": "2026-11-09",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ferdinand-von-Schirach-Der-stille-Freund",
+      "featured": false
+    },
+    {
+      "title": "Henna",
+      "date": "2026-11-09",
+      "venue": "Region Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Henna",
+      "featured": false
+    },
+    {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-09",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-09",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
+      "featured": false
+    },
+    {
+      "title": "Von Memes bis Fakes: Desinformationsmuster im Blick",
+      "date": "2026-11-09",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Von-Memes-bis-Fakes-Desinformationsmuster-im-Blick",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-09",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
+      "featured": false
+    },
+    {
+      "title": "Die große Mixed-Comedy-Show",
+      "date": "2026-11-10",
+      "venue": "Béi Chéz Heinz",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-gro%C3%9Fe-Mixed-Comedy-Show",
+      "featured": false
+    },
+    {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-11-10",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-11-10",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
+      "featured": false
+    },
+    {
+      "title": "Ich will alles – oder nichts!",
+      "date": "2026-11-10",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich-will-alles-%E2%80%93-oder-nichts",
+      "featured": false
+    },
+    {
+      "title": "Kinder-Uni: Die Retter in Orange",
+      "date": "2026-11-10",
+      "venue": "Medizinische Hochschule Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kinder-Uni-Die-Retter-in-Orange",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-11-10",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
+      "featured": false
+    },
+    {
+      "title": "15 Jahre: Da lacht der Bär!",
+      "date": "2026-11-11",
+      "venue": "Marlene Bar & Bühne",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/15-Jahre-Da-lacht-der-B%C3%A4r",
+      "featured": false
+    },
+    {
+      "title": "96-Laternenumzug ums Stadion",
+      "date": "2026-11-11",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/96-Laternenumzug-ums-Stadion",
+      "featured": false
+    },
+    {
+      "title": "Als der Tiger einmal der Bär sein wollte",
+      "date": "2026-11-11",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Als-der-Tiger-einmal-der-B%C3%A4r-sein-wollte",
+      "featured": false
+    },
+    {
+      "title": "Ich, ich, ich!",
+      "date": "2026-11-11",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-ich,-ich",
+      "featured": false
+    },
+    {
+      "title": "Laternenumzug in Döhren",
+      "date": "2026-11-11",
+      "venue": "Ev.-luth. Auferstehungskirche Hannover-Döhren",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-in-D%C3%B6hren",
+      "featured": false
+    },
+    {
+      "title": "Max Uthoff",
+      "date": "2026-11-11",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Max-Uthoff",
+      "featured": false
+    },
+    {
       "title": "Offener Palettengarten Misburg-Anderten",
       "date": "2026-11-11",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Pride",
+      "date": "2026-11-11",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pride",
+      "featured": false
+    },
+    {
+      "title": "St. Martinsumzug in Wettbergen",
+      "date": "2026-11-11",
+      "venue": "Johannes-der-Täufer Kirche",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/St.-Martinsumzug-in-Wettbergen",
+      "featured": false
+    },
+    {
+      "title": "Fräsch: Young Comedy im Pavillon",
+      "date": "2026-11-12",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Fr%C3%A4sch-Young-Comedy-im-Pavillon",
+      "featured": false
+    },
+    {
+      "title": "Jim Knopf und die Wilde 13",
+      "date": "2026-11-12",
+      "venue": "GOP Varieté",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
+      "featured": false
+    },
+    {
+      "title": "Julia Brandner",
+      "date": "2026-11-12",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Julia-Brandner",
+      "featured": false
+    },
+    {
+      "title": "Laternenumzug in der Oststadt",
+      "date": "2026-11-12",
+      "venue": "Ev.-luth. Dreifaltigkeitskirche",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-in-der-Oststadt",
+      "featured": false
     },
     {
       "title": "Tanzparty in Misburg",
@@ -88,6 +256,22 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Die-M%C3%A4usephilharmonie",
+      "featured": false
+    },
+    {
+      "title": "Flohmarkt auf der Neuen Bult",
+      "date": "2026-11-14",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
+      "featured": false
+    },
+    {
+      "title": "Georgengarten Parkrun",
+      "date": "2026-11-14",
+      "venue": "Georgengarten",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
       "featured": false
     },
     {
@@ -205,6 +389,22 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Hannover Indians vs. EHC Neuwied",
+      "date": "2026-11-27",
+      "venue": "Eisstadion am Pferdeturm",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-EHC-Neuwied",
+      "featured": false
+    },
+    {
+      "title": "Hannover Scorpions vs. TecArt Black Dragons",
+      "date": "2026-11-27",
+      "venue": "Eisstadion Mellendorf",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Scorpions-vs.-TecArt-Black-Dragons",
+      "featured": false
     },
     {
       "title": "Ladies' Weekend im November",
@@ -326,6 +526,14 @@
       "venue": "Opernhaus Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Opernball-2027",
+      "featured": false
+    },
+    {
+      "title": "Irish Spring Festival 2027",
+      "date": "2027-03-08",
+      "venue": "Schloss Landestrost",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
       "featured": false
     }
   ]

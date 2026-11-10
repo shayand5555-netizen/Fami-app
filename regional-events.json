@@ -1,86 +1,30 @@
 {
-  "updatedAt": "2026-11-09T12:53:59.393Z",
+  "updatedAt": "2026-11-10T12:40:35.851Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Calliope - Mein erster Minicomputer",
-      "date": "2026-11-09",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Calliope-Mein-erster-Minicomputer",
-      "featured": false
-    },
-    {
-      "title": "Die Jugendgruppe BE:TwEEN 2026",
-      "date": "2026-11-09",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
-      "featured": false
-    },
-    {
-      "title": "Die rote Zora",
-      "date": "2026-11-09",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
-      "featured": false
-    },
-    {
-      "title": "Ferdinand von Schirach: Der stille Freund",
-      "date": "2026-11-09",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ferdinand-von-Schirach-Der-stille-Freund",
-      "featured": false
-    },
-    {
-      "title": "Henna",
-      "date": "2026-11-09",
-      "venue": "Region Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Henna",
-      "featured": false
-    },
-    {
-      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
-      "date": "2026-11-09",
-      "venue": "SEA LIFE Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
-      "featured": false
-    },
-    {
-      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
-      "date": "2026-11-09",
-      "venue": "Zur guten Absicht",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
-      "featured": false
-    },
-    {
-      "title": "Von Memes bis Fakes: Desinformationsmuster im Blick",
-      "date": "2026-11-09",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Von-Memes-bis-Fakes-Desinformationsmuster-im-Blick",
-      "featured": false
-    },
-    {
-      "title": "Wintermarkt in der Tourist Infomation",
-      "date": "2026-11-09",
-      "venue": "Tourist Information am Hauptbahnhof",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
-      "featured": false
-    },
     {
       "title": "Die große Mixed-Comedy-Show",
       "date": "2026-11-10",
       "venue": "Béi Chéz Heinz",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-gro%C3%9Fe-Mixed-Comedy-Show",
+      "featured": false
+    },
+    {
+      "title": "Die rote Zora",
+      "date": "2026-11-10",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
+      "featured": false
+    },
+    {
+      "title": "Geschichtskreis Vahrenwald",
+      "date": "2026-11-10",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Geschichtskreis-Vahrenwald",
       "featured": false
     },
     {
@@ -116,11 +60,43 @@
       "featured": false
     },
     {
+      "title": "Pen & Paper",
+      "date": "2026-11-10",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
+      "featured": false
+    },
+    {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-10",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-10",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
+      "featured": false
+    },
+    {
       "title": "Sprachkurs goes digital | 60+",
       "date": "2026-11-10",
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kostenlos",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-10",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
       "featured": false
     },
     {
@@ -251,6 +227,22 @@
       "featured": false
     },
     {
+      "title": "Laternenumzug in Wettbergen",
+      "date": "2026-11-13",
+      "venue": "Ortsfeuerwehr Wettbergen",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-in-Wettbergen",
+      "featured": false
+    },
+    {
+      "title": "Orchester-Detektive: „Fesselnd“",
+      "date": "2026-11-13",
+      "venue": "NDR Konzerthaus, Großer Sendesaal",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Orchester-Detektive-%E2%80%9EFesselnd%E2%80%9C",
+      "featured": false
+    },
+    {
       "title": "Die Mäusephilharmonie",
       "date": "2026-11-14",
       "venue": "Bürgerhaus Misburg",
@@ -334,6 +326,14 @@
       "venue": "Eisstadion am Pferdeturm",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-Hammer-Eisb%C3%A4ren",
+      "featured": false
+    },
+    {
+      "title": "Seelzer Lichtermeer",
+      "date": "2026-11-20",
+      "venue": "Rathausplatz Seelze",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Seelzer-Lichtermeer",
       "featured": false
     },
     {
@@ -453,6 +453,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
+      "title": "Lichterfest in Neustadt a. Rbge.",
+      "date": "2026-12-05",
+      "venue": "Liebfrauenkirche",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Lichterfest-in-Neustadt-a.-Rbge",
+      "featured": false
+    },
+    {
       "title": "Wochenmarkt Misburg",
       "date": "2026-12-05",
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
@@ -518,22 +526,6 @@
       "venue": "Innenstadt Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Karnevalsumzug-2027",
-      "featured": false
-    },
-    {
-      "title": "Opernball 2027",
-      "date": "2027-02-19",
-      "venue": "Opernhaus Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Opernball-2027",
-      "featured": false
-    },
-    {
-      "title": "Irish Spring Festival 2027",
-      "date": "2027-03-08",
-      "venue": "Schloss Landestrost",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
       "featured": false
     }
   ]

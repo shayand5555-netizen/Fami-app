@@ -1,87 +1,8 @@
 {
-  "updatedAt": "2026-11-11T11:53:32.328Z",
+  "updatedAt": "2026-11-12T12:44:18.504Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "15 Jahre: Da lacht der Bär!",
-      "date": "2026-11-11",
-      "venue": "Marlene Bar & Bühne",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/15-Jahre-Da-lacht-der-B%C3%A4r",
-      "featured": false
-    },
-    {
-      "title": "96-Laternenumzug ums Stadion",
-      "date": "2026-11-11",
-      "venue": "Heinz-von-Heiden-Arena",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/96-Laternenumzug-ums-Stadion",
-      "featured": false
-    },
-    {
-      "title": "Als der Tiger einmal der Bär sein wollte",
-      "date": "2026-11-11",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Als-der-Tiger-einmal-der-B%C3%A4r-sein-wollte",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-11-11",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "Ich, ich, ich!",
-      "date": "2026-11-11",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-ich,-ich",
-      "featured": false
-    },
-    {
-      "title": "Laternenumzug in Döhren",
-      "date": "2026-11-11",
-      "venue": "Ev.-luth. Auferstehungskirche Hannover-Döhren",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-in-D%C3%B6hren",
-      "featured": false
-    },
-    {
-      "title": "Max Uthoff",
-      "date": "2026-11-11",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Max-Uthoff",
-      "featured": false
-    },
-    {
-      "title": "Offener Palettengarten Misburg-Anderten",
-      "date": "2026-11-11",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
-    },
-    {
-      "title": "Pride",
-      "date": "2026-11-11",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Pride",
-      "featured": false
-    },
-    {
-      "title": "St. Martinsumzug in Wettbergen",
-      "date": "2026-11-11",
-      "venue": "Johannes-der-Täufer Kirche",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/St.-Martinsumzug-in-Wettbergen",
-      "featured": false
-    },
     {
       "title": "Blind",
       "date": "2026-11-12",
@@ -247,6 +168,14 @@
       "venue": "Freizeitheim Vahrenwald",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
+      "featured": false
+    },
+    {
+      "title": "Comedy-Trio: „Spaß, Humor und Seemannslieder!“",
+      "date": "2026-11-18",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Comedy-Trio-%E2%80%9ESpa%C3%9F,-Humor-und-Seemannslieder!%E2%80%9C2",
       "featured": false
     },
     {

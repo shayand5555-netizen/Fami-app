@@ -1,5 +1,11 @@
 # Fami – Versionsverlauf
 
+## 0.50.6-rc.1 – 13. November 2026
+
+- Die geöffnete KI-Rezeptmaske bleibt bei einer gleichzeitigen Cloud-Synchronisierung geöffnet.
+- Eigene Rezeptbilder werden bei unveränderten Rezeptdaten nicht mehr neu aufgebaut und flimmern dadurch nicht mehr.
+- Bereits geladene lokale Rezeptbilder werden ohne erneute verzögerte Dekodierung angezeigt.
+
 ## 0.50.5-rc.1 – 7. November 2026
 
 - Beim Fotoimport ist das ausgewählte Foto auch bei einer fotografierten Rezeptseite als Rezeptbild vorausgewählt. Die Auswahl kann vor dem Speichern ausgeschaltet werden.

@@ -1,62 +1,46 @@
 {
-  "updatedAt": "2026-11-12T12:44:18.504Z",
+  "updatedAt": "2026-11-13T12:13:27.567Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "Blind",
-      "date": "2026-11-12",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Blind",
-      "featured": false
-    },
-    {
-      "title": "Fräsch: Young Comedy im Pavillon",
-      "date": "2026-11-12",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Fr%C3%A4sch-Young-Comedy-im-Pavillon",
-      "featured": false
-    },
-    {
-      "title": "Hamlet: R2D2 or not 2B2",
-      "date": "2026-11-12",
+      "title": "All the Sex I've Ever Had",
+      "date": "2026-11-13",
       "venue": "Schauspielhaus",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Hamlet-R2D2-or-not-2B2",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/All-the-Sex-I%27ve-Ever-Had",
       "featured": false
     },
     {
-      "title": "Jim Knopf und die Wilde 13",
-      "date": "2026-11-12",
-      "venue": "GOP Varieté",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
-      "featured": false
-    },
-    {
-      "title": "Julia Brandner",
-      "date": "2026-11-12",
-      "venue": "Kulturzentrum Pavillon",
+      "title": "Die Bösen Schwestern: Abschied ist ein schweres Schaf",
+      "date": "2026-11-13",
+      "venue": "Marlene Bar & Bühne",
       "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Julia-Brandner",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-B%C3%B6sen-Schwestern-Abschied-ist-ein-schweres-Schaf",
       "featured": false
     },
     {
-      "title": "Laternenumzug in der Oststadt",
-      "date": "2026-11-12",
-      "venue": "Ev.-luth. Dreifaltigkeitskirche",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-in-der-Oststadt",
+      "title": "Europas Rolle in der neuen Weltordnung",
+      "date": "2026-11-13",
+      "venue": "Schloss Herrenhausen",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Europas-Rolle-in-der-neuen-Weltordnung",
       "featured": false
     },
     {
-      "title": "Tanzparty in Misburg",
-      "date": "2026-11-12",
-      "venue": "Bürgerhaus & Kulturbüro",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Tanzparty-in-Misburg",
+      "title": "Figurentheater Marmelock: Ozeanreise mit Maurice Ravel",
+      "date": "2026-11-13",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Figurentheater-Marmelock-Ozeanreise-mit-Maurice-Ravel",
+      "featured": false
+    },
+    {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-11-13",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
       "featured": false
     },
     {
@@ -65,6 +49,22 @@
       "venue": "Eisstadion am Pferdeturm",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-Herforder-Ice-Dragons",
+      "featured": false
+    },
+    {
+      "title": "Hannover Kiosk",
+      "date": "2026-11-13",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
+      "featured": false
+    },
+    {
+      "title": "Höhere Gewalt",
+      "date": "2026-11-13",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/H%C3%B6here-Gewalt",
       "featured": false
     },
     {
@@ -92,6 +92,78 @@
       "featured": false
     },
     {
+      "title": "Romeo und Julia (Ballett)",
+      "date": "2026-11-13",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia-Ballett",
+      "featured": false
+    },
+    {
+      "title": "Santa Maria: Das Musical im Theater am Aegi",
+      "date": "2026-11-13",
+      "venue": "Theater am Aegi",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Santa-Maria-Das-Musical-im-Theater-am-Aegi",
+      "featured": false
+    },
+    {
+      "title": "Schüler*innen schulen Senior*innen",
+      "date": "2026-11-13",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sch%C3%BCler*innen-schulen-Senior*innen",
+      "featured": false
+    },
+    {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-13",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
+      "title": "Unsere Stadt, unsere Perspektiven",
+      "date": "2026-11-13",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Unsere-Stadt,-unsere-Perspektiven",
+      "featured": false
+    },
+    {
+      "title": "Urban Lens: Natürlich Hannover",
+      "date": "2026-11-13",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Urban-Lens-Nat%C3%BCrlich-Hannover",
+      "featured": false
+    },
+    {
+      "title": "Was uns wertvoll ist",
+      "date": "2026-11-13",
+      "venue": "Markuskirche",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Was-uns-wertvoll-ist",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-13",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
+      "featured": false
+    },
+    {
+      "title": "Das offene Foyer der Staatsoper Hannover",
+      "date": "2026-11-14",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
+      "featured": false
+    },
+    {
       "title": "Die Mäusephilharmonie",
       "date": "2026-11-14",
       "venue": "Bürgerhaus Misburg",
@@ -116,6 +188,14 @@
       "featured": false
     },
     {
+      "title": "Il Viaggio, Dante",
+      "date": "2026-11-14",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Il-Viaggio,-Dante",
+      "featured": false
+    },
+    {
       "title": "JuBi - Die Jugendbildungsmesse",
       "date": "2026-11-14",
       "venue": "Schillerschule",
@@ -127,8 +207,16 @@
       "title": "Lichterfest im Kinderwald",
       "date": "2026-11-14",
       "venue": "Kinderwald Hannover",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Lichterfest-im-Kinderwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lichterfest-im-Kinderwald",
+      "featured": false
+    },
+    {
+      "title": "Liebe, Lust und andere Katastrophen: Brecht!",
+      "date": "2026-11-14",
+      "venue": "Mittwoch:Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Liebe,-Lust-und-andere-Katastrophen-Brecht",
       "featured": false
     },
     {
@@ -137,6 +225,14 @@
       "venue": "Neues Rathaus",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Rathauserst%C3%BCrmung-in-Hannover",
+      "featured": false
+    },
+    {
+      "title": "Studien- und Ausbildungsmesse Stuzubi",
+      "date": "2026-11-14",
+      "venue": "Hannover Congress Centrum",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Studien-und-Ausbildungsmesse-Stuzubi",
       "featured": false
     },
     {
@@ -155,11 +251,43 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Figurentheater: Im Land der Drachen und Elfen",
+      "date": "2026-11-15",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Im-Land-der-Drachen-und-Elfen",
+      "featured": false
+    },
+    {
+      "title": "Für Grundschulkinder: Führungen durch den Landtag",
+      "date": "2026-11-15",
+      "venue": "Niedersächsischer Landtag",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/F%C3%BCr-Grundschulkinder-F%C3%BChrungen-durch-den-Landtag",
+      "featured": false
+    },
+    {
+      "title": "Geschichte zum Ausprobieren 2026",
+      "date": "2026-11-15",
+      "venue": "Hannover Kiosk",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
+      "featured": false
+    },
+    {
       "title": "Hannover Scorpions vs. Füchse Duisburg",
       "date": "2026-11-15",
       "venue": "Eisstadion Mellendorf",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Scorpions-vs.-F%C3%BCchse-Duisburg",
+      "featured": false
+    },
+    {
+      "title": "Kerzenbasteln in der Naturpark-Scheune",
+      "date": "2026-11-15",
+      "venue": "Naturpark-Scheune Steinhude",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kerzenbasteln-in-der-Naturpark-Scheune",
       "featured": false
     },
     {
@@ -391,6 +519,14 @@
       "venue": "Verschiedene Veranstaltungsorte in Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Real-Dance-Festival",
+      "featured": false
+    },
+    {
+      "title": "Karnevalsumzug 2027",
+      "date": "2027-02-06",
+      "venue": "Innenstadt Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Karnevalsumzug-2027",
       "featured": false
     }
   ]

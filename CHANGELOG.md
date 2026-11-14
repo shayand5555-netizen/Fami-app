@@ -1,5 +1,15 @@
 # Fami – Versionsverlauf
 
+## 0.51.0-rc.1 – 14. November 2026
+
+- Schriften, Nebeninformationen und Kalenderbeschriftungen sind auf dem iPhone deutlich besser lesbar.
+- Wichtige Schaltflächen und Symbolaktionen besitzen eine mindestens 44 Pixel große Touchfläche.
+- Die Suche findet jetzt Termine, Aufgaben, Einkaufspositionen, Wochenplangerichte, Rezepte, Putzaufgaben und Familienmitglieder und öffnet den passenden Bereich.
+- Die Rezeptaufnahme erscheint auf dem iPhone als ruhiger Vollbildablauf mit klarer Auswahl zwischen Foto, Link und manueller Eingabe.
+- Fami reagiert auf den System-Dark-Mode, erhöhten Kontrast und „Bewegung reduzieren“.
+- Speicher- und Statusmeldungen werden von Screenreadern angekündigt; Fokusmarkierungen und Formfelder wurden verbessert.
+- Die iPhone-Navigation, Suchergebnisse und Rezeptaktionen wurden für größere Schrift und sichere Touchbedienung nachgeschärft.
+
 ## 0.50.6-rc.1 – 13. November 2026
 
 - Die geöffnete KI-Rezeptmaske bleibt bei einer gleichzeitigen Cloud-Synchronisierung geöffnet.

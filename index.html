@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#f7f5ef" />
+  <meta name="theme-color" content="#f7f5ef" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#111613" media="(prefers-color-scheme: dark)" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
   <meta name="apple-mobile-web-app-title" content="Fami" />
@@ -15,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=0.50.6" />
+<link rel="stylesheet" href="styles.css?v=0.51.0" />
 </head>
 <body>
   <svg class="svg-sprite" aria-hidden="true">
@@ -65,8 +66,8 @@
   <main>
     <header class="topbar">
       <button class="mobile-brand"><span class="brand-mark">F</span></button>
-      <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" placeholder="In Fami suchen …" /><kbd>⌘ K</kbd></div>
-<div class="top-actions"><button type="button" class="version-badge" id="appVersion" title="Versionsverlauf öffnen" aria-label="Versionsverlauf öffnen"><span>v0.50.6</span><span class="version-stage"> RC</span></button><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn feedback-shortcut" id="feedbackBtn" aria-label="Feedback senden">?</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
+      <div class="search"><svg><use href="#i-search"/></svg><input id="globalSearch" type="search" placeholder="In Fami suchen …" aria-label="Fami vollständig durchsuchen" aria-haspopup="dialog" aria-controls="globalSearchDialog" autocomplete="off" /><kbd>⌘ K</kbd></div>
+<div class="top-actions"><button type="button" class="version-badge" id="appVersion" title="Versionsverlauf öffnen" aria-label="Versionsverlauf öffnen"><span>v0.51.0</span><span class="version-stage"> RC</span></button><button class="btn install-btn hidden" id="installApp">App installieren</button><button class="icon-btn feedback-shortcut" id="feedbackBtn" aria-label="Feedback senden">?</button><button class="icon-btn notification" id="notificationSettings" aria-label="Benachrichtigungen einrichten"><svg><use href="#i-bell"/></svg><i></i></button><button class="btn primary" id="quickAdd"><svg><use href="#i-plus"/></svg><span>Neu</span></button></div>
     </header>
 
     <section class="content" id="homeView">
@@ -215,13 +216,19 @@
       <div class="notification-setup"><div class="notification-status" id="notificationStatus"></div><button class="btn primary" id="enableNotifications">Benachrichtigungen aktivieren</button><button class="btn ghost" id="testNotification">Testnachricht senden</button><fieldset class="quiet-hours"><legend>Ruhezeit auf diesem Gerät</legend><label>Von<input type="time" id="quietFrom" value="21:00"></label><label>Bis<input type="time" id="quietUntil" value="07:00"></label><label class="calendar-toggle"><input type="checkbox" id="quietEnabled"><span></span>Aktiv</label></fieldset><p>Wähle anschließend bei jedem Termin aus, wie lange vorher du erinnert werden möchtest.</p><small>Für Erinnerungen bei vollständig geschlossener App muss Fami installiert und der Online-Pushdienst verbunden sein.</small></div>
     </section>
   </div>
-  <div class="toast" id="toast"><span>✓</span><p></p><button class="toast-action hidden" data-toast-action>Rückgängig</button></div>
-<script src="push-config.js?v=0.50.6"></script>
-<script src="cloud.js?v=0.50.6"></script>
-<script src="notifications.js?v=0.50.6"></script>
-<script src="family-recipes.js?v=0.50.6"></script>
-<script src="recipe-scanner.js?v=0.50.6"></script>
-<script src="app.js?v=0.50.6"></script>
+  <dialog class="global-search-dialog" id="globalSearchDialog" aria-labelledby="globalSearchTitle">
+    <header><div><p class="eyebrow">ALLES IN FAMI</p><h2 id="globalSearchTitle">Suchen</h2></div><button type="button" class="icon-btn" data-search-close aria-label="Suche schließen">×</button></header>
+    <label class="global-search-field"><svg><use href="#i-search"/></svg><input id="globalSearchDialogInput" type="search" placeholder="Termine, Aufgaben, Rezepte …" aria-label="Suchbegriff" autocomplete="off" /></label>
+    <p class="global-search-hint">Durchsucht Kalender, Aufgaben, Einkauf, Wochenplan, Rezepte, Putzplan und Familie.</p>
+    <div class="global-search-results" id="globalSearchResults" role="listbox" aria-live="polite"></div>
+  </dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"><span aria-hidden="true">✓</span><p></p><button class="toast-action hidden" data-toast-action>Rückgängig</button></div>
+<script src="push-config.js?v=0.51.0"></script>
+<script src="cloud.js?v=0.51.0"></script>
+<script src="notifications.js?v=0.51.0"></script>
+<script src="family-recipes.js?v=0.51.0"></script>
+<script src="recipe-scanner.js?v=0.51.0"></script>
+<script src="app.js?v=0.51.0"></script>
 </body>
 </html>
 

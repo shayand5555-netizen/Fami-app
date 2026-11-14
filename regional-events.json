@@ -1,160 +1,8 @@
 {
-  "updatedAt": "2026-11-13T12:13:27.567Z",
+  "updatedAt": "2026-11-14T11:28:50.690Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "All the Sex I've Ever Had",
-      "date": "2026-11-13",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/All-the-Sex-I%27ve-Ever-Had",
-      "featured": false
-    },
-    {
-      "title": "Die Bösen Schwestern: Abschied ist ein schweres Schaf",
-      "date": "2026-11-13",
-      "venue": "Marlene Bar & Bühne",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-B%C3%B6sen-Schwestern-Abschied-ist-ein-schweres-Schaf",
-      "featured": false
-    },
-    {
-      "title": "Europas Rolle in der neuen Weltordnung",
-      "date": "2026-11-13",
-      "venue": "Schloss Herrenhausen",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Europas-Rolle-in-der-neuen-Weltordnung",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater Marmelock: Ozeanreise mit Maurice Ravel",
-      "date": "2026-11-13",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Figurentheater-Marmelock-Ozeanreise-mit-Maurice-Ravel",
-      "featured": false
-    },
-    {
-      "title": "GOP: Streng geheim!",
-      "date": "2026-11-13",
-      "venue": "GOP Varieté-Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
-      "featured": false
-    },
-    {
-      "title": "Hannover Indians vs. Herforder Ice Dragons",
-      "date": "2026-11-13",
-      "venue": "Eisstadion am Pferdeturm",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-Herforder-Ice-Dragons",
-      "featured": false
-    },
-    {
-      "title": "Hannover Kiosk",
-      "date": "2026-11-13",
-      "venue": "Hannover Kiosk",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
-      "featured": false
-    },
-    {
-      "title": "Höhere Gewalt",
-      "date": "2026-11-13",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/H%C3%B6here-Gewalt",
-      "featured": false
-    },
-    {
-      "title": "Klavierduo Maria & Sofia: GOLDENE KLÄNGE",
-      "date": "2026-11-13",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Klavierduo-Maria-Sofia-GOLDENE-KL%C3%84NGE",
-      "featured": false
-    },
-    {
-      "title": "Laternenumzug in Wettbergen",
-      "date": "2026-11-13",
-      "venue": "Ortsfeuerwehr Wettbergen",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Laternenumzug-in-Wettbergen",
-      "featured": false
-    },
-    {
-      "title": "Orchester-Detektive: „Fesselnd“",
-      "date": "2026-11-13",
-      "venue": "NDR Konzerthaus, Großer Sendesaal",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Orchester-Detektive-%E2%80%9EFesselnd%E2%80%9C",
-      "featured": false
-    },
-    {
-      "title": "Romeo und Julia (Ballett)",
-      "date": "2026-11-13",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia-Ballett",
-      "featured": false
-    },
-    {
-      "title": "Santa Maria: Das Musical im Theater am Aegi",
-      "date": "2026-11-13",
-      "venue": "Theater am Aegi",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Santa-Maria-Das-Musical-im-Theater-am-Aegi",
-      "featured": false
-    },
-    {
-      "title": "Schüler*innen schulen Senior*innen",
-      "date": "2026-11-13",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sch%C3%BCler*innen-schulen-Senior*innen",
-      "featured": false
-    },
-    {
-      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
-      "date": "2026-11-13",
-      "venue": "SEA LIFE Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
-      "featured": false
-    },
-    {
-      "title": "Unsere Stadt, unsere Perspektiven",
-      "date": "2026-11-13",
-      "venue": "Zur guten Absicht",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Unsere-Stadt,-unsere-Perspektiven",
-      "featured": false
-    },
-    {
-      "title": "Urban Lens: Natürlich Hannover",
-      "date": "2026-11-13",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Urban-Lens-Nat%C3%BCrlich-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Was uns wertvoll ist",
-      "date": "2026-11-13",
-      "venue": "Markuskirche",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Was-uns-wertvoll-ist",
-      "featured": false
-    },
-    {
-      "title": "Wintermarkt in der Tourist Infomation",
-      "date": "2026-11-13",
-      "venue": "Tourist Information am Hauptbahnhof",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
-      "featured": false
-    },
     {
       "title": "Das offene Foyer der Staatsoper Hannover",
       "date": "2026-11-14",
@@ -164,11 +12,27 @@
       "featured": false
     },
     {
-      "title": "Die Mäusephilharmonie",
+      "title": "Die Mäusephilharmonie AUSGEBUCHT",
       "date": "2026-11-14",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Die-M%C3%A4usephilharmonie",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Die-M%C3%A4usephilharmonie-AUSGEBUCHT",
+      "featured": false
+    },
+    {
+      "title": "Endorphine: Zum Jubiläum der Theaterwerkstatt Hannover",
+      "date": "2026-11-14",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Endorphine-Zum-Jubil%C3%A4um-der-Theaterwerkstatt-Hannover",
+      "featured": false
+    },
+    {
+      "title": "Finale des Debattier-Turniers",
+      "date": "2026-11-14",
+      "venue": "Schloss Herrenhausen",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Finale-des-Debattier-Turniers",
       "featured": false
     },
     {
@@ -204,6 +68,14 @@
       "featured": false
     },
     {
+      "title": "Let's Dance 2026 live in Hannover",
+      "date": "2026-11-14",
+      "venue": "ZAG-Arena",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Let%27s-Dance-2026-live-in-Hannover",
+      "featured": false
+    },
+    {
       "title": "Lichterfest im Kinderwald",
       "date": "2026-11-14",
       "venue": "Kinderwald Hannover",
@@ -225,14 +97,6 @@
       "venue": "Neues Rathaus",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Rathauserst%C3%BCrmung-in-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Studien- und Ausbildungsmesse Stuzubi",
-      "date": "2026-11-14",
-      "venue": "Hannover Congress Centrum",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Studien-und-Ausbildungsmesse-Stuzubi",
       "featured": false
     },
     {
@@ -296,6 +160,54 @@
       "venue": "Freizeitheim Vahrenwald",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
+      "featured": false
+    },
+    {
+      "title": "Randale: Rockmusik für Kinder und Erwachsene",
+      "date": "2026-11-15",
+      "venue": "Béi Chéz Heinz",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Randale-Rockmusik-f%C3%BCr-Kinder-und-Erwachsene",
+      "featured": false
+    },
+    {
+      "title": "Singen von Anfang an",
+      "date": "2026-11-15",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Singen-von-Anfang-an",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-15",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
+      "featured": false
+    },
+    {
+      "title": "Tee mit den Royals",
+      "date": "2026-11-15",
+      "venue": "Museum Schloss Herrenhausen",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Tee-mit-den-Royals",
+      "featured": false
+    },
+    {
+      "title": "Calliope - Mein erster Minicomputer",
+      "date": "2026-11-16",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Calliope-Mein-erster-Minicomputer",
+      "featured": false
+    },
+    {
+      "title": "Die Jugendgruppe BE:TwEEN 2026",
+      "date": "2026-11-16",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
       "featured": false
     },
     {

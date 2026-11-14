@@ -9,8 +9,8 @@ const css=fs.readFileSync(new URL('../styles.css',import.meta.url),'utf8');
 const worker=fs.readFileSync(new URL('../service-worker.js',import.meta.url),'utf8');
 
 test('Version und Offline-Dateien sind einheitlich',()=>{
-  assert.match(html,/v0\.51\.0/);
-  assert.match(worker,/fami-v0\.51\.0/);
+  assert.match(html,/v0\.51\.1/);
+  assert.match(worker,/fami-v0\.51\.1/);
   assert.doesNotMatch(app,/0\.50\.6/);
 });
 

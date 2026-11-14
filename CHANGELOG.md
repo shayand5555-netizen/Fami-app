@@ -1,5 +1,10 @@
 # Fami – Versionsverlauf
 
+## 0.51.1-rc.1 – 14. November 2026
+
+- Geöffnete Zutatenlisten und Kochanleitungen bleiben während des automatischen Familien-Abgleichs offen.
+- Rezeptdetails lassen sich auf dem iPhone in Ruhe lesen und schließen sich nur noch durch erneutes Antippen.
+
 ## 0.51.0-rc.1 – 14. November 2026
 
 - Schriften, Nebeninformationen und Kalenderbeschriftungen sind auf dem iPhone deutlich besser lesbar.

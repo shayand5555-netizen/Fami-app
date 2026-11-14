@@ -1,6 +1,6 @@
 param(
   [string]$Url = 'https://shayand5555-netizen.github.io/Fami-app/',
-  [string]$ExpectedVersion = '0.51.0'
+  [string]$ExpectedVersion = '0.51.1'
 )
 
 $ErrorActionPreference = 'Stop'

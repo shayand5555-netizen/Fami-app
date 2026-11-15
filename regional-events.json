@@ -1,119 +1,8 @@
 {
-  "updatedAt": "2026-11-14T11:28:50.690Z",
+  "updatedAt": "2026-11-15T11:57:51.644Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Das offene Foyer der Staatsoper Hannover",
-      "date": "2026-11-14",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Die Mäusephilharmonie AUSGEBUCHT",
-      "date": "2026-11-14",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Die-M%C3%A4usephilharmonie-AUSGEBUCHT",
-      "featured": false
-    },
-    {
-      "title": "Endorphine: Zum Jubiläum der Theaterwerkstatt Hannover",
-      "date": "2026-11-14",
-      "venue": "Kulturzentrum Pavillon",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Endorphine-Zum-Jubil%C3%A4um-der-Theaterwerkstatt-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Finale des Debattier-Turniers",
-      "date": "2026-11-14",
-      "venue": "Schloss Herrenhausen",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Finale-des-Debattier-Turniers",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt auf der Neuen Bult",
-      "date": "2026-11-14",
-      "venue": "Pferderennbahn Neue Bult",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
-      "featured": false
-    },
-    {
-      "title": "Georgengarten Parkrun",
-      "date": "2026-11-14",
-      "venue": "Georgengarten",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
-      "featured": false
-    },
-    {
-      "title": "Il Viaggio, Dante",
-      "date": "2026-11-14",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Il-Viaggio,-Dante",
-      "featured": false
-    },
-    {
-      "title": "JuBi - Die Jugendbildungsmesse",
-      "date": "2026-11-14",
-      "venue": "Schillerschule",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/JuBi-Die-Jugendbildungsmesse",
-      "featured": false
-    },
-    {
-      "title": "Let's Dance 2026 live in Hannover",
-      "date": "2026-11-14",
-      "venue": "ZAG-Arena",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Let%27s-Dance-2026-live-in-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Lichterfest im Kinderwald",
-      "date": "2026-11-14",
-      "venue": "Kinderwald Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lichterfest-im-Kinderwald",
-      "featured": false
-    },
-    {
-      "title": "Liebe, Lust und andere Katastrophen: Brecht!",
-      "date": "2026-11-14",
-      "venue": "Mittwoch:Theater",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Liebe,-Lust-und-andere-Katastrophen-Brecht",
-      "featured": false
-    },
-    {
-      "title": "Rathauserstürmung in Hannover",
-      "date": "2026-11-14",
-      "venue": "Neues Rathaus",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Rathauserst%C3%BCrmung-in-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Vintage Wonderland",
-      "date": "2026-11-14",
-      "venue": "Vintage Wonderland",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
-      "featured": false
-    },
-    {
-      "title": "Wochenmarkt Misburg",
-      "date": "2026-11-14",
-      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
-    },
     {
       "title": "Figurentheater: Im Land der Drachen und Elfen",
       "date": "2026-11-15",
@@ -144,6 +33,14 @@
       "venue": "Eisstadion Mellendorf",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Scorpions-vs.-F%C3%BCchse-Duisburg",
+      "featured": false
+    },
+    {
+      "title": "Haus zur Sonne",
+      "date": "2026-11-15",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Haus-zur-Sonne",
       "featured": false
     },
     {
@@ -208,6 +105,22 @@
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
+      "featured": false
+    },
+    {
+      "title": "Infos zur Vorsorgevollmacht in Gehrden",
+      "date": "2026-11-16",
+      "venue": "Rathaus Nebenstelle der Stadt Gehrden",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Gehrden",
+      "featured": false
+    },
+    {
+      "title": "Figurentheater: Ella und der grüne Prinz",
+      "date": "2026-11-17",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Ella-und-der-gr%C3%BCne-Prinz",
       "featured": false
     },
     {
@@ -439,6 +352,22 @@
       "venue": "Innenstadt Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Karnevalsumzug-2027",
+      "featured": false
+    },
+    {
+      "title": "Opernball 2027",
+      "date": "2027-02-19",
+      "venue": "Opernhaus Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Opernball-2027",
+      "featured": false
+    },
+    {
+      "title": "Irish Spring Festival 2027",
+      "date": "2027-03-08",
+      "venue": "Schloss Landestrost",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
       "featured": false
     }
   ]

@@ -1,96 +1,8 @@
 {
-  "updatedAt": "2026-11-15T11:57:51.644Z",
+  "updatedAt": "2026-11-16T12:46:04.609Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Figurentheater: Im Land der Drachen und Elfen",
-      "date": "2026-11-15",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Im-Land-der-Drachen-und-Elfen",
-      "featured": false
-    },
-    {
-      "title": "Für Grundschulkinder: Führungen durch den Landtag",
-      "date": "2026-11-15",
-      "venue": "Niedersächsischer Landtag",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/F%C3%BCr-Grundschulkinder-F%C3%BChrungen-durch-den-Landtag",
-      "featured": false
-    },
-    {
-      "title": "Geschichte zum Ausprobieren 2026",
-      "date": "2026-11-15",
-      "venue": "Hannover Kiosk",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Geschichte-zum-Ausprobieren-2026",
-      "featured": false
-    },
-    {
-      "title": "Hannover Scorpions vs. Füchse Duisburg",
-      "date": "2026-11-15",
-      "venue": "Eisstadion Mellendorf",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Scorpions-vs.-F%C3%BCchse-Duisburg",
-      "featured": false
-    },
-    {
-      "title": "Haus zur Sonne",
-      "date": "2026-11-15",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Haus-zur-Sonne",
-      "featured": false
-    },
-    {
-      "title": "Kerzenbasteln in der Naturpark-Scheune",
-      "date": "2026-11-15",
-      "venue": "Naturpark-Scheune Steinhude",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kerzenbasteln-in-der-Naturpark-Scheune",
-      "featured": false
-    },
-    {
-      "title": "KREATIVMARKT",
-      "date": "2026-11-15",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/KREATIVMARKT",
-      "featured": false
-    },
-    {
-      "title": "Randale: Rockmusik für Kinder und Erwachsene",
-      "date": "2026-11-15",
-      "venue": "Béi Chéz Heinz",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Randale-Rockmusik-f%C3%BCr-Kinder-und-Erwachsene",
-      "featured": false
-    },
-    {
-      "title": "Singen von Anfang an",
-      "date": "2026-11-15",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Singen-von-Anfang-an",
-      "featured": false
-    },
-    {
-      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
-      "date": "2026-11-15",
-      "venue": "Zur guten Absicht",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
-      "featured": false
-    },
-    {
-      "title": "Tee mit den Royals",
-      "date": "2026-11-15",
-      "venue": "Museum Schloss Herrenhausen",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Tee-mit-den-Royals",
-      "featured": false
-    },
     {
       "title": "Calliope - Mein erster Minicomputer",
       "date": "2026-11-16",
@@ -108,11 +20,75 @@
       "featured": false
     },
     {
+      "title": "Die rote Zora",
+      "date": "2026-11-16",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
+      "featured": false
+    },
+    {
+      "title": "Figurentheater: Im Land der Drachen und Elfen",
+      "date": "2026-11-16",
+      "venue": "Theatrio Figuren Theaterhaus Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Im-Land-der-Drachen-und-Elfen",
+      "featured": false
+    },
+    {
       "title": "Infos zur Vorsorgevollmacht in Gehrden",
       "date": "2026-11-16",
       "venue": "Rathaus Nebenstelle der Stadt Gehrden",
       "category": "Kostenlos",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Gehrden",
+      "featured": false
+    },
+    {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-16",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-16",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
+      "featured": false
+    },
+    {
+      "title": "Steh-auf-Comedy-Show",
+      "date": "2026-11-16",
+      "venue": "Béi Chéz Heinz",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Steh-auf-Comedy-Show",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-16",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
+      "featured": false
+    },
+    {
+      "title": "Bilderbuchkino in der Zentralbibliothek",
+      "date": "2026-11-17",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Bilderbuchkino-in-der-Zentralbibliothek",
+      "featured": false
+    },
+    {
+      "title": "Die Ringelreihe",
+      "date": "2026-11-17",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Ringelreihe",
       "featured": false
     },
     {
@@ -124,11 +100,99 @@
       "featured": false
     },
     {
+      "title": "Infos zur Vorsorgevollmacht in Springe",
+      "date": "2026-11-17",
+      "venue": "Region Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Springe",
+      "featured": false
+    },
+    {
+      "title": "Mehr als nur Rechnen!",
+      "date": "2026-11-17",
+      "venue": "Leibniz Universität Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Mehr-als-nur-Rechnen",
+      "featured": false
+    },
+    {
+      "title": "Schwindel",
+      "date": "2026-11-17",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Schwindel",
+      "featured": false
+    },
+    {
+      "title": "Sliding Away",
+      "date": "2026-11-17",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sliding-Away",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-11-17",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
+      "featured": false
+    },
+    {
+      "title": "Vintage Wonderland",
+      "date": "2026-11-17",
+      "venue": "Vintage Wonderland",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
+      "featured": false
+    },
+    {
+      "title": "Alfons",
+      "date": "2026-11-18",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Alfons",
+      "featured": false
+    },
+    {
+      "title": "Antigone im Mittwoch:Theater",
+      "date": "2026-11-18",
+      "venue": "Mittwoch:Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Antigone-im-Mittwoch-Theater",
+      "featured": false
+    },
+    {
       "title": "Comedy-Trio: „Spaß, Humor und Seemannslieder!“",
       "date": "2026-11-18",
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Comedy-Trio-%E2%80%9ESpa%C3%9F,-Humor-und-Seemannslieder!%E2%80%9C2",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Comedy-Trio-%E2%80%9ESpa%C3%9F,-Humor-und-Seemannslieder!%E2%80%9C",
+      "featured": false
+    },
+    {
+      "title": "GOP: Streng geheim!",
+      "date": "2026-11-18",
+      "venue": "GOP Varieté-Theater",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/GOP-Streng-geheim",
+      "featured": false
+    },
+    {
+      "title": "Ich, Fritz Haarmann",
+      "date": "2026-11-18",
+      "venue": "Marlene Bar & Bühne",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-Fritz-Haarmann",
+      "featured": false
+    },
+    {
+      "title": "Ich, ich, ich!",
+      "date": "2026-11-18",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Ich,-ich,-ich",
       "featured": false
     },
     {
@@ -137,6 +201,38 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
+    },
+    {
+      "title": "Weihnachten kommt!",
+      "date": "2026-11-18",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Weihnachten-kommt",
+      "featured": false
+    },
+    {
+      "title": "Zum letzten Mal: Mit anderen Augen",
+      "date": "2026-11-18",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Zum-letzten-Mal-Mit-anderen-Augen",
+      "featured": false
+    },
+    {
+      "title": "Jim Knopf und die Wilde 13",
+      "date": "2026-11-19",
+      "venue": "GOP Varieté",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
+      "featured": false
+    },
+    {
+      "title": "Ausstellung: Misburg – Spuren der Vergangenheit",
+      "date": "2026-11-20",
+      "venue": "Bürgerhaus Misburg",
+      "category": "Misburg-Anderten",
+      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Ausstellung-Misburg-%E2%80%93-Spuren-der-Vergangenheit",
+      "featured": false
     },
     {
       "title": "Die Recken vs. TVB Stuttgart",
@@ -160,6 +256,22 @@
       "venue": "Rathausplatz Seelze",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Seelzer-Lichtermeer",
+      "featured": false
+    },
+    {
+      "title": "Flohmarkt auf der Neuen Bult",
+      "date": "2026-11-21",
+      "venue": "Pferderennbahn Neue Bult",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
+      "featured": false
+    },
+    {
+      "title": "Georgengarten Parkrun",
+      "date": "2026-11-21",
+      "venue": "Georgengarten",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
       "featured": false
     },
     {
@@ -279,6 +391,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse"
     },
     {
+      "title": "Hannover Scorpions vs. Herforder Ice Dragons",
+      "date": "2026-12-04",
+      "venue": "Eisstadion Mellendorf",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Scorpions-vs.-Herforder-Ice-Dragons",
+      "featured": false
+    },
+    {
       "title": "Lichterfest in Neustadt a. Rbge.",
       "date": "2026-12-05",
       "venue": "Liebfrauenkirche",
@@ -336,6 +456,14 @@
       "venue": "Freizeitheim Döhren",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-Januar",
+      "featured": false
+    },
+    {
+      "title": "Ladies' Weekend im Januar",
+      "date": "2027-01-23",
+      "venue": "Freizeitheim Döhren",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-Januar2",
       "featured": false
     },
     {

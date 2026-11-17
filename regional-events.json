@@ -1,80 +1,8 @@
 {
-  "updatedAt": "2026-11-16T12:46:04.609Z",
+  "updatedAt": "2026-11-17T13:27:13.809Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Calliope - Mein erster Minicomputer",
-      "date": "2026-11-16",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Calliope-Mein-erster-Minicomputer",
-      "featured": false
-    },
-    {
-      "title": "Die Jugendgruppe BE:TwEEN 2026",
-      "date": "2026-11-16",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
-      "featured": false
-    },
-    {
-      "title": "Die rote Zora",
-      "date": "2026-11-16",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
-      "featured": false
-    },
-    {
-      "title": "Figurentheater: Im Land der Drachen und Elfen",
-      "date": "2026-11-16",
-      "venue": "Theatrio Figuren Theaterhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Figurentheater-Im-Land-der-Drachen-und-Elfen",
-      "featured": false
-    },
-    {
-      "title": "Infos zur Vorsorgevollmacht in Gehrden",
-      "date": "2026-11-16",
-      "venue": "Rathaus Nebenstelle der Stadt Gehrden",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Infos-zur-Vorsorgevollmacht-in-Gehrden",
-      "featured": false
-    },
-    {
-      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
-      "date": "2026-11-16",
-      "venue": "SEA LIFE Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
-      "featured": false
-    },
-    {
-      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
-      "date": "2026-11-16",
-      "venue": "Zur guten Absicht",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
-      "featured": false
-    },
-    {
-      "title": "Steh-auf-Comedy-Show",
-      "date": "2026-11-16",
-      "venue": "Béi Chéz Heinz",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Steh-auf-Comedy-Show",
-      "featured": false
-    },
-    {
-      "title": "Wintermarkt in der Tourist Infomation",
-      "date": "2026-11-16",
-      "venue": "Tourist Information am Hauptbahnhof",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
-      "featured": false
-    },
     {
       "title": "Bilderbuchkino in der Zentralbibliothek",
       "date": "2026-11-17",
@@ -100,6 +28,14 @@
       "featured": false
     },
     {
+      "title": "Hannover Kiosk",
+      "date": "2026-11-17",
+      "venue": "Hannover Kiosk",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Hannover-Kiosk",
+      "featured": false
+    },
+    {
       "title": "Infos zur Vorsorgevollmacht in Springe",
       "date": "2026-11-17",
       "venue": "Region Hannover",
@@ -116,6 +52,22 @@
       "featured": false
     },
     {
+      "title": "Pen & Paper",
+      "date": "2026-11-17",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
+      "featured": false
+    },
+    {
+      "title": "Regions­versamm­lung am 17. November 2026",
+      "date": "2026-11-17",
+      "venue": "Region Hannover | Standort Hildesheimer Str. 18",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Regions%C2%ADversamm%C2%ADlung-am-17.-November-2026",
+      "featured": false
+    },
+    {
       "title": "Schwindel",
       "date": "2026-11-17",
       "venue": "Schauspielhaus",
@@ -124,11 +76,27 @@
       "featured": false
     },
     {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-17",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
       "title": "Sliding Away",
       "date": "2026-11-17",
       "venue": "Ballhof Eins",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Sliding-Away",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-17",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
       "featured": false
     },
     {
@@ -145,6 +113,14 @@
       "venue": "Vintage Wonderland",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Vintage-Wonderland",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-17",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
       "featured": false
     },
     {
@@ -169,6 +145,14 @@
       "venue": "Bürgerhaus Misburg",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Comedy-Trio-%E2%80%9ESpa%C3%9F,-Humor-und-Seemannslieder!%E2%80%9C",
+      "featured": false
+    },
+    {
+      "title": "Die rote Zora",
+      "date": "2026-11-18",
+      "venue": "Schauspielhaus",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
       "featured": false
     },
     {
@@ -251,6 +235,22 @@
       "featured": false
     },
     {
+      "title": "Internationaler Tag der Kinderrechte",
+      "date": "2026-11-20",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Internationaler-Tag-der-Kinderrechte",
+      "featured": false
+    },
+    {
+      "title": "Lesung für Kinder ab 5 Jahren: Prinzessin von Schrei",
+      "date": "2026-11-20",
+      "venue": "Hugendubel",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lesung-f%C3%BCr-Kinder-ab-5-Jahren-Prinzessin-von-Schrei",
+      "featured": false
+    },
+    {
       "title": "Seelzer Lichtermeer",
       "date": "2026-11-20",
       "venue": "Rathausplatz Seelze",
@@ -280,6 +280,14 @@
       "venue": "Heinz-von-Heiden-Arena",
       "category": "Sport",
       "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Greuther-F%C3%BCrth",
+      "featured": false
+    },
+    {
+      "title": "Willkommen in Mitmischingen – Wer hat hier das Sagen?",
+      "date": "2026-11-21",
+      "venue": "Kindermuseum Zinnober",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Willkommen-in-Mitmischingen-%E2%80%93-Wer-hat-hier-das-Sagen",
       "featured": false
     },
     {

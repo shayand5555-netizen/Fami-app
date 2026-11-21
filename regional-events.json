@@ -1,110 +1,14 @@
 {
-  "updatedAt": "2026-11-20T12:54:19.214Z",
+  "updatedAt": "2026-11-21T12:40:22.017Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
     {
-      "title": "Ausstellung: Misburg – Spuren der Vergangenheit",
-      "date": "2026-11-20",
-      "venue": "Bürgerhaus Misburg",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Freizeiteinrichtungen/Freizeitheime-Stadtteilzentren/B%C3%BCrgerhaus-Misburg/Alle-Veranstaltungen-Kurse/Ausstellung-Misburg-%E2%80%93-Spuren-der-Vergangenheit",
-      "featured": false
-    },
-    {
-      "title": "Die Recken vs. TVB Stuttgart",
-      "date": "2026-11-20",
-      "venue": "ZAG-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-TVB-Stuttgart",
-      "featured": false
-    },
-    {
-      "title": "Hannover Indians vs. Hammer Eisbären",
-      "date": "2026-11-20",
-      "venue": "Eisstadion am Pferdeturm",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-Hammer-Eisb%C3%A4ren",
-      "featured": false
-    },
-    {
-      "title": "Internationaler Tag der Kinderrechte",
-      "date": "2026-11-20",
-      "venue": "Stadtteilzentrum Weiße Rose",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Internationaler-Tag-der-Kinderrechte2",
-      "featured": false
-    },
-    {
-      "title": "Lesung für Kinder ab 5 Jahren: Prinzessin von Schrei",
-      "date": "2026-11-20",
-      "venue": "Hugendubel",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Lesung-f%C3%BCr-Kinder-ab-5-Jahren-Prinzessin-von-Schrei",
-      "featured": false
-    },
-    {
-      "title": "Rainer Künnecke spielt Wilhelm Busch",
-      "date": "2026-11-20",
-      "venue": "die hinterbuehne",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Rainer-K%C3%BCnnecke-spielt-Wilhelm-Busch",
-      "featured": false
-    },
-    {
-      "title": "Schüler*innen schulen Senior*innen",
-      "date": "2026-11-20",
-      "venue": "Freizeitheim Vahrenwald",
+      "title": "10 Jahre Kunstsammler-Verein: Jubiläumsfeier",
+      "date": "2026-11-21",
+      "venue": "Sprengel Museum Hannover",
       "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sch%C3%BCler*innen-schulen-Senior*innen",
-      "featured": false
-    },
-    {
-      "title": "Seelzer Lichtermeer",
-      "date": "2026-11-20",
-      "venue": "Rathausplatz Seelze",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Seelzer-Lichtermeer",
-      "featured": false
-    },
-    {
-      "title": "Tröstlich – Musik über Verlust und Verbundenheit",
-      "date": "2026-11-20",
-      "venue": "Willehadi-Kirche Garbsen",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Tr%C3%B6stlich-%E2%80%93-Musik-%C3%BCber-Verlust-und-Verbundenheit2",
-      "featured": false
-    },
-    {
-      "title": "Urban Lens: Natürlich Hannover",
-      "date": "2026-11-20",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Urban-Lens-Nat%C3%BCrlich-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Was bleibt",
-      "date": "2026-11-20",
-      "venue": "Saal der Evangelischen Jugend Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Was-bleibt",
-      "featured": false
-    },
-    {
-      "title": "Wintervarieté: Flow – where art moves",
-      "date": "2026-11-20",
-      "venue": "Orangerie Herrenhausen",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wintervariet%C3%A9-Flow-%E2%80%93-where-art-moves",
-      "featured": false
-    },
-    {
-      "title": "Wokey Wokey",
-      "date": "2026-11-20",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wokey-Wokey",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/10-Jahre-Kunstsammler-Verein-Jubil%C3%A4umsfeier",
       "featured": false
     },
     {
@@ -156,11 +60,43 @@
       "featured": false
     },
     {
+      "title": "Jim Knopf und die Wilde 13",
+      "date": "2026-11-21",
+      "venue": "GOP Varieté",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
+      "featured": false
+    },
+    {
       "title": "Kinderkonzert \"Joseph Haydn und die Fürstin\"",
       "date": "2026-11-21",
       "venue": "Martinskirche",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kinderkonzert-%22Joseph-Haydn-und-die-F%C3%BCrstin%22",
+      "featured": false
+    },
+    {
+      "title": "La Bohème",
+      "date": "2026-11-21",
+      "venue": "Opernhaus Hannover",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/La-Boh%C3%A8me",
+      "featured": false
+    },
+    {
+      "title": "List’n Up–Der Poetry Slam in der List",
+      "date": "2026-11-21",
+      "venue": "Stadtteilzentrum Lister Turm",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/List%E2%80%99n-Up%E2%80%93Der-Poetry-Slam-in-der-List",
+      "featured": false
+    },
+    {
+      "title": "Tröstlich – Musik über Verlust und Verbundenheit",
+      "date": "2026-11-21",
+      "venue": "Lister Matthäuskirche",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Tr%C3%B6stlich-%E2%80%93-Musik-%C3%BCber-Verlust-und-Verbundenheit",
       "featured": false
     },
     {
@@ -211,11 +147,43 @@
       "featured": false
     },
     {
+      "title": "Sonntagsworkshops: Widdewidde wie sie mir gefällt",
+      "date": "2026-11-22",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sonntagsworkshops-Widdewidde-wie-sie-mir-gef%C3%A4llt",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-22",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
+      "featured": false
+    },
+    {
       "title": "Winterfest der Bio-Handwerksbäckerei Backwerk",
       "date": "2026-11-22",
       "venue": "Backwerk Bio Handwerksbäckerei",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterfest-der-Bio-Handwerksb%C3%A4ckerei-Backwerk",
+      "featured": false
+    },
+    {
+      "title": "TechnoThek – November Special",
+      "date": "2026-11-23",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
+      "featured": false
+    },
+    {
+      "title": "Vortrag: Wald – mehr als die Summe der Bäume",
+      "date": "2026-11-23",
+      "venue": "Hörsaal Kirchenkanzlei",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Vortrag-Wald-%E2%80%93-mehr-als-die-Summe-der-B%C3%A4ume",
       "featured": false
     },
     {
@@ -304,6 +272,14 @@
       "featured": false
     },
     {
+      "title": "Hannover 96 vs. Hertha BSC",
+      "date": "2026-12-05",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Hertha-BSC",
+      "featured": false
+    },
+    {
       "title": "Lichterfest in Neustadt a. Rbge.",
       "date": "2026-12-05",
       "venue": "Liebfrauenkirche",
@@ -317,6 +293,14 @@
       "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
       "category": "Misburg-Anderten",
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
+    },
+    {
+      "title": "Die Recken vs. HSG Wetzlar",
+      "date": "2026-12-06",
+      "venue": "ZAG-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Die-Recken-vs.-HSG-Wetzlar",
+      "featured": false
     },
     {
       "title": "Offener Palettengarten Misburg-Anderten",
@@ -409,6 +393,14 @@
       "venue": "Schloss Landestrost",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-20272",
+      "featured": false
+    },
+    {
+      "title": "Irish Spring Festival 2027",
+      "date": "2027-03-09",
+      "venue": "Schloss Landestrost",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-2027",
       "featured": false
     }
   ]

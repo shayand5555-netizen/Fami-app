@@ -1,119 +1,8 @@
 {
-  "updatedAt": "2026-11-21T12:40:22.017Z",
+  "updatedAt": "2026-11-22T12:36:25.661Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "10 Jahre Kunstsammler-Verein: Jubiläumsfeier",
-      "date": "2026-11-21",
-      "venue": "Sprengel Museum Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/10-Jahre-Kunstsammler-Verein-Jubil%C3%A4umsfeier",
-      "featured": false
-    },
-    {
-      "title": "32. Buchlust-Messe in Hannover",
-      "date": "2026-11-21",
-      "venue": "Literaturhaus Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/32.-Buchlust-Messe-in-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Das offene Foyer der Staatsoper Hannover",
-      "date": "2026-11-21",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Das-offene-Foyer-der-Staatsoper-Hannover",
-      "featured": false
-    },
-    {
-      "title": "Die drei ??? Kids Live: Piraten in Rocky Beach",
-      "date": "2026-11-21",
-      "venue": "Theater am Aegi",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-drei-Kids-Live-Piraten-in-Rocky-Beach",
-      "featured": false
-    },
-    {
-      "title": "Flohmarkt auf der Neuen Bult",
-      "date": "2026-11-21",
-      "venue": "Pferderennbahn Neue Bult",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Flohmarkt-auf-der-Neuen-Bult",
-      "featured": false
-    },
-    {
-      "title": "Georgengarten Parkrun",
-      "date": "2026-11-21",
-      "venue": "Georgengarten",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Georgengarten-Parkrun",
-      "featured": false
-    },
-    {
-      "title": "Hannover 96 vs. Greuther Fürth",
-      "date": "2026-11-21",
-      "venue": "Heinz-von-Heiden-Arena",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-Greuther-F%C3%BCrth",
-      "featured": false
-    },
-    {
-      "title": "Jim Knopf und die Wilde 13",
-      "date": "2026-11-21",
-      "venue": "GOP Varieté",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Jim-Knopf-und-die-Wilde-13",
-      "featured": false
-    },
-    {
-      "title": "Kinderkonzert \"Joseph Haydn und die Fürstin\"",
-      "date": "2026-11-21",
-      "venue": "Martinskirche",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kinderkonzert-%22Joseph-Haydn-und-die-F%C3%BCrstin%22",
-      "featured": false
-    },
-    {
-      "title": "La Bohème",
-      "date": "2026-11-21",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/La-Boh%C3%A8me",
-      "featured": false
-    },
-    {
-      "title": "List’n Up–Der Poetry Slam in der List",
-      "date": "2026-11-21",
-      "venue": "Stadtteilzentrum Lister Turm",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/List%E2%80%99n-Up%E2%80%93Der-Poetry-Slam-in-der-List",
-      "featured": false
-    },
-    {
-      "title": "Tröstlich – Musik über Verlust und Verbundenheit",
-      "date": "2026-11-21",
-      "venue": "Lister Matthäuskirche",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Tr%C3%B6stlich-%E2%80%93-Musik-%C3%BCber-Verlust-und-Verbundenheit",
-      "featured": false
-    },
-    {
-      "title": "Willkommen in Mitmischingen – Wer hat hier das Sagen?",
-      "date": "2026-11-21",
-      "venue": "Kindermuseum Zinnober",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Willkommen-in-Mitmischingen-%E2%80%93-Wer-hat-hier-das-Sagen",
-      "featured": false
-    },
-    {
-      "title": "Wochenmarkt Misburg",
-      "date": "2026-11-21",
-      "venue": "Hinter der Alten Burg / Storchendamm, 30629 Hannover",
-      "category": "Misburg-Anderten",
-      "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
-    },
     {
       "title": "Geschichte zum Ausprobieren 2026",
       "date": "2026-11-22",
@@ -139,14 +28,6 @@
       "featured": false
     },
     {
-      "title": "Kleidertauschparty in der Südstadt",
-      "date": "2026-11-22",
-      "venue": "Adventgemeinde Hannover-Süd - Bistro",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Kleidertauschparty-in-der-S%C3%BCdstadt",
-      "featured": false
-    },
-    {
       "title": "Sonntagsworkshops: Widdewidde wie sie mir gefällt",
       "date": "2026-11-22",
       "venue": "Stadtbibliothek",
@@ -163,11 +44,27 @@
       "featured": false
     },
     {
-      "title": "Winterfest der Bio-Handwerksbäckerei Backwerk",
-      "date": "2026-11-22",
-      "venue": "Backwerk Bio Handwerksbäckerei",
-      "category": "Feste & Festivals",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Winterfest-der-Bio-Handwerksb%C3%A4ckerei-Backwerk",
+      "title": "Die Jugendgruppe BE:TwEEN 2026",
+      "date": "2026-11-23",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
+      "featured": false
+    },
+    {
+      "title": "Die Königin der Farben: Ausgebucht!",
+      "date": "2026-11-23",
+      "venue": "Stadtteilzentrum Weiße Rose",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-K%C3%B6nigin-der-Farben-Ausgebucht",
+      "featured": false
+    },
+    {
+      "title": "Henna",
+      "date": "2026-11-23",
+      "venue": "Region Hannover",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Henna",
       "featured": false
     },
     {
@@ -184,6 +81,14 @@
       "venue": "Hörsaal Kirchenkanzlei",
       "category": "Kostenlos",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Vortrag-Wald-%E2%80%93-mehr-als-die-Summe-der-B%C3%A4ume",
+      "featured": false
+    },
+    {
+      "title": "Sprachkurs goes digital | 60+",
+      "date": "2026-11-24",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
       "featured": false
     },
     {
@@ -340,6 +245,14 @@
       "url": "https://www.hannover.de/Kultur-Freizeit/Freizeit-Sport/Shopping-M%C3%A4rkte/Wochen-Bauernm%C3%A4rkte/Wochenm%C3%A4rkte-in-der-Stadt/Wochenm%C3%A4rkte-nach-Stadtteilen/Wochenmarkt-Misburg"
     },
     {
+      "title": "Hannover 96 vs. 1. FC Kaiserslautern",
+      "date": "2026-12-20",
+      "venue": "Heinz-von-Heiden-Arena",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-96-vs.-1.-FC-Kaiserslautern",
+      "featured": false
+    },
+    {
       "title": "Stadtteilfest | Gemeinsam leuchten",
       "date": "2027-01-22",
       "venue": "Freizeitheim Vahrenwald",
@@ -401,6 +314,22 @@
       "venue": "Schloss Landestrost",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Irish-Spring-Festival-2027",
+      "featured": false
+    },
+    {
+      "title": "Ladies' Weekend im März",
+      "date": "2027-03-12",
+      "venue": "Freizeitheim Döhren",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-M%C3%A4rz",
+      "featured": false
+    },
+    {
+      "title": "Frühlingsfest Hannover 2027",
+      "date": "2027-03-27",
+      "venue": "Schützenplatz Hannover",
+      "category": "Feste & Festivals",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Fr%C3%BChlingsfest-Hannover-2027",
       "featured": false
     }
   ]

@@ -1,96 +1,8 @@
 {
-  "updatedAt": "2026-11-23T14:39:50.551Z",
+  "updatedAt": "2026-11-24T14:53:25.286Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Calliope - Mein erster Minicomputer",
-      "date": "2026-11-23",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Calliope-Mein-erster-Minicomputer",
-      "featured": false
-    },
-    {
-      "title": "Desimos spezial Club-Mix-Show",
-      "date": "2026-11-23",
-      "venue": "Apollo-Kino",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Desimos-spezial-Club-Mix-Show",
-      "featured": false
-    },
-    {
-      "title": "Deutsch, du Schuft!",
-      "date": "2026-11-23",
-      "venue": "Ballhof Zwei",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Deutsch,-du-Schuft",
-      "featured": false
-    },
-    {
-      "title": "Die Jugendgruppe BE:TwEEN 2026",
-      "date": "2026-11-23",
-      "venue": "Freizeitheim Vahrenwald",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
-      "featured": false
-    },
-    {
-      "title": "Henna",
-      "date": "2026-11-23",
-      "venue": "Region Hannover",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Henna",
-      "featured": false
-    },
-    {
-      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
-      "date": "2026-11-23",
-      "venue": "SEA LIFE Hannover",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
-      "featured": false
-    },
-    {
-      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
-      "date": "2026-11-23",
-      "venue": "Zur guten Absicht",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
-      "featured": false
-    },
-    {
-      "title": "TechnoThek – November Special",
-      "date": "2026-11-23",
-      "venue": "Stadtbibliothek",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
-      "featured": false
-    },
-    {
-      "title": "Vortrag: Wald – mehr als die Summe der Bäume",
-      "date": "2026-11-23",
-      "venue": "Hörsaal Kirchenkanzlei",
-      "category": "Kostenlos",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Vortrag-Wald-%E2%80%93-mehr-als-die-Summe-der-B%C3%A4ume",
-      "featured": false
-    },
-    {
-      "title": "Wieder im Programm: Gewässer im Ziplock",
-      "date": "2026-11-23",
-      "venue": "Ballhof Eins",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wieder-im-Programm-Gew%C3%A4sser-im-Ziplock",
-      "featured": false
-    },
-    {
-      "title": "Wintermarkt in der Tourist Infomation",
-      "date": "2026-11-23",
-      "venue": "Tourist Information am Hauptbahnhof",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
-      "featured": false
-    },
     {
       "title": "All the Sex I've Ever Had",
       "date": "2026-11-24",
@@ -113,6 +25,14 @@
       "venue": "Theater am Aegi",
       "category": "Bühnen",
       "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Eure-M%C3%BCtter-Perlen-vor-die-S%C3%A4ue-%E2%80%93-Best-of",
+      "featured": false
+    },
+    {
+      "title": "Gewässer im Ziplock",
+      "date": "2026-11-24",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Gew%C3%A4sser-im-Ziplock",
       "featured": false
     },
     {
@@ -140,11 +60,43 @@
       "featured": false
     },
     {
+      "title": "Pen & Paper",
+      "date": "2026-11-24",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Pen-Paper",
+      "featured": false
+    },
+    {
+      "title": "Sea Life Hannover: Von der Leine bis zum Tropenwald",
+      "date": "2026-11-24",
+      "venue": "SEA LIFE Hannover",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Sea-Life-Hannover-Von-der-Leine-bis-zum-Tropenwald",
+      "featured": false
+    },
+    {
+      "title": "Spendensammlung für „DIE!!! Weihnachtsfeier“",
+      "date": "2026-11-24",
+      "venue": "Zur guten Absicht",
+      "category": "Kostenlos",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Spendensammlung-f%C3%BCr-%E2%80%9EDIE!!!-Weihnachtsfeier%E2%80%9C",
+      "featured": false
+    },
+    {
       "title": "Sprachkurs goes digital | 60+",
       "date": "2026-11-24",
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kostenlos",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kostenlos/Sprachkurs-goes-digital-|-60",
+      "featured": false
+    },
+    {
+      "title": "TechnoThek – November Special",
+      "date": "2026-11-24",
+      "venue": "Stadtbibliothek",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/TechnoThek-%E2%80%93-November-Special",
       "featured": false
     },
     {
@@ -161,6 +113,14 @@
       "venue": "Kindermuseum Zinnober",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Willkommen-in-Mitmischingen-%E2%80%93-Wer-hat-hier-das-Sagen",
+      "featured": false
+    },
+    {
+      "title": "Wintermarkt in der Tourist Infomation",
+      "date": "2026-11-24",
+      "venue": "Tourist Information am Hauptbahnhof",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Wintermarkt-in-der-Tourist-Infomation",
       "featured": false
     },
     {
@@ -211,11 +171,35 @@
       "featured": false
     },
     {
-      "title": "Kindertheater | Die Königin der Farben",
+      "title": "Wokey Wokey",
+      "date": "2026-11-25",
+      "venue": "Ballhof Zwei",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Wokey-Wokey",
+      "featured": false
+    },
+    {
+      "title": "Zum letzten Mal: Ich, ich, ich!",
+      "date": "2026-11-25",
+      "venue": "Ballhof Eins",
+      "category": "Bühnen",
+      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Zum-letzten-Mal-Ich,-ich,-ich",
+      "featured": false
+    },
+    {
+      "title": "Die Königin der Farben | AUSGEBUCHT!",
       "date": "2026-11-26",
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kindertheater-|-Die-K%C3%B6nigin-der-Farben",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-K%C3%B6nigin-der-Farben-|-AUSGEBUCHT",
+      "featured": false
+    },
+    {
+      "title": "Familienkino an Häuserwänden",
+      "date": "2026-11-27",
+      "venue": "Lutherkirche",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Familienkino-an-H%C3%A4userw%C3%A4nden",
       "featured": false
     },
     {
@@ -248,6 +232,14 @@
       "venue": "Freizeitheim Döhren",
       "category": "Märkte",
       "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-November",
+      "featured": false
+    },
+    {
+      "title": "Vorlesenachmittage",
+      "date": "2026-11-27",
+      "venue": "Museum August Kestner",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Vorlesenachmittage",
       "featured": false
     },
     {

@@ -1,72 +1,8 @@
 {
-  "updatedAt": "2026-11-27T13:52:15.390Z",
+  "updatedAt": "2026-11-28T12:59:47.086Z",
   "region": "Hannover",
   "source": "Hannover.de",
   "events": [
-    {
-      "title": "Die rote Zora",
-      "date": "2026-11-27",
-      "venue": "Schauspielhaus",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Die-rote-Zora",
-      "featured": false
-    },
-    {
-      "title": "Familienkino an Häuserwänden",
-      "date": "2026-11-27",
-      "venue": "Lutherkirche",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Familienkino-an-H%C3%A4userw%C3%A4nden",
-      "featured": false
-    },
-    {
-      "title": "Hannover Indians vs. EHC Neuwied",
-      "date": "2026-11-27",
-      "venue": "Eisstadion am Pferdeturm",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Indians-vs.-EHC-Neuwied",
-      "featured": false
-    },
-    {
-      "title": "Hannover Scorpions vs. TecArt Black Dragons",
-      "date": "2026-11-27",
-      "venue": "Eisstadion Mellendorf",
-      "category": "Sport",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/Hannover-Scorpions-vs.-TecArt-Black-Dragons",
-      "featured": false
-    },
-    {
-      "title": "Kinderbuchlesung: Grimm und Möhrchen",
-      "date": "2026-11-27",
-      "venue": "Buchhandlung Leuenhagen & Paris",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Kinderbuchlesung-Grimm-und-M%C3%B6hrchen",
-      "featured": false
-    },
-    {
-      "title": "Ladies' Weekend im November",
-      "date": "2026-11-27",
-      "venue": "Freizeitheim Döhren",
-      "category": "Märkte",
-      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-November",
-      "featured": false
-    },
-    {
-      "title": "Romeo und Julia (Ballett)",
-      "date": "2026-11-27",
-      "venue": "Opernhaus Hannover",
-      "category": "Bühnen",
-      "url": "https://www.hannover.de/Veranstaltungskalender/B%C3%BChnen/Romeo-und-Julia-Ballett",
-      "featured": false
-    },
-    {
-      "title": "Vorlesenachmittage",
-      "date": "2026-11-27",
-      "venue": "Museum August Kestner",
-      "category": "Kinder & Jugendliche",
-      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Vorlesenachmittage",
-      "featured": false
-    },
     {
       "title": "Fairground Festival 2026",
       "date": "2026-11-28",
@@ -123,11 +59,35 @@
       "featured": false
     },
     {
+      "title": "Ich hab da so ein Gefühl",
+      "date": "2026-11-29",
+      "venue": "Kulturzentrum Pavillon",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Ich-hab-da-so-ein-Gef%C3%BChl",
+      "featured": false
+    },
+    {
+      "title": "Rumpelstilzchen",
+      "date": "2026-11-29",
+      "venue": "MeRz Theater",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Rumpelstilzchen",
+      "featured": false
+    },
+    {
       "title": "SPIEL:ZEIT Experimente Klängen | AUSGEBUCHT!",
       "date": "2026-11-29",
       "venue": "Freizeitheim Vahrenwald",
       "category": "Kinder & Jugendliche",
       "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/SPIEL-ZEIT-Experimente-Kl%C3%A4ngen-|-AUSGEBUCHT",
+      "featured": false
+    },
+    {
+      "title": "Die Jugendgruppe BE:TwEEN 2026",
+      "date": "2026-11-30",
+      "venue": "Freizeitheim Vahrenwald",
+      "category": "Kinder & Jugendliche",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Kinder-Jugendliche/Die-Jugendgruppe-BE-TwEEN-2026",
       "featured": false
     },
     {
@@ -326,11 +286,35 @@
       "featured": false
     },
     {
+      "title": "Ladies' Weekend im März",
+      "date": "2027-03-12",
+      "venue": "Freizeitheim Döhren",
+      "category": "Märkte",
+      "url": "https://www.hannover.de/Veranstaltungskalender/M%C3%A4rkte/Ladies%27-Weekend-im-M%C3%A4rz",
+      "featured": false
+    },
+    {
       "title": "Frühlingsfest Hannover 2027",
       "date": "2027-03-27",
       "venue": "Schützenplatz Hannover",
       "category": "Feste & Festivals",
       "url": "https://www.hannover.de/Veranstaltungskalender/Feste-Festivals/Fr%C3%BChlingsfest-Hannover-2027",
+      "featured": false
+    },
+    {
+      "title": "35. Hannover Marathon",
+      "date": "2027-04-11",
+      "venue": "Platz der Menschenrechte (ehemals Trammplatz)",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/35.-Hannover-Marathon",
+      "featured": false
+    },
+    {
+      "title": "The Harlem Globetrotters: Rivalry-Tour",
+      "date": "2027-04-25",
+      "venue": "Swiss Life Hall",
+      "category": "Sport",
+      "url": "https://www.hannover.de/Veranstaltungskalender/Sport/The-Harlem-Globetrotters-Rivalry-Tour",
       "featured": false
     }
   ]
